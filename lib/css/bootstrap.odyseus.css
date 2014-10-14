@@ -1,0 +1,260 @@
+/* !
+* Bootstrap v3.2.0 (http://getbootstrap.com)
+* Copyright 2011-2014 Twitter, Inc.
+* Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE) */
+
+/* Footer tweaks */
+#footer {
+	color: #C8C8C8;
+	min-height: 60px !important;
+	bottom: 0 !important;
+	right: 0 !important;
+	left: 0 !important;
+	padding: 0 !important;
+	border-radius: 0 !important;
+	border: none !important;
+	margin-bottom: 0 !important;
+}
+.footer-inner {
+	margin-top: 20px;
+}
+/* Footer tweaks */
+
+/* Various tweaks */
+.container {
+	padding-bottom: 1em !important;
+	margin-bottom: 1em !important;
+}
+.container img {
+	max-width: 100%;
+	height: auto;
+}
+div.boxed{
+	border: #ecece7 solid 1px;
+	border-radius: 5px;
+	box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1), 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.container h1, .container h2 {
+	border-bottom: 1px solid #e0e0dc;
+}
+/* Various tweaks */
+
+/* Basic info box tweaks */
+#basic-info {
+	float: right;
+	padding: 15px 0 15px 10px;
+	width: 290px;
+	position: relative;
+	z-index: 1
+}
+#basic-info h3 {
+	text-transform: uppercase;
+	letter-spacing: .5px
+}
+#basic-info .panel .panel-body li {
+	padding: 2px 0 2px 1px;
+	margin: 2px 0 2px 1px;
+}
+/* Basic info box tweaks */
+
+/* Option 2B: Reset an entire region with a custom Less mixin */
+.reset-box-sizing {
+  &,
+  *,
+  *:before,
+  *:after {
+    .box-sizing(content-box);
+  }
+}
+.element {
+  .reset-box-sizing();
+}
+/* Option 2B: Reset an entire region with a custom Less mixin */
+
+/* For fixed header */
+body {
+	padding-top: 70px;
+}
+/* For fixed header */
+
+/* Outline removal from all links */
+a:focus {
+	outline: none !important;
+}
+/* Outline removal from all links */
+
+/* Class for center images */
+.centered_image {
+	text-align: center;
+}
+/* Class for center images */
+
+/* Navbar shadow */
+#autohide_navbar {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.175);
+}
+/* Navbar shadow */
+
+/* Font preferences */
+html, body {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+code, kbd, pre, samp {
+	font-family: "DejaVu Sans Mono", "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+}
+/* Font preferences */
+
+/* For Back To Top Button */
+#top-link {
+	color: #555;
+	min-height: 18px;
+	padding: 6px;
+	border-radius: 3px;
+	background-color: rgba(200, 200, 200, 1)
+	outline: none;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+#top-link-block.affix-top {
+	position: absolute; /* allows it to "slide" up into view */
+	bottom: -82px;
+	right: 10px;
+}
+#top-link-block.affix {
+	position: fixed; /* keeps it on the bottom once in view */
+	bottom: 18px;
+	right: 10px;
+}
+/* For Back To Top Button */
+
+/* pre tag tweaks */
+pre {
+	padding: 0 !important;
+	background-color: #f8f8f8 !important; /* Tweak for XCode "Highlight" Theme */
+}
+.container pre {
+	padding-left: 15px !important;
+	padding-right: 15px !important;
+}
+/* pre tag tweaks */
+
+/* General responsiveness tweaks */
+@media (min-width:767px) {
+}
+@media all (min-width:480px) and (max-width:768px) {
+	/* For Back To Top Button */
+	#top-link-block.affix-top {
+		right: 0;
+	}
+	#top-link-block.affix {
+		bottom: 8px;
+		right: 0;
+	}
+	/* For Back To Top Button */
+}
+@media all (min-width:240px) and (max-width:480px) {
+	/* For Back To Top Button */
+	#top-link-block.affix-top {
+		right: 0;
+	}
+	#top-link-block.affix {
+		bottom: 8px;
+		right: 0;
+	}
+	/* For Back To Top Button */
+}
+/* General responsiveness tweaks */
+
+/* Responsive list for Index */
+#unordered_list, #pattern {
+	margin: 0;
+	padding: 0;
+}
+
+.tile {
+	text-decoration: none;
+	padding: 0;
+}
+
+.list li {
+	display: inline-block;
+}
+.list li:hover, .list li:focus, .list li:active {
+	background-color: #f5f5f5;
+}
+.inner {
+	display: table-row;
+	overflow: hidden;
+}
+.li-img {
+	display: table-cell;
+	vertical-align: middle;
+	width: 30%;
+	padding-right: 1em;
+}
+.li-img img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.li-text {
+	display: table-cell;
+	vertical-align: middle;
+	width: 70%;
+	text-decoration: none;
+}
+.li-head {
+	margin: 5px;
+	font-weight: bold;
+}
+.li-sub {
+	margin: 5px;
+}
+.tile a {
+	display: block;
+	text-decoration: none;
+	color: #2C3E50;
+	outline: none;
+	padding: 0;
+}
+@media all and (min-width:45em) {
+	.list li {
+		float: left;
+		width: 33.33333%;
+	}
+	.tile a {
+		padding: .33em;
+	}
+}
+@media all and (min-width:75em) {
+	.list li {
+		width: 25%;
+	}
+	.tile a {
+		padding: .5em;
+	}
+}
+/* Responsive list for Index */
+/* Pagination Styles */
+#pagination_wraper {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+/* Pagination Styles */
+/* Search box tweaks */
+.fuzzy_search_span {
+	position: relative;
+	float: right;
+	max-width: 200px;
+}
+.fuzzy-search:focus {
+	outline: 0;
+}
+#fuzzy_searchbox {
+	width: 100%;
+	display: inline-block;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+/* Search box tweaks */
