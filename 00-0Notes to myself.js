@@ -4,5 +4,5 @@
  *  Examples: "mismatched tag. Expected: </meta>." or "not well-formed".
  *  2- Button URIs are added manually.
  *  3- URLs to GitHub sources added manually.
- *  
+ *  4- Code preview is automatically generated from the button URI.
  */
