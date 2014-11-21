@@ -8,6 +8,13 @@
 	<link type="text/css" rel="stylesheet" href="lib/css/bootstrap.min.css" />
 	<link type="text/css" rel="stylesheet" href="lib/css/bootstrap.odyseus.css" />
 	<link type="text/css" rel="stylesheet" href="lib/css/highlight.css" />
+	<style type="text/css">
+@media (min-width:580px) {
+	#install_alert {
+		margin-right:300px;
+	}
+}
+</style>
 </head>
 <body>
 <noscript><div class="alert alert-dismissable alert-danger">
@@ -45,7 +52,7 @@
 		</div>
 	</div>
 <p>This button has the ability to create very complex menus with menu items that can execute from custom commands to commands from other extensions or from the browser itself. You can also create menu items to open paths to any folder, open any file or execute any program with or without arguments. There are also "special items" that can create a list of all installed &quot;addons&quot; by type with just one line of code (Extensions, plugins, Stylish styles, Scriptish scripts and GeaseMonkey scripts). See Multi Menu's help page for more details (Ctrl + Right click on Multi Menu button). I created this button as an alternative to the <a href="https://addons.mozilla.org/firefox/addon/personal-menu/">Personal Menu</a> extension.</p>
-<div class="alert alert-warning" style="margin-right:300px;">
+<div id="install_alert" class="alert alert-warning">
 <p>Once installed, the menu created by Multi Menu is empty. You have to add the items by editing the Initialization tab of this button.</p>
 <p><b>Read the Help page (Ctrl + Right click on Multi Menu button) to learn how to add items.</b></p>
 </div>
