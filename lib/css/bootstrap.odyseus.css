@@ -26,8 +26,8 @@
 	margin-bottom: 1em !important;
 }
 .container img {
-	max-width: 100%;
-	height: auto;
+	max-width: 100% !important;
+	height: auto !important;
 }
 div.boxed{
 	border: #ecece7 solid 1px;
