@@ -14,3 +14,8 @@
  *     1 = For index
  *     2 = For any other pages.
  */
+
+/**
+ *  WARNING!
+ *  Do not use Bootstrap 3.1.1!!! Affix is broken.
+ */
