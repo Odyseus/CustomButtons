@@ -15,7 +15,19 @@
  *     2 = For any other pages.
  */
 
+
 /**
- *  WARNING!
- *  Do not use Bootstrap 3.1.1!!! Affix is broken.
+ *  #### Notes specific to Bootstrap ####
+ *  Bootstrap Theme:
+ *  - Switched to a simpler theme. A combination of Flatly and Cerulean, from http://bootswatch.com.
+ *  - Simply use Flatly css and change all sizes in pixels for the ones in Cerulean.
+ *  - Also, remove importing of Lato font and change all instances of "Lato" for "Open Sans".
+ *  
+ *  ScroolSpy:
+ *  - When using an offset on links with animated scroll, set a ScrollSpy's offset corresponding
+ *    to twice the value of the offset for the animated scroll.
+ *    Otherwise, ScrollSpy will highlight the incorrect link when clicking on it.
+ *    Note: The offset is to avoid the navbar covering the links target.
+ *  - I changed to "data-" attributes for setting up ScrollSpy. It seems easier.
+ *  - I still can't fix the position of the side navigation after resizing. ¬¬
  */
