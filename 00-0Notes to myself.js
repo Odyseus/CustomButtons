@@ -19,9 +19,10 @@
 /**
  *  #### Notes specific to Bootstrap ####
  *  Bootstrap Theme:
- *  - Switched to a simpler theme. A combination of Flatly and Cerulean, from http://bootswatch.com.
- *  - Simply use Flatly css and change all sizes in pixels for the ones in Cerulean.
- *  - Also, remove importing of Lato font and change all instances of "Lato" for "Open Sans".
+ *  A combination of Flatly colors, Cerulean sizes and Slate navbar. http://bootswatch.com.
+ *  1 - Use Flatly css as base.
+ *  2 - Change all sizes in pixels for the ones in Cerulean.
+ *  3 - Change all .navbar and .dropdown classes for the ones in Slate.
  *  
  *  ScroolSpy:
  *  - When using an offset on links with animated scroll, set a ScrollSpy's offset corresponding

@@ -67,12 +67,9 @@
 <h2>Images</h2>
 <h4>Featuring &quot;One-off&quot; buttons and suggestions</h4>
 <img src="lib/img/MultiSearch-00.png" alt="" border="0" width="" height="" /><br><br>
-	<span>
-		<span>
-			<input class="spoiler_button btn btn-info btn-sm" type="button" value="Show more" onclick="self.spoiler(this);"><br><br>
-		</span>
-		<span>
-			<span class="spoiler" style="display: none;">
+<div class="spoiler_container">
+	<a class="spoiler_show btn btn-info btn-sm">More images</a><br><br>
+		<div class="spoiler_js">
 <h4>Featuring Drag&amp;Drop on &quot;One-off&quot; buttons</h4>
 <img src="lib/img/MultiSearch-01.png" alt="" border="0" width="" height="" /><br><br>
 <h4>Featuring Drag&amp;Drop on &quot;One-off&quot; buttons attached to main panel</h4>
@@ -84,15 +81,14 @@
 <h4>Options window</h4>
 <img src="lib/img/MultiSearch-Settings-01.png" alt="" border="0" width="" height="" />
 <img src="lib/img/MultiSearch-Settings-02.png" alt="" border="0" width="" height="" /><br><br>
-<img src="lib/img/MultiSearch-Settings-03.png" alt="" border="0" width="" height="" />
-			</span>
-		</span>
-	</span>
+<img src="lib/img/MultiSearch-Settings-03.png" alt="" border="0" width="" height="" /><br><br>
+		</div>
+</div>
 </div>
 <br><br>
 
 <h2>Options - General settings tab</h2>
-<p>The options window is opened with <b>Control + Alt + Right Click</b>. <a href="#technicalities">See Technicalities - Point 2.</a></p>
+<p>The options window is opened with <b><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + Right Click</b>. <a href="#technicalities">See Technicalities - Point 2.</a></p>
 <ul>
 	<li><b>Button image size:</b> This preference sets the size of this button image to a fixed size (in pixels). This is a workaround because the image of this button is extracted directly from the search plugins installed in the browser. These images can be of different sizes, so to avoid for this button to constantly change its size (and thereby also change the size of the toolbar that contains it), I created this preference.</li>
 	<li><b>Doorhanger for Drag&amp;Drop notifications:</b> With this option <em>enabled/checked</em>, whenever a drag operation is performed over this button, a notification popup will appear in the address bar (A so called <em>doorhanger</em> popup) informing what operation will be performed when the dragged content is dropped. When this option <em>disabled/unchecked</em>, notifications will change to a more subtle status panel notification at the bottom of your browser.</li>
@@ -156,18 +152,14 @@
 <li><b>Fixed: </b>I accidentally added the same function twice. Not a critical error, but an error nonetheless.</li>
 <li><b>Added: </b>Option to add a new engine called <b>&quot;aboutConfig&quot;</b> that will allow you to directly search for entries inside the &quot;about:config&quot; page. Disabled by default. <a href="https://github.com/ardiman/userChrome.js/tree/master/searchplugin-4-aboutconfig">Based on code by <b>ardiman</b></a>.</li>
 </ul>
-<span>
-	<span>
-		<input class="spoiler_button btn btn-info btn-sm" type="button" value="Show more" onclick="self.spoiler(this);"><br><br>
-	</span>
-	<span>
-		<span class="spoiler" style="display: none;">
+<div class="spoiler_container">
+	<a class="spoiler_show btn btn-info btn-sm">Previous versions</a><br><br>
+		<div class="spoiler_js">
 <h4>Updated December 17, 2014</h4>
-
 <ul>
 <li><b>Added: </b>New feature called &quot;One-off buttons&quot;. This feature is similar to the feature of the same name introduced in Firefox 34.0.5, but at the same time totally different and independent from the default &quot;One-off buttons&quot;. This allows the Multi Search's &quot;One-off buttons&quot; to work even in applications in wich &quot;One-off buttons&quot; dosn't exists by default, like Palemoon or SeaMonkey. The only thing shared between both is the list of hidden &quot;One-off buttons&quot;.</li>
 <li><b>Added: </b>Auto-trigger search suggestions options.</li>
-<li><b>Added: </b>Some tweaks to the search panel. Added a search button and a clear search box button. Added a shortcut to clear the search box (Ctrl + Del). Added some hidden options (acceced by editing the Initialization tab of this button) to personalize the search box behavior (Between the lines 155-165).</li>
+<li><b>Added: </b>Some tweaks to the search panel. Added a search button and a clear search box button. Added a shortcut to clear the search box (<kbd>Ctrl</kbd> + <kbd>Del</kbd>). Added some hidden options (acceced by editing the Initialization tab of this button) to personalize the search box behavior (Between the lines 155-165).</li>
 <li><b>Changed: </b>Rewrited check for updates system. Now is possible to auto-check for updates every x amount of days with a delay of seconds after application startup.</li>
 </ul>
 <h4>Updated July 26, 2014</h4>
@@ -185,9 +177,8 @@
 <li><b>Added:</b> New ability to add new search engines from the Multi Search manage engines menu (Middle click). Example: Go to github.com, Middle click on Multi Search. A new menu item will appear that will allow you to add Github's search engine to your list of engines.</li>
 </ul>
 <p><b>Note:</b> This is the same feature that can be found in the browser's default search bar. I forgot to add it to the original version of this button, so here it is.</p>
-		</span>
-	</span>
-</span>
+		</div>
+</div>
 </div>
 </div>
 <div class="panel panel-warning">
@@ -208,10 +199,10 @@
   <div class="panel-body">
 <ul>
 	<li><b>Left Click: </b>Open search panel. If &quot;Straight search&quot; is enabled, it will directly perform a search or will open the search panel if the dropmarker is clicked.</li>
-	<li><b>Left Click + Shift: </b>Open &quot;Google Images&quot; in a new tab.</li>
-	<li><b>Right Click + Alt <font style="font-size: 10px;">(or Shift if under GNU/Linux or Mac OS)</font>: </b>Switch &quot;Search mode&quot;.</li>
-	<li><b>Right Click + Ctrl + Alt <font style="font-size: 10px;">(or Shift if under GNU/Linux or Mac OS)</font></font>: </b>Open this button options window.</li>
-	<li><b>Right Click + Ctrl: </b>Switch &quot;Straight search&quot;.</li>
+	<li><b>Left Click + <kbd>Shift</kbd>: </b>Open &quot;Google Images&quot; in a new tab.</li>
+	<li><b>Right Click + <kbd>Alt</kbd> <font style="font-size: 10px;">(or <kbd>Shift</kbd> if under GNU/Linux or Mac OS)</font>: </b>Switch &quot;Search mode&quot;.</li>
+	<li><b>Right Click + <kbd>Ctrl</kbd> + <kbd>Alt</kbd> <font style="font-size: 10px;">(or <kbd>Shift</kbd> if under GNU/Linux or Mac OS)</font></font>: </b>Open this button options window.</li>
+	<li><b>Right Click + <kbd>Ctrl</kbd>: </b>Switch &quot;Straight search&quot;.</li>
 	<li><b>Middle Click: </b>Manage search engines (switch search engine, add/remove/rearrange search engines, assign keywords to a search engine, etc.).</li>
 </ul>
 </div>
@@ -223,7 +214,7 @@
   <div class="panel-body">
 <ol>
 	<li>All links dragged to this button will be treated as text. Except links containing an inline image which will be treated as an image and will trigger a Search by image with Google Images.</li>
-	<li>In GNU/Linux and Mac OS, all the button clicks using the <b>Alt</b> key as a modifier, will be &quot;swapped&quot; to use the <b>Shift</b> key. I did this because I found in GNU/Linux some problems when trying to use the <b>Alt</b> key as a modifier. The &quot;swap&quot; is automatic and the tooltip for this button will display the correct key.</li>
+	<li>In GNU/Linux and Mac OS, all the button clicks using the <b><kbd>Alt</kbd></b> key as a modifier, will be &quot;swapped&quot; to use the <b><kbd>Shift</kbd></b> key. I did this because I found in GNU/Linux some problems when trying to use the <b><kbd>Alt</kbd></b> key as a modifier. The &quot;swap&quot; is automatic and the tooltip for this button will display the correct key.</li>
 	<li>When doing site searches, it is not verified if the search engine can perform such a search or not. The user will have to discern if such type of search is possible with the search engine chosen.</li>
 	<li>If you remove a search engine recently added through Multi Search, this engine will not be immediately available to be added again. The browser will need to be restarted to make it possible to add that engine. This happens because I did not fully implemented the function that the default search bar uses (to keep this button as simple as possible).</li>
 	<li>For certain features of this button to work properly (Specifically, the ability to detect new search engines and the ability to clear the search history generated by this button), the browser needs to detect the default search bar. You can choose to leave it visible or hide it (That is why I created the option called <a href="#hide_default_searchbar">Hide default searchbar</a>). Although, I must say, to leave the default search bar visible is redundant.</li>
@@ -275,8 +266,8 @@
 	</a>
 </span><!-- /#top-link-block -->
 
-	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="lib/js/highlight.pack.js"></script>
 	<script type="text/javascript" src="lib/js/myFunctions.js"></script>
 	<script type="text/javascript">
