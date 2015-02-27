@@ -33,6 +33,9 @@
 .carousel-indicators .active {
 	background-color: rgba(50, 50, 50, .75) !important;
 }
+#mm-carousel {
+	width: 100% !important; /* Needed for those aberrations of Palemoon and Cyberfox!!!! */
+}
 </style>
 </head>
 <body>
@@ -182,8 +185,8 @@
   </a>
 </div>
 <br>
+<br>
 <h2 id="mm_companion">Multi Menu Companion</h2>
-<div>
 <p>&quot;Multi Menu Companion&quot; is a button that I created to add some features to &quot;Multi Menu&quot; button to facilitate items creation. These features where part of &quot;Multi Menu&quot; button itself, but I remove them and created a new button to keep &quot;Multi Menu&quot; as &quot;light&quot; as possible. &quot;Multi Menu Companion&quot; is absolutely <b>not needed</b> for &quot;Multi Menu&quot; to work. It's just an &quot;assistant&quot;.</p>
 <h4>Features</h4>
 <ul>
@@ -207,7 +210,6 @@
 	<li><b>Gel all commands: </b>It will copy to the clipboard all available application's commands. The &quot;oncommand&quot; attribute is what is usefull to create &quot;custom&quot; menu items. Most commands are self explanatory (the function name itself tells you what action will be performed), but others are very cryptic or even useless. <span class="text-danger"><b>Do not test commands that you are not sure what they do!!! If in doubt, just ask.</b></span></li>
 	<li><b>Open Multi Menu storage: </b>It will open the location in wich the .css file/s and the HelpPage.html file are stored.</li>
 </ul>
-</div>
 
 <div id="changelog" class="panel panel-success">
   <div class="panel-heading">
@@ -340,10 +342,6 @@ left.push(['spacer', 1]);</code></pre>
 		var syntax = "html"; // In case syntax highlighting for help tab is needed. Posible values: "html", "css", "js" or empty (""),
 		var isIndex = 0;
 		$(document).ready(function () {
-			$("#multi-menu-carousel").carousel({
-				pause : true,
-				interval : false
-			});
 			$("#mm-carousel").carousel({
 				pause : true,
 				interval : false
