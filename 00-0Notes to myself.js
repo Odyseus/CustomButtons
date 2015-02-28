@@ -31,4 +31,8 @@
  *    Note: The offset is to avoid the navbar covering the links target.
  *  - I changed to "data-" attributes for setting up ScrollSpy. It seems easier.
  *  - I still can't fix the position of the side navigation after resizing. ¬¬
+ *  
+ *  Carousel:
+ *  - Set width to 100% to the carousel primary div. Otherwise, the carousel will be displayed
+ *    wrong in those aberrations of Palemoon and Cyberfox!!!
  */
