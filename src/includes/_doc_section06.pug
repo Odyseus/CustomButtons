@@ -1,0 +1,299 @@
+﻿.cb-docs-section
+	h1#nav_working_with_urls.page-header Working with URLs, tabs, UI elements and so on
+	h3#nav_working_with_urls-1 Open Pages - Firefox and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		// open page in the current tab
+		loadURI(&quot;http://www.google.com/&quot;);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// open page in a new tab in the background
+		gBrowser.addTab(&quot;http://www.google.com/&quot;);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// open page in a new tab in the foreground
+		gBrowser.selectedTab = gBrowser.addTab(&quot;http://www.google.com/&quot;);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// open page in a new window
+		window.open(&quot;http://www.google.com/&quot;);</code>
+	h3#nav_working_with_urls-2 Open Sidebar - Firefox
+	pre.official_docs.
+		<code>/*Code*/
+		// open page in the side panel
+		openWebPanel(&quot;Firefox&quot;, &quot;about:logo&quot;);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// open and close a page in the side panel
+		if (document.getElementById(&quot;sidebar-title&quot;).value) {
+		toggleSidebar();
+		} else {
+		openWebPanel(&quot;Firefox&quot;, &quot;about:logo&quot;);
+		}</code>
+	h3#nav_working_with_urls-3 Using Bookmarklets - Firefox and SeaMonkey
+	pre.official_docs.
+		<code>javascript:(function(){alert('test');})();</code>
+	pre.official_docs.
+		<code>/*Code*/
+		loadURI(&quot;javascript:(function(){alert('test');})();&quot;);</code>
+	pre.official_docs.
+		<code>javascript:(function(){alert(&quot;test&quot;);})();</code>
+	pre.official_docs.
+		<code>/*Code*/
+		loadURI('javascript:(function(){alert(&quot;test&quot;);})();');</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// google &quot;greasemonkey location hack&quot; for more information
+		content.document.location.href = &quot;javascript:(&quot; + function() {
+		alert(&quot;test&quot;);
+		} + &quot;)()&quot;;</code>
+	h3#nav_working_with_urls-4 Select Tabs - Firefox and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		// next tab
+		gBrowser.tabContainer.advanceSelectedTab(1, true);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// previous tab
+		gBrowser.tabContainer.advanceSelectedTab(-1, true);</code>
+	h3#nav_working_with_urls-5 Move Tabs - Firefox and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		// move tab forward
+		if (gBrowser.selectedTab.nextSibling) gBrowser.moveTabForward();
+		else gBrowser.moveTabToStart();
+		</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// move tab backward
+		if (gBrowser.selectedTab.previousSibling) gBrowser.moveTabBackward();
+		else gBrowser.moveTabToEnd();</code>
+	h3#nav_working_with_urls-6 Reload Tabs - Firefox and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		gBrowser.reloadTab(gBrowser.selectedTab);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		gBrowser.reloadAllTabs();</code>
+	h3#nav_working_with_urls-7 Remove Tabs - Firefox and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		gBrowser.removeTab(gBrowser.selectedTab);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		gBrowser.removeAllTabsBut(gBrowser.selectedTab);</code>
+	h3 Navigate History - Firefox and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		// go back to the first page
+		gBrowser.webNavigation.gotoIndex(0);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// go forward to the last page
+		gBrowser.webNavigation.gotoIndex(gBrowser.webNavigation.sessionHistory.count - 1);</code>
+	h3#nav_working_with_urls-8 Toggle Toolbars - Firefox
+	pre.official_docs.
+		<code>/*Code*/
+		var toolbar = document.getElementById(&quot;toolbar-menubar&quot;);
+		var visibility = toolbar.getAttribute(&quot;autohide&quot;) == &quot;true&quot;;
+		setToolbarVisibility(toolbar, visibility);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		var toolbar = document.getElementById(&quot;nav-bar&quot;);
+		var visibility = toolbar.collapsed;
+		setToolbarVisibility(toolbar, visibility);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		var toolbar = document.getElementById(&quot;PersonalToolbar&quot;);
+		var visibility = toolbar.collapsed;
+		setToolbarVisibility(toolbar, visibility);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		var toolbar = document.getElementById(&quot;addon-bar&quot;);
+		var visibility = toolbar.collapsed;
+		setToolbarVisibility(toolbar, visibility);</code>
+	h3#nav_working_with_urls-9 Toggle Find Bar - Firefox, SeaMonkey and Thunderbird
+	pre.
+		<code>/*Code*/
+		var toolbar = document.getElementById(&quot;FindToolbar&quot;);
+		toolbar.hidden ? toolbar.onFindCommand() : toolbar.close();
+		</code>
+	h3#nav_working_with_urls-10 Toggle Tab Strip - Firefox and SeaMonkey
+	pre.
+		<code>/*Code*/
+		gBrowser.setStripVisibilityTo(!gBrowser.getStripVisibility());
+		</code>
+	h3#nav_working_with_urls-11 Execute Menu Item Command
+	pre.
+		<code>/*Code*/
+		document.getElementsByAttribute(&quot;label&quot;, &quot;Troubleshooting Information&quot;)[0].doCommand();
+		</code>
+	pre.
+		<code>/*Code*/
+		// unicode hexadecimal 2026 - horizontal ellipsis character
+		document.getElementsByAttribute(&quot;label&quot;, &quot;Add new button\u2026&quot;)[0].doCommand();
+		</code>
+	h3#nav_working_with_urls-12 Observe Attribute Example - Firefox, SeaMonkey and Thunderbird
+	pre.
+		<code>/*Initialization code*/
+		// toggle attribute in customize toolbar window
+		var info = Cc[&quot;@mozilla.org/xre/app-info;1&quot;].
+		getService(Ci.nsIXULAppInfo);
+		var toolbox;
+		if (info.name == &quot;Firefox&quot; || info.name == &quot;SeaMonkey&quot;) {
+		toolbox = document.getElementById(&quot;navigator-toolbox&quot;);
+		}
+		if (info.name == &quot;Thunderbird&quot;) {
+		toolbox = document.getElementById(&quot;mail-toolbox&quot;);
+		}
+		var ob = &lt;observes
+		xmlns=&quot;http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul&quot;
+		element={toolbox.id}
+		attribute=&quot;iconsize&quot;
+		onbroadcast={&quot;document.getElementById('&quot; + this.id + &quot;').change()&quot;}/&gt;;
+		this.appendChild(custombuttonsUtils.makeXML(ob));
+		this.change = function() {
+		if (toolbox.getAttribute(&quot;iconsize&quot;) == &quot;small&quot;) {
+		this.image = &quot;chrome://global/skin/icons/information-16.png&quot;;
+		alert('attribute for the &quot;Use Small Icons&quot; option is checked');
+		}
+		if (toolbox.getAttribute(&quot;iconsize&quot;) == &quot;large&quot;) {
+		this.image = &quot;chrome://global/skin/icons/information-24.png&quot;;
+		alert('attribute for the &quot;Use Small Icons&quot; option is not checked');
+		}
+		}
+		this.change();
+		</code>
+	h3#nav_working_with_urls-13 Various examples of the addresses-tabs-windows-and other things
+	h3 Management of the browser window.
+	pre.from_russian_forum.
+		<code>window.restore(); // Restore
+			window.maximize(); // Expand
+			window.minimize() // Collapse
+			window.close(); // Close
+			goQuitApplication();// Close all windows
+			window.moveTo(0,0);// Move the window to the specified coordinates (upper left corner)
+			window.resizeTo(1024,738);// Resize the window</code>
+	h3 OPEN a new window size half the screen with the address or arbitrary html code.
+	pre.from_russian_forum.
+		<code>var urla = &quot;http://custombuttons.mozdev.org/&quot;//---set the address or write code as in the line below
+			var urlb = &quot;data:text/html,ololo!&quot;; //just text ololo!
+			// 2 lines below to clear 1-HTML code of the page 2-collect the entire address
+			var pagecode='&lt;html&gt;&lt;head&gt;&lt;title&gt;The title of the page&lt;/title&gt;&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text		/html; charset=UTF-8&quot;&gt;&lt;/head&gt;&lt;body&gt;&lt;hr&gt;&lt;font size=+2 color=#ff1010&gt;&lt;b&gt;TEST&lt;/b&gt;&lt;/font&gt;&lt;hr&gt;		&lt;/body&gt;&lt;/html&gt;';
+			var urlc = &quot;data:text/html,&quot;+pagecode;
+
+			var sizex = screen.width/2; //------screen width/2
+			var sizey = screen.height/2; //-----screen height/2</code>
+	h3
+		| Setup window:
+		| resizable	 -	changing dimensions
+		| scrollbars	-	Show scroll bars
+		| menubar		 -	the menu bar
+		| toolbar		 -	browser panel
+		| location		-	Panel with the address bar
+		| personalbar -	custom panels
+		| status			-	status bar
+	pre.from_russian_forum.
+		<code>var winfeatures='resizable=yes,scrollbars=yes,menubar=yes,toolbar=yes,location=yes,personalbar=yes,status=yes,width=' + sizex + ',height=' +sizey;
+			var wnd = window.open(url, this.name,winfeatures ); // actually open the window with the address url and settings winfeatures
+			if (wnd.focus) wnd.focus();</code>
+	h3 Add the current page to a specified folder in bookmarks
+	pre.from_russian_forum.
+		<code>var folderName = &quot;test&quot;;
+			var bmsvc = Cc[&quot;@mozilla.org/browser/nav-bookmarks-service;1&quot;].getService(Ci.nsINavBookmarksService);
+			var menuFolder = bmsvc. bookmarksMenuFolder;
+			var f = bmsvc. getChildFolder (menuFolder, folderName);
+			if (f == 0){ bmsvc. createFolder (menuFolder, folderName, bmsvc. DEFAULT_INDEX);
+			f = bmsvc. getChildFolder (menuFolder, folderName);}
+			PlacesCommandHook. bookmarkCurrentPage (false, f);</code>
+	h3 Open the url in a new tab without validation
+	pre.
+		<code>var url=&quot;http://custombuttons.mozdev.org/&quot;;
+			getBrowser (). selectedTab = getBrowser (). addTab (url);</code>
+	h3 Open the url in a new tab if it is not empty, if empty then the current
+	pre.
+		<code>var url=&quot;http://custombuttons.mozdev.org/&quot;;
+			if (getBrowser().currentURI.spec == &quot;about:blank&quot;) loadURI (url);
+			else{ getBrowser (). selectedTab = getBrowser (). addTab (url);</code>
+	h3 Open the url in a new tab if it is not empty, if empty then the current option 2. for FF 4+
+	pre.
+		<code>var url = &quot;http://custombuttons.mozdev.org/&quot;;
+			if (
+			(
+			gBrowser.currentURI.spec == &quot;about:blank&quot;
+			|| gBrowser.currentURI.spec == cbu.getPrefs(&quot;browser.newtab.url&quot;)
+			)
+			&amp;&amp; !gBrowser.selectedBrowser.webProgress.isLoadingDocument
+			)
+			loadURI(url);
+			else
+			gBrowser.selectedTab = gBrowser.addTab(url);</code>
+	h3 Open a url in the current tab
+	pre.
+		<code>var url=&quot;http://custombuttons.mozdev.org/&quot;;
+			loadURI (url);</code>
+	h3 Get the address of the current page
+	pre.
+		<code>var url=getBrowser().currentURI.spec;</code>
+	h3 Listener to load the page.
+	pre.
+		<code>var appcontent = document.getElementById(&quot;appcontent&quot;);
+			appcontent.removeEventListener(&quot;DOMContentLoaded&quot;, pageloadedok, true);
+			appcontent.addEventListener(&quot;DOMContentLoaded&quot;, pageloadedok, true);
+			function pageloadedok(){custombuttons.alertSlide(&quot;Page loaded&quot;,&quot;Page loaded&quot;)}</code>
+	h3 Listener values change URL bar
+	pre.
+		<code>var myExt_urlBarListener = {
+				QueryInterface: function (aIID)
+				{
+					if (aIID.equals(Ci.nsIWebProgressListener) ||
+					aIID.equals(Ci.nsISupportsWeakReference) ||
+					aIID.equals(Ci.nsISupports))
+					return this;
+					throw Cr.NS_NOINTERFACE;
+				},
+
+				onLocationChange: function (aProgress, aRequest, aURI)
+				{
+					setTimeout(urlbarvaluechanged, 300);
+				},
+
+				onStateChange: function (a, b, c, d) {},
+				onProgressChange: function (a, b, c, d, e, f) {},
+				onStatusChange: function (a, b, c, d) {},
+				onSecurityChange: function (a, b, c) {}
+			};
+
+			gBrowser.addProgressListener(myExt_urlBarListener,Ci.nsIWebProgress.NOTIFY_LOCATION);
+			function urlbarvaluechanged(){custombuttons.alertSlide(&quot;urlbar value changed&quot;, &quot;on &quot;+gURLBar.value);}</code>
+	h3 Getting the current IP with duplicate in case the first server is unavailable.
+	pre.
+		<code>var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open('GET', 'http://ip.xss.ru/', true);
+			xmlhttp.onreadystatechange = function () {
+				if (xmlhttp.readyState == 4) {
+					if (xmlhttp.status == 200) {
+						var ip = xmlhttp.responseText;
+						ipok = ip. match (/\d?\d?\d\.\d?\d?\d\.\d?\d?\d\.\d?\d?\d/) [0];
+						alert(&quot;1=&quot;+ipok);
+						return ipok;
+					} else { getipalt(); }
+				}
+			};
+			xmlhttp.send(null);
+
+			function getipalt(){
+				xmlhttp.open('GET', 'http://www.myip.ru/ru-RU/index.php', true);
+				xmlhttp.onreadystatechange = function () {
+					if (xmlhttp.readyState == 4) {
+						if (xmlhttp.status == 200) {
+							var ip = xmlhttp.responseText;
+
+							ipok = ip. match (/\d?\d?\d\.\d?\d?\d\.\d?\d?\d\.\d?\d?\d/) [0];
+							alert(&quot;2=&quot;+ipok);
+							return ipok;
+						}
+					}
+				};
+				xmlhttp.send(null);
+			}</code>

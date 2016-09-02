@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[Cookies]]></html:title>
+    <html:link rel="shortcut icon" href="data:image/png;base64,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"/>
+    <html:style type="text/css"><![CDATA[
+body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+:-moz-any-link:focus {
+  color: white;
+  outline-color: transparent;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3ECookies%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/png%3Bbase64%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%3D%3D%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5Bvar%20isFirefox%20%20%20%3D%20Application.id%20%3D%3D%20%22%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D%22%3B%0Avar%20isSeaMonkey%20%3D%20Application.id%20%3D%3D%20%22%7B92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a%7D%22%3B%0A%0Avar%20wm%20%3D%20Cc%5B%22@mozilla.org/appshell/window-mediator%3B1%22%5D.%0A%20%20%20%20%20%20%20%20%20getService%28Ci.nsIWindowMediator%29%3B%0A%0Avar%20ww%20%3D%20Cc%5B%22@mozilla.org/embedcomp/window-watcher%3B1%22%5D.%0A%20%20%20%20%20%20%20%20%20getService%28Ci.nsIWindowWatcher%29%0A%0Afunction%20eTLD%28%29%20%7B%0A%20%20var%20eTLDsvc%20%3D%20Cc%5B%22@mozilla.org/network/effective-tld-service%3B1%22%5D.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20getService%28Ci.nsIEffectiveTLDService%29%3B%0A%20%20var%20eTLD%2C%20uri%20%3D%20content.document.documentURIObject%3B%0A%20%20try%20%7B%0A%20%20%20%20eTLD%20%3D%20eTLDsvc.getBaseDomain%28uri%29%3B%0A%20%20%7D%20catch%20%28e%29%20%7B%0A%20%20%20%20eTLD%20%3D%20uri.asciiHost%3B%0A%20%20%7D%0A%20%20return%20eTLD%3B%0A%7D%0A%0Afunction%20viewCookies%28%29%20%7B%0A%20%20var%20domain%20%3D%20eTLD%28%29%3B%0A%0A%20%20if%20%28isSeaMonkey%29%20%7B%0A%20%20%20%20toDataManager%28domain%20+%20%22%7Ccookies%22%29%3B%0A%20%20%20%20return%3B%0A%20%20%7D%0A%0A%20%20var%20win%20%3D%20wm.getMostRecentWindow%28%22Browser%3ACookies%22%29%3B%0A%20%20if%20%28win%29%20%7B%0A%20%20%20%20win.gCookiesWindow.setFilter%28domain%29%3B%0A%20%20%20%20win.focus%28%29%3B%0A%20%20%7D%20else%20%7B%0A%20%20%20%20openDialog%28%22chrome%3A//browser/content/preferences/cookies.xul%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Browser%3ACookies%22%2C%20%22%22%2C%20%7BfilterString%3A%20domain%7D%29%3B%0A%20%20%7D%0A%7D%0A%0Afunction%20cookieExceptions%28%29%20%7B%0A%20%20var%20domain%20%3D%20eTLD%28%29%3B%0A%0A%20%20if%20%28isSeaMonkey%29%20%7B%0A%20%20%20%20toDataManager%28domain%20+%20%22%7Cpermissions%22%29%3B%0A%20%20%20%20return%3B%0A%20%20%7D%0A%0A%20%20var%20params%20%3D%20%7B%0A%20%20%20%20blockVisible%3A%20true%2C%0A%20%20%20%20sessionVisible%3A%20true%2C%0A%20%20%20%20allowVisible%3A%20true%2C%0A%20%20%20%20prefilledHost%3A%20eTLD%28%29%2C%0A%20%20%20%20permissionType%3A%20%22cookie%22%2C%0A%20%20%20%20windowTitle%3A%20%22Cookie%20Permissions%22%2C%0A%20%20%20%20introText%3A%20%22Cookies%20are%20delicious%20delicacies.%5Cn%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22You%20can%20specify%20which%20websites%20are%20always%20or%20never%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22allowed%20to%20use%20cookies.%20Type%20the%20exact%20address%20of%20the%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22site%20you%20want%20to%20manage%20and%20then%20click%20Block%2C%20Allow%20for%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22Session%2C%20or%20Allow.%22%0A%20%20%7D%0A%20%20var%20win%20%3D%20wm.getMostRecentWindow%28%22Browser%3APermissions%22%29%3B%0A%20%20if%20%28win%29%20%7B%0A%20%20%20%20if%20%28%22initWithParams%22%20in%20win%29%20win.initWithParams%28params%29%3B%0A%20%20%20%20win.focus%28%29%3B%0A%20%20%20%20return%3B%0A%20%20%7D%0A%20%20openDialog%28%22chrome%3A//browser/content/preferences/permissions.xul%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%22%22%2C%20%22resizable%2C%20dialog%3Dno%2C%20centerscreen%22%2C%20params%29%3B%0A%7D%0A%0Afunction%20cookieCuller%28%29%20%7B%0A%20%20var%20wenum%20%3D%20ww.getWindowEnumerator%28%29%3B%0A%20%20var%20index%20%3D%201%3B%0A%20%20while%20%28wenum.hasMoreElements%28%29%29%20%7B%0A%20%20%20%20%20%20var%20win%20%3D%20wenum.getNext%28%29%3B%0A%20%20%20%20%20%20if%20%28win.name%20%3D%3D%20%22CookieCuller%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20win.focus%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20return%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20index++%3B%0A%20%20%7D%0A%20%20openDialog%28%22chrome%3A//cookieculler/content/CookieCuller.xul%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%22CookieCuller%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%22centerscreen%2C%20chrome%2C%20dialog%3Dno%2C%20%22%0A%20%20%20%20%20%20%20%20%20%20%20+%20%22resizable%2C%20minimizable%2C%20maximizable%22%29%3B%0A%7D%0A%0Afunction%20onContextMenu%28aEvent%29%20%7B%0A%20%20if%20%28%22inspectDOMNode%22%20in%20window%29%20%7B%0A%20%20%20%20aEvent.preventDefault%28%29%3B%0A%20%20%20%20%28%22inspectDOMNode%22%20in%20window%29%20%26%26%20inspectDOMNode%28aEvent.target%29%3B%0A%20%20%20%20closeMenus%28aEvent.target%29%3B%0A%20%20%7D%0A%7D%0A%0Afunction%20onPopupShowing%28aEvent%29%20%7B%0A%20%20aEvent.target.querySelector%28%22menuitem%5Blabel%3D%27CookieCuller%27%5D%22%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.hidden%20%3D%20%21%28%22CookieCullerStartup%22%20in%20window%29%3B%0A%20%20aEvent.target.querySelector%28%22menuitem%5Blabel%3D%27Cookies%20Manager+%27%5D%22%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.hidden%20%3D%20%21%28%22coomanPlus%22%20in%20window%29%3B%0A%7D%0A%0Afunction%20menuCommand%28aEvent%29%20%7B%0A%20%20switch%20%28aEvent.target.label%29%20%7B%0A%20%20%20%20case%20%22View%20cookies%22%3A%20viewCookies%28%29%3B%20break%3B%0A%20%20%20%20case%20%22Cookie%20permissions%22%3A%20cookieExceptions%28%29%3B%20break%3B%0A%20%20%20%20case%20%22Cookies%20Manager+%22%3A%20coomanPlus.openCookieEditor%28%29%3B%20break%3B%0A%20%20%20%20case%20%22CookieCuller%22%3A%20cookieCuller%28%29%3B%0A%20%20%7D%0A%7D%0A%0Avar%20m%20%3D%20%27%3Cmenupopup%20xmlns%3D%22%27%20+%20xulns%20+%20%27%22%27%0A%20%20%20%20%20%20+%20%27%20onpopupshowing%3D%22onPopupShowing%28event%29%3B%22%27%0A%20%20%20%20%20%20+%20%27%20oncommand%3D%22menuCommand%28event%29%3B%22%3E%27%0A%20%20%20%20%20%20+%20%27%3Cmenuitem%20label%3D%22View%20cookies%22/%3E%27%0A%20%20%20%20%20%20+%20%27%3Cmenuitem%20label%3D%22Cookie%20permissions%22/%3E%27%0A%20%20%20%20%20%20+%20%27%3Cmenuitem%20label%3D%22Cookies%20Manager+%22/%3E%27%0A%20%20%20%20%20%20+%20%27%3Cmenuitem%20label%3D%22CookieCuller%22/%3E%27%0A%20%20%20%20%20%20+%20%27%3Cmenuseparator/%3E%27%0A%20%20%20%20%20%20+%20%27%3Cmenuitem%20label%3D%22Check%20for%20updates%20for%20this%20button%22%27%0A%20%20%20%20%20%20+%20%27%20oncommand%3D%22var%20btn%20%3D%20this.parentNode.parentNode%3B%27%0A%20%20%20%20%20%20+%20%27%20btn.updater.checkForUpdate%28btn.updater.getUpdate%29%3B%22%27%0A%20%20%20%20%20%20+%20%27%20onclick%3D%22if%20%28event.button%20%3D%3D%201%29%27%0A%20%20%20%20%20%20+%20%27%20this.parentNode.parentNode.updater.openUpdateURL%28%29%3B%22/%3E%27%0A%20%20%20%20%20%20+%20%27%3C/menupopup%3E%27%3B%0A%0Athis.type%20%3D%20%22menu%22%3B%0Athis.appendChild%28cbu.makeXML%28m%29%29%3B%0Athis.firstChild.onPopupShowing%20%3D%20onPopupShowing.bind%28%29%3B%0Athis.firstChild.oncontextmenu%20%3D%20onContextMenu.bind%28%29%3B%0Athis.firstChild.menuCommand%20%3D%20menuCommand.bind%28%29%3B%0A%0A////////////////////////////////////////////////////////////////////////////%0A///////////////////////////%20Start%20Button%20updater%20///////////////////////////%0A%0A/*%20*****%20BEGIN%20LICENSE%20BLOCK%20*****%0A%20*%20Version%3A%20MPL%201.1/GPL%202.0%0A%20*%0A%20*%20The%20contents%20of%20this%20file%20are%20subject%20to%20the%20Mozilla%20Public%20License%0A%20*%20Version%201.1%20%28the%20%22License%22%29%3B%20you%20may%20not%20use%20this%20file%20except%20in%0A%20*%20compliance%20with%20the%20License.%20You%20may%20obtain%20a%20copy%20of%20the%20License%20at%0A%20*%20http%3A//www.mozilla.org/MPL/1.1/%0A%20*%0A%20*%20Software%20distributed%20under%20the%20License%20is%20distributed%20on%20an%20%22AS%20IS%22%20basis%2C%0A%20*%20WITHOUT%20WARRANTY%20OF%20ANY%20KIND%2C%20either%20express%20or%20implied.%20See%20the%20License%0A%20*%20for%20the%20specific%20language%20governing%20rights%20and%20limitations%20under%20the%0A%20*%20License.%0A%20*%0A%20*%20Original%20code%20is%20Button%20Updater%20for%20Custom%20Buttons%20extension%0A%20*%0A%20*%20The%20Initial%20Developer%20of%20the%20Original%20Code%20is%20LouCypher.%0A%20*%20Portions%20created%20by%20the%20Initial%20Developer%20are%20Copyright%20%28C%29%202011%0A%20*%20the%20Initial%20Developer.%20All%20Rights%20Reserved.%0A%20*%0A%20*%20Contributor%28s%29%3A%0A%20*%20-%20LouCypher%3A%20original%20code%0A%20*%0A%20*%20Alternatively%2C%20the%20contents%20of%20this%20file%20may%20be%20used%20under%20the%20terms%20of%0A%20*%20the%20GNU%20General%20Public%20License%20Version%202%20or%20later%20%28the%20%22GPL%22%29%2C%20in%20which%0A%20*%20case%20the%20provisions%20of%20the%20GPL%20are%20applicable%20instead%20of%20those%20above.%0A%20*%0A%20*%20*****%20END%20LICENSE%20BLOCK%20*****%20*/%0A%0Athis.updater%20%3D%20%7B%0A%20%20btnClick%3A%20self.onclick%2C%0A%20%20btnType%3A%20self.type%2C%0A%20%20btnImage%3A%20self.image%2C%0A%20%20btnTooltip%3A%20self.tooltipText%2C%0A%0A%20%20baseURL%3A%20%22https%3A//loucypher.googlecode.com/svn/custombuttons/xml/%22%2C%0A%0A%20%20get%20updateURL%28%29%20%7B%0A%20%20%20%20return%20this.baseURL%20+%20encodeURIComponent%28self.name.replace%28/%28%5C/%7C%3A%29/g%2C%20%22-%22%29%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22.xml%22%3B%0A%20%20%7D%2C%0A%0A%20%20openUpdateURL%3A%20function%20updater_openUpdateURL%28%29%20%7B%0A%20%20%20%20switchToTabHavingURI%28this.updateURL%29%3B%0A%20%20%7D%2C%0A%0A%20%20get%20stdIcon%28%29%20%7B%0A%20%20%20%20var%20stdIcon%20%3D%20parseInt%28self.cbStdIcon.match%28/%5Cd/%29%29%3B%0A%20%20%20%20switch%20%28stdIcon%29%20%7B%0A%20%20%20%20%20%20%20case%204%3A%20return%20%22chrome%3A//custombuttons/skin/stdicons/bbutton.png%22%3B%0A%20%20%20%20%20%20%20case%203%3A%20return%20%22chrome%3A//custombuttons/skin/stdicons/gbutton.png%22%3B%0A%20%20%20%20%20%20%20case%202%3A%20return%20%22chrome%3A//custombuttons/skin/stdicons/rbutton.png%22%3B%0A%20%20%20%20%20%20default%3A%20return%20%22chrome%3A//custombuttons/skin/button.png%22%3B%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%0A%20%20get%20bsyIcon%28%29%20%7B%0A%20%20%20%20switch%20%28Application.id%29%20%7B%0A%20%20%20%20%20%20case%20%22%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D%22%3A%0A%20%20%20%20%20%20%20%20if%20%28Application.version%20%3E%3D%20%224%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20return%20%22chrome%3A//browser/skin/tabbrowser/connecting.png%22%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20return%20%22chrome%3A//global/skin/icons/loading_16.png%22%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20case%20%22%7B92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a%7D%22%3A%0A%20%20%20%20%20%20%20%20return%20%22chrome%3A//communicator/skin/icons/loading.gif%22%3B%0A%20%20%20%20%20%20default%3A%0A%20%20%20%20%20%20%20%20return%20%22chrome%3A//global/skin/icons/loading_16.png%22%3B%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%0A%20%20//%20Check%20if%20the%20URI%20is%20Custom%20Button%20URI%20%28custombutton%3A//...%29%0A%20%20isValidCbURI%3A%20function%20updater_isValidCbURI%28aURL%29%20%7B%0A%20%20%20%20if%20%28%21aURL%29%20return%20false%3B%0A%20%20%20%20return%20/%5Ecustombutton%5C%3A%5C/%5C//.test%28aURL%29%3B%0A%20%20%7D%2C%0A%0A%20%20//%20Convert%20%27custombutton%3A%27%20URI%20to%20DOM%0A%20%20convertURItoDOM%3A%20function%20updater_convertURItoDOM%28aURL%29%20%7B%0A%20%20%20%20if%20%28%21this.isValidCbURI%28aURL%29%29%20%7B%0A%20%20%20%20%20%20custombuttons.alertBox%28self.name%2C%20%22Not%20a%20Custom%20Buttons%20link%21%22%29%3B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%0A%20%20%20%20var%20string%20%3D%20unescape%28aURL.replace%28/%5Ecustombutton%5C%3A%5C/%5C//%2C%20%22%22%29.toString%28%29%29%3B%0A%20%20%20%20var%20parser%20%3D%20new%20DOMParser%28%29%3B%0A%20%20%20%20var%20dom%20%3D%20parser.parseFromString%28string%2C%20%22text/xml%22%29%3B%0A%20%20%20%20if%20%28dom.documentElement.nodeName%20%3D%3D%20%22parsererror%22%29%20%7B%0A%20%20%20%20%20%20return%20null%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20return%20dom.documentElement%3B%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%0A%20%20//%20Get%20value%20from%20XML%20element%0A%20%20getParamValue%3A%20function%20updater_getParamValue%28aDocument%2C%20aNodeName%29%20%7B%0A%20%20%20%20var%20node%20%3D%20aDocument.querySelector%28aNodeName%29%3B%0A%20%20%20%20if%20%28%21node%29%20return%20%22%22%3B%0A%20%20%20%20if%20%28%21node.firstChild%20%7C%7C%20%28node.firstChild%20%26%26%0A%20%20%20%20%20%20%20%20%28node.firstChild.nodeType%20%3D%3D%20node.TEXT_NODE%29%29%29%20%7B%0A%20%20%20%20%20%20return%20node.textContent%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20return%20node.firstChild.textContent%3B%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%0A%20%20//%20Set%20button%20parameters%20from%20XML%20alement%0A%20%20getButtonParameters%3A%20function%20updater_getButtonParameters%28aButtonLink%2C%20aURL%29%20%7B%0A%20%20%20%20var%20dom%20%3D%20this.convertURItoDOM%28aURL%29%3B%0A%20%20%20%20var%20params%20%3D%20custombuttons.cbService.getButtonParameters%28aButtonLink%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.wrappedJSObject%3B%0A%20%20%20%20params.name%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22name%22%29%0A%20%20%20%20params.date%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22date%22%29%20%7C%7C%20%22%22%3B%0A%20%20%20%20params.image%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22image%22%29%20%7C%7C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20this.getParamValue%28dom%2C%20%22stdicon%22%29%3B%0A%20%20%20%20params.code%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22code%22%29%0A%20%20%20%20params.initCode%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22initcode%22%29%0A%20%20%20%20params.help%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22help%22%29%0A%20%20%20%20params.accelkey%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22accelkey%22%29%0A%20%20%20%20params.mode%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22mode%22%29%0A%20%20%20%20params.wrappedJSObject%20%20%3D%20params%3B%0A%20%20%20%20return%20params%3B%0A%20%20%7D%2C%0A%0A%20%20//%20Reset%20button%20attribute%20if%20user%20click%20the%20button%20during%20update%0A%20%20resetAttributes%3A%20function%20updater_resetAttributes%28%29%20%7B%0A%20%20%20%20self.image%20%3D%20this.btnImage%3B%0A%20%20%20%20self.tooltipText%20%3D%20self.name%3B%0A%20%20%20%20self.removeAttribute%28%22busy%22%29%3B%0A%20%20%20%20self.onclick%20%3D%20this.btnClick%3B%0A%20%20%20%20self.type%20%3D%20this.btnType%3B%0A%20%20%20%20self.tooltipText%20%3D%20this.btnTooltip%3B%0A%20%20%7D%2C%0A%0A%20%20//%20Check%20button%20for%20update%0A%20%20checkForUpdate%3A%20function%20updater_checkForUpdate%28aCallback%29%20%7B%0A%20%20%20%20if%20%28%21navigator.onLine%29%20%7B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20If%20browser%20is%20in%20offline%20mode%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20ask%20to%20switch%20to%20online%0A%20%20%20%20%20%20var%20online%20%3D%20custombuttons.confirmBox%28self.name%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Firefox%20is%20currently%20in%20offline%20mode.%5Cn%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22Switch%20to%20online%20mode%20and%20try%20again%3F%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Yes%22%2C%20%22No%22%29%3B%0A%20%20%20%20%20%20if%20%28%21online%29%20return%3B%0A%20%20%20%20%20%20BrowserOffline.toggleOfflineStatus%28%29%3B%20//%20switch%20to%20online%0A%20%20%20%20%7D%0A%0A%20%20%20%20var%20url%20%3D%20this.updateURL%20+%20%22%3F%22%20+%20Date.now%28%29%3B%0A%20%20%20%20var%20req%20%3D%20new%20XMLHttpRequest%28%29%3B%0A%20%20%20%20req.open%28%22GET%22%2C%20url%2C%20true%29%3B%0A%20%20%20%20if%20%28self.hasAttribute%28%22busy%22%29%29%20%7B%0A%20%20%20%20%20%20this.resetAttributes%28%29%3B%0A%20%20%20%20%20%20return%0A%20%20%20%20%7D%0A%20%20%20%20var%20updater%20%3D%20this%3B%0A%20%20%20%20req.onreadystatechange%20%3D%20function%20%28aEvent%29%20%7B%0A%20%20%20%20%20%20self.onclick%20%3D%20function%28aEvent%29%20%7B%0A%20%20%20%20%20%20%20%20aEvent.preventDefault%28%29%3B%0A%20%20%20%20%20%20%20%20req.abort%28%29%3B%0A%20%20%20%20%20%20%20%20self.updater.resetAttributes%28%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20self.image%20%3D%20updater.bsyIcon%3B%0A%20%20%20%20%20%20self.setAttribute%28%22busy%22%2C%20%22%22%29%3B%0A%20%20%20%20%20%20self.removeAttribute%28%22type%22%29%3B%0A%20%20%20%20%20%20self.tooltipText%20%3D%20%22Checking%20for%20update...%5CnClick%20to%20abort.%22%3B%0A%20%20%20%20%20%20if%20%28req.readyState%20%3D%3D%204%20%26%26%20req.status%20%3D%3D%20200%29%20%7B%0A%20%20%20%20%20%20%20%20updater.resetAttributes%28%29%3B%0A%20%20%20%20%20%20%20%20aCallback%28req.responseXML%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20req.send%28null%29%3B%0A%20%20%7D%2C%0A%0A%20%20//%20Get%20update%20from%20XML%0A%20%20getUpdate%3A%20function%20updater_getUpdate%28aDocument%29%20%7B%0A%20%20%20%20if%20%28aDocument.documentElement.localName%20%21%3D%20%22custombutton%22%29%20%7B%0A%20%20%20%20%20%20custombuttons.alertBox%28self.name%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Not%20a%20valid%20Custom%20Buttons%20XML%20file%21%22%29%3B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20//inspectDOMDocument%28aDocument%29%3B%20return%3B%0A%20%20%20%20let%20icon%20%3D%20self.updater.btnImage%20%3F%20self.updater.btnImage%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3A%20self.updater.stdIcon%3B%0A%20%20%20%20let%20button%20%3D%20aDocument.getElementById%28%22button%22%29%3B%0A%20%20%20%20let%20link%20%3D%20button.getElementsByTagNameNS%28xhtmlns%2C%20%22a%22%29%5B0%5D%3B%0A%20%20%20%20if%20%28link.href%20%3D%3D%20self.URI%29%20%7B%0A%20%20%20%20%20%20let%20as%20%3D%20Cc%5B%27@mozilla.org/alerts-service%3B1%27%5D.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20getService%28Ci.nsIAlertsService%29%3B%0A%20%20%20%20%20%20as.showAlertNotification%28icon%2C%20%22No%20update%20found%21%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Finish%20checking%22%2C%20false%2C%20%22%22%2C%20null%29%3B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%20%0A%0A%20%20%20%20var%20install%20%3D%20custombuttons.confirmBox%28self.name%2C%20%22Update%20found%21%20%22%20+%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Update%20this%20button%3F%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Yes%22%2C%20%22No%22%29%3B%0A%20%20%20%20if%20%28%21install%29%20return%3B%0A%20%20%20%20let%20btnLink%20%3D%20custombuttons.makeButtonLink%28%22update%22%2C%20self.id%29%3B%0A%20%20%20%20let%20params%20%3D%20self.updater.getButtonParameters%28btnLink%2C%20link.href%29%3B%0A%20%20%20%20//inspectObject%28params%29%3B%20return%3B%0A%20%20%20%20custombuttons.cbService.installButton%28params%29%3B%0A%20%20%20%20custombuttons.alertBox%28self.name%2C%20%22Button%20updated%21%22%29%3B%0A%20%20%20%20self.setAttribute%28%22cb-edit-state%22%2C%20%22active%22%29%3B%0A%20%20%7D%2C%0A%0A%20%20init%3A%20function%20updater_onLoad%28%29%20%7B%0A%0A%20%20%20%20var%20icon%20%3D%20this.btnImage%20%3F%20this.btnImage%20%3A%20this.stdIcon%3B%0A%0A%20%20%20%20function%20%24%28aId%29%20%7B%0A%20%20%20%20%20%20return%20document.getElementById%28aId%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20addMenuItem%28aNewIDs%2C%20aNodeIDs%2C%20aSeparator%29%20%7B%0A%20%20%20%20%20%20//%20Remove%20previously%20created%20menuitems%20if%20any%0A%20%20%20%20%20%20if%20%28%24%28aNewIDs%29%29%20%7B%0A%20%20%20%20%20%20%20%20if%20%28aSeparator%20%26%26%0A%20%20%20%20%20%20%20%20%20%20%20%20%28%24%28aNewIDs%29.nextSibling.localName%20%3D%3D%20%22menuseparator%22%29%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%24%28aNewIDs%29.parentNode.removeChild%28%24%28aNewIDs%29.nextSibling%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%24%28aNewIDs%29.parentNode.removeChild%28%24%28aNewIDs%29%29%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20var%20mi%20%3D%20cbu.makeXML%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27%3Cmenuitem%20xmlns%3D%22%27%20+%20xulns%20+%20%27%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20id%3D%22%27%20+%20aNewIDs%20+%20%27%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20class%3D%22menuitem-iconic%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20image%3D%22%27%20+%20icon%20+%20%27%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20label%3D%22Check%20for%20updates%20for%20this%20button%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20onclick%3D%22if%20%28event.button%20%3D%3D%201%29%20%7B%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20var%20btn%20%3D%20document.getElementById%28%5C%27%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20self.id%20+%20%27%5C%27%29%3B%20btn.updater.openUpdateURL%28%29%3B%20%7D%22%20%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20oncommand%3D%22var%20btn%20%3D%20document.getElementById%28%5C%27%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20self.id%20+%20%27%5C%27%29%3B%20btn.updater.checkForUpdate%28%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27btn.updater.getUpdate%29%3B%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20observes%3D%22custombuttons-contextbroadcaster-primary%22/%3E%27%29%3B%0A%20%20%20%20%20%20%24%28aNodeIDs%29.parentNode.insertBefore%28mi%2C%20%24%28aNodeIDs%29.nextSibling%29%3B%0A%20%20%20%20%20%20if%20%28aSeparator%29%20%7B%0A%20%20%20%20%20%20%20%20var%20sep%20%3D%20cbu.makeXML%28%27%3Cmenuseparator%20xmlns%3D%22%27%20+%20xulns%20+%20%27%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20id%3D%22%27%20+%20mi.id%20+%20%27-separator%22/%3E%27%29%3B%0A%20%20%20%20%20%20%20%20mi.parentNode.insertBefore%28sep%2C%20mi.nextSibling%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20initUpdaterCbPopup%28aEvent%29%20%7B%0A%20%20%20%20%20%20var%20popupNode%20%3D%20%22triggerNode%22%20in%20aEvent.target%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3F%20aEvent.target.triggerNode%20%3A%20document.popupNode%3B%0A%20%20%20%20%20%20%24%28kIDs%29.hidden%20%3D%20%28popupNode%20%21%3D%20self%29%3B%0A%20%20%20%20%20%20%28%24%28kIDs%29.nextSibling.id%20%3D%3D%20%24%28kIDs%29.id%20+%20%22-separator%22%29%20%26%26%0A%20%20%20%20%20%20%28%24%28kIDs%29.nextSibling.hidden%20%3D%20%28popupNode%20%21%3D%20self%29%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20var%20kIDs%20%3D%20self.id%20+%20%22-checkForUpdate%22%3B%0A%20%20%20%20var%20uIDs%20%3D%20%22custombuttons-contextpopup-updateButton%22%3B%0A%0A%20%20%20%20//%20Add%20%27Check%20for%20Update...%27%20menuitem%20to%20CB%20contextmenu%0A%20%20%20%20addMenuItem%28kIDs%2C%20uIDs%2C%20true%29%3B%0A%0A%20%20%20%20%24%28uIDs%29.parentNode.addEventListener%28%22popupshowing%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20initUpdaterCbPopup%2C%20false%29%3B%0A%20%20%20%20%24%28uIDs%29.parentNode.removeEventListener%28%22popuphiding%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20initUpdaterCbPopup%2C%20false%29%3B%0A%0A%20%20%20%20self.onDestroy%20%3D%20function%28aReason%29%20%7B%0A%20%20%20%20%20%20if%20%28aReason%20%21%3D%20%22delete%22%29%20return%3B%0A%20%20%20%20%20%20%24%28uIDs%29.parentNode.removeEventListener%28%22popupshowing%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20initUpdaterCbPopup%2C%20false%29%3B%0A%20%20%20%20%20%20%24%28kIDs%29.parentNode.removeChild%28%24%28kIDs%20+%20%22-separator%22%29%29%3B%0A%20%20%20%20%20%20%24%28kIDs%29.parentNode.removeChild%28%24%28kIDs%29%29%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Athis.updater.init%28%29%3B%0A%0A////////////////////////////%20End%20Button%20updater%20////////////////////////////%0A////////////////////////////////////////////////////////////////////////////%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5B/*%0A%0AIcon%20is%20part%20of%20Crystal%20Project%20by%20Everaldo%20Coelho%0Ahttp%3A//www.everaldo.com/crystal/%0ALicense%3A%20LGPL%0Ahttp%3A//www.everaldo.com/crystal/%3Faction%3Dlicense%0A%0A*/%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Cookies">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=external-custombuttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <name>Cookies</name>
+  <image><![CDATA[data:image/png;base64,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]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[var isFirefox   = Application.id == "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}";
+var isSeaMonkey = Application.id == "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}";
+
+var wm = Cc["@mozilla.org/appshell/window-mediator;1"].
+         getService(Ci.nsIWindowMediator);
+
+var ww = Cc["@mozilla.org/embedcomp/window-watcher;1"].
+         getService(Ci.nsIWindowWatcher)
+
+function eTLD() {
+  var eTLDsvc = Cc["@mozilla.org/network/effective-tld-service;1"].
+                getService(Ci.nsIEffectiveTLDService);
+  var eTLD, uri = content.document.documentURIObject;
+  try {
+    eTLD = eTLDsvc.getBaseDomain(uri);
+  } catch (e) {
+    eTLD = uri.asciiHost;
+  }
+  return eTLD;
+}
+
+function viewCookies() {
+  var domain = eTLD();
+
+  if (isSeaMonkey) {
+    toDataManager(domain + "|cookies");
+    return;
+  }
+
+  var win = wm.getMostRecentWindow("Browser:Cookies");
+  if (win) {
+    win.gCookiesWindow.setFilter(domain);
+    win.focus();
+  } else {
+    openDialog("chrome://browser/content/preferences/cookies.xul",
+               "Browser:Cookies", "", {filterString: domain});
+  }
+}
+
+function cookieExceptions() {
+  var domain = eTLD();
+
+  if (isSeaMonkey) {
+    toDataManager(domain + "|permissions");
+    return;
+  }
+
+  var params = {
+    blockVisible: true,
+    sessionVisible: true,
+    allowVisible: true,
+    prefilledHost: eTLD(),
+    permissionType: "cookie",
+    windowTitle: "Cookie Permissions",
+    introText: "Cookies are delicious delicacies.\n"
+             + "You can specify which websites are always or never "
+             + "allowed to use cookies. Type the exact address of the "
+             + "site you want to manage and then click Block, Allow for "
+             + "Session, or Allow."
+  }
+  var win = wm.getMostRecentWindow("Browser:Permissions");
+  if (win) {
+    if ("initWithParams" in win) win.initWithParams(params);
+    win.focus();
+    return;
+  }
+  openDialog("chrome://browser/content/preferences/permissions.xul",
+             "", "resizable, dialog=no, centerscreen", params);
+}
+
+function cookieCuller() {
+  var wenum = ww.getWindowEnumerator();
+  var index = 1;
+  while (wenum.hasMoreElements()) {
+      var win = wenum.getNext();
+      if (win.name == "CookieCuller") {
+          win.focus();
+          return;
+      }
+      index++;
+  }
+  openDialog("chrome://cookieculler/content/CookieCuller.xul",
+             "CookieCuller",
+             "centerscreen, chrome, dialog=no, "
+           + "resizable, minimizable, maximizable");
+}
+
+function onContextMenu(aEvent) {
+  if ("inspectDOMNode" in window) {
+    aEvent.preventDefault();
+    ("inspectDOMNode" in window) && inspectDOMNode(aEvent.target);
+    closeMenus(aEvent.target);
+  }
+}
+
+function onPopupShowing(aEvent) {
+  aEvent.target.querySelector("menuitem[label='CookieCuller']")
+               .hidden = !("CookieCullerStartup" in window);
+  aEvent.target.querySelector("menuitem[label='Cookies Manager+']")
+               .hidden = !("coomanPlus" in window);
+}
+
+function menuCommand(aEvent) {
+  switch (aEvent.target.label) {
+    case "View cookies": viewCookies(); break;
+    case "Cookie permissions": cookieExceptions(); break;
+    case "Cookies Manager+": coomanPlus.openCookieEditor(); break;
+    case "CookieCuller": cookieCuller();
+  }
+}
+
+var m = '<menupopup xmlns="' + xulns + '"'
+      + ' onpopupshowing="onPopupShowing(event);"'
+      + ' oncommand="menuCommand(event);">'
+      + '<menuitem label="View cookies"/>'
+      + '<menuitem label="Cookie permissions"/>'
+      + '<menuitem label="Cookies Manager+"/>'
+      + '<menuitem label="CookieCuller"/>'
+      + '<menuseparator/>'
+      + '<menuitem label="Check for updates for this button"'
+      + ' oncommand="var btn = this.parentNode.parentNode;'
+      + ' btn.updater.checkForUpdate(btn.updater.getUpdate);"'
+      + ' onclick="if (event.button == 1)'
+      + ' this.parentNode.parentNode.updater.openUpdateURL();"/>'
+      + '</menupopup>';
+
+this.type = "menu";
+this.appendChild(cbu.makeXML(m));
+this.firstChild.onPopupShowing = onPopupShowing.bind();
+this.firstChild.oncontextmenu = onContextMenu.bind();
+this.firstChild.menuCommand = menuCommand.bind();
+
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////// Start Button updater ///////////////////////////
+
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0
+ *
+ * The contents of this file are subject to the Mozilla Public License
+ * Version 1.1 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/1.1/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * Original code is Button Updater for Custom Buttons extension
+ *
+ * The Initial Developer of the Original Code is LouCypher.
+ * Portions created by the Initial Developer are Copyright (C) 2011
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ * - LouCypher: original code
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * the GNU General Public License Version 2 or later (the "GPL"), in which
+ * case the provisions of the GPL are applicable instead of those above.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+this.updater = {
+  btnClick: self.onclick,
+  btnType: self.type,
+  btnImage: self.image,
+  btnTooltip: self.tooltipText,
+
+  baseURL: "https://loucypher.googlecode.com/svn/custombuttons/xml/",
+
+  get updateURL() {
+    return this.baseURL + encodeURIComponent(self.name.replace(/(\/|:)/g, "-"))
+                        + ".xml";
+  },
+
+  openUpdateURL: function updater_openUpdateURL() {
+    switchToTabHavingURI(this.updateURL);
+  },
+
+  get stdIcon() {
+    var stdIcon = parseInt(self.cbStdIcon.match(/\d/));
+    switch (stdIcon) {
+       case 4: return "chrome://custombuttons/skin/stdicons/bbutton.png";
+       case 3: return "chrome://custombuttons/skin/stdicons/gbutton.png";
+       case 2: return "chrome://custombuttons/skin/stdicons/rbutton.png";
+      default: return "chrome://custombuttons/skin/button.png";
+    }
+  },
+
+  get bsyIcon() {
+    switch (Application.id) {
+      case "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}":
+        if (Application.version >= "4") {
+          return "chrome://browser/skin/tabbrowser/connecting.png";
+        } else {
+          return "chrome://global/skin/icons/loading_16.png";
+        }
+      case "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}":
+        return "chrome://communicator/skin/icons/loading.gif";
+      default:
+        return "chrome://global/skin/icons/loading_16.png";
+    }
+  },
+
+  // Check if the URI is Custom Button URI (custombutton://...)
+  isValidCbURI: function updater_isValidCbURI(aURL) {
+    if (!aURL) return false;
+    return /^custombutton\:\/\//.test(aURL);
+  },
+
+  // Convert 'custombutton:' URI to DOM
+  convertURItoDOM: function updater_convertURItoDOM(aURL) {
+    if (!this.isValidCbURI(aURL)) {
+      custombuttons.alertBox(self.name, "Not a Custom Buttons link!");
+      return;
+    }
+    var string = unescape(aURL.replace(/^custombutton\:\/\//, "").toString());
+    var parser = new DOMParser();
+    var dom = parser.parseFromString(string, "text/xml");
+    if (dom.documentElement.nodeName == "parsererror") {
+      return null;
+    } else {
+      return dom.documentElement;
+    }
+  },
+
+  // Get value from XML element
+  getParamValue: function updater_getParamValue(aDocument, aNodeName) {
+    var node = aDocument.querySelector(aNodeName);
+    if (!node) return "";
+    if (!node.firstChild || (node.firstChild &&
+        (node.firstChild.nodeType == node.TEXT_NODE))) {
+      return node.textContent;
+    } else {
+      return node.firstChild.textContent;
+    }
+  },
+
+  // Set button parameters from XML alement
+  getButtonParameters: function updater_getButtonParameters(aButtonLink, aURL) {
+    var dom = this.convertURItoDOM(aURL);
+    var params = custombuttons.cbService.getButtonParameters(aButtonLink)
+                                        .wrappedJSObject;
+    params.name             = this.getParamValue(dom, "name")
+    params.date             = this.getParamValue(dom, "date") || "";
+    params.image            = this.getParamValue(dom, "image") ||
+                              this.getParamValue(dom, "stdicon");
+    params.code             = this.getParamValue(dom, "code")
+    params.initCode         = this.getParamValue(dom, "initcode")
+    params.help             = this.getParamValue(dom, "help")
+    params.accelkey         = this.getParamValue(dom, "accelkey")
+    params.mode             = this.getParamValue(dom, "mode")
+    params.wrappedJSObject  = params;
+    return params;
+  },
+
+  // Reset button attribute if user click the button during update
+  resetAttributes: function updater_resetAttributes() {
+    self.image = this.btnImage;
+    self.tooltipText = self.name;
+    self.removeAttribute("busy");
+    self.onclick = this.btnClick;
+    self.type = this.btnType;
+    self.tooltipText = this.btnTooltip;
+  },
+
+  // Check button for update
+  checkForUpdate: function updater_checkForUpdate(aCallback) {
+    if (!navigator.onLine) {                // If browser is in offline mode
+                                            // ask to switch to online
+      var online = custombuttons.confirmBox(self.name,
+                             "Firefox is currently in offline mode.\n"
+                           + "Switch to online mode and try again?",
+                             "Yes", "No");
+      if (!online) return;
+      BrowserOffline.toggleOfflineStatus(); // switch to online
+    }
+
+    var url = this.updateURL + "?" + Date.now();
+    var req = new XMLHttpRequest();
+    req.open("GET", url, true);
+    if (self.hasAttribute("busy")) {
+      this.resetAttributes();
+      return
+    }
+    var updater = this;
+    req.onreadystatechange = function (aEvent) {
+      self.onclick = function(aEvent) {
+        aEvent.preventDefault();
+        req.abort();
+        self.updater.resetAttributes();
+      }
+      self.image = updater.bsyIcon;
+      self.setAttribute("busy", "");
+      self.removeAttribute("type");
+      self.tooltipText = "Checking for update...\nClick to abort.";
+      if (req.readyState == 4 && req.status == 200) {
+        updater.resetAttributes();
+        aCallback(req.responseXML);
+      }
+    }
+    req.send(null);
+  },
+
+  // Get update from XML
+  getUpdate: function updater_getUpdate(aDocument) {
+    if (aDocument.documentElement.localName != "custombutton") {
+      custombuttons.alertBox(self.name,
+                             "Not a valid Custom Buttons XML file!");
+      return;
+    }
+
+    //inspectDOMDocument(aDocument); return;
+    let icon = self.updater.btnImage ? self.updater.btnImage
+                                     : self.updater.stdIcon;
+    let button = aDocument.getElementById("button");
+    let link = button.getElementsByTagNameNS(xhtmlns, "a")[0];
+    if (link.href == self.URI) {
+      let as = Cc['@mozilla.org/alerts-service;1'].
+               getService(Ci.nsIAlertsService);
+      as.showAlertNotification(icon, "No update found!",
+                               "Finish checking", false, "", null);
+      return;
+    } 
+
+    var install = custombuttons.confirmBox(self.name, "Update found! " +
+                                           "Update this button?",
+                                           "Yes", "No");
+    if (!install) return;
+    let btnLink = custombuttons.makeButtonLink("update", self.id);
+    let params = self.updater.getButtonParameters(btnLink, link.href);
+    //inspectObject(params); return;
+    custombuttons.cbService.installButton(params);
+    custombuttons.alertBox(self.name, "Button updated!");
+    self.setAttribute("cb-edit-state", "active");
+  },
+
+  init: function updater_onLoad() {
+
+    var icon = this.btnImage ? this.btnImage : this.stdIcon;
+
+    function $(aId) {
+      return document.getElementById(aId);
+    }
+
+    function addMenuItem(aNewIDs, aNodeIDs, aSeparator) {
+      // Remove previously created menuitems if any
+      if ($(aNewIDs)) {
+        if (aSeparator &&
+            ($(aNewIDs).nextSibling.localName == "menuseparator")) {
+          $(aNewIDs).parentNode.removeChild($(aNewIDs).nextSibling);
+        }
+        $(aNewIDs).parentNode.removeChild($(aNewIDs));
+      }
+
+      var mi = cbu.makeXML(
+                    '<menuitem xmlns="' + xulns + '"'
+                  + ' id="' + aNewIDs + '"'
+                  + ' class="menuitem-iconic"'
+                  + ' image="' + icon + '"'
+                  + ' label="Check for updates for this button"'
+                  + ' onclick="if (event.button == 1) {'
+                  + ' var btn = document.getElementById(\''
+                  + self.id + '\'); btn.updater.openUpdateURL(); }" '
+                  + ' oncommand="var btn = document.getElementById(\''
+                  + self.id + '\'); btn.updater.checkForUpdate('
+                  + 'btn.updater.getUpdate);"'
+                  + ' observes="custombuttons-contextbroadcaster-primary"/>');
+      $(aNodeIDs).parentNode.insertBefore(mi, $(aNodeIDs).nextSibling);
+      if (aSeparator) {
+        var sep = cbu.makeXML('<menuseparator xmlns="' + xulns + '"'
+                            + ' id="' + mi.id + '-separator"/>');
+        mi.parentNode.insertBefore(sep, mi.nextSibling);
+      }
+    }
+
+    function initUpdaterCbPopup(aEvent) {
+      var popupNode = "triggerNode" in aEvent.target
+                        ? aEvent.target.triggerNode : document.popupNode;
+      $(kIDs).hidden = (popupNode != self);
+      ($(kIDs).nextSibling.id == $(kIDs).id + "-separator") &&
+      ($(kIDs).nextSibling.hidden = (popupNode != self));
+    }
+
+    var kIDs = self.id + "-checkForUpdate";
+    var uIDs = "custombuttons-contextpopup-updateButton";
+
+    // Add 'Check for Update...' menuitem to CB contextmenu
+    addMenuItem(kIDs, uIDs, true);
+
+    $(uIDs).parentNode.addEventListener("popupshowing",
+                                           initUpdaterCbPopup, false);
+    $(uIDs).parentNode.removeEventListener("popuphiding",
+                                              initUpdaterCbPopup, false);
+
+    self.onDestroy = function(aReason) {
+      if (aReason != "delete") return;
+      $(uIDs).parentNode.removeEventListener("popupshowing",
+                                             initUpdaterCbPopup, false);
+      $(kIDs).parentNode.removeChild($(kIDs + "-separator"));
+      $(kIDs).parentNode.removeChild($(kIDs));
+    }
+  }
+}
+
+this.updater.init();
+
+//////////////////////////// End Button updater ////////////////////////////
+////////////////////////////////////////////////////////////////////////////]]></initcode>
+  <code><![CDATA[/*
+
+Icon is part of Crystal Project by Everaldo Coelho
+http://www.everaldo.com/crystal/
+License: LGPL
+http://www.everaldo.com/crystal/?action=license
+
+*/]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[]]></help>
+  <attributes/>
+</custombutton>

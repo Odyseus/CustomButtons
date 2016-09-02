@@ -1,0 +1,85 @@
+﻿doctype html
+html
+	head
+		meta(http-equiv='content-type', content='text/html;charset=utf-8')
+		title Custom Buttons By Odyseus
+		link(rel='shortcut icon', type='image/x-icon', href='lib/img/IndexImages/index.png')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(type='text/css', rel='alternate stylesheet', href='lib/css/bootstrap-dark.css', title='dark')
+		link(type='text/css', rel='stylesheet', href='lib/css/bootstrap-light.css', title='light')
+		link(type='text/css', rel='stylesheet', href='lib/css/tweaks-common.css')
+		link(type='text/css', rel='alternate stylesheet', href='lib/css/highlight-dark.css', title='dark')
+		link(type='text/css', rel='stylesheet', href='lib/css/highlight-light.css', title='light')
+		link(type='text/css', rel='alternate stylesheet', href='lib/css/tweaks-dark.css', title='dark')
+		link(type='text/css', rel='stylesheet', href='lib/css/tweaks-light.css', title='light')
+		script(type='text/javascript', src='lib/js/themes.js')
+
+		script(type='text/javascript').
+			setTheme(); // Sets the style sheet themes
+			var metadata = null;
+
+		style(type='text/css').
+			#old-buttons>li a:link {
+				font-size: 1.25em !important;
+				text-decoration: none !important;
+			}
+			#old-buttons img {
+				border: 0 !important;
+				margin: 0px 10px !important;
+			}
+			#old-buttons img {
+				height: 18px !important;
+				width: auto !important;
+			}
+			.aligned {
+				text-align: center !important;
+			}
+
+	body(role='document')
+
+		include ./includes/_noscript.pug
+
+		#mainarea
+
+			span#headmenu
+				include ./includes/_navbar.pug
+
+			.container.boxed
+				h1 Buttons database
+				div.aligned
+					a.btn.btn-info.btn-xs(style='font-size:12px;font-weight:bold;' data-toggle='tooltip', data-placement='bottom', data-original-title= 'Download this database as an standalone HTML file.',rel='nofollow', title='Download this database as an standalone HTML file.', href='StandAloneOldCBDatabaseLight.html', download)
+						span.glyphicon.glyphicon-download-alt
+						|  Light
+					| 
+					a.btn.btn-info.btn-xs(style='font-size:12px;font-weight:bold;' data-toggle='tooltip', data-placement='bottom', data-original-title= 'Download this database as an standalone HTML file.',rel='nofollow', title='Download this database as an standalone HTML file.', href='StandAloneOldCBDatabaseDark.html', download)
+						span.glyphicon.glyphicon-download-alt
+						|  Dark
+
+				br
+				p This is the old 
+					a(href='https://addons.mozilla.org/firefox/addon/custom-buttons%C2%B2/') CB
+						sup 2
+					|  Forum Button Database from September 2010 compiled and published by 
+					b morat
+					| 
+					a(href='http://custombuttons.sourceforge.net/forum/viewtopic.php?f=4&t=266') here
+					| .
+				.alert.alert-danger
+					p
+						b WARNING!!! Some of these buttons are very old and may not work at all or may even crash your browser. So take the proper precautions.
+				div(align='middle')
+					input(type='button', class='btn btn-primary btn-sm button-name' value='Show All Sources' onclick='self.toggleSp(this);')
+
+				br
+				include ./includes/_olddatabase.html
+
+			div#footer.navbar.navbar-default
+				include ./includes/_footer.pug
+
+		include ./includes/_linktotop.pug
+
+		script(type='text/javascript', src='lib/js/jquery-2.2.4.min.js')
+		script(type='text/javascript', src='lib/js/bootstrap.min.js')
+		script(type='text/javascript', src='lib/js/highlight.pack.js')
+		script(type='text/javascript', src='lib/js/myFunctions.js')
+		script(type='text/javascript', src='lib/js/myFunctionsForOLDCBDatabase.js')

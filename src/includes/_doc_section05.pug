@@ -1,0 +1,239 @@
+﻿.cb-docs-section
+	h1#nav_d.page-header Working with clipboard, text data, etc
+	h3#nav_d-1 Using Clipboards
+	pre.official_docs.
+		<code>/*Code*/
+		// copy string to system clipboard
+		var clipboard = Cc[&quot;@mozilla.org/widget/clipboardhelper;1&quot;].
+			getService(Ci.nsIClipboardHelper);
+		clipboard.copyString(&quot;test&quot;);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// internal clipboard - uppercase write, read, clear
+		gClipboard.Write(document.location.href);
+		alert(gClipboard.Read());
+		gClipboard.Clear();
+		alert(gClipboard.Read());</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// system clipboard - lowercase write, read, clear
+		gClipboard.write(content.document.location.href);
+		alert(gClipboard.read());
+		gClipboard.clear();
+		alert(gClipboard.read());</code>
+	h3#nav_d-2 Export Commands to Clipboard
+	pre.official_docs.
+		<code>/*Code*/
+		var commands = document.getElementsByTagName(&quot;command&quot;);
+		var out = new Array();
+		var info = Cc[&quot;@mozilla.org/xre/app-info;1&quot;].
+			getService(Ci.nsIXULAppInfo);
+		out.push(info.name + &quot; &quot; + info.version, &quot;&quot;);
+		out.push('windowtype=&quot;' + document.documentElement.getAttribute(&quot;windowtype&quot;) + '&quot;', &quot;&quot;);
+		for (var i = 0; i &lt; commands.length; i++) {
+			var id = commands[i].getAttribute(&quot;id&quot;);
+			var oncommand = commands[i].getAttribute(&quot;oncommand&quot;);
+			if (id &amp;&amp; oncommand)
+				out.push(id);
+		}
+		var req = new XMLHttpRequest();
+		req.open(&quot;GET&quot;, &quot;chrome://global/content/platformHTMLBindings.xml&quot;, false);
+		req.send(null);
+		var doc = req.responseXML;
+		var handlers = doc.getElementsByTagName(&quot;handler&quot;);
+		for (var i = 0; i &lt; handlers.length; i++) {
+			var command = handlers[i].getAttribute(&quot;command&quot;);
+			if (command &amp;&amp; out.indexOf(command) == -1)
+				out.push(command);
+		}
+		var clipboard = Cc[&quot;@mozilla.org/widget/clipboardhelper;1&quot;].
+			getService(Ci.nsIClipboardHelper);
+		clipboard.copyString(out.join(&quot;\r\n&quot;));</code>
+	h3#nav_d-3 Using Special Files
+	pre.official_docs.
+		<code>/*Code*/
+		var file = Cc[&quot;@mozilla.org/file/directory_service;1&quot;].
+			getService(Ci.nsIProperties).
+			get(&quot;Home&quot;, Ci.nsIFile);
+		alert(file.path);
+		var uri = Cc[&quot;@mozilla.org/network/io-service;1&quot;].
+			getService(Ci.nsIIOService).
+			newFileURI(file);
+		alert(uri.spec);
+		var localFile = file.QueryInterface(Ci.nsILocalFile);
+		localFile.reveal();</code>
+	h3#nav_d-4 Export Special Files to Clipboard
+	pre.official_docs.
+		<code>/*Code*/
+		var ds = Cc[&quot;@mozilla.org/file/directory_service;1&quot;].
+			getService(Ci.nsIProperties);
+		var nsDirectoryServiceDefs = [&quot;AppData&quot;, &quot;ApplMenu&quot;, &quot;Buckt&quot;, &quot;CmDeskP&quot;, &quot;CmPrgs&quot;, &quot;CmStrt&quot;,
+			&quot;CntlPnl&quot;, &quot;Cntls&quot;, &quot;CookD&quot;, &quot;CurProcD&quot;, &quot;CurWorkD&quot;, &quot;Desk&quot;, &quot;DeskP&quot;, &quot;DeskV&quot;, &quot;DfltDwnld&quot;,
+			&quot;Docs&quot;, &quot;Drivs&quot;, &quot;DrvD&quot;, &quot;Exts&quot;, &quot;Favs&quot;, &quot;Fnts&quot;, &quot;GreD&quot;, &quot;Home&quot;, &quot;IntrntSts&quot;, &quot;ISrch&quot;, &quot;LibD&quot;,
+			&quot;LocalAppData&quot;, &quot;LocApp&quot;, &quot;LocDocs&quot;, &quot;LocDsk&quot;, &quot;LocFrmwrks&quot;, &quot;Locl&quot;, &quot;LoclIntrntPlgn&quot;, &quot;LocPrfs&quot;,
+			&quot;Mov&quot;, &quot;Music&quot;, &quot;netH&quot;, &quot;NetW&quot;, &quot;OS2Dir&quot;, &quot;Pct&quot;, &quot;Pers&quot;, &quot;Prfs&quot;, &quot;PrntHd&quot;, &quot;Prnts&quot;, &quot;ProgF&quot;,
+			&quot;Progs&quot;, &quot;Rcnt&quot;, &quot;Shdwn&quot;, &quot;SndTo&quot;, &quot;Strt&quot;, &quot;SysD&quot;, &quot;TmpD&quot;, &quot;Tmpls&quot;,&quot;Trsh&quot;, &quot;ULibDir&quot;, &quot;UsrApp&quot;,
+			&quot;UsrDocs&quot;, &quot;UsrDsk&quot;, &quot;UsrFrmwrks&quot;, &quot;UsrIntrntPlgn&quot;, &quot;UsrPrfs&quot;, &quot;WinD&quot;, &quot;XCurProcD&quot;, &quot;XDGDesk&quot;,
+			&quot;XDGDocs&quot;, &quot;XDGDwnld&quot;, &quot;XDGMusic&quot;, &quot;XDGPict&quot;, &quot;XDGPubSh&quot;, &quot;XDGTempl&quot;, &quot;XDGVids&quot;, &quot;XpcomLib&quot;];
+		var nsAppDirectoryServiceDefs = [&quot;AChrom&quot;, &quot;AChromDL&quot;, &quot;APluginsDL&quot;, &quot;APlugns&quot;, &quot;AppRegD&quot;,
+			&quot;AppRegF&quot;, &quot;ARes&quot;, &quot;BMarks&quot;, &quot;cachePDir&quot;, &quot;DefProfLRt&quot;, &quot;DefProfRt&quot;, &quot;DefRt&quot;, &quot;DLoads&quot;,
+			&quot;ExtPrefDL&quot;, &quot;LclSt&quot;, &quot;PrefD&quot;, &quot;PrefDL&quot;, &quot;PrefDOverride&quot;, &quot;PrefF&quot;, &quot;PrfDef&quot;, &quot;ProfD&quot;, &quot;profDef&quot;,
+			&quot;ProfDefNoLoc&quot;, &quot;ProfLD&quot;, &quot;SHARED&quot;, &quot;SrchF&quot;, &quot;SrchPluginsDL&quot;, &quot;SrchPlugns&quot;, &quot;UChrm&quot;, &quot;UHist&quot;,
+			&quot;UMimTyp&quot;, &quot;UPnls&quot;, &quot;UsrSrchPlugns&quot;, &quot;UStor&quot;, &quot;XPIClnupD&quot;];
+		var nsBrowserDirectoryServiceDefs = [&quot;ExistingPrefOverride&quot;];
+		var nsXULAppAPI = [&quot;ProfDS&quot;, &quot;ProfLDS&quot;, &quot;UAppData&quot;, &quot;XREAppDist&quot;, &quot;XREExeF&quot;, &quot;XREExtDL&quot;,
+			&quot;XRESysLExtPD&quot;, &quot;XRESysSExtPD&quot;, &quot;XREUSysExt&quot;];
+		var props = new Array();
+		var out = new Array();
+		props = props.concat(nsDirectoryServiceDefs);
+		props = props.concat(nsAppDirectoryServiceDefs);
+		props = props.concat(nsBrowserDirectoryServiceDefs);
+		props = props.concat(nsXULAppAPI);
+		for (var i = 0; i &lt; props.length; i++) {
+			if (ds.has(props[i])) {
+				var file = ds.get(props[i], Ci.nsIFile);
+				if (file &amp;&amp; file.path) {
+					out.push([props[i], file.path]);
+				}
+			}
+		}
+		out.sort(function (a, b) {
+			return a[1] &gt; b[1]
+		});
+		var width = out.reduce(function (a, b) {
+				return a[0].length &gt; b[0].length ? a : b
+			})[0].length;
+		for (var i = 0; i &lt; out.length; i++) {
+			out[i] = out[i][0] + Array(width + 2 - out[i][0].length).join(&quot; &quot;) + out[i][1];
+		}
+		var clipboard = Cc[&quot;@mozilla.org/widget/clipboardhelper;1&quot;].
+			getService(Ci.nsIClipboardHelper);
+		clipboard.copyString(out.join(&quot;\r\n&quot;));</code>
+	h3#nav_d-5 The clipboard, change the conversion getting different values, and so forth
+	h3 Obtain the value from the Clipboard
+	pre.
+		<code>var text = custombuttonsUtils.gClipboard.read();</code>
+	h3 Write the value to the Clipboard
+	pre.
+		<code>var text = &quot;This text will be placed into the Clipboard&quot;;
+		const gClipboardHelper = Cc[&quot;@mozilla.org/widget/clipboardhelper;1&quot;].
+			getService(Ci.nsIClipboardHelper);
+		gClipboardHelper.copyString(text);</code>
+	h3 Attention!! If you add one of the components of the string (for example, if you enter through the prompt):
+	h3 Add it with a numeric variable is like adding rows to it around, use the following option:
+	pre.
+		<code>var a = prompt(&quot;Enter the number of:&quot;);
+		var b = 5;
+		var n = a + b;
+		var m = (+a) + (+b);
+		alert(&quot;a=&quot; + a + &quot;\nb=5\na+b=&quot; + n + &quot;\n(+a)+(+b)=&quot; + m);
+		// do not forget about this feature of javascript</code>
+	h3 Break a line into pieces at a delimiter
+	pre.
+		<code>var stroka = &quot;123=43*44o=lol*=rm8658oo*=uenrnk7n*=4upa6m&quot;;
+		var chkpoint = &quot;*=&quot;; // This separator
+		var arrayOfStrings = stroka.split(chkpoint);
+		pervyi_element = arrayOfStrings[0]; //is 123 = 43 * 44o = lol
+		vtoroi_element = arrayOfStrings[1]; //equal to rm8658oo
+		//etc</code>
+	h3 The length of the string
+	pre.
+		<code>var stroka = &quot;envosnvrohnorhnsonhoisd&quot;;
+		alert(stroka + &quot;=&quot; + stroka.length + &quot; characters&quot;);</code>
+	h3 Get a piece of string
+	pre.
+		<code>var stroka = &quot;1234567890&quot;;
+		alert(stroka.substring(4, 7)); // 567
+		alert(stroka.substring(5)); // 67890</code>
+	h3 Converting strings to unicode
+	pre.
+		<code>var mytext = &quot;sdlgsdlgsdlvnlsfndn&quot;;
+		var uc = Cc[&quot;@mozilla.org/intl/scriptableunicodeconverter&quot;].createInstance(Ci.nsIScriptableUnicodeConverter);
+		uc.charset = &quot;utf-8&quot;;
+		unicodetext = uc.ConvertFromUnicode(mytext);</code>
+	h3 URL decoding with (unescape)
+	pre.
+		<code>var nn = unescape('%64%6f%63%75%6d%65%6e');
+		alert(nn);</code>
+	h3 Insert text into the text area on page option 1.
+	pre.
+		<code>var text = &quot;Pasted text&quot;;
+		var cmd = &quot;cmd_insertText&quot;;
+		var controller = document.commandDispatcher.getControllerForCommand(cmd);
+		if (controller &amp;&amp; controller.isCommandEnabled(cmd)) {
+			controller = controller.QueryInterface(Ci.nsICommandController);
+			var params = Cc[&quot;@mozilla.org/embedcomp/command-params;1&quot;]
+				.createInstance(Ci.nsICommandParams);
+			params.setStringValue(&quot;state_data&quot;, text);
+			controller.doCommandWithParams(cmd, params);
+		}</code>
+	h3 Insert text into the text field on page option 2.
+	pre.
+		<code>var intext = &quot;The pasted text&quot;;
+		var theBox = document.commandDispatcher.focusedElement;
+		var pos = theBox.selectionStart;
+		var text = theBox.value.substring(0, pos) + intext + theBox.value.substring(pos, theBox.value.length);
+		theBox.value = text;
+		theBox.setSelectionRange(pos, pos + intext.length);</code>
+	h3 Paste the code into the current page version 1.
+	pre.
+		<code>vnachalo = &quot;&lt; b&gt;This bold text and a line at the top of the page&lt; b&gt;&lt; hr&gt;&quot;;
+		vkonec = &quot;&lt; br&gt;&lt; u&gt;The underlined text and picture &lt; img src='http://www.mozilla.org/favicon.ico'&gt; at the end of the page&lt;/ u&gt;&quot;;
+		content.document.body.innerHTML = vnachalo + content.document.body.innerHTML + vkonec; // remove spaces from HTML tags for it to work</code>
+	h3 Paste the code into the current page version 2.
+	pre.
+		<code>
+		var begin = &quot;&lt; b&gt;This bold text and a line at the top of the page&lt; b&gt;&lt; hr&gt;&quot;;
+		var end = &quot;&lt; br &gt;&lt; u &gt;The underlined text and picture &lt; img src='http://www.mozilla.org/favicon.ico'&gt; at the end of the page&lt;					/ u &gt;&quot;;
+		var doc = content.document; // remove spaces from HTML tags for it to work
+		var body = doc.body || doc.documentElement;
+		body.insertBefore(createDocumentFragment(begin), body.firstChild);
+		body.appendChild(createDocumentFragment(end));
+		function createDocumentFragment(html) {
+			var tmp = doc.createElementNS(&quot;http://www.w3.org/1999/xhtml&quot;, &quot;div&quot;);
+			tmp.innerHTML = html;
+			var df = doc.createDocumentFragment();
+			while (tmp.hasChildNodes())
+				df.appendChild(tmp.firstChild);
+			return df;
+		}
+		</code>
+	h3 Paste the code into the current page option 3.
+	pre.
+		<code>
+			var begin = &quot;&lt; b &gt;This bold text and a line at the top of the page&lt; b &gt;&lt; hr &gt;&quot;;
+			var end = &quot;&lt; br &gt;&lt; u &gt;The underlined text and picture &lt; img src='http://www.mozilla.org/favicon.ico'&gt; at the end of the page&lt;/ u &gt;&quot;;
+			var doc = content.document; // remove spaces from HTML tags for it to work
+			var body = doc.body || doc.documentElement;
+			body.insertBefore(createDiv(begin), body.firstChild);
+			body.appendChild(createDiv(end));
+			function createDiv(html) {
+				var div = doc.createElementNS(&quot;http://www.w3.org/1999/xhtml&quot;, &quot;div&quot;);
+				div.innerHTML = html;
+				return div;
+			}
+		</code>
+	h3 Getting the date 1.
+	pre.
+		<code>
+			var t=new Date();
+			var y=1900+t.getYear();
+			var min=t.getMinutes(); if (min&lt;10){min=&quot;0&quot;+min};
+			var h=t.getHours();
+			var m=t.getMonth();switch(m){case 0: m=&quot;Jan&quot;;break;case 1: m=&quot;Feb&quot;;break;case 2: m=&quot;Mar&quot;;break;case 3: m=&quot;Apr&quot;;break;case 4: m=&quot;May&quot;;break;case 5: m=&quot;Jun&quot;;break;case 6: m=&quot;Jul&quot;;break;case 7: m=&quot;Aug&quot;;break;case 8: m=&quot;Sep&quot;;break;case 9: m=&quot;Oct&quot;;break;case 10: m=&quot;Nov&quot;;break;default: m=&quot;Dec&quot;;}
+			var d=t.getDate();
+			var curdate=y+&quot;-&quot;+d+&quot;-&quot;+m+&quot;_&quot;+h+&quot;:&quot;+min;
+			alert(curdate)
+		</code>
+	h3 Getting the date 2.
+	pre.
+		<code>
+			var t=new Date();
+			var y=1900+t.getYear();
+			var min=t.getMinutes(); if (min&lt;10){min=&quot;0&quot;+min};
+			var h=t.getHours();
+			var m = [&quot;Jan&quot;, &quot;Feb&quot;, &quot;Mar&quot;, &quot;Apr&quot;, &quot;May&quot;, &quot;Jun&quot;, &quot;Jul&quot;, &quot;Aug&quot;, &quot;Sep&quot;, &quot;Oct&quot;, &quot;Nov&quot;, &quot;Dec&quot;][t.getMonth()];
+			var d=t.getDate();
+			var curdate=y+&quot;-&quot;+d+&quot;-&quot;+m+&quot;_&quot;+h+&quot;:&quot;+min;
+			alert(curdate)
+		</code>

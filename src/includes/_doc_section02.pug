@@ -1,0 +1,838 @@
+﻿.cb-docs-section
+	h1#nav_working_with_buttons.page-header Working with buttons, mouse, menus, etc
+	h3#nav_working_with_buttons-menu-type Toolbar Button Type &apos;menu&apos; - Firefox and SeaMonkey
+	p The following three examples create the exact same button. The difference lies in the way the menu for this button is created. In the first example, the menu is created by parsing a variable that stores an XML string. In the second example, the menu is created with pure JavaScript. And in the third example, the menu is stored indide the &quot;Help&quot; tab of the button.
+	h3#nav_working_with_buttons-menu-type-ex1 Example 1 - Menu created from an XML string
+	pre.tweaked_by_odyseus.
+		<code>/*Initialization code*/
+		/**
+		 *   left click on button    - Open menu popup
+		 *  right click on button    - Open custom button context popup
+		 *   left click on menuitems - Open page in the current tab
+		 * middle click on menuitems - Open page in a new tab in the background
+		 *  right click on menuitems - Open page in a new tab in the foreground
+		 */
+
+		const cbNS = &quot;http://xsms.nm.ru/custombuttons/&quot;;
+
+		// xulns = http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul.
+		// Is a global variable defined by Custom Buttons.
+		var menu =  &quot;&lt;menupopup xmlns=\&quot;&quot; + xulns + &quot;\&quot; xmlns:cb=\&quot;&quot; + cbNS + &quot;\&quot;&quot; +
+			&quot; onclick=\&quot;this.parentNode.menuClick(event);\&quot;&gt;&quot; +
+			&quot;&lt;menu&quot; +
+			&quot; class=\&quot;menu-iconic\&quot;&quot; +
+			&quot; image=\&quot;chrome://global/skin/dirListing/folder.png\&quot;&quot; +
+			&quot; label=\&quot;Search\&quot;&gt;&quot; +
+			&quot;&lt;menupopup&gt;&quot; +
+			&quot;&lt;menuitem&quot; +
+			&quot; class=\&quot;menuitem-iconic\&quot;&quot; +
+			&quot; image=\&quot;http://www.google.com/favicon.ico\&quot;&quot; +
+			&quot; label=\&quot;Google\&quot;&quot; +
+			&quot; cb:url=\&quot;http://www.google.com/\&quot;/&gt;&quot; +
+			&quot;&lt;menuitem&quot; +
+			&quot; class=\&quot;menuitem-iconic\&quot;&quot; +
+			&quot; image=\&quot;http://search.yahoo.com/favicon.ico\&quot;&quot; +
+			&quot; label=\&quot;Yahoo\&quot;&quot; +
+			&quot; cb:url=\&quot;http://search.yahoo.com/\&quot;/&gt;&quot; +
+			&quot;&lt;menuitem&quot; +
+			&quot; class=\&quot;menuitem-iconic\&quot;&quot; +
+			&quot; image=\&quot;http://www.bing.com/favicon.ico\&quot;&quot; +
+			&quot; label=\&quot;Bing\&quot;&quot; +
+			&quot; cb:url=\&quot;http://www.bing.com/\&quot;/&gt;&quot; +
+			&quot;&lt;menuseparator/&gt;&quot; +
+			&quot;&lt;menuitem&quot; +
+			&quot; label=\&quot;Open All in Tabs\&quot;&quot; +
+			&quot; onclick=\&quot;document.getElementById(\'&quot; + this.id + &quot;\').openAllInTabs(event);\&quot;/&gt;&quot; +
+			&quot;&lt;/menupopup&gt;&quot; +
+			&quot;&lt;/menu&gt;&quot; +
+			&quot;&lt;menuitem&quot; +
+			&quot; class=\&quot;menuitem-iconic\&quot;&quot; +
+			&quot; image=\&quot;http://en.wikipedia.org/favicon.ico\&quot;&quot; +
+			&quot; label=\&quot;Wikipedia\&quot;&quot; +
+			&quot; cb:url=\&quot;http://en.wikipedia.org/\&quot;/&gt;&quot; +
+			&quot;&lt;/menupopup&gt;&quot;;
+
+		this.appendChild($XML(menu)); // This appends the menu itself to the button.
+
+		var nodeList = this.getElementsByTagName(&quot;menuitem&quot;); // Gets all menuitems in this button.
+
+		for (var i = 0; i &lt; nodeList.length; i++) { // This loop sets the tooltip for each menuitem.
+			var label = nodeList[i].getAttribute(&quot;label&quot;);
+			var url = nodeList[i].getAttributeNS(cbNS, &quot;url&quot;);
+			if (label &amp;&amp; url)
+				nodeList[i].setAttribute(&quot;tooltiptext&quot;, label + &quot;\n&quot; + url);
+		}
+
+		this.type = &quot;menu&quot;;
+
+		this.orient = &quot;horizontal&quot;;
+
+		this.menuClick = function (event) {
+			event.preventDefault();
+			event.stopPropagation();
+			this.open = false; // This closes the popup after middle/right clicks on menuitems.
+			var url = event.target.getAttributeNS(cbNS, &quot;url&quot;);
+			if (url &amp;&amp; event.button == 0) // Left click
+				loadURI(url);
+			if (url &amp;&amp; event.button == 1) // Middle click
+				gBrowser.addTab(url);
+			if (url &amp;&amp; event.button == 2) // Right click
+				gBrowser.selectedTab = gBrowser.addTab(url);
+		};
+
+		this.openAllInTabs = function (event) {
+			var nodeList = event.target.parentNode.childNodes;
+			for (var i = 0; i &lt; nodeList.length; i++) {
+				var url = nodeList[i].getAttributeNS(cbNS, &quot;url&quot;);
+				if (url)
+					gBrowser.addTab(url);
+			}
+		};
+
+		function $XML(aXML) { // Return parsed XML
+			aXML = aXML.replace(/&gt;\s+&lt;/g, &quot;&gt;&lt;&quot;); // Linearize XML
+			return (new DOMParser).parseFromString(aXML, &quot;application/xml&quot;).documentElement;
+		}</code>
+	h3#nav_working_with_buttons-menu-type-ex2 Example 2 - Menu created with JavaScript
+	pre.tweaked_by_odyseus.
+		<code>/*Initialization code*/
+		/**
+		 *   left click on button    - Open menu popup
+		 *  right click on button    - Open custom button context popup
+		 *   left click on menuitems - Open page in the current tab
+		 * middle click on menuitems - Open page in a new tab in the background
+		 *  right click on menuitems - Open page in a new tab in the foreground
+		 */
+
+		const cbNS = &quot;http://xsms.nm.ru/custombuttons/&quot;;
+
+		// xulns = http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul.
+		// Is a global variable defined by Custom Buttons.
+		var mainPopup = document.createElementNS(xulns, &quot;menupopup&quot;);
+		mainPopup.setAttribute(&quot;xmlns:cb&quot;, cbNS);
+		mainPopup.setAttribute(&quot;onclick&quot;, &quot;this.parentNode.menuClick(event);&quot;);
+
+		var subMenu = mainPopup.appendChild(document.createElementNS(xulns, &quot;menu&quot;));
+		subMenu.setAttribute(&quot;class&quot;, &quot;menu-iconic&quot;);
+		subMenu.setAttribute(&quot;label&quot;, &quot;Search&quot;);
+		subMenu.setAttribute(&quot;image&quot;, &quot;chrome://global/skin/dirListing/folder.png&quot;);
+
+		var subPopup = subMenu.appendChild(document.createElementNS(xulns, &quot;menupopup&quot;));
+
+		var mItem1 = subPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+		mItem1.setAttribute(&quot;class&quot;, &quot;menuitem-iconic&quot;);
+		mItem1.setAttribute(&quot;label&quot;, &quot;Google&quot;);
+		mItem1.setAttribute(&quot;image&quot;, &quot;http://www.google.com/favicon.ico&quot;);
+		mItem1.setAttributeNS(cbNS, &quot;cb:url&quot;, &quot;https://www.google.com&quot;);
+
+		var mItem2 = subPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+		mItem2.setAttribute(&quot;class&quot;, &quot;menuitem-iconic&quot;);
+		mItem2.setAttribute(&quot;label&quot;, &quot;Yahoo&quot;);
+		mItem2.setAttribute(&quot;image&quot;, &quot;http://search.yahoo.com/favicon.ico&quot;);
+		mItem2.setAttributeNS(cbNS, &quot;cb:url&quot;, &quot;https://search.yahoo.com&quot;);
+
+		var mItem3 = subPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+		mItem3.setAttribute(&quot;class&quot;, &quot;menuitem-iconic&quot;);
+		mItem3.setAttribute(&quot;label&quot;, &quot;Bing&quot;);
+		mItem3.setAttribute(&quot;image&quot;, &quot;http://www.bing.com/favicon.ico&quot;);
+		mItem3.setAttributeNS(cbNS, &quot;cb:url&quot;, &quot;https://www.bing.com&quot;);
+
+		subPopup.appendChild(document.createElementNS(xulns, &quot;menuseparator&quot;));
+
+		var mItem4 = subPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+		mItem4.setAttribute(&quot;label&quot;, &quot;Open All in Tabs&quot;);
+		mItem4.setAttribute(&quot;onclick&quot;, &quot;document.getElementById('&quot; + this.id + &quot;').openAllInTabs(event);&quot;);
+
+		var mItem5 = mainPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+		mItem5.setAttribute(&quot;class&quot;, &quot;menuitem-iconic&quot;);
+		mItem5.setAttribute(&quot;label&quot;, &quot;Wikipedia&quot;);
+		mItem5.setAttribute(&quot;image&quot;, &quot;http://en.wikipedia.org/favicon.ico&quot;);
+		mItem5.setAttributeNS(cbNS, &quot;cb:url&quot;, &quot;http://en.wikipedia.org&quot;);
+
+		this.appendChild(mainPopup); // This appends the menu itself to the button.
+
+		var nodeList = this.getElementsByTagName(&quot;menuitem&quot;); // Gets all menuitems in this button.
+
+		for (var i = 0; i &lt; nodeList.length; i++) { // This loop sets the tooltip for each menuitem.
+			var label = nodeList[i].getAttribute(&quot;label&quot;);
+			var url = nodeList[i].getAttributeNS(cbNS, &quot;url&quot;);
+			if (label &amp;&amp; url)
+				nodeList[i].setAttribute(&quot;tooltiptext&quot;, label + &quot;\n&quot; + url);
+		}
+
+		this.type = &quot;menu&quot;;
+
+		this.orient = &quot;horizontal&quot;;
+
+		this.menuClick = function (event) {
+			event.preventDefault();
+			event.stopPropagation();
+			this.open = false; // This closes the popup after middle/right clicks on menuitems.
+			var url = event.target.getAttributeNS(cbNS, &quot;url&quot;);
+			if (url &amp;&amp; event.button == 0) // Left click
+				loadURI(url);
+			if (url &amp;&amp; event.button == 1) // Middle click
+				gBrowser.addTab(url);
+			if (url &amp;&amp; event.button == 2) // Right click
+				gBrowser.selectedTab = gBrowser.addTab(url);
+		};
+
+		this.openAllInTabs = function (event) {
+			var nodeList = event.target.parentNode.childNodes;
+			for (var i = 0; i &lt; nodeList.length; i++) {
+				var url = nodeList[i].getAttributeNS(cbNS, &quot;url&quot;);
+				if (url)
+					gBrowser.addTab(url);
+			}
+		};</code>
+	h3#nav_working_with_buttons-menu-type-ex3 Example 3 - Menu stored inside &quot;Help&quot; tab
+	.tweaked_by_odyseus.panel-body
+		ul.nav.nav-tabs(style='margin-bottom: 15px;')
+			li.active.init-tab
+				a(data-toggle='tab', rel='nofollow', href='#nav_working_with_buttons-menu-type-init-tab') Initialization Tab
+			li.help-tab
+				a(data-toggle='tab', rel='nofollow', href='#nav_working_with_buttons-menu-type-help-tab') Help Tab
+		.tab-content
+			#nav_working_with_buttons-menu-type-init-tab.tab-pane.fade.active.in.init-tab
+				pre.
+					<code>/*Initialization code*/
+					/**
+					 *   left click on button    - Open menu popup
+					 *  right click on button    - Open custom button context popup
+					 *   left click on menuitems - Open page in the current tab
+					 * middle click on menuitems - Open page in a new tab in the background
+					 *  right click on menuitems - Open page in a new tab in the foreground
+					 */
+
+					const cbNS = &quot;http://xsms.nm.ru/custombuttons/&quot;;
+
+					var menu = this.Help.replace(/_this_id_/gm, this.id);
+
+					this.appendChild($XML(menu)); // This appends the menu itself to the button.
+
+					var nodeList = this.getElementsByTagName(&quot;menuitem&quot;); // Gets all menuitems in this button.
+
+					for (var i = 0; i &lt; nodeList.length; i++) { // This loop sets the tooltip for each menuitem.
+						var label = nodeList[i].getAttribute(&quot;label&quot;);
+						var url = nodeList[i].getAttributeNS(cbNS, &quot;url&quot;);
+						if (label &amp;&amp; url)
+							nodeList[i].setAttribute(&quot;tooltiptext&quot;, label + &quot;\n&quot; + url);
+					}
+
+					this.type = &quot;menu&quot;;
+
+					this.orient = &quot;horizontal&quot;;
+
+					this.menuClick = function (event) {
+						event.preventDefault();
+						event.stopPropagation();
+						this.open = false; // This closes the popup after middle/right clicks on menuitems.
+						var url = event.target.getAttributeNS(cbNS, &quot;url&quot;);
+						if (url &amp;&amp; event.button == 0) // Left click
+							loadURI(url);
+						if (url &amp;&amp; event.button == 1) // Middle click
+							gBrowser.addTab(url);
+						if (url &amp;&amp; event.button == 2) // Right click
+							gBrowser.selectedTab = gBrowser.addTab(url);
+					};
+
+					this.openAllInTabs = function (event) {
+						var nodeList = event.target.parentNode.childNodes;
+						for (var i = 0; i &lt; nodeList.length; i++) {
+							var url = nodeList[i].getAttributeNS(cbNS, &quot;url&quot;);
+							if (url)
+								gBrowser.addTab(url);
+						}
+					};
+
+					function $XML(aXML) { // Return parsed XML
+						aXML = aXML.replace(/&gt;\s+&lt;/g, &quot;&gt;&lt;&quot;); // Linearize XML
+						return (new DOMParser).parseFromString(aXML, &quot;application/xml&quot;).documentElement;
+					}</code>
+			#nav_working_with_buttons-menu-type-help-tab.tab-pane.fade.help-tab
+				pre.
+					<code>&lt;!--
+					 Here can be used &quot;pure&quot; XML (XUL to be precise) without the need to escape it.
+					--&gt;
+					&lt;menupopup xmlns=&quot;http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul&quot;
+						 xmlns:cb=&quot;http://xsms.nm.ru/custombuttons/&quot;
+						 onclick=&quot;this.parentNode.menuClick(event);&quot;&gt;
+						&lt;menu
+						 class=&quot;menu-iconic&quot;
+						 image=&quot;chrome://global/skin/dirListing/folder.png&quot;
+						 label=&quot;Search&quot;&gt;
+							&lt;menupopup&gt;
+								&lt;menuitem
+								 class=&quot;menuitem-iconic&quot;
+								 image=&quot;http://www.google.com/favicon.ico&quot;
+								 label=&quot;Google&quot;
+								 cb:url=&quot;http://www.google.com/&quot;/&gt;
+								&lt;menuitem
+								 class=&quot;menuitem-iconic&quot;
+								 image=&quot;http://search.yahoo.com/favicon.ico&quot;
+								 label=&quot;Yahoo&quot;
+								 cb:url=&quot;http://search.yahoo.com/&quot;/&gt;
+								&lt;menuitem
+								 class=&quot;menuitem-iconic&quot;
+								 image=&quot;http://www.bing.com/favicon.ico&quot;
+								 label=&quot;Bing&quot;
+								 cb:url=&quot;http://www.bing.com/&quot;/&gt;
+								&lt;menuseparator/&gt;
+								&lt;menuitem
+								 label=&quot;Open All in Tabs&quot;
+								 onclick=&quot;document.getElementById('_this_id_').openAllInTabs(event);&quot;/&gt;
+							&lt;/menupopup&gt;
+						&lt;/menu&gt;
+						&lt;menuitem
+						 class=&quot;menuitem-iconic&quot;
+						 image=&quot;http://en.wikipedia.org/favicon.ico&quot;
+						 label=&quot;Wikipedia&quot;
+						 cb:url=&quot;http://en.wikipedia.org/&quot;/&gt;
+					&lt;/menupopup&gt;</code>
+	h3#nav_working_with_buttons-menu-button-type Toolbar Button Type &apos;menu-button&apos; - Firefox and SeaMonkey
+	p The following three examples create the exact same button. The difference lies in the way the menu for this button is created. In the first example, the menu is created by parsing a variable that stores an XML string. In the second example, the menu is created with pure JavaScript. And in the third example, the menu is stored indide the &quot;Help&quot; tab of the button.
+	h3#nav_working_with_buttons-menu-button-type-ex1 Example 1 - Menu created by parsing an XML string
+	pre.tweaked_by_odyseus.
+		<code>/*Initialization code*/
+		/**
+		 *   Left click on button               - Open page in a new window
+		 *   Left click on           dropmarker - Open menu popup
+		 *  Right click on button or dropmarker - Open custom button context popup
+		 *   Left click on menuitems            - Open page in the current tab
+		 * Middle click on menuitems            - Open page in a new tab in the background
+		 *  Right click on menuitems            - Open page in a new tab in the foreground
+		 */
+
+		const cbNS = &quot;http://xsms.nm.ru/custombuttons/&quot;;
+
+		// xulns = http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul.
+		// Is a global variable defined by Custom Buttons.
+		var menu = &quot;&lt;menupopup xmlns=\&quot;&quot; + xulns + &quot;\&quot; xmlns:cb=\&quot;&quot; + cbNS + &quot;\&quot;&quot; +
+			&quot; onclick=\&quot;this.parentNode.menuClick(event)\&quot;&quot; +
+			&quot; oncommand=\&quot;this.parentNode.menuCommand(event)\&quot;&gt;&quot; +
+			&quot;&lt;menu class=\&quot;menu-iconic\&quot;&quot; +
+			&quot; image=\&quot;chrome://global/skin/dirListing/folder.png\&quot; label=\&quot;Search\&quot;&gt;&quot; +
+			&quot;&lt;menupopup&gt;&quot; +
+			&quot;&lt;menuitem&quot; +
+			&quot; class=\&quot;menuitem-iconic\&quot;&quot; +
+			&quot; image=\&quot;http://www.google.com/favicon.ico\&quot;&quot; +
+			&quot; label = \&quot;Google\&quot;&quot; +
+			&quot; cb:url=\&quot;https://www.google.com/\&quot;/&gt;&quot; +
+			&quot;&lt;menuitem&quot; +
+			&quot; class=\&quot;menuitem-iconic\&quot;&quot; +
+			&quot; image=\&quot;http://search.yahoo.com/favicon.ico\&quot;&quot; +
+			&quot; label=\&quot;Yahoo\&quot;&quot; +
+			&quot; cb:url=\&quot;https://search.yahoo.com/\&quot;/&gt;&quot; +
+			&quot;&lt;menuitem&quot; +
+			&quot; class=\&quot;menuitem-iconic\&quot;&quot; +
+			&quot; image=\&quot;http://www.bing.com/favicon.ico\&quot;&quot; +
+			&quot; label=\&quot;Bing\&quot;&quot; +
+			&quot; cb:url=\&quot;https://www.bing.com/\&quot;/&gt;&quot; +
+			&quot;&lt;menuseparator/&gt;&quot; +
+			&quot;&lt;menuitem&quot; +
+			&quot; label=\&quot;Open All in Tabs\&quot;&quot; +
+			&quot; onclick=\&quot;document.getElementById('&quot; + this.id + &quot;').openAllInTabs(event);\&quot;/&gt;&quot; +
+			&quot;&lt;/menupopup&gt;&quot; +
+			&quot;&lt;/menu&gt;&quot; +
+			&quot;&lt;menuitem&quot; +
+			&quot; class=\&quot;menuitem-iconic\&quot;&quot; +
+			&quot; image=\&quot;http://en.wikipedia.org/favicon.ico\&quot;&quot; +
+			&quot; label=\&quot;Wikipedia\&quot;&quot; +
+			&quot; cb:url=\&quot;http://en.wikipedia.org/\&quot;/&gt;&quot; +
+			&quot;&lt;/menupopup&gt;&quot;;
+
+		this.appendChild($XML(menu)); // This appends the menu itself to the button.
+
+		var nodeList = this.getElementsByTagName(&quot;menuitem&quot;); // Gets all menuitems in this button.
+
+		for (var i = 0; i &lt; nodeList.length; i++) { // This loop sets the tooltip for each menuitem.
+			var label = nodeList[i].getAttribute(&quot;label&quot;);
+			var url = nodeList[i].getAttributeNS(cbNS, &quot;url&quot;);
+			if (label &amp;&amp; url)
+				nodeList[i].setAttribute(&quot;tooltiptext&quot;, label + &quot;\n&quot; + url);
+		}
+
+		this.type = &quot;menu-button&quot;;
+
+		this.orient = &quot;horizontal&quot;;
+
+		this.menuClick = function (event) {
+			event.preventDefault();
+			event.stopPropagation();
+			this.open = false; // This closes the popup after middle/right clicks on menuitems.
+			var url = event.target.getAttributeNS(cbNS, &quot;url&quot;);
+			if (url &amp;&amp; event.button == 1) // Middle click
+				gBrowser.addTab(url);
+			if (url &amp;&amp; event.button == 2) // Right click
+				gBrowser.selectedTab = gBrowser.addTab(url);
+		};
+
+		this.menuCommand = function (event) { // Left click
+			event.stopPropagation();
+			var url = event.target.getAttributeNS(cbNS, &quot;url&quot;);
+			if (url)
+				loadURI(url);
+		};
+
+		this.buttonCommand = function (event) { // Left click on button, not dropmarker
+			var url = &quot;about:config&quot;;
+			window.open(url, &quot;_blank&quot;, &quot;chrome,centerscreen,width=640,height=480&quot;);
+		};
+
+		this.openAllInTabs = function (event) {
+			var nodeList = event.target.parentNode.childNodes;
+			for (var i = 0; i &lt; nodeList.length; i++) {
+				var url = nodeList[i].getAttributeNS(cbNS, &quot;url&quot;);
+				if (url)
+					gBrowser.addTab(url);
+			}
+		};
+
+		this.setAttribute(&quot;oncommand&quot;, &quot;this.buttonCommand(event)&quot;);
+
+		function $XML(aXML) { // Return parsed XML
+			aXML = aXML.replace(/&gt;\s+&lt;/g, &quot;&gt;&lt;&quot;); // Linearize XML
+			return (new DOMParser).parseFromString(aXML, &quot;application/xml&quot;).documentElement;
+		}</code>
+	h3#nav_working_with_buttons-menu-button-type-ex2 Example 2 - Menu created with JavaScript
+	pre.tweaked_by_odyseus.
+		<code>/*Initialization code*/
+		/**
+		 *   Left click on button               - Open page in a new window
+		 *   Left click on           dropmarker - Open menu popup
+		 *  Right click on button or dropmarker - Open custom button context popup
+		 *   Left click on menuitems            - Open page in the current tab
+		 * Middle click on menuitems            - Open page in a new tab in the background
+		 *  Right click on menuitems            - Open page in a new tab in the foreground
+		 */
+
+		const cbNS = &quot;http://xsms.nm.ru/custombuttons/&quot;;
+
+		// xulns = http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul.
+		// Is a global variable defined by Custom Buttons.
+		var mainPopup = document.createElementNS(xulns, &quot;menupopup&quot;);
+		mainPopup.setAttribute(&quot;xmlns:cb&quot;, cbNS);
+		mainPopup.setAttribute(&quot;onclick&quot;, &quot;this.parentNode.menuClick(event);&quot;);
+		mainPopup.setAttribute(&quot;oncommand&quot;, &quot;this.parentNode.menuCommand(event);&quot;);
+
+		var subMenu = mainPopup.appendChild(document.createElementNS(xulns, &quot;menu&quot;));
+		subMenu.setAttribute(&quot;class&quot;, &quot;menu-iconic&quot;);
+		subMenu.setAttribute(&quot;label&quot;, &quot;Search&quot;);
+		subMenu.setAttribute(&quot;image&quot;, &quot;chrome://global/skin/dirListing/folder.png&quot;);
+
+		var subPopup = subMenu.appendChild(document.createElementNS(xulns, &quot;menupopup&quot;));
+
+		var mItem1 = subPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+		mItem1.setAttribute(&quot;class&quot;, &quot;menuitem-iconic&quot;);
+		mItem1.setAttribute(&quot;label&quot;, &quot;Google&quot;);
+		mItem1.setAttribute(&quot;image&quot;, &quot;http://www.google.com/favicon.ico&quot;);
+		mItem1.setAttributeNS(cbNS, &quot;cb:url&quot;, &quot;https://www.google.com&quot;);
+
+		var mItem2 = subPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+		mItem2.setAttribute(&quot;class&quot;, &quot;menuitem-iconic&quot;);
+		mItem2.setAttribute(&quot;label&quot;, &quot;Yahoo&quot;);
+		mItem2.setAttribute(&quot;image&quot;, &quot;http://search.yahoo.com/favicon.ico&quot;);
+		mItem2.setAttributeNS(cbNS, &quot;cb:url&quot;, &quot;https://search.yahoo.com&quot;);
+
+		var mItem3 = subPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+		mItem3.setAttribute(&quot;class&quot;, &quot;menuitem-iconic&quot;);
+		mItem3.setAttribute(&quot;label&quot;, &quot;Bing&quot;);
+		mItem3.setAttribute(&quot;image&quot;, &quot;http://www.bing.com/favicon.ico&quot;);
+		mItem3.setAttributeNS(cbNS, &quot;cb:url&quot;, &quot;https://www.bing.com&quot;);
+
+		subPopup.appendChild(document.createElementNS(xulns, &quot;menuseparator&quot;));
+
+		var mItem4 = subPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+		mItem4.setAttribute(&quot;label&quot;, &quot;Open All in Tabs&quot;);
+		mItem4.setAttribute(&quot;onclick&quot;, &quot;document.getElementById('&quot; + this.id + &quot;').openAllInTabs(event);&quot;);
+
+		var mItem5 = mainPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+		mItem5.setAttribute(&quot;class&quot;, &quot;menuitem-iconic&quot;);
+		mItem5.setAttribute(&quot;label&quot;, &quot;Wikipedia&quot;);
+		mItem5.setAttribute(&quot;image&quot;, &quot;http://en.wikipedia.org/favicon.ico&quot;);
+		mItem5.setAttributeNS(cbNS, &quot;cb:url&quot;, &quot;http://en.wikipedia.org&quot;);
+
+		this.appendChild(mainPopup); // This appends the menu itself to the button.
+
+		var nodeList = this.getElementsByTagName(&quot;menuitem&quot;); // Gets all menuitems in this button.
+
+		for (var i = 0; i &lt; nodeList.length; i++) { // This loop sets the tooltip for each menuitem.
+			var label = nodeList[i].getAttribute(&quot;label&quot;);
+			var url = nodeList[i].getAttributeNS(cbNS, &quot;url&quot;);
+			if (label &amp;&amp; url)
+				nodeList[i].setAttribute(&quot;tooltiptext&quot;, label + &quot;\n&quot; + url);
+		}
+
+		this.type = &quot;menu-button&quot;;
+
+		this.orient = &quot;horizontal&quot;;
+
+		this.menuClick = function (event) {
+			event.preventDefault();
+			event.stopPropagation();
+			this.open = false; // This closes the popup after middle/right clicks on menuitems.
+			var url = event.target.getAttributeNS(cbNS, &quot;url&quot;);
+			if (url &amp;&amp; event.button == 1) // Middle click
+				gBrowser.addTab(url);
+			if (url &amp;&amp; event.button == 2) // Right click
+				gBrowser.selectedTab = gBrowser.addTab(url);
+		};
+
+		this.menuCommand = function (event) { // Left click
+			event.stopPropagation();
+			var url = event.target.getAttributeNS(cbNS, &quot;url&quot;);
+			if (url)
+				loadURI(url);
+		};
+
+		this.buttonCommand = function (event) { // Left click on button, not dropmarker
+			var url = &quot;about:config&quot;;
+			window.open(url, &quot;_blank&quot;, &quot;chrome,centerscreen,width=640,height=480&quot;);
+		};
+
+		this.openAllInTabs = function (event) {
+			var nodeList = event.target.parentNode.childNodes;
+			for (var i = 0; i &lt; nodeList.length; i++) {
+				var url = nodeList[i].getAttributeNS(cbNS, &quot;url&quot;);
+				if (url)
+					gBrowser.addTab(url);
+			}
+		};
+
+		this.setAttribute(&quot;oncommand&quot;, &quot;this.buttonCommand(event)&quot;);</code>
+	h3#nav_working_with_buttons-menu-button-type-ex3 Example 3 - Menu stored inside &quot;Help&quot; tab
+	.tweaked_by_odyseus.panel-body
+		ul.nav.nav-tabs(style='margin-bottom: 15px;')
+			li.active.init-tab
+				a(data-toggle='tab', rel='nofollow', href='#nav_working_with_buttons-menu-button-type-init-tab') Initialization Tab
+			li.help-tab
+				a(data-toggle='tab', rel='nofollow', href='#nav_working_with_buttons-menu-button-type-help-tab') Help Tab
+		.tab-content
+			#nav_working_with_buttons-menu-button-type-init-tab.tab-pane.fade.active.in.init-tab
+				pre.
+					<code>/*Initialization code*/
+					/**
+					 *   Left click on button               - Open page in a new window
+					 *   Left click on           dropmarker - Open menu popup
+					 *  Right click on button or dropmarker - Open custom button context popup
+					 *   Left click on menuitems            - Open page in the current tab
+					 * Middle click on menuitems            - Open page in a new tab in the background
+					 *  Right click on menuitems            - Open page in a new tab in the foreground
+					 */
+
+					const cbNS = &quot;http://xsms.nm.ru/custombuttons/&quot;;
+
+					// xulns = http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul.
+					// Is a global variable defined by Custom Buttons.
+					var mainPopup = document.createElementNS(xulns, &quot;menupopup&quot;);
+					mainPopup.setAttribute(&quot;xmlns:cb&quot;, cbNS);
+					mainPopup.setAttribute(&quot;onclick&quot;, &quot;this.parentNode.menuClick(event);&quot;);
+					mainPopup.setAttribute(&quot;oncommand&quot;, &quot;this.parentNode.menuCommand(event);&quot;);
+
+					var subMenu = mainPopup.appendChild(document.createElementNS(xulns, &quot;menu&quot;));
+					subMenu.setAttribute(&quot;class&quot;, &quot;menu-iconic&quot;);
+					subMenu.setAttribute(&quot;label&quot;, &quot;Search&quot;);
+					subMenu.setAttribute(&quot;image&quot;, &quot;chrome://global/skin/dirListing/folder.png&quot;);
+
+					var subPopup = subMenu.appendChild(document.createElementNS(xulns, &quot;menupopup&quot;));
+
+					var mItem1 = subPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+					mItem1.setAttribute(&quot;class&quot;, &quot;menuitem-iconic&quot;);
+					mItem1.setAttribute(&quot;label&quot;, &quot;Google&quot;);
+					mItem1.setAttribute(&quot;image&quot;, &quot;http://www.google.com/favicon.ico&quot;);
+					mItem1.setAttributeNS(cbNS, &quot;cb:url&quot;, &quot;https://www.google.com&quot;);
+
+					var mItem2 = subPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+					mItem2.setAttribute(&quot;class&quot;, &quot;menuitem-iconic&quot;);
+					mItem2.setAttribute(&quot;label&quot;, &quot;Yahoo&quot;);
+					mItem2.setAttribute(&quot;image&quot;, &quot;http://search.yahoo.com/favicon.ico&quot;);
+					mItem2.setAttributeNS(cbNS, &quot;cb:url&quot;, &quot;https://search.yahoo.com&quot;);
+
+					var mItem3 = subPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+					mItem3.setAttribute(&quot;class&quot;, &quot;menuitem-iconic&quot;);
+					mItem3.setAttribute(&quot;label&quot;, &quot;Bing&quot;);
+					mItem3.setAttribute(&quot;image&quot;, &quot;http://www.bing.com/favicon.ico&quot;);
+					mItem3.setAttributeNS(cbNS, &quot;cb:url&quot;, &quot;https://www.bing.com&quot;);
+
+					subPopup.appendChild(document.createElementNS(xulns, &quot;menuseparator&quot;));
+
+					var mItem4 = subPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+					mItem4.setAttribute(&quot;label&quot;, &quot;Open All in Tabs&quot;);
+					mItem4.setAttribute(&quot;onclick&quot;, &quot;document.getElementById('&quot; + this.id + &quot;').openAllInTabs(event);&quot;);
+
+					var mItem5 = mainPopup.appendChild(document.createElementNS(xulns, &quot;menuitem&quot;));
+					mItem5.setAttribute(&quot;class&quot;, &quot;menuitem-iconic&quot;);
+					mItem5.setAttribute(&quot;label&quot;, &quot;Wikipedia&quot;);
+					mItem5.setAttribute(&quot;image&quot;, &quot;http://en.wikipedia.org/favicon.ico&quot;);
+					mItem5.setAttributeNS(cbNS, &quot;cb:url&quot;, &quot;http://en.wikipedia.org&quot;);
+
+					this.appendChild(mainPopup); // This appends the menu itself to the button.
+
+					var nodeList = this.getElementsByTagName(&quot;menuitem&quot;); // Gets all menuitems in this button.
+
+					for (var i = 0; i &lt; nodeList.length; i++) { // This loop sets the tooltip for each menuitem.
+						var label = nodeList[i].getAttribute(&quot;label&quot;);
+						var url = nodeList[i].getAttributeNS(cbNS, &quot;url&quot;);
+						if (label &amp;&amp; url)
+							nodeList[i].setAttribute(&quot;tooltiptext&quot;, label + &quot;\n&quot; + url);
+					}
+
+					this.type = &quot;menu-button&quot;;
+
+					this.orient = &quot;horizontal&quot;;
+
+					this.menuClick = function (event) {
+						event.preventDefault();
+						event.stopPropagation();
+						this.open = false; // This closes the popup after middle/right clicks on menuitems.
+						var url = event.target.getAttributeNS(cbNS, &quot;url&quot;);
+						if (url &amp;&amp; event.button == 1) // Middle click
+							gBrowser.addTab(url);
+						if (url &amp;&amp; event.button == 2) // Right click
+							gBrowser.selectedTab = gBrowser.addTab(url);
+					};
+
+					this.menuCommand = function (event) { // Left click
+						event.stopPropagation();
+						var url = event.target.getAttributeNS(cbNS, &quot;url&quot;);
+						if (url)
+							loadURI(url);
+					};
+
+					this.buttonCommand = function (event) { // Left click on button, not dropmarker
+						var url = &quot;about:config&quot;;
+						window.open(url, &quot;_blank&quot;, &quot;chrome,centerscreen,width=640,height=480&quot;);
+					};
+
+					this.openAllInTabs = function (event) {
+						var nodeList = event.target.parentNode.childNodes;
+						for (var i = 0; i &lt; nodeList.length; i++) {
+							var url = nodeList[i].getAttributeNS(cbNS, &quot;url&quot;);
+							if (url)
+								gBrowser.addTab(url);
+						}
+					};
+
+					this.setAttribute(&quot;oncommand&quot;, &quot;this.buttonCommand(event)&quot;);</code>
+			#nav_working_with_buttons-menu-button-type-help-tab.tab-pane.fade.help-tab
+				pre.
+					<code>&lt;!--
+					 Here can be used &quot;pure&quot; XML (XUL to be precise) without the need to escape it.
+					--&gt;
+					&lt;menupopup xmlns=&quot;http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul&quot;
+						 xmlns:cb=&quot;http://xsms.nm.ru/custombuttons/&quot;
+						 onclick=&quot;this.parentNode.menuClick(event)&quot;
+						 oncommand=&quot;this.parentNode.menuCommand(event)&quot;&gt;
+						&lt;menu class=&quot;menu-iconic&quot;
+							  image=&quot;chrome://global/skin/dirListing/folder.png&quot;
+							  label=&quot;Search&quot;&gt;
+							&lt;menupopup&gt;
+								&lt;menuitem
+								 class=&quot;menuitem-iconic&quot;
+								 image=&quot;http://www.google.com/favicon.ico&quot;
+								 label=&quot;Google&quot;
+								 cb:url=&quot;https://www.google.com/&quot;/&gt;
+								&lt;menuitem
+								 class=&quot;menuitem-iconic&quot;
+								 image=&quot;http://search.yahoo.com/favicon.ico&quot;
+								 label=&quot;Yahoo&quot;
+								 cb:url=&quot;https://search.yahoo.com/&quot;/&gt;
+								&lt;menuitem
+								 class=&quot;menuitem-iconic&quot;
+								 image=&quot;http://www.bing.com/favicon.ico&quot;
+								 label=&quot;Bing&quot;
+								 cb:url=&quot;https://www.bing.com/&quot;/&gt;
+								&lt;menuseparator/&gt;
+								&lt;menuitem
+								 label=&quot;Open All in Tabs&quot;
+								 onclick=&quot;document.getElementById('_this_id_').openAllInTabs(event);&quot;/&gt;
+							&lt;/menupopup&gt;
+						&lt;/menu&gt;
+						&lt;menuitem
+						 class=&quot;menuitem-iconic&quot;
+						 image=&quot;http://en.wikipedia.org/favicon.ico&quot;
+						 label=&quot;Wikipedia&quot;
+						 cb:url=&quot;http://en.wikipedia.org/&quot;/&gt;
+					&lt;/menupopup&gt;</code>
+	h3#nav_working_with_buttons-drag-and-drop Drag&amp;Drop capabilities
+	h3 Example 1
+	pre.tweaked_by_odyseus.
+		<code>/*Initialization code*/
+		this.dragAndDropHandler = {
+			handleEvent : function (aEvt) {
+				var types = aEvt.dataTransfer.types; // All data types found in the dragged data.
+				switch (aEvt.type) {
+				case &quot;dragover&quot;:
+					// Warning!!! The dragover event is triggered &quot;every few hundred milliseconds&quot;.
+					// That's what MDN docs says. https://developer.mozilla.org/en-US/docs/Web/Events/dragover
+					// In the past, I think to remember that said every 100 milliseconds.
+					// So be carefull what you put in here because it will run several times per second.
+					aEvt.preventDefault();
+					break;
+				case &quot;drop&quot;:
+					if (types.contains(&quot;text/html&quot;) || types.contains(&quot;text/plain&quot;) ||
+						types.contains(&quot;text/x-moz-text-internal&quot;)) {
+						let data = aEvt.dataTransfer.getData('text/html');
+						var urlArr = /href=&quot;?([^&quot;\s]+)&quot;?\s*/.exec(data); // Check if what is been dragged contains a link.
+						if (!urlArr)                                               // If it's not a link...
+							urlArr = aEvt.dataTransfer.getData('text/plain') ||
+								aEvt.dataTransfer.getData('text/x-moz-text-internal'); // ...treat it as plain text.
+						if (urlArr) {
+							if (typeof urlArr === &quot;object&quot;)                // If an URL was found, log the URL...
+								LOG(urlArr[1]);
+							else                                           // ...else, log plain text.
+								LOG(urlArr);
+						}
+					}
+					aEvt.preventDefault();
+					break;
+				}
+			}
+		};</code>
+	p
+		code this.dragAndDropHandler
+		|  can be used by setting attributes...
+	pre.tweaked_by_odyseus.
+		<code>/*Initialization code*/
+		// The &quot;drop&quot; event will not trigger if the &quot;dragover&quot; event is not declared.
+		this.setAttribute(&quot;ondragover&quot;, &quot;this.dragAndDropHandler.handleEvent(event);&quot;);
+
+		this.setAttribute(&quot;ondrop&quot;, &quot;this.dragAndDropHandler.handleEvent(event);&quot;);</code>
+	p ...or by adding event listeners.
+	pre.tweaked_by_odyseus.
+		<code>/*Initialization code*/
+		var uid = &quot;__unique_identifier_&quot; + this.id;
+		if (!(uid in window)) { // Ensures that event listeners are added just once.
+			window[uid] = true;
+			// The &quot;drop&quot; event will not trigger if the &quot;dragover&quot; event is not declared.
+			this.addEventListener(&quot;dragover&quot;, this.dragAndDropHandler, false);
+			this.addEventListener(&quot;drop&quot;, this.dragAndDropHandler, false);
+		}</code>
+	h3 Example 2 - Simpler examples
+	h4 By setting attributes
+	pre.tweaked_by_odyseus.
+		<code>/*Initialization code*/
+		// The &quot;drop&quot; event will not trigger if the &quot;dragover&quot; event is not declared.
+		this.ondragover = function (aEvt) {
+			aEvt.preventDefault();
+		};
+
+		// This will log to the console all data types found in the droped data.
+		this.ondrop = function (aEvt) {
+			var listOfTypes = [];
+			for (var type = 0; type &lt; aEvt.dataTransfer.types.length; type++)
+				listOfTypes.push(aEvt.dataTransfer.types[type]);
+			LOG(listOfTypes.join(&quot;\n&quot;));
+			aEvt.preventDefault();
+		};</code>
+	h4 By adding event listeners
+	pre.tweaked_by_odyseus.
+		<code>/*Initialization code*/
+		var uid = &quot;__unique_identifier_&quot; + this.id;
+		if (!(uid in window)) { // Ensures that event listeners are added just once.
+			window[uid] = true;
+			// The &quot;drop&quot; event will not trigger if the &quot;dragover&quot; event is not declared.
+			this.addEventListener(&quot;dragover&quot;, function (aEvt) {
+				aEvt.preventDefault();
+			}, false);
+
+			// This will log to the console all data types found in the droped data.
+			this.addEventListener(&quot;drop&quot;, function (aEvt) {
+				var listOfTypes = [];
+				for (var type = 0; type &lt; aEvt.dataTransfer.types.length; type++)
+					listOfTypes.push(aEvt.dataTransfer.types[type]);
+				LOG(listOfTypes.join(&quot;\n&quot;));
+				aEvt.preventDefault();
+			}, false);
+
+		}</code>
+	h3(id='') Hide dropmarker - for &quot;menu&quot; and/or &quot;menu-button&quot; types
+	h3 Example 1
+	pre.from_russian_forum.
+		<code>/*Initialization*/
+		this.hideDropMarker = function () {
+			var dropMarker = document.getAnonymousElementByAttribute(self, &quot;class&quot;, &quot;toolbarbutton-menu-dropmarker&quot;);
+			if (dropMarker) {
+				dropMarker.setAttribute(&quot;hidden&quot;, &quot;true&quot;);
+			} else {
+				setTimeout(self.hideDropMarker, 10);
+			}
+		}
+		this.hideDropMarker();</code>
+	h3 Example 2
+	pre.tweaked_by_odyseus.
+		<code>/*Initialization*/
+		(function dropmarkerVisibility() {
+			let dropMarker = document.getAnonymousElementByAttribute(self, &quot;class&quot;, &quot;toolbarbutton-menu-dropmarker&quot;);
+			if (dropMarker)
+				dropMarker.setAttribute(&quot;hidden&quot;, true);
+			else
+				setTimeout(function () {
+					dropmarkerVisibility();
+				}, 50);
+		})();</code>
+	h3(id='') Open menu on mouse over and hide on mouse out
+	h3 Example 1
+	pre.from_russian_forum.
+		<code>/*Initialization*/
+		this.timer = 0;
+
+		// Opens de menu on mouse over.
+		this.onmouseover = function (event) {
+			this.open = true;
+			clearTimeout(this.timer);
+		};
+
+		// Closes de menu on mouse out.
+		this.onmouseout = function (event) {
+			if (!event.relatedTarget || Array.indexOf(this.getElementsByTagName(&quot;*&quot;), event.relatedTarget) === -1) {
+				clearTimeout(this.timer);
+				this.timer = setTimeout(function () {
+						self.open = false;
+					}, 200); // 200 - delay for closing the menu in milliseconds.
+			}
+		};</code>
+	h3 Example 2 - variation with open delay
+	pre.tweaked_by_odyseus.
+		<code>/*Initialization*/
+		this.timer = 0;
+
+		// Opens de menu on mouse over.
+		this.onmouseover = function () {
+			clearTimeout(this.timer);
+			this.timer = setTimeout(function () {
+					self.open = true;
+				}, 200); // 200 - delay for open the menu in milliseconds.
+		};
+
+		// Closes de menu on mouse out.
+		this.onmouseout = function () {
+			clearTimeout(this.timer);
+			this.timer = setTimeout(function () {
+					self.open = false;
+				}, 200); // 200 - delay for closing the menu in milliseconds.
+		};</code>
+	h3 Example 3 - variation targeting the menu popup
+	pre.tweaked_by_odyseus.
+		<code>/*Initialization*/
+		let thisMenupopup = this.getElementsByTagName(&quot;menupopup&quot;)[0];
+
+		if (thisMenupopup) {
+			this.timer = 0;
+
+			// Opens de menu on mouse over.
+			this.onmouseover = function () {
+				clearTimeout(this.timer);
+				this.timer = setTimeout(function () {
+						thisMenupopup.openPopup(self, &quot;after_start&quot;, 0, 0, false, false);
+					}, 200); // 200 - delay for open the menu in milliseconds.
+			};
+
+			// Closes de menu on mouse out.
+			this.onmouseout = function () {
+				clearTimeout(this.timer);
+				this.timer = setTimeout(function () {
+						thisMenupopup.hidePopup();
+					}, 200); // 200 - delay for closing the menu in milliseconds.
+			};
+		}</code>

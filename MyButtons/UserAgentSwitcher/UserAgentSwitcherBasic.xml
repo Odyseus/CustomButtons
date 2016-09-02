@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/" xmlns:html="http://www.w3.org/1999/xhtml">
+<html:head>
+	<html:title><![CDATA[User Agent Switcher (Basic)]]></html:title>
+	<html:link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAEZElEQVQ4jWXMfTDUCRzH8V/TH+r+aGK4aSaGuHRGhJURzd2VburUOdGTZq3VXCI5uq08ZzMp0nQp9GBZu1PRE5PHI89OhL2jPLWsZSXSnYebMU3+ed8fXe66++P1x/fz+c5HEGBJWHaZccSVYpuwtHvr/i3y8t/+k38QcaHYJiy7zFiAJUJYdplxYtFQgbx8cj6pfJLkyinkFa+RV7wm9fEbLtS84Vz1FKfLJz+SVP6a02UT8/EPBwvDssuMBYlcZZtQMj4fpDYgVo0SqBpFojYQkDfKoVtjHH/4ipCCMfYqRtijGGFv7ggStYFAlQFx/ijxj8bnJXKVrRAQnWkfVzJOkGqEINUI/jd1HMzTsydnGIl6lEs1U6RWTeJ/cxjf6zoO5OoJUr5AerUTsXKYuJJxAqIz7YXdJzLWRxePEaTSs0+hY1eWFolKz3fXB9mVraW6b46qvjl2ZmnZlfmCQ1faubrzCP7pjUiUOqKLx9h9ImO94BOW7ih7YECSP4xUreeAYojwQgPHCg0cUg0zObfA5NwC3+f0Eh+r5sEWP3xjbhOYpyUwfxjZAwM+YemOwvYjqRsiCvWI83SLY1H3DJR0T1PTP0tN7wx1GgNPUy/T8sU2wqVnCbjRQ0DuEPtzBjlWoGf7kdQNgodU7hScP8hBxSBi5RASlZ7g/CGq+2ZIrRgj+GI9tYfD0bo4czckiqCMJ3yT0cu3mQPsu6kl5JaOr6RyJ2GDf4yzb1Yf4lwtKeVjVPfN8mp2gaqeacTXNCgz1QyvWcM1T29KH3cwMfOWuoFZ0qvGCVYOEpirZdOBRGfhc1+ZaNvFLnb89Ax5yQil3b8zMfeO6u4JSp5o6enrJykqmb0yJU0D00z9uUD9wBwXfn7JwZwBfDN7cPCViQRr7+Oum89rcJG34yJvx/1sJ6HqAX55pud57wBZd8rZEXOH5KJ+avtnCL2lY9/1F/hl97P9Ujdfpv2KtfdxV8HC6+hGUXI7DoltOCS24ZTURsydLhraurhbWkdBVQePOscp7ZridusE/lnP8c3qZWfGczzOaXBNbsfC6+hGYdXWUDf7+CfYxbVgF9eCKK4GZWkrh9MfIr7Swss/5hmbfsvXFzVsTevEM6UD78vP8Er/DdGZpzgmtrJqa6ibYOIpdV97qpm1p5qxldURe6MS59AcvM63sPHMU+53THK/Y4LFn1PNbEnT4CpvW8xMPKXugomHZJOVrAGrH+v57Oh9VkvzcYitR5TUis3JRkKUPYQoe7CSNSyyOdnImhP/3CYekk3CCpf97hYRFe/MI2tYHV6O+Q/VrItuxFpWj3lULfaxjdjHNmIeVfs/FlG1WERUvFvhst9dWGa72drMJ0VjE1m5YBfdgH1sI84JTTgnNCFKbMItqRm3pGZEiU04JTThGPd+2C66AZvIygUznxTNMtvN1oIgCEZLV5r7GZlaKozMLIuWm1oWv2dV/MmnH1tualX8oTcysywyMrVULF1p7icIgtFfxkUcJUxp7EkAAAAASUVORK5CYII="/>
+	<html:style type="text/css"><![CDATA[body{font-size:medium;margin:0}body,code:before,help:before,initcode:before{font-family:"Verdana",sans-serif}#wrapper{position:fixed;top:1em;right:1em;max-width:15%;text-align:center}#button{background-color:#299a0b;border:1px solid #3a7404;border-radius:.5em;padding:0;margin-bottom:1em;box-shadow:1px 2px 3px rgba(0,0,0,.25)}#button a{color:#f0f0f0;font-weight:700;text-shadow:-.5pt -.5px .5pt rgba(0,0,0,1);padding:.8em;text-decoration:none}:-moz-any-link:focus{color:grey;outline-color:transparent;text-decoration:none}#button a,code,code:before,initcode,initcode:before,help,help:before{display:block}#credits{position:fixed;bottom:1em;right:1em;font-size:small}#about{font-size:small}custombutton{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABAElEQVQ4jW2TQXLFMAhDff+b2vEHYw5AF38eVTNdZAIxCEkmw31VptU5T7mvOuepc56K2B2f85TZrEwr99VxptUwm2U2695PZVrH937KfZX76txsVsTus0yrEbEr0/4F4AyQc56eDMiI2F0IbYoj9h9ZSCV2XzXUA1BVL8BvBvSMiN20zWY38VZ5gDEkYtfAYTRToA3qiQJk2hcA7W8gpaxG0nPvp4aiQ5UCzOV2GKAgLUEfpsGCfaBR92TonapmdCoAjHTIgLa6/14gbgow8oj9uwe6SMQ0qTz9P9oDZOgCkfMNJnqWaV8P3ouDRorUXEA4H1wbtMmVjcrQ7TSb9QMtXcwa4wpbXgAAAABJRU5ErkJggg==) fixed #f6f6f1;margin:1em}date,image,mode,accelkey{display:none}name{font-weight:700;font-size:x-large}code:before,help:before,initcode:before{font-weight:700;font-size:large;margin:0 0 1em;padding:.5em}code:before{content:"Code Tab"}help:before{content:"Help Tab"}initcode:before{content:"Initialization Code Tab"}code,initcode,help{background-color:#fcfcfc;font-size:.875em;font-family:Consolas,"Bitstream Vera Sans Mono","Courier New",Courier,monospace!important;margin:1em 2em 1em 0 !important;padding:1em;text-align:left;box-shadow:2px 2px 0 rgba(170,160,130,0.5),4px 4px 0 rgba(200,190,165,0.5);max-width:80%;min-width:80%;white-space:pre-wrap;word-wrap:break-word}]]></html:style>
+</html:head>
+<html:body>
+	<html:div id="wrapper">
+		<html:div id="button">
+			<html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3EUser%20Agent%20Switcher%20%28Basic%29%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAEZElEQVQ4jWXMfTDUCRzH8V/TH+r+aGK4aSaGuHRGhJURzd2VburUOdGTZq3VXCI5uq08ZzMp0nQp9GBZu1PRE5PHI89OhL2jPLWsZSXSnYebMU3+ed8fXe66++P1x/fz+c5HEGBJWHaZccSVYpuwtHvr/i3y8t/+k38QcaHYJiy7zFiAJUJYdplxYtFQgbx8cj6pfJLkyinkFa+RV7wm9fEbLtS84Vz1FKfLJz+SVP6a02UT8/EPBwvDssuMBYlcZZtQMj4fpDYgVo0SqBpFojYQkDfKoVtjHH/4ipCCMfYqRtijGGFv7ggStYFAlQFx/ijxj8bnJXKVrRAQnWkfVzJOkGqEINUI/jd1HMzTsydnGIl6lEs1U6RWTeJ/cxjf6zoO5OoJUr5AerUTsXKYuJJxAqIz7YXdJzLWRxePEaTSs0+hY1eWFolKz3fXB9mVraW6b46qvjl2ZmnZlfmCQ1faubrzCP7pjUiUOqKLx9h9ImO94BOW7ih7YECSP4xUreeAYojwQgPHCg0cUg0zObfA5NwC3+f0Eh+r5sEWP3xjbhOYpyUwfxjZAwM+YemOwvYjqRsiCvWI83SLY1H3DJR0T1PTP0tN7wx1GgNPUy/T8sU2wqVnCbjRQ0DuEPtzBjlWoGf7kdQNgodU7hScP8hBxSBi5RASlZ7g/CGq+2ZIrRgj+GI9tYfD0bo4czckiqCMJ3yT0cu3mQPsu6kl5JaOr6RyJ2GDf4yzb1Yf4lwtKeVjVPfN8mp2gaqeacTXNCgz1QyvWcM1T29KH3cwMfOWuoFZ0qvGCVYOEpirZdOBRGfhc1+ZaNvFLnb89Ax5yQil3b8zMfeO6u4JSp5o6enrJykqmb0yJU0D00z9uUD9wBwXfn7JwZwBfDN7cPCViQRr7+Oum89rcJG34yJvx/1sJ6HqAX55pud57wBZd8rZEXOH5KJ+avtnCL2lY9/1F/hl97P9Ujdfpv2KtfdxV8HC6+hGUXI7DoltOCS24ZTURsydLhraurhbWkdBVQePOscp7ZridusE/lnP8c3qZWfGczzOaXBNbsfC6+hGYdXWUDf7+CfYxbVgF9eCKK4GZWkrh9MfIr7Swss/5hmbfsvXFzVsTevEM6UD78vP8Er/DdGZpzgmtrJqa6ibYOIpdV97qpm1p5qxldURe6MS59AcvM63sPHMU+53THK/Y4LFn1PNbEnT4CpvW8xMPKXugomHZJOVrAGrH+v57Oh9VkvzcYitR5TUis3JRkKUPYQoe7CSNSyyOdnImhP/3CYekk3CCpf97hYRFe/MI2tYHV6O+Q/VrItuxFpWj3lULfaxjdjHNmIeVfs/FlG1WERUvFvhst9dWGa72drMJ0VjE1m5YBfdgH1sI84JTTgnNCFKbMItqRm3pGZEiU04JTThGPd+2C66AZvIygUznxTNMtvN1oIgCEZLV5r7GZlaKozMLIuWm1oWv2dV/MmnH1tualX8oTcysywyMrVULF1p7icIgtFfxkUcJUxp7EkAAAAASUVORK5CYII%3D%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5B/**%0A%20*%20%20Button%20based%20on%20a%20script%20created%20for%20userChrome.js%20extension.%20http%3A//userchromejs.mozdev.org/%0A%20*%20%20Source%3A%20https%3A//github.com/ardiman/userChrome.js/tree/master/useragentswitcherlite%0A%20*/%0Aif%20%28self.parentNode%20%26%26%20/%5Ewrapper-/.test%28self.parentNode.id%29%29%0A%09return%3B%0A%0Avar%20%24%20%3D%20this.UserAgentSwitcher%20%3D%20%7B%0A%09init%3A%20function%28%29%20%7B%0A%09%09if%20%28%21%28%22Services%22%20in%20window%29%29%0A%09%09%09Cu.import%28%22resource%3A//gre/modules/Services.jsm%22%29%3B%0A%0A%09%09if%20%28%21%28%24._UID%20in%20window%29%29%20%7B%0A%09%09%09window%5B%24._UID%5D%20%3D%20%7B%0A%09%09%09%09CustomizableUI%3A%20false%2C%0A%09%09%09%7D%3B%0A%09%09%7D%0A%09%09%24.initPrefs%28%29%3B%0A%0A%09%09self.setAttribute%28%22popup%22%2C%20%24._UID%20+%20%22-menupopup%22%29%3B%0A%09%09self.onmousedown%20%3D%20function%28aE%29%20%7B%0A%09%09%09if%20%28%24.accel%28aE%29%29%0A%09%09%09%09aE.preventDefault%28%29%3B%0A%09%09%09aE.stopPropagation%28%29%3B%0A%09%09%7D%3B%0A%09%09self.onclick%20%3D%20function%28aE%29%20%7B%0A%09%09%09if%20%28aE.button%20%3D%3D%3D%200%20%26%26%20%21aE.shiftKey%20%26%26%20%24.accel%28aE%29%20%26%26%20%21aE.altKey%20%7C%7C%0A%09%09%09%09aE.button%20%3D%3D%3D%201%20%26%26%20%21aE.shiftKey%20%26%26%20%21%24.accel%28aE%29%20%26%26%20%21aE.altKey%29%20%7B%0A%09%09%09%09aE.preventDefault%28%29%3B%0A%09%09%09%09%24.openOptions%28%29%3B%0A%09%09%09%7D%0A%09%09%09aE.stopPropagation%28%29%3B%0A%09%09%7D%3B%0A%0A%09%09%24._mainArr%20%3D%20JSON.parse%28%24.gPref%28%22pUserAgentsJSON%22%29%29%3B%0A%0A%09%09%24.handlePrefObserver%28%29%3B%0A%09%09%24.createElements%28%29%3B%0A%09%09%24.setSelfTooltip%28%29%3B%0A%0A%09%09if%20%28%22CustomizableUI%22%20in%20window%29%20%7B%0A%09%09%09if%20%28%21window%5B%24._UID%5D%5B%22CustomizableUI%22%5D%29%20%7B%0A%09%09%09%09window%5B%24._UID%5D%5B%22CustomizableUI%22%5D%20%3D%20true%3B%0A%09%09%09%09CustomizableUI.addListener%28%7B%0A%09%09%09%09%09onCustomizeEnd%3A%20function%28aWindow%29%20%7B%0A%09%09%09%09%09%09var%20thisBtn%20%3D%20aWindow.document.getElementById%28self.id%29%3B%0A%09%09%09%09%09%09setTimeout%28function%28%29%20%7B%0A%09%09%09%09%09%09%09aWindow%5B%24._UID%5D%5B%22CustomizableUI%22%5D%20%26%26%20thisBtn.MultiSearch.selfDestroy%28%29%3B%0A%09%09%09%09%09%09%7D%2C%20Math.floor%28Math.random%28%29%20*%20%281%20+%202000%20-%20200%29%29%20+%20200%29%3B%0A%09%09%09%09%09%7D%0A%09%09%09%09%7D%29%3B%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09addDestructor%28function%28aReason%29%20%7B%0A%09%09%09if%20%28aReason%20%3D%3D%3D%20%22update%22%20%7C%7C%20aReason%20%3D%3D%3D%20%22delete%22%29%20%7B%0A%09%09%09%09%24.handlePrefObserver%28true%29%3B%0A%09%09%09%09let%20selfEls%20%3D%20document.getElementsByAttribute%28%22cb_id%22%2C%20%24._UID%29%3B%0A%09%09%09%09Array.prototype.slice.call%28selfEls%29.forEach%28function%28aEl%29%20%7B%20//%20Delete%20all%20elements%20created%20by%20this%20button.%0A%09%09%09%09%09aEl%20%26%26%20aEl.parentNode.removeChild%28aEl%29%3B%0A%09%09%09%09%7D%29%3B%0A%09%09%09%7D%0A%09%09%09if%20%28aReason%20%3D%3D%3D%20%22delete%22%29%20%7B%0A%09%09%09%09%28Services.prefs.getBranch%28%24.Branch%29%29.deleteBranch%28%22%22%29%3B%0A%09%09%09%09Services.prefs.savePrefFile%28null%29%3B%0A%09%09%09%09delete%20window%5B%24._UID%5D%3B%0A%09%09%09%7D%0A%09%09%7D%29%3B%0A%09%7D%2C%0A%0A%09openOptions%3A%20function%28%29%20%7B%0A%09%09var%20url%20%3D%20%22about%3Aconfig%3Ffilter%3D%22%20+%20%24.Branch%3B%0A%09%09if%20%28%24.gPref%28%22pOpenOptionsOnNewTab%22%29%20%26%26%20%28%22gBrowser%22%20in%20window%29%29%20%7B%0A%09%09%09let%20tab%20%3D%20gBrowser.visibleTabs.find%28tab%20%3D%3E%20tab.linkedBrowser.currentURI.spec%20%3D%3D%3D%20url%29%3B%0A%09%09%09gBrowser.selectedTab%20%3D%20tab%20%7C%7C%20gBrowser.addTab%28url%29%3B%0A%09%09%7D%20else%0A%09%09%09toOpenWindowByType%28%22Preferences%3AConfigManager%22%2C%20url%29%3B%0A%09%7D%2C%0A%0A%09performAction%3A%20function%28%29%20%7B%0A%09%09switch%20%28%24.gPref%28%22pActionAfterSwitchingUserAgent%22%29%29%20%7B%0A%09%09%09case%200%3A%0A%09%09%09%09return%20true%3B%0A%09%09%09case%201%3A%0A%09%09%09%09gBrowser.reloadTab%28gBrowser.selectedTab%29%3B%0A%09%09%09%09break%3B%0A%09%09%09case%202%3A%0A%09%09%09%09gBrowser.reloadAllTabs%28%29%3B%0A%09%09%09%09break%3B%0A%09%09%7D%0A%09%09return%20true%3B%0A%09%7D%2C%0A%0A%09getCurrentUAData%3A%20function%28aType%29%20%7B%0A%09%09let%20lbl%2C%20agent%3B%0A%09%09let%20currentUA%20%3D%20%24._mainArr.filter%28function%28aUA%29%20%7B%0A%09%09%09return%20aUA.hasOwnProperty%28%22agent%22%29%20%26%26%20aUA%5B%22agent%22%5D%20%3D%3D%3D%20%24.uaPref%3B%0A%09%09%7D%29%3B%0A%09%09lbl%20%3D%20currentUA.length%20%3D%3D%3D%200%20%3F%20%22Default%20User%20Agent%22%20%3A%20currentUA%5B0%5D%5B%22label%22%5D%3B%0A%09%09agent%20%3D%20currentUA.length%20%3D%3D%3D%200%20%3F%20navigator.userAgent%20%3A%20currentUA%5B0%5D%5B%22agent%22%5D%3B%0A%09%09return%20%7B%0A%09%09%09label%3A%20lbl%2C%0A%09%09%09agent%3A%20agent%2C%0A%09%09%7D%3B%0A%09%7D%2C%0A%0A%09setSelfTooltip%3A%20function%28%29%20%7B%0A%09%09let%20data%20%3D%20%24.getCurrentUAData%28%29%3B%0A%09%09self.tooltipText%20%3D%20self.name%20+%20%22%20-%20ID%23%3A%20%22%20+%20self.id.slice%2820%29%20+%20%22%5Cn%5Cn%22%20+%0A%09%09%09%22%uD835%uDDDF%uD835%uDDF2%uD835%uDDF3%uD835%uDE01%20%uD835%uDDF0%uD835%uDDF9%uD835%uDDF6%uD835%uDDF0%uD835%uDDF8%3A%20Open%20User%20Agent%20selection%20menu%5Cn%22%20+%0A%09%09%09%22%uD835%uDDE0%uD835%uDDF6%uD835%uDDF1%uD835%uDDF1%uD835%uDDF9%uD835%uDDF2%20%uD835%uDDFC%uD835%uDDFF%20%22%20+%20%24.accel%28%29%20+%20%22%20+%20%uD835%uDDDF%uD835%uDDF2%uD835%uDDF3%uD835%uDE01%20%uD835%uDDF0%uD835%uDDF9%uD835%uDDF6%uD835%uDDF0%uD835%uDDF8%3A%20Open%20Options%5Cn%5Cn%22%20+%0A%09%09%09%28%24.gPref%28%22pShowCurrentUserAgentInfoOnButtonTooltip%22%29%20%3F%0A%09%09%09%09%28%22%uD835%uDDD6%uD835%uDE02%uD835%uDDFF%uD835%uDDFF%uD835%uDDF2%uD835%uDDFB%uD835%uDE01%20%uD835%uDDE8%uD835%uDE00%uD835%uDDF2%uD835%uDDFF%20%uD835%uDDD4%uD835%uDDF4%uD835%uDDF2%uD835%uDDFB%uD835%uDE01%3A%20%22%20+%20data%5B%22label%22%5D%20+%20%22%5Cn%22%20+%0A%09%09%09%09%09data%5B%22agent%22%5D%20+%20%22%5Cn%5Cn%22%29%20%3A%20%22%22%29%20+%0A%09%09%09%22%uD835%uDDE5%uD835%uDDF2%uD835%uDDEE%uD835%uDDF1%20%uD835%uDE01%uD835%uDDF5%uD835%uDDF6%uD835%uDE00%20%uD835%uDDEF%uD835%uDE02%uD835%uDE01%uD835%uDE01%uD835%uDDFC%uD835%uDDFB%20%uD835%uDDF5%uD835%uDDF2%uD835%uDDF9%uD835%uDDFD%20%uD835%uDDF3%uD835%uDDFC%uD835%uDDFF%20%uD835%uDE03%uD835%uDDF2%uD835%uDDFF%uD835%uDE06%20%uD835%uDDF6%uD835%uDDFA%uD835%uDDFD%uD835%uDDFC%uD835%uDDFF%uD835%uDE01%uD835%uDDEE%uD835%uDDFB%uD835%uDE01%20%uD835%uDE02%uD835%uDE00%uD835%uDDEE%uD835%uDDF4%uD835%uDDF2%20%uD835%uDDFB%uD835%uDDFC%uD835%uDE01%uD835%uDDF2%uD835%uDE00.%5Cn%22%20+%0A%09%09%09%22%uD835%uDDE5%uD835%uDDF6%uD835%uDDF4%uD835%uDDF5%uD835%uDE01%20%uD835%uDDF0%uD835%uDDF9%uD835%uDDF6%uD835%uDDF0%uD835%uDDF8%20%uD835%uDDFC%uD835%uDDFB%20%uD835%uDDEF%uD835%uDE02%uD835%uDE01%uD835%uDE01%uD835%uDDFC%uD835%uDDFB%2C%20%5C%22%uD835%uDDD5%uD835%uDE02%uD835%uDE01%uD835%uDE01%uD835%uDDFC%uD835%uDDFB%20%uD835%uDDDB%uD835%uDDF2%uD835%uDDF9%uD835%uDDFD%5C%22%20%uD835%uDDF6%uD835%uDE01%uD835%uDDF2%uD835%uDDFA.%22%3B%0A%09%7D%2C%0A%0A%09createElements%3A%20function%28%29%20%7B%0A%09%09let%20popSet%20%3D%20%24.%24%28%22mainPopupSet%22%29%3B%0A%09%09let%20m%20%3D%20%24.%24%28%24._UID%20+%20%22-menupopup%22%29%3B%0A%09%09if%20%28popSet%20%26%26%20%21m%29%20%7B%0A%09%09%09m%20%3D%20popSet.appendChild%28%24.%24CNS%28%22menupopup%22%2C%20%7B%0A%09%09%09%09id%3A%20%24._UID%20+%20%22-menupopup%22%2C%0A%09%09%09%09cb_id%3A%20%24._UID%2C%0A%09%09%09%09onpopupshowing%3A%20%24.that%20+%20%22populateMainMenu%28this%29%3Bevent.stopPropagation%28%29%3B%22%2C%0A%09%09%09%09oncontextmenu%3A%20%22event.stopPropagation%28%29%3B%22%2C%0A%09%09%09%09onpopuphiding%3A%20%22event.stopPropagation%28%29%3B%22%2C%0A%09%09%09%09onpopupshown%3A%20%22this.handleOpenState%28event%2C%20true%29%3Bevent.stopPropagation%28%29%3B%22%2C%0A%09%09%09%09onpopuphidden%3A%20%22this.handleOpenState%28event%2C%20false%29%3Bevent.stopPropagation%28%29%3B%22%2C%0A%09%09%09%09onclick%3A%20%22event.stopPropagation%28%29%3B%22%2C%0A%09%09%09%09oncommand%3A%20%24.that%20+%20%22setUserAgent%28event%29%3Bevent.stopPropagation%28%29%3B%22%2C%0A%09%09%09%09orient%3A%20%22vertical%22%2C%0A%09%09%09%09position%3A%20%22after_start%22%2C%0A%09%09%09%09consumeoutsideclicks%3A%20false%2C%0A%09%09%09%7D%29%29%3B%0A%09%09%09m.handleOpenState%20%3D%20function%28aE%2C%20aState%29%20%7B%0A%09%09%09%09if%20%28aState%29%0A%09%09%09%09%09self.setAttribute%28%22open%22%2C%20aState%29%3B%0A%09%09%09%09else%0A%09%09%09%09%09self.removeAttribute%28%22open%22%29%3B%0A%09%09%09%7D%3B%0A%09%09%09if%20%28%24.gPref%28%22pConvertMenuToPanel%22%29%29%20%7B%0A%09%09%09%09m.style.MozAppearance%20%3D%20%22none%22%3B%0A%09%09%09%09m.style.MozBinding%20%3D%20%22url%28%27chrome%3A//global/content/bindings/popup.xml%23arrowpanel%27%29%22%3B%0A%09%09%09%09m.style.background%20%3D%20%22transparent%22%3B%0A%09%09%09%09m.style.border%20%3D%20%22none%22%3B%0A%09%09%09%09m.style.MozImageRegion%20%3D%20%22auto%22%3B%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%2C%0A%0A%09setUserAgent%3A%20function%28aE%29%20%7B%0A%09%09let%20ua%20%3D%20aE.target.getAttribute%28%22data-agent%22%29%3B%0A%09%09if%20%28ua%20%3D%3D%3D%20%22%22%29%0A%09%09%09Services.prefs.clearUserPref%28%24.uaPrefStr%29%3B%0A%09%09else%20%7B%0A%09%09%09let%20str%20%3D%20Cc%5B%22@mozilla.org/supports-string%3B1%22%5D.createInstance%28Ci.nsISupportsString%29%3B%0A%09%09%09str.data%20%3D%20ua%3B%0A%09%09%09Services.prefs.setComplexValue%28%28%24.uaPrefStr%29%2C%20Ci.nsISupportsString%2C%20str%29%3B%0A%09%09%7D%0A%09%09setTimeout%28function%28%29%20%7B%0A%09%09%09%24.performAction%28%29%3B%0A%09%09%7D%2C%20100%29%3B%0A%09%09setTimeout%28function%28%29%20%7B%0A%09%09%09%24.setSelfTooltip%28%29%3B%0A%09%09%7D%2C%20100%29%3B%0A%09%7D%2C%0A%0A%09populateMainMenu%3A%20function%28aN%29%20%7B%0A%09%09aN.textContent%20%3D%20%22%22%3B%0A%0A%09%09let%20pref%20%3D%20%24.uaPref%3B%0A%0A%09%09aN.appendChild%28%24.%24CNS%28%22menuitem%22%2C%20%7B%0A%09%09%09label%3A%20%22Default%20User%20Agent%22%2C%0A%09%09%09accesskey%3A%20%22D%22%2C%0A%09%09%09type%3A%20%22radio%22%2C%0A%09%09%09checked%3A%20pref%20%3D%3D%3D%20null%2C%0A%09%09%09%22data-agent%22%3A%20%22%22%2C%0A%09%09%09onclick%3A%20%22event.stopPropagation%28%29%3B%22%2C%0A%09%09%7D%29%29%3B%0A%0A%09%09aN.appendChild%28%24.%24CNS%28%22menuseparator%22%29%29%3B%0A%0A%09%09let%20arr%20%3D%20%24._mainArr%3B%0A%09%09let%20i%20%3D%200%2C%0A%09%09%09iLen%20%3D%20arr.length%3B%0A%09%09try%20%7B%0A%09%09%09if%20%28arr%20%26%26%20arr.length%20%3E%200%29%20%7B%0A%09%09%09%09for%20%28%3B%20i%20%3C%20iLen%3B%20i++%29%20%7B%0A%09%09%09%09%09switch%20%28arr%5Bi%5D%5B%22label%22%5D%29%20%7B%0A%09%09%09%09%09%09case%20%22%5Bmenuseparator%5D%22%3A%0A%09%09%09%09%09%09%09aN.appendChild%28%24.%24CNS%28%22menuseparator%22%29%29%3B%0A%09%09%09%09%09%09%09break%3B%0A%09%09%09%09%09%09default%3A%0A%09%09%09%09%09%09%09aN.appendChild%28%24.%24CNS%28%22menuitem%22%2C%20%7B%0A%09%09%09%09%09%09%09%09label%3A%20arr%5Bi%5D%5B%22label%22%5D%2C%0A%09%09%09%09%09%09%09%09tooltiptext%3A%20arr%5Bi%5D%5B%22agent%22%5D%2C%0A%09%09%09%09%09%09%09%09accesskey%3A%20arr%5Bi%5D%5B%22accesskey%22%5D%2C%0A%09%09%09%09%09%09%09%09type%3A%20%22radio%22%2C%0A%09%09%09%09%09%09%09%09checked%3A%20pref%20%3D%3D%3D%20arr%5Bi%5D%5B%22agent%22%5D%2C%0A%09%09%09%09%09%09%09%09%22data-agent%22%3A%20arr%5Bi%5D%5B%22agent%22%5D%2C%0A%09%09%09%09%09%09%09%09onclick%3A%20%22event.stopPropagation%28%29%3B%22%2C%0A%09%09%09%09%09%09%09%7D%29%29%3B%0A%09%09%09%09%09%09%09break%3B%0A%09%09%09%09%09%7D%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%20finally%20%7B%0A%09%09%09aN.appendChild%28%24.%24CNS%28%22menuseparator%22%29%29%3B%0A%0A%09%09%09aN.appendChild%28%24.%24CNS%28%22menuitem%22%2C%20%7B%0A%09%09%09%09label%3A%20%22Edit%20menu%22%2C%0A%09%09%09%09tooltiptext%3A%20%22Edit%20menu%20of%20User%20Agents%22%2C%0A%09%09%09%09oncommand%3A%20%24.that%20+%20%22editUserAgents%28%29%3Bevent.stopPropagation%28%29%3B%22%2C%0A%09%09%09%09onclick%3A%20%22event.stopPropagation%28%29%3B%22%2C%0A%09%09%09%7D%29%29%3B%0A%09%09%7D%0A%09%7D%2C%0A%0A%09editUserAgents%3A%20function%28%29%20%7B%0A%09%09var%20em%20%3D%20Services.ww.getWindowEnumerator%28%29%3B%0A%09%09var%20winName%20%3D%20%24._UID%20+%20%22_user_agents_editor%22%3B%0A%09%09var%20index%20%3D%201%3B%0A%09%09while%20%28em.hasMoreElements%28%29%29%20%7B%0A%09%09%09let%20win%20%3D%20em.getNext%28%29%3B%0A%09%09%09if%20%28win.name%20%3D%3D%3D%20winName%29%20%7B%0A%09%09%09%09win.focus%28%29%3B%0A%09%09%09%09return%3B%0A%09%09%09%7D%0A%09%09%09index++%3B%0A%09%09%7D%0A%09%09let%20xul%20%3D%20%24.getHelp%28%22%25UserAgentsEditor%25%22%29%3B%0A%09%09let%20storage%20%3D%20%7B%0A%09%09%09custombuttons%3A%20custombuttons%2C%0A%09%09%09button%3A%20self%2C%0A%09%09%09accel%3A%20%24.accel%2C%0A%09%09%09data%3A%20%24._mainArr%2C%0A%09%09%7D%3B%0A%09%09xul%20%3D%20xul.replace%28/%3E%5Cs+%3C/g%2C%20%22%3E%3C%22%29%3B%0A%09%09xul%20%3D%20xul.split%28%22%25U_I_D%25%22%29.join%28%24._UID%29%3B%0A%09%09xul%20%3D%20xul.split%28%22%25A_C_C_E_L%25%22%29.join%28%24.accel%28%29%29%3B%0A%09%09let%20url%20%3D%20%22data%3Aapplication/vnd.mozilla.xul+xml%3Btext/plain%2C%22%20+%20encodeURIComponent%28xul%29%3B%0A%09%09let%20win%20%3D%20openDialog%28url%2C%20winName%2C%20%22chrome%2C%20resizable%2C%20dialog%3Dno%2C%20centerscreen%2C%20close%22%29%3B%0A%09%09win._storage%20%3D%20storage%3B%0A%09%7D%2C%0A%0A%09/**%0A%09%20*%20NEVER%20CHANGE%20TO%20%22BRANCH%20OBSERVER%22%21%21%21%21%0A%09%20*%20Works%20like%20absolute%20SHEET%20on%20SeaMonkey%21%21%21%21%0A%09%20*/%0A%09handlePrefObserver%3A%20function%28aRem%29%20%7B%0A%09%09var%20prefs%20%3D%20%24.DefPrefs%3B%0A%09%09for%20%28let%20key%20in%20prefs%29%20%7B%0A%09%09%09let%20pref%20%3D%20%24.Branch%20+%20key%3B%0A%09%09%09if%20%28prefs.hasOwnProperty%28key%29%29%20%7B%0A%09%09%09%09if%20%28aRem%29%0A%09%09%09%09%09Services.prefs.removeObserver%28pref%2C%20%24.prefObserver%2C%20false%29%3B%0A%09%09%09%09else%0A%09%09%09%09%09Services.prefs.addObserver%28pref%2C%20%24.prefObserver%2C%20false%29%3B%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%2C%0A%0A%09prefObserver%3A%20%7B%0A%09%09observe%3A%20function%28aSubject%2C%20aTopic%2C%20aPStr%29%20%7B%0A%09%09%09if%20%28aTopic%20%3D%3D%3D%20%22nsPref%3Achanged%22%29%20%7B%0A%09%09%09%09let%20prefName%20%3D%20aPStr.slice%28%24.Branch.length%29%3B%0A%09%09%09%09switch%20%28prefName%29%20%7B%0A%09%09%09%09%09case%20%22pUserAgentsJSON%22%3A%0A%09%09%09%09%09%09%24._mainArr%20%3D%20JSON.parse%28%24.gPref%28%22pUserAgentsJSON%22%29%29%3B%0A%09%09%09%09%09%09break%3B%0A%09%09%09%09%09case%20%22pShowCurrentUserAgentInfoOnButtonTooltip%22%3A%0A%09%09%09%09%09%09%24.setSelfTooltip%28%29%3B%0A%09%09%09%09%09%09break%3B%0A%09%09%09%09%09case%20%22pConvertMenuToPanel%22%3A%0A%09%09%09%09%09%09%24.selfDestroy%28%29%3B%0A%09%09%09%09%09%09break%3B%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%2C%0A%0A%09%24%3A%20function%28aId%29%20%7B%20//%20Return%20elements%20by%20Id%0A%09%09return%20document.getElementById%28aId%29%3B%0A%09%7D%2C%0A%0A%09getHelp%3A%20function%28aPlaceholder%29%20%7B%20//%20Get%20specific%20data%2C%20surrounded%20by%20%22placeholders%22%2C%20from%20the%20Help%20tab.%0A%09%09return%20%24.%24%28self.id%29.getAttribute%28%22Help%22%29.split%28%22%3C%21--%22%20+%20aPlaceholder%20+%20%22--%3E%22%29%5B1%5D%3B%0A%09%7D%2C%0A%0A%09selfDestroy%3A%20function%28%29%20%7B%0A%09%09self.destroy%28%22update%22%29%3B%0A%09%09setTimeout%28function%28%29%20%7B%0A%09%09%09self.init%28%29%3B%0A%09%09%7D%2C%20100%29%3B%0A%09%7D%2C%0A%0A%09%24CNS%3A%20function%28aElName%2C%20aAttrs%2C%20aNameSpace%29%20%7B%20//%20Creates%20elements%0A%09%09var%20el%20%3D%20aNameSpace%20%3F%0A%09%09%09document.createElementNS%28aNameSpace%2C%20aElName%29%20%3A%0A%09%09%09document.createElement%28aElName%29%3B%0A%09%09if%20%28aAttrs%29%0A%09%09%09Object.keys%28aAttrs%29.forEach%28function%28n%29%20%7B%0A%09%09%09%09if%20%28aAttrs%5Bn%5D%20%21%3D%3D%20%22%22%29%0A%09%09%09%09%09el.setAttribute%28n%2C%20aAttrs%5Bn%5D%29%3B%0A%09%09%09%7D%29%3B%0A%09%09return%20el%3B%0A%09%7D%2C%0A%0A%09accel%3A%20function%28aE%29%20%7B%0A%09%09if%20%28aE%29%0A%09%09%09return%20%24.isOSX%20%3F%20aE.metaKey%20%3A%20aE.ctrlKey%3B%0A%09%09return%20%24.isOSX%20%3F%20%22%uD835%uDDD6%uD835%uDDFC%uD835%uDDFA%uD835%uDDFA%uD835%uDDEE%uD835%uDDFB%uD835%uDDF1%22%20%3A%20%22%uD835%uDDD6%uD835%uDDFC%uD835%uDDFB%uD835%uDE01%uD835%uDDFF%uD835%uDDFC%uD835%uDDF9%22%3B%0A%09%7D%2C%0A%09get%20uaPref%28%29%20%7B%0A%09%09return%20%28Services.prefs.getPrefType%28%24.uaPrefStr%29%20%3D%3D%3D%200%20%3F%0A%09%09%09null%20%3A%0A%09%09%09Services.prefs.getComplexValue%28%24.uaPrefStr%2C%20Ci.nsISupportsString%29.data%29%3B%0A%09%7D%2C%0A%09isOSX%3A%20Services.appinfo.OS.toLowerCase%28%29.startsWith%28%22darwin%22%29%2C%0A%09_UID%3A%20%22__user_agent_switcher%22%20+%20self.id.slice%2820%29%2C%0A%09_mainArr%3A%20null%2C%0A%09that%3A%20%22document.getElementById%28%27%22%20+%20self.id%20+%20%22%27%29.UserAgentSwitcher.%22%2C%0A%09uaPrefStr%3A%20%22general.useragent.override%22%2C%0A%7D%3B%0A%0Athis.UserAgentSwitcher.Branch%20%3D%20%22CB.UserAgentSwitcher.Id%22%20+%20self.id.slice%2820%29%20+%20%22.%22%3B%0A%0Athis.UserAgentSwitcher.DefPrefs%20%3D%20%7B%0A%09pOpenOptionsOnNewTab%3A%20false%2C%0A%09pConvertMenuToPanel%3A%20true%2C%0A%09pShowCurrentUserAgentInfoOnButtonTooltip%3A%20true%2C%0A%09pActionAfterSwitchingUserAgent%3A%200%2C%0A%09pUserAgentsJSON%3A%20JSON.stringify%28%5B%7B%0A%09%09%22label%22%3A%20%22Android%204.4.2%20-%20Samsung%20Galaxy%20S5%20%28SM-G900P%29%22%2C%0A%09%09%22accesskey%22%3A%20%22%22%2C%0A%09%09%22agent%22%3A%20%22Mozilla/5.0%20%28Linux%3B%20Android%204.4.2%3B%20en-us%3B%20SAMSUNG%20SM-G900P%20Build/KOT49H%29%20AppleWebKit/537.36%20%28KHTML%2C%20like%20Gecko%29%20Version/1.6%22%0A%09%7D%2C%20%7B%0A%09%09%22label%22%3A%20%22Mobile%20Safari%209.0%20-%20iOS%22%2C%0A%09%09%22accesskey%22%3A%20%22%22%2C%0A%09%09%22agent%22%3A%20%22Mozilla/5.0%20%28iPad%3B%20CPU%20OS%209_3_2%20like%20Mac%20OS%20X%29%20AppleWebKit/601.1.46%20%28KHTML%2C%20like%20Gecko%29%20Version/9.0%20Mobile/13F69%20Safari/601.1%22%0A%09%7D%2C%20%7B%0A%09%09%22label%22%3A%20%22%5Bmenuseparator%5D%22%0A%09%7D%2C%20%7B%0A%09%09%22label%22%3A%20%22Chrome%2050.0%20-%20Win10%20x64%22%2C%0A%09%09%22accesskey%22%3A%20%22C%22%2C%0A%09%09%22agent%22%3A%20%22Mozilla/5.0%20%28Windows%20NT%2010.0%3B%20WOW64%29%20AppleWebKit/537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome/50.0.2661.102%20Safari/537.36%22%0A%09%7D%2C%20%7B%0A%09%09%22label%22%3A%20%22Chrome%2050.0%20-%20Linux%20x86_64%22%2C%0A%09%09%22accesskey%22%3A%20%22C%22%2C%0A%09%09%22agent%22%3A%20%22Mozilla/5.0%20%28X11%3B%20Linux%20x86_64%29%20AppleWebKit/537.36%20%28KHTML%2C%20like%20Gecko%29%20Chrome/50.0.2661.94%20Safari/537.36%22%0A%09%7D%2C%20%7B%0A%09%09%22label%22%3A%20%22Firefox%2046.0%20-%20Win10%20x64%22%2C%0A%09%09%22accesskey%22%3A%20%22F%22%2C%0A%09%09%22agent%22%3A%20%22Mozilla/5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A46.0%29%20Gecko/20100101%20Firefox/46.0%22%0A%09%7D%2C%20%7B%0A%09%09%22label%22%3A%20%22Firefox%2046.0%20-%20Linux%20x86_64%22%2C%0A%09%09%22accesskey%22%3A%20%22F%22%2C%0A%09%09%22agent%22%3A%20%22Mozilla/5.0%20%28X11%3B%20Linux%20x86_64%3B%20rv%3A46.0%29%20Gecko/20100101%20Firefox/46.0%22%0A%09%7D%2C%20%7B%0A%09%09%22label%22%3A%20%22IE%2011.0%20for%20Desktop%20-%20Win10%20x64%22%2C%0A%09%09%22accesskey%22%3A%20%22I%22%2C%0A%09%09%22agent%22%3A%20%22Mozilla/5.0%20%28Windows%20NT%2010.0%3B%20WOW64%3B%20Trident/7.0%3B%20rv%3A11.0%29%20like%20Gecko%22%0A%09%7D%2C%20%7B%0A%09%09%22label%22%3A%20%22Safari%20Generic%20-%20MacOSX%22%2C%0A%09%09%22accesskey%22%3A%20%22S%22%2C%0A%09%09%22agent%22%3A%20%22Mozilla/5.0%20%28Macintosh%3B%20Intel%20Mac%20OS%20X%2010_11_5%29%20AppleWebKit/601.6.17%20%28KHTML%2C%20like%20Gecko%29%20Version/9.1.1%20Safari/601.6.17%22%0A%09%7D%2C%20%7B%0A%09%09%22label%22%3A%20%22%5Bmenuseparator%5D%22%0A%09%7D%2C%20%7B%0A%09%09%22label%22%3A%20%22Google%20Robot%22%2C%0A%09%09%22accesskey%22%3A%20%22G%22%2C%0A%09%09%22agent%22%3A%20%22Googlebot/2.1%20%28+http%3A//www.google.com/bot.html%29%22%0A%09%7D%2C%20%7B%0A%09%09%22label%22%3A%20%22Bing%20Robot%22%2C%0A%09%09%22accesskey%22%3A%20%22B%22%2C%0A%09%09%22agent%22%3A%20%22Mozilla/5.0%20%28compatible%3B%20bingbot/2.0%3B%20+http%3A//www.bing.com/bingbot.htm%29%22%0A%09%7D%2C%20%7B%0A%09%09%22label%22%3A%20%22Yahoo%21%20Robot%22%2C%0A%09%09%22accesskey%22%3A%20%22Y%22%2C%0A%09%09%22agent%22%3A%20%22Mozilla/5.0%20%28compatible%3B%20Yahoo%21%20Slurp%3B%20http%3A//help.yahoo.com/help/us/ysearch/slurp%29%22%0A%09%7D%5D%29%2C%0A%7D%3B%0A%0Athis.UserAgentSwitcher.initPrefs%20%3D%20function%28%29%20%7B%0A%09let%20branch%20%3D%20Services.prefs.getDefaultBranch%28self.UserAgentSwitcher.Branch%29%2C%0A%09%09defaults%20%3D%20self.UserAgentSwitcher.DefPrefs%3B%0A%09for%20%28let%20key%20in%20defaults%29%20%7B%0A%09%09if%20%28defaults.hasOwnProperty%28key%29%29%20%7B%0A%09%09%09let%20val%20%3D%20defaults%5Bkey%5D%3B%0A%09%09%09switch%20%28typeof%20val%29%20%7B%0A%09%09%09%09case%20%22boolean%22%3A%0A%09%09%09%09%09branch.setBoolPref%28key%2C%20val%29%3B%0A%09%09%09%09%09break%3B%0A%09%09%09%09case%20%22number%22%3A%0A%09%09%09%09%09branch.setIntPref%28key%2C%20val%29%3B%0A%09%09%09%09%09break%3B%0A%09%09%09%09case%20%22string%22%3A%0A%09%09%09%09%09let%20str%20%3D%20Cc%5B%22@mozilla.org/supports-string%3B1%22%5D.createInstance%28Ci.nsISupportsString%29%3B%0A%09%09%09%09%09str.data%20%3D%20val%3B%0A%09%09%09%09%09branch.setComplexValue%28%28key%29%2C%20Ci.nsISupportsString%2C%20str%29%3B%0A%09%09%09%09%09break%3B%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%7D%3B%0A%0Athis.UserAgentSwitcher.gPref%20%3D%20function%28aKey%29%20%7B%0A%09let%20branch%20%3D%20Services.prefs.getBranch%28self.UserAgentSwitcher.Branch%29%3B%0A%09switch%20%28typeof%20self.UserAgentSwitcher.DefPrefs%5BaKey%5D%29%20%7B%0A%09%09case%20%22boolean%22%3A%0A%09%09%09return%20branch.getBoolPref%28aKey%29%3B%0A%09%09case%20%22number%22%3A%0A%09%09%09return%20branch.getIntPref%28aKey%29%3B%0A%09%09case%20%22string%22%3A%0A%09%09%09return%20branch.getComplexValue%28aKey%2C%20Ci.nsISupportsString%29.data%3B%0A%09%7D%0A%09return%20null%3B%0A%7D%3B%0A%0Athis.UserAgentSwitcher.sPref%20%3D%20function%28aKey%2C%20aVal%29%20%7B%0A%09let%20branch%20%3D%20Services.prefs.getBranch%28self.UserAgentSwitcher.Branch%29%3B%0A%09switch%20%28typeof%20aVal%29%20%7B%0A%09%09case%20%22boolean%22%3A%0A%09%09%09branch.setBoolPref%28aKey%2C%20aVal%29%3B%0A%09%09%09break%3B%0A%09%09case%20%22number%22%3A%0A%09%09%09branch.setIntPref%28aKey%2C%20aVal%29%3B%0A%09%09%09break%3B%0A%09%09case%20%22string%22%3A%0A%09%09%09let%20str%20%3D%20Cc%5B%22@mozilla.org/supports-string%3B1%22%5D.createInstance%28Ci.nsISupportsString%29%3B%0A%09%09%09str.data%20%3D%20aVal%3B%0A%09%09%09branch.setComplexValue%28%28aKey%29%2C%20Ci.nsISupportsString%2C%20str%29%3B%0A%09%09%09break%3B%0A%09%7D%0A%7D%3B%0A%0Athis.UserAgentSwitcher.init%28%29%3B%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5B/*CODE*/%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%uD835%uDDDC%uD835%uDDFA%uD835%uDDFD%uD835%uDDFC%uD835%uDDFF%uD835%uDE01%uD835%uDDEE%uD835%uDDFB%uD835%uDE01%20%uD835%uDDFB%uD835%uDDFC%uD835%uDE01%uD835%uDDF2%uD835%uDE00%0A%u26AB%20Posible%20values%20for%20%uD835%uDDFD%uD835%uDDD4%uD835%uDDF0%uD835%uDE01%uD835%uDDF6%uD835%uDDFC%uD835%uDDFB%uD835%uDDD4%uD835%uDDF3%uD835%uDE01%uD835%uDDF2%uD835%uDDFF%uD835%uDDE6%uD835%uDE04%uD835%uDDF6%uD835%uDE01%uD835%uDDF0%uD835%uDDF5%uD835%uDDF6%uD835%uDDFB%uD835%uDDF4%uD835%uDDE8%uD835%uDE00%uD835%uDDF2%uD835%uDDFF%uD835%uDDD4%uD835%uDDF4%uD835%uDDF2%uD835%uDDFB%uD835%uDE01%20preference.%0A%09%u26AB%200%20%3D%20Do%20nothing.%0A%09%u26AB%201%20%3D%20Reload%20current%20tab.%0A%09%u26AB%202%20%3D%20Reload%20all%20tabs.%0A%0A%uD835%uDDEA%uD835%uDDD4%uD835%uDDE5%uD835%uDDE1%uD835%uDDDC%uD835%uDDE1%uD835%uDDDA%u2757%u2757%20%uD835%uDDD5%uD835%uDDD8%20%uD835%uDDD6%uD835%uDDD4%uD835%uDDE5%uD835%uDDD8%uD835%uDDD9%uD835%uDDE8%uD835%uDDDF%20%uD835%uDDDC%uD835%uDDD9%20%uD835%uDDEC%uD835%uDDE2%uD835%uDDE8%20%uD835%uDDD8%uD835%uDDD7%uD835%uDDDC%uD835%uDDE7%20%uD835%uDDE7%uD835%uDDDB%uD835%uDDD8%20%uD835%uDDDB%uD835%uDDD8%uD835%uDDDF%uD835%uDDE3%20%uD835%uDDE7%uD835%uDDD4%uD835%uDDD5%20%uD835%uDDE2%uD835%uDDD9%20%uD835%uDDE7%uD835%uDDDB%uD835%uDDDC%uD835%uDDE6%20%uD835%uDDD5%uD835%uDDE8%uD835%uDDE7%uD835%uDDE7%uD835%uDDE2%uD835%uDDE1%u2757%u2757%u2757%0A%uD835%uDDDC%uD835%uDDE7%20%uD835%uDDD6%uD835%uDDE2%uD835%uDDE8%uD835%uDDDF%uD835%uDDD7%20%uD835%uDDD5%uD835%uDDE5%uD835%uDDD8%uD835%uDDD4%uD835%uDDDE%20%uD835%uDDDC%uD835%uDDE7%uD835%uDDE6%20%uD835%uDDD9%uD835%uDDE8%uD835%uDDE1%uD835%uDDD6%uD835%uDDDC%uD835%uDDE2%uD835%uDDE1%uD835%uDDD4%uD835%uDDDF%uD835%uDDDC%uD835%uDDE7%uD835%uDDEC%u2757%u2757%u2757%0A%0A%5B%2C%5D%0A%0A/**%0A%20*%20%uD835%uDDD9%uD835%uDDE5%uD835%uDDE2%uD835%uDDE0%20%uD835%uDDDB%uD835%uDDD8%uD835%uDDE5%uD835%uDDD8%20%uD835%uDDD7%uD835%uDDE2%uD835%uDDEA%uD835%uDDE1%20%uD835%uDDD7%uD835%uDDE2%20%uD835%uDDE1%uD835%uDDE2%uD835%uDDE7%20%uD835%uDDE7%uD835%uDDE2%uD835%uDDE8%uD835%uDDD6%uD835%uDDDB%20%uD835%uDDD4%uD835%uDDE1%uD835%uDDEC%uD835%uDDE7%uD835%uDDDB%uD835%uDDDC%uD835%uDDE1%uD835%uDDDA%0A%20*/%0A%0A%26lt%3B%21--%25UserAgentsEditor%25--%26gt%3B%26lt%3B%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%20%3F%26gt%3B%0A%26lt%3B%3Fxml-stylesheet%20href%3D%22chrome%3A//global/skin/%22%20%3F%26gt%3B%0A%26lt%3B%3Fxml-stylesheet%20href%3D%22data%3Atext/css%3Bcharset%3Dutf-8%2C%0Awindow%20*%20%7B%0A%09font-family%3A%20%26amp%3Bquot%3BOpen%20Sans%26amp%3Bquot%3B%2C%20Helvetica%2C%20Arial%2C%20sans-serif%20%21important%3B%0A%7D%0A.convert-to-panel%20%7B%0A%09-moz-appearance%3A%20none%20%21important%3B%0A%09-moz-binding%3A%20url%28%26amp%3Bquot%3Bchrome%3A//global/content/bindings/popup.xml%2523arrowpanel%26amp%3Bquot%3B%29%20%21important%3B%0A%09background%3A%20transparent%20%21important%3B%0A%09border%3A%20none%20%21important%3B%0A%09-moz-image-region%3A%20auto%20%21important%3B%0A%7D%0Acaption%20.caption-text%2C%0A.bold_text%20%7B%0A%09font-weight%3A%20bold%20%21important%3B%0A%7D%0A.warning%7B%0A%09font-weight%3A%20bold%20%21important%3B%0A%09color%3A%20red%20%21important%3B%0A%7D%0Abutton%20.button-text%20%7B%0A%09display%3A%20inline-block%20%21important%3B%0A%09text-align%3A%20left%20%21important%3B%0A%7D%0Abutton%20%7B%0A%09min-width%3A%200%20%21important%3B%0A%7D%0A.optional%20%7B%0A%09outline%3A%202px%20solid%20green%20%21important%3B%0A%7D%0A.required%20%7B%0A%09outline%3A%202px%20solid%20orange%20%21important%3B%0A%7D%0A.optional%2C%0A.required%2C%0A.experimental%20%7B%0A%09margin-top%3A%205px%20%21important%3B%0A%09margin-bottom%3A%205px%20%21important%3B%0A%7D%0Agroupbox%20%7B%0A%09-moz-appearance%3A%20groupbox%20%21important%3B%0A%09border%3A%202px%20groove%20ThreeDFace%20%21important%3B%0A%09border-radius%3A%203px%20%21important%3B%0A%09margin%3A%203px%20%21important%3B%0A%09padding%3A%203px%203px%206px%20%21important%3B%0A%7D%0A.groupbox-body%20%7B%0A%09padding%3A%20inherit%20%21important%3B%0A%7D%0Acaption%20%7B%0A%09margin%3A%200%206px%20%21important%3B%0A%09background-color%3A%20-moz-Dialog%20%21important%3B%0A%7D%0A/*%20%21important%20is%20needed%20to%20override%20label%20in%20global.css%20*/%0A.caption-text%20%7B%0A%09margin%3A%200%202px%20%21important%3B%0A%7D%0Aresizer%20%7B%0A%09-moz-appearance%3A%20none%20%21important%3B%0A%09background-image%3A%20none%20%21important%3B%0A%7D%0A.pseudo_menupopup%20%7B%0A%09-moz-appearance%3A%20menupopup%20%21important%3B%0A%09padding%3A%205px%20%21important%3B%0A%09overflow-x%3A%20auto%20%20%21important%3B%0A%09overflow-y%3A%20auto%20%20%21important%3B%0A%7D%0A.edit-user-agent%20%7B%0A%09list-style-image%3A%20url%28%26amp%3Bquot%3Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAABbklEQVQokX2QP0sCcRzGv+kZiC7+/PNT8w/INeh2kzl0bg4SUZESDSHkWwgMMsgGIdPBMDRvUQKXIpcgiTh0EITruPfgvY+n5YYG9YEPz/SBh4fICoDtWq0mtdvtCIAt2hQATlmWDwVB+Pb5fI1OpxNdKwGwZzKZA0EQVCL6JSKNMdYEEFgpAbCXSqU8Y+ydiKYWGmPsod/vr54HwKMoSiEWiw2I6MviJxgM3m2SXOPx+DQej78Q0YfFp9frvd80zzUcDk/C4XCHiF4dDsfA7Xa/BQKBW1VVfetO8IxGo2NRFB9FUax3u90LzvlTNpvdB2BfJ7kmk8lRKpVqcs7buVzuJplMXs7ncycBsCmKEq9Wq5Ku6/5KpSLpuu5vNBrp2Wx2Vi6Xr6LR6HMoFLqu1+sJAiDIslzknLd6vV76f+fz+XMACdM091qtVnE6ne4SAJthGJKmaYXlcrmzWCwKpmlGNE0rGIYhAbBZOAEIf/lbwByZlq46AAAAAElFTkSuQmCC%26amp%3Bquot%3B%29%20%21important%3B%0A%09-moz-image-region%3A%20auto%20%21important%3B%0A%7D%0A.delete-user-agent%20%7B%0A%09list-style-image%3A%20url%28%26amp%3Bquot%3Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAABVklEQVQokWNgoAT8//+f+////9xofB5cigXmGemnz9LRyX97+zbf29u3+Wbp6OTPN9TP+P//vwCGyavsrdLm8HH+XCDA/X6Fo33aSif71AUC3O/n8HH+XGFnmY5i0////7n3piTVH1aVfXFAVuT/aknB96skBd8fkBX5f0RV9sXelJQGZKdCNH3+LPaot7P2vL7yi1MaUv9PaUj9P6+v/OJxT0fd/8+fxTD9cPs23/6YoPSTJipvrxsr/L9urPD/pInK2/2xgRn/b9/mw/DDDh+7/AMGcu/vWKv9f+is++Khs+6LO9Zq/w8ayL3f4W1bgOKk////89yb0F763FPv22tfkxcfF0yo+7xwYu1rX5MXzz31vj2Y0F6KEbz///+X/r16Tsn3ma21/7+8FP//+bPY95mttT9WzS79//+/NK64EPv//7/E////GaFY4v///+JYFRMLAKUewtoAYB96AAAAAElFTkSuQmCC%26amp%3Bquot%3B%29%20%21important%3B%0A%09-moz-image-region%3A%20auto%20%21important%3B%0A%7D%0A.save_changes%20%7B%0A%09list-style-image%3A%20url%28%26amp%3Bquot%3Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACdElEQVQ4jWNgIBGE/mdgZvjPwEiqPgYGBgaGpCOGUhX3XFO630Zapp0xZiVJc/QSFb78aw4dXe/C3k/8lnCj73OkfcN/BiaiNEfsUpfKPGfV0fDE/33jc///PR8i/nW9iz5Rez/QnoGBgYHBYT4Dh/cGNdugHZqS6Jq9l8oJppyw6ml8FvCx6Lbz/7iThv8zL1n9r37k+6fgusdGBoYGBqbQvXpOmeecbqecsu33XKUiCtNsPJOBNXiHfm/NQ78veTcd/wcf0vofsF/9f+BBjX/RR40fxBwx8WNIOWinWHnPd3/di8B/1Q/93yYcse6yWSonqDddXCxgi/bkyge+XzOu2f332qv632238n+P3Sr//XZr3wnaoRvlOUmFnaHgivu2kocevz32qf5PvGT1r+Ke/2fvDdqz3NapL25+Efol8ZLVf8edCv9tt8n+t9sm999lu9oZv42adtqrtNkYGBgYGKy2yW212S73w2Sz5D+LrTL/k6/a/C+74/u/7I7P/9gLFv9NNknC8F+LdbIX7NcqO6IEkvpyLimdNcKLtdaK/tBaK/LfYKPE//Bzpv+DThn9198g/l9rrch/7TWif3SXS14wWSLvaTyTATP+pZYLycqvFFijuJL/p+JKgf9KqwT/K60U+K+4UuC/4gqBvyoLRS6oTRW1wZsCBRdxykks5loovoT7k/gS7v/iS7j/iy/i+S81i/eCTL+gJwMDEcmXdy6DOt88toW8C9h+8s1l+88/keOMSCuPI0MaFmfjAIwM/QwKbNMY1rJ0Mp5kKGOwIFYjDLAyCDAI8ITyaHH7cOszSDMIMzAQbzuqS4jxMwMDAwDtNu92OyP2UwAAAABJRU5ErkJggg%3D%3D%26amp%3Bquot%3B%29%20%21important%3B%0A%09-moz-image-region%3A%20auto%20%21important%3B%0A%7D%0A.cancel_changes%20%7B%0A%09list-style-image%3A%20url%28%26amp%3Bquot%3Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADdklEQVQ4jXVTb0yUBRx+3n+8977vve/BcXhIBzg5CMZRCAvGSIZQMCXpRFhkagRjTkjStdr6M9bW1/rCt1tZ0vDUU1E4QMHrAMk7F4zDY4qYRBdkyzJK0eMC9+sLOGnr+fo8z2+/Pc8eYBVtgHZSH2NzqqoJ/4Muk0l1WSxZLovFuI4oAKTjVXu2Tbd++tmNhsbac9HR0f81d8CoTVZUVk01t3x+vGJ3+U5AXuOi7BbL9q79jRf/cp5duvNRa9Cfld3YqaqxawIXNOPlrOy6UPORwJ9tX0Z69tV7X0vc9CoAHarzi2u/2P3GlZm6g0sP322lB4c/WAlVVk+NbEpp+QZQHIDcn7y5aXa7/fr95vdWHh75mGbr3444il4e3ZWZ+ybeyi89PdBwKLywrYLu5hfTvXI7LVbtodmcvJ/G8l9850p2dtN0uu3H+6U76Peicrr7wlb6e2sZ9ReWRRqyCvtRkbblpQMZz53tS9z8IGTaQLfNCfSb7XlaTH2W7lVW/fpHUfH8gmkD3TEn0A8xsRSKNpInLv7RgbiN/fbEDDsACGmCkNek6DvcmmFxVBRpWBDopiDQgiWJfjbF0QTL0iDDkJ/jyC1EhQ/xUefTgWIAurWcuAIgvUXQdZxStMcXeIHOAdQHhroB6gSoh2HIyfGPDzPc+RIgBwC/rqYagHsfyOvOsA0PWJLoGMfRUYCOAvQVw5A72kiuBEvwQ6C8BuDWmdsA8YQk5Z9R9Kd6FH3YxfPUDpCTYegEy1I7QCd5ntx6/cppWd/ZLkkFn6y97wAEF8+XXFDUbo8kh3tZjnoA8jAMjcYYadwcT98yDPUC1Mdy5JHkcK+i9BwTxTIHIOD7fXU7v0uxDg6K4pKXZWkEoHGWpRuSRBMJlvlgivX2TVmmwCrnZVkaEnVLg0bTiDstw47x6tquyS05ER/H0RhA0yxLIVlevqaqtwZEsXlA0e29ZjAEQ6r6z61VjY/jacK8cdmfneuFL7egxm8yXbouSY/mFIV+0bTlSU0LDIniwUuAwQHIHp1ubzDG4JtX1chcVBRNSfLSVVX1X7Va6/E1oBvmUTKT+Ez3fGFheNJqDfgEYb8HeLKFPkAbkaRd43GxvrlUa2TGbPaOcNwr/YDyJEh3UlLpZZvtzFRm5utjTy3tqSNiID5+x1BqivNicnJFGyACwL8fh1x5BGHtQgAAAABJRU5ErkJggg%3D%3D%26amp%3Bquot%3B%29%20%21important%3B%0A%09-moz-image-region%3A%20auto%20%21important%3B%0A%7D%0A.extra_info_pop%20%7B%0A%09list-style-image%3A%20url%28%26amp%3Bquot%3Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACaElEQVQ4jYWSS0wTYRSFb60xaNo0TjTj1mRaFkgZkuJmNmxN7FBpiBtTqgYbSSRhIiUmoImPnc6004elPKIGdWcirKS8dFHYuZBKRIxGxyISjKFI04H0uBhEsAVP8u/u/f57zz1EZSQIotUpBit5d0sd726pqzkjOQRBtJarLVGNeKWR84cnWWk0a+vOrNq6M6uslMpy/vAk77ns2bWxqqnVYveHEkzntE4KYAoDR2N5WKI6KAyQAjDBKZ1rVuJVTa2WEoDdH0ocvJNdJxWgKHAsuYaR2WXcndCwP7oOigAUAipuabrDJ8dKxmY6p3VSAYoBdB840r+Gp6+/4dqLzzAnNkBxbEGYq2m92h1o2DKM84cnKWT8TAnAlNxA45M5SMNzuPBsHof710BJGBAVILkIrlkeFwTBSk4xWMlKo1lSNwuSgGmgiJODGjILK/i0/AvHB1dAfQacosYUbHtK470dduIbW+ps1zOrFDFGp16AHgDmhwUMz343AI9XQP0A9WyuGAJsXTO5WjHg2hMw9Hbx/4Cas5KDlVI7VqABwDxQwFBmcY8VRjTe22bfNFGd2G4i9QLm3m2AR7lSE33KWH19vZEH3nPJw3RO7TjjoXgOo++W8PVnHif6FmCKFf+esSNdcJ6+6N6RBe68Eq+4remkAvtCedx4/gap2SW8ev8DPS8/wBX/aATp5hedOydHykbZ4ZdjTDCtk1KERc3DGsnDqhrvgKyDCaYLnO9epGyU/6jaHWjgmuVxtj2l2bpmcraumRwrjWicTxlzngq4d23cLkEQrLy3w14rBly1YsDFe9vsW4b9o9/mTMrMlE74aAAAAABJRU5ErkJggg%3D%3D%26amp%3Bquot%3B%29%20%21important%3B%0A%09-moz-image-region%3A%20auto%20%21important%3B%0A%7D%0A%22%20type%3D%22text/css%22%20%3F%26gt%3B%0A%26lt%3Bwindow%20id%3D%22%25U_I_D%25_user_agents_editor%22%0A%09%20%20%20%20onload%3D%22%24.onLoad%28%29%3B%22%0A%09%20%20%20%20onunload%3D%22%24.onUnLoad%28%29%3B%22%0A%09%20%20%20%20xmlns%3D%22http%3A//www.mozilla.org/keymaster/gatekeeper/there.is.only.xul%22%26gt%3B%0A%26lt%3Bscript%26gt%3B%26lt%3B%21%5BCDATA%5B%0Avar%20Cc%20%3D%20Components.classes%3B%0Avar%20Ci%20%3D%20Components.interfaces%3B%0Avar%20Cu%20%3D%20Components.utils%3B%0ACu.import%28%22resource%3A//gre/modules/Services.jsm%22%29%3B%0Avar%20stg%20%3D%20window._storage%3B%0Avar%20cb_btn%20%3D%20stg.button%3B%0A%0Afunction%20%24id%28aID%2C%20aParent%29%20%7B%0A%09if%20%28%21aParent%29%0A%09%09return%20document.getElementById%28aID%29%3B%0A%09return%20aParent.getElementById%28aID%29%3B%0A%7D%0Avar%20%24%20%3D%20%7B%0A%09onLoad%3A%20function%28%29%20%7B%0A%09%09window.editPanelTarget%20%3D%20null%3B%0A%09%09%24.populateBox%28%29%3B%0A%09%09window.addEventListener%28%22focus%22%2C%20%24%2C%20false%29%3B%0A%09%09window.addEventListener%28%22blur%22%2C%20%24%2C%20false%29%3B%0A%09%09%24.highlightButton%28cb_btn%2C%201%29%3B%0A%09%7D%2C%0A%09handleEvent%3A%20function%28aE%29%20%7B%0A%09%09switch%20%28aE.type%29%20%7B%0A%09%09%09case%20%22focus%22%3A%0A%09%09%09%09%24.highlightButton%28cb_btn%2C%201%29%3B%0A%09%09%09%09break%3B%0A%09%09%09case%20%22blur%22%3A%0A%09%09%09%09%24.highlightButton%28cb_btn%2C%202%29%3B%0A%09%09%09%09break%3B%0A%09%09%7D%0A%09%7D%2C%0A%09onUnLoad%3A%20function%28%29%20%7B%0A%09%09%24.highlightButton%28cb_btn%29%3B%0A%09%7D%2C%0A%09populateBox%3A%20function%28%29%20%7B%0A%09%09let%20uaArray%20%3D%20stg.data%3B%0A%09%09let%20o%20%3D%200%2C%0A%09%09%09oLen%20%3D%20uaArray.length%3B%0A%09%09for%20%28%3B%20o%20%26lt%3B%20oLen%3B%20o++%29%20%7B%0A%09%09%09let%20obj%20%3D%20uaArray%5Bo%5D%3B%0A%09%09%09let%20lbl%20%3D%20obj%5B%22label%22%5D%20%7C%7C%20%22%22%3B%0A%09%09%09%24.createItems%28lbl%2C%20obj%29%3B%0A%09%09%7D%0A%09%7D%2C%0A%09highlightButtonTimer%3A%20null%2C%0A%09highlightButton%3A%20function%28aEl%2C%20aStyle%29%20%7B%0A%09%09aEl.style.removeProperty%28%22border-color%22%29%3B%0A%09%09aEl.style.removeProperty%28%22box-shadow%22%29%3B%0A%09%09aEl.style.removeProperty%28%22outline%22%29%3B%0A%09%09aEl.style.removeProperty%28%22outline-offset%22%29%3B%0A%09%09aEl.style.removeProperty%28%22transition-duration%22%29%3B%0A%09%09if%20%28%21aStyle%29%0A%09%09%09return%20true%3B%0A%09%09clearTimeout%28%24.highlightButtonTimer%29%3B%0A%09%09%24.highlightButtonTimer%20%3D%20setTimeout%28function%28%29%20%7B%0A%09%09%09switch%20%28aStyle%29%20%7B%0A%09%09%09%09case%201%3A%0A%09%09%09%09%09aEl.style.setProperty%28%22border-color%22%2C%20%22rgba%280%2C200%2C0%2C1%29%22%2C%20%22important%22%29%3B%0A%09%09%09%09%09aEl.style.setProperty%28%22box-shadow%22%2C%20%220%200%201px%201px%20rgba%280%2C200%2C0%2C1%29%22%2C%20%22important%22%29%3B%0A%09%09%09%09%09aEl.style.setProperty%28%22outline%22%2C%20%222px%20solid%20rgba%280%2C200%2C0%2C1%29%22%2C%20%22important%22%29%3B%0A%09%09%09%09%09aEl.style.setProperty%28%22outline-offset%22%2C%20%22-2px%22%2C%20%22important%22%29%3B%0A%09%09%09%09%09aEl.style.setProperty%28%22transition-duration%22%2C%20%2210ms%22%2C%20%22important%22%29%3B%0A%09%09%09%09%09break%3B%0A%09%09%09%09case%202%3A%0A%09%09%09%09%09aEl.style.setProperty%28%22border-color%22%2C%20%22rgba%280%2C200%2C0%2C.2%29%22%2C%20%22important%22%29%3B%0A%09%09%09%09%09aEl.style.setProperty%28%22box-shadow%22%2C%20%220%200%201px%201px%20rgba%280%2C200%2C0%2C.2%29%22%2C%20%22important%22%29%3B%0A%09%09%09%09%09aEl.style.setProperty%28%22outline%22%2C%20%222px%20dotted%20rgba%280%2C200%2C0%2C.2%29%22%2C%20%22important%22%29%3B%0A%09%09%09%09%09aEl.style.setProperty%28%22outline-offset%22%2C%20%22-2px%22%2C%20%22important%22%29%3B%0A%09%09%09%09%09aEl.style.setProperty%28%22transition-duration%22%2C%20%2210ms%22%2C%20%22important%22%29%3B%0A%09%09%09%09%09break%3B%0A%09%09%09%7D%0A%09%09%7D%2C%2010%29%3B%0A%09%7D%2C%0A%09highlightElement%3A%20function%28aEl%2C%20aRem%29%20%7B%0A%09%09aEl.style.removeProperty%28%22background%22%29%3B%0A%09%09aEl.style.removeProperty%28%22border-color%22%29%3B%0A%09%09aEl.style.removeProperty%28%22box-shadow%22%29%3B%0A%09%09aEl.style.removeProperty%28%22outline%22%29%3B%0A%09%09aEl.style.removeProperty%28%22outline-offset%22%29%3B%0A%09%09if%20%28aRem%29%0A%09%09%09return%20true%3B%0A%09%09aEl.style.setProperty%28%22background%22%2C%20%22rgba%280%2C255%2C0%2C.25%29%22%2C%20%22important%22%29%3B%0A%09%09aEl.style.setProperty%28%22border-color%22%2C%20%22rgba%280%2C200%2C0%2C1%29%22%2C%20%22important%22%29%3B%0A%09%09aEl.style.setProperty%28%22box-shadow%22%2C%20%220%200%201px%201px%20rgba%280%2C200%2C0%2C.5%29%22%2C%20%22important%22%29%3B%0A%09%09aEl.style.setProperty%28%22outline%22%2C%20%222px%20solid%20rgba%280%2C200%2C0%2C1%29%22%2C%20%22important%22%29%3B%0A%09%09aEl.style.setProperty%28%22outline-offset%22%2C%20%22-2px%22%2C%20%22important%22%29%3B%0A%09%7D%2C%0A%09onAccept%3A%20function%28%29%20%7B%0A%09%09let%20uaArray%20%3D%20%5B%5D%3B%0A%09%09try%20%7B%0A%09%09%09let%20box%20%3D%20%24id%28%22container-box%22%29%3B%0A%09%09%09Array.prototype.slice.call%28box.getElementsByTagName%28%22menuitem%22%29%29.forEach%28function%28aMI%29%20%7B%0A%09%09%09%09uaArray.push%28aMI._data%29%3B%0A%09%09%09%7D%29%3B%0A%09%09%7D%20finally%20%7B%0A%09%09%09setTimeout%28function%28%29%20%7B%0A%09%09%09%09let%20JSONData%20%3D%20JSON.stringify%28uaArray%29%3B%0A%09%09%09%09cb_btn.UserAgentSwitcher.sPref%28%22pUserAgentsJSON%22%2C%20JSONData%29%3B%0A%09%09%09%7D%2C%20100%29%3B%0A%09%09%7D%0A%09%7D%2C%0A%09reportError%3A%20function%28aRejectReason%29%20%7B%0A%09%09try%20%7B%0A%09%09%09console.error%28aRejectReason%29%3B%0A%09%09%7D%20catch%20%28aErr%29%20%7B%0A%09%09%09Cu.reportError%28%5Bcb_btn.name%20+%20%22%3A%20%22%20+%20cb_btn.id%2C%20aRejectReason%2C%20aRejectReason.stack%5D.join%28%22%5Cn%22%29%29%3B%0A%09%09%7D%0A%09%7D%2C%0A%09dummyData%3A%20function%28aType%29%20%7B%0A%09%09switch%20%28aType%29%20%7B%0A%09%09%09case%20%22userAgent%22%3A%0A%09%09%09%09return%20%7B%0A%09%09%09%09%09%22label%22%3A%20%22User%20Agent%22%2C%0A%09%09%09%09%09%22accesskey%22%3A%20%22%22%2C%0A%09%09%09%09%09%22agent%22%3A%20%22%22%2C%0A%09%09%09%09%7D%3B%0A%09%09%09case%20%22%5Bmenuseparator%5D%22%3A%0A%09%09%09%09return%20%7B%0A%09%09%09%09%09%22label%22%3A%20%22%5Bmenuseparator%5D%22%2C%0A%09%09%09%09%7D%3B%0A%09%09%7D%0A%09%7D%2C%0A%09createItems%3A%20function%28aLabel%2C%20aData%29%20%7B%0A%09%09let%20box%20%3D%20%24id%28%22container-box%22%29%3B%0A%09%09let%20hbox%20%3D%20box.appendChild%28%24.%24CNS%28%22hbox%22%2C%20%7B%0A%09%09%09align%3A%20%22center%22%0A%09%09%7D%29%29%3B%0A%09%09let%20mI%20%3D%20hbox.appendChild%28%24.%24CNS%28%22menuitem%22%2C%20%7B%0A%09%09%09label%3A%20aLabel%2C%0A%09%09%09flex%3A%20%221%22%2C%0A%09%09%09class%3A%20%22menuitem-iconic%22%2C%0A%09%09%7D%29%29%3B%0A%09%09mI._data%20%3D%20aData%3B%0A%09%09hbox.appendChild%28%24.%24CNS%28%22button%22%2C%20%7B%0A%09%09%09tooltiptext%3A%20%22Delete%20item%22%2C%0A%09%09%09mousethrough%3A%20%22never%22%2C%0A%09%09%09class%3A%20%22delete-user-agent%22%2C%0A%09%09%09oncommand%3A%20%22%24.removeItem%28event%2C%20this%29%3B%22%0A%09%09%7D%29%29%3B%0A%09%09if%20%28aLabel%20%21%3D%3D%20%22%5Bmenuseparator%5D%22%29%20%7B%0A%09%09%09hbox.appendChild%28%24.%24CNS%28%22button%22%2C%20%7B%0A%09%09%09%09tooltiptext%3A%20%22Edit%20User%20Agent%22%2C%0A%09%09%09%09mousethrough%3A%20%22never%22%2C%0A%09%09%09%09class%3A%20%22edit-user-agent%22%2C%0A%09%09%09%09oncommand%3A%20%22%24.editItem%28event%29%3B%22%0A%09%09%09%7D%29%29%3B%0A%09%09%7D%0A%09%7D%2C%0A%09removeItem%3A%20function%28aE%2C%20aNode%29%20%7B%0A%09%09if%20%28stg.accel%28aE%29%29%20%7B%0A%09%09%09aNode.parentNode.parentNode.removeChild%28aNode.parentNode%29%3B%0A%09%09%09return%20true%3B%0A%09%09%7D%0A%09%09let%20cBox%20%3D%20stg.custombuttons.confirmBox%28%22User%20Agent%20Switcher%22%2C%20%22Delete%20custom%20engine%3F%5Cn%5Cn%22%20+%0A%09%09%09%22Keep%20the%20%22%20+%20stg.accel%28%29%20+%20%22%20key%20pressed%20to%20delete%20items%20without%20confirmation.%22%2C%20%22Yes%22%2C%20%22Cancel%22%29%3B%0A%09%09if%20%28cBox%29%20%7B%0A%09%09%09aNode.parentNode.parentNode.removeChild%28aNode.parentNode%29%3B%0A%09%09%7D%20else%0A%09%09%09return%20false%3B%0A%09%7D%2C%0A%09populateEditPanel%3A%20function%28aFakeMI%2C%20aNode%2C%20aTarget%29%20%7B%0A%09%09window.editPanelTarget%20%3D%20aTarget.parentNode%3B%0A%09%09%24.highlightElement%28window.editPanelTarget%29%3B%0A%09%09let%20dataObj%20%3D%20aFakeMI._data%3B%0A%09%09let%20vbox%20%3D%20%24id%28%22user_agent_box%22%29%3B%0A%09%09let%20tempBox%3B%0A%09%09try%20%7B%0A%09%09%09try%20%7B%0A%09%09%09%09let%20id%20%3D%20vbox.getAttribute%28%22id%22%29%3B%0A%09%09%09%09tempBox%20%3D%20vbox.cloneNode%28true%29%3B%0A%09%09%09%09tempBox.setAttribute%28%22id%22%2C%20id%20+%20%22-cloned%22%29%3B%0A%09%09%09%7D%20finally%20%7B%0A%09%09%09%09aNode.appendChild%28tempBox%29%3B%0A%09%09%09%7D%0A%09%09%7D%20finally%20%7B%0A%09%09%09Array.prototype.slice.call%28tempBox.getElementsByAttribute%28%22data-attr%22%2C%20%22*%22%29%29.forEach%28function%28aEl%29%20%7B%0A%09%09%09%09let%20attrName%20%3D%20aEl.getAttribute%28%22data-attr%22%29%3B%0A%09%09%09%09let%20attrVal%20%3D%20dataObj%5BattrName%5D%3B%0A%09%09%09%09//%20This%20crap%20doesn%27t%20work%20on%20normal%20textboxes%2C%20but%20it%20does%20on%20number%20textboxes.%0A%09%09%09%09aEl%20%26amp%3B%26amp%3B%20%28aEl.value%20%3D%20attrVal%29%3B%0A%09%09%09%09//%20And%20this%20crap%20doesn%27t%20work%20on%20number%20textboxes%2C%20but%20it%20does%20on%20normal%20textboxes.%20WTF%21%3F%21%3F%21%3F%21%0A%09%09%09%09aEl%20%26amp%3B%26amp%3B%20aEl.setAttribute%28%22value%22%2C%20attrVal%29%3B%0A%09%09%09%7D%29%3B%0A%09%09%7D%0A%09%7D%2C%0A%09editItem%3A%20function%28aE%2C%20aType%29%20%7B%0A%09%09let%20panel%20%3D%20%24.panel%3B%0A%09%09if%20%28panel%20%26amp%3B%26amp%3B%20%28panel.state%20%3D%3D%3D%20%22open%22%20%7C%7C%20panel.state%20%3D%3D%3D%20%22opening%22%29%29%0A%09%09%09return%20false%3B%0A%09%09let%20fakeMI%20%3D%20aE.target.parentNode.firstChild%3B%0A%09%09%24.populateEditPanel%28fakeMI%2C%20panel.firstChild%2C%20aE.target%29%3B%0A%09%09panel.openPopup%28aE.target%2C%20%22%22%2C%200%2C%200%2C%20false%2C%20null%2C%20null%29%3B%0A%09%7D%2C%0A%09onEditPanelAccept%3A%20function%28%29%20%7B%0A%09%09let%20panel%20%3D%20%24.panel%3B%0A%09%09let%20item%20%3D%20window.editPanelTarget.firstChild%3B%0A%09%09try%20%7B%0A%09%09%09Array.prototype.slice.call%28panel.getElementsByAttribute%28%22data-attr%22%2C%20%22*%22%29%29.forEach%28function%28aEl%29%20%7B%0A%09%09%09%09let%20attrName%20%3D%20aEl.getAttribute%28%22data-attr%22%29%3B%0A%09%09%09%09item._data%5BattrName%5D%20%3D%20aEl.value%20%7C%7C%20%22%22%3B%0A%09%09%09%7D%29%3B%0A%09%09%7D%20finally%20%7B%0A%09%09%09%24.updateCustomEngine%28item%29%3B%0A%09%09%09%24.onEditPanelCancel%28%29%3B%0A%09%09%7D%0A%09%7D%2C%0A%09updateCustomEngine%3A%20function%28aItem%29%20%7B%0A%09%09aItem.setAttribute%28%22label%22%2C%20aItem._data%5B%22label%22%5D%20%7C%7C%20%22%22%29%3B%0A%09%7D%2C%0A%09onEditPanelCancel%3A%20function%28%29%20%7B%0A%09%09let%20panel%20%3D%20%24.panel%3B%0A%09%09panel%20%26amp%3B%26amp%3B%20panel.hidePopup%28%29%3B%0A%09%09if%20%28window.editPanelTarget%29%20%7B%0A%09%09%09%24.highlightElement%28window.editPanelTarget%2C%20true%29%3B%0A%09%09%7D%0A%09%7D%2C%0A%09onEditPanelHidden%3A%20function%28aE%2C%20aN%29%20%7B%0A%09%09if%20%28aE.target%20%21%3D%3D%20aN%29%0A%09%09%09return%20false%3B%0A%09%09aE.stopPropagation%28%29%3B%0A%09%7D%2C%0A%09onEditPanelHiding%3A%20function%28aE%2C%20aN%29%20%7B%0A%09%09if%20%28aE.target%20%21%3D%3D%20aN%29%0A%09%09%09return%20false%3B%0A%09%09aN.firstChild.textContent%20%3D%20%22%22%3B%0A%09%09%24.highlightElement%28window.editPanelTarget%2C%20true%29%0A%09%09window.editPanelTarget%20%3D%20null%3B%0A%09%09aE.stopPropagation%28%29%3B%0A%09%7D%2C%0A%09%24CNS%3A%20function%28aElName%2C%20aAttrs%29%20%7B%20//%20Creates%20elements%0A%09%09var%20el%20%3D%20document.createElement%28aElName%29%3B%0A%09%09if%20%28aAttrs%29%0A%09%09%09Object.keys%28aAttrs%29.forEach%28function%28n%29%20%7B%0A%09%09%09%09if%20%28aAttrs%5Bn%5D%20%21%3D%3D%20%22%22%29%0A%09%09%09%09%09el.setAttribute%28n%2C%20aAttrs%5Bn%5D%29%0A%09%09%09%7D%29%3B%0A%09%09return%20el%3B%0A%09%7D%2C%0A%09draggedElement%3A%20null%2C%0A%09DragAndDropHandler%3A%20%7B%0A%09%09handleEvent%3A%20function%28aE%29%20%7B%0A%09%09%09switch%20%28aE.type%29%20%7B%0A%09%09%09%09case%20%22dragstart%22%3A%0A%09%09%09%09%09if%20%28%21stg.accel%28aE%29%20%7C%7C%20%21%21window.editPanelTarget%29%0A%09%09%09%09%09%09return%20false%3B%0A%09%09%09%09%09let%20target%20%3D%20aE.target%3B%0A%09%09%09%09%09if%20%28target.nodeName%20%21%3D%3D%20%22hbox%22%29%0A%09%09%09%09%09%09%24.draggedElement%20%3D%20target.parentNode%3B%0A%09%09%09%09%09if%20%28%24.draggedElement.nodeName%20%21%3D%3D%20%22hbox%22%29%0A%09%09%09%09%09%09%24.draggedElement%20%3D%20null%3B%0A%09%09%09%09%09if%20%28getComputedStyle%28%24.draggedElement%29.outlineStyle%20%21%3D%3D%20%22none%22%29%20%7B%0A%09%09%09%09%09%09%24.draggedElement%20%3D%20null%3B%0A%09%09%09%09%09%09return%20false%3B%0A%09%09%09%09%09%7D%0A%09%09%09%09%09aE.dataTransfer.setData%28%22text/plain%22%2C%20%22dummy%22%29%3B%20//%20Stupid%20piece%20of%20SHEET%21%21%21%21%21%0A%09%09%09%09%09break%3B%0A%09%09%09%09case%20%22dragover%22%3A%0A%09%09%09%09%09aE.preventDefault%28%29%3B%0A%09%09%09%09%09break%3B%0A%09%09%09%09case%20%22drop%22%3A%0A%09%09%09%09%09aE.preventDefault%28%29%3B%0A%09%09%09%09%09let%20insPoint%20%3D%20aE.target.parentNode%3B%0A%09%09%09%09%09if%20%28insPoint%20%26amp%3B%26amp%3B%20insPoint.nodeName%20%3D%3D%3D%20%22hbox%22%29%20%7B%0A%09%09%09%09%09%09insPoint.parentNode.insertBefore%28%24.draggedElement%2C%20insPoint%29%3B%0A%09%09%09%09%09%7D%20else%20if%20%28aE.target.nodeName%20%3D%3D%3D%20%22vbox%22%29%20%7B%0A%09%09%09%09%09%09aE.target.appendChild%28%24.draggedElement%29%3B%0A%09%09%09%09%09%7D%0A%09%09%09%09%09break%3B%0A%09%09%09%7D%0A%09%09%09aE.stopPropagation%28%29%3B%0A%09%09%7D%0A%09%7D%2C%0A%09setTextboxValue%3A%20function%28aE%2C%20aDataAttr%29%20%7B%0A%09%09let%20el%20%3D%20%24.panel.getElementsByAttribute%28%22data-attr%22%2C%20aDataAttr%29%5B0%5D%3B%0A%09%09el%20%26amp%3B%26amp%3B%20%28el.value%20%3D%20aE.target.value%29%3B%0A%09%7D%2C%0A%09get%20panel%28%29%20%7B%0A%09%09return%20%24id%28%22edit-user-agent-panel%22%29%3B%0A%09%7D%2C%0A%7D%3B%0A%5D%5D%26gt%3B%26lt%3B/script%26gt%3B%0A%09%26lt%3Bkeyset%26gt%3B%0A%09%09%26lt%3Bkey%20keycode%3D%22VK_ESCAPE%22%20oncommand%3D%22return%20false%3B%22/%26gt%3B%0A%09%26lt%3B/keyset%26gt%3B%0A%09%26lt%3Bvbox%20flex%3D%221%22%26gt%3B%0A%09%09%26lt%3Bvbox%20id%3D%22container-box%22%0A%09%09%09%09%20%20minheight%3D%2250%22%0A%09%09%09%09%20%20flex%3D%221%22%0A%09%09%09%09%20%20class%3D%22pseudo_menupopup%22%0A%09%09%09%09%20%20context%3D%22pseudo-item-context%22%0A%09%09%09%09%20%20ondragstart%3D%22%24.DragAndDropHandler.handleEvent%28event%29%3B%22%0A%09%09%09%09%20%20ondragover%3D%22%24.DragAndDropHandler.handleEvent%28event%29%3B%22%0A%09%09%09%09%20%20ondrop%3D%22%24.DragAndDropHandler.handleEvent%28event%29%3B%22%26gt%3B%0A%09%09%26lt%3B/vbox%26gt%3B%0A%09%09%26lt%3Bseparator/%26gt%3B%0A%09%09%26lt%3Bhbox%26gt%3B%0A%09%09%09%09%26lt%3Bspacer%20flex%3D%221%22/%26gt%3B%0A%09%09%09%09%26lt%3Bbutton%20label%3D%22Insert%20a%20new%20item%22%20type%3D%22menu%22%26gt%3B%0A%09%09%09%09%09%26lt%3Bmenupopup%20consumeoutsideclicks%3D%22false%22%20%26gt%3B%0A%09%09%09%09%09%09%26lt%3Bmenuitem%20label%3D%22Add%20an%20User%20Agent%22%0A%09%09%09%09%09%09%09%09%20%20oncommand%3D%22event.stopPropagation%28%29%3B%22%0A%09%09%09%09%09%09%09%09%20%20onclick%3D%22%24.createItems%28%27User%20Agent%27%2C%20%24.dummyData%28%27userAgent%27%29%29%3B%22/%26gt%3B%0A%09%09%09%09%09%09%26lt%3Bmenuitem%20label%3D%22Add%20a%20menuseparator%22%0A%09%09%09%09%09%09%09%09%20%20oncommand%3D%22event.stopPropagation%28%29%3B%22%0A%09%09%09%09%09%09%09%09%20%20onclick%3D%22%24.createItems%28%27%5Bmenuseparator%5D%27%2C%20%24.dummyData%28%27%5Bmenuseparator%5D%27%29%29%3B%22/%26gt%3B%0A%09%09%09%09%09%26lt%3B/menupopup%26gt%3B%0A%09%09%09%09%26lt%3B/button%26gt%3B%0A%09%09%09%09%26lt%3Bbutton%20popup%3D%22extra_info_pop%22%20tooltiptext%3D%22Extra%20info%22%20class%3D%22extra_info_pop%22%20/%26gt%3B%0A%09%09%09%09%26lt%3Bspacer%20flex%3D%221%22/%26gt%3B%0A%09%09%26lt%3B/hbox%26gt%3B%0A%09%09%26lt%3Bseparator/%26gt%3B%0A%09%09%26lt%3Bhbox%26gt%3B%0A%09%09%09%26lt%3Bspacer%20flex%3D%221%22/%26gt%3B%0A%09%09%09%26lt%3Bbutton%20label%3D%22Save%20changes%22%20class%3D%22save_changes%22%20oncommand%3D%22%24.onAccept%28%29%3B%22/%26gt%3B%0A%09%09%09%26lt%3Bbutton%20label%3D%22Cancel%22%20class%3D%22cancel_changes%22%20oncommand%3D%22close%28%29%3B%22/%26gt%3B%0A%09%09%09%26lt%3Bspacer%20flex%3D%221%22/%26gt%3B%0A%09%09%26lt%3B/hbox%26gt%3B%0A%09%09%26lt%3Bvbox%20collapsed%3D%22true%22%26gt%3B%0A%09%09%09%26lt%3Bgroupbox%20id%3D%22user_agent_box%22%20orient%3D%22vertical%22%20flex%3D%221%22%26gt%3B%0A%09%09%09%09%26lt%3Bcaption%20label%3D%22Edit%20User%20Agent%20item%22/%26gt%3B%0A%09%09%09%09%26lt%3Bgrid%26gt%3B%0A%09%09%09%09%09%26lt%3Bcolumns%26gt%3B%0A%09%09%09%09%09%09%26lt%3Bcolumn%20/%26gt%3B%0A%09%09%09%09%09%09%26lt%3Bcolumn%20flex%3D%221%22/%26gt%3B%0A%09%09%09%09%09%26lt%3B/columns%26gt%3B%0A%09%09%09%09%09%26lt%3Brows%26gt%3B%0A%09%09%09%09%09%09%26lt%3Brow%20align%3D%22center%22%26gt%3B%0A%09%09%09%09%09%09%09%26lt%3Blabel%20value%3D%22Label%22/%26gt%3B%0A%09%09%09%09%09%09%09%26lt%3Btextbox%20data-attr%3D%22label%22%20class%3D%22required%22/%26gt%3B%0A%09%09%09%09%09%09%26lt%3B/row%26gt%3B%0A%09%09%09%09%09%09%26lt%3Brow%20align%3D%22center%22%26gt%3B%0A%09%09%09%09%09%09%09%26lt%3Blabel%20value%3D%22User%20Agent%22/%26gt%3B%0A%09%09%09%09%09%09%09%26lt%3Btextbox%20data-attr%3D%22agent%22%20class%3D%22required%22/%26gt%3B%0A%09%09%09%09%09%09%26lt%3B/row%26gt%3B%0A%09%09%09%09%09%09%26lt%3Brow%20align%3D%22center%22%26gt%3B%0A%09%09%09%09%09%09%09%26lt%3Blabel%20value%3D%22Accesskey%22/%26gt%3B%0A%09%09%09%09%09%09%09%26lt%3Btextbox%20data-attr%3D%22accesskey%22%20class%3D%22optional%22/%26gt%3B%0A%09%09%09%09%09%09%26lt%3B/row%26gt%3B%0A%09%09%09%09%09%26lt%3B/rows%26gt%3B%0A%09%09%09%09%26lt%3B/grid%26gt%3B%0A%09%09%09%26lt%3B/groupbox%26gt%3B%0A%09%09%26lt%3B/vbox%26gt%3B%0A%09%26lt%3B/vbox%26gt%3B%0A%09%26lt%3Bseparator/%26gt%3B%0A%09%26lt%3Bpopupset%26gt%3B%0A%09%09%26lt%3Bpanel%20id%3D%22edit-user-agent-panel%22%0A%09%09%09%20%20%20consumeoutsideclicks%3D%22false%22%0A%09%09%09%20%20%20noautohide%3D%22true%22%0A%09%09%09%20%20%20backdrag%3D%22true%22%0A%09%09%09%20%20%20minwidth%3D%22500%22%0A%09%09%09%20%20%20flip%3D%22slide%22%0A%09%09%09%20%20%20flex%3D%221%22%0A%09%09%09%20%20%20class%3D%22convert-to-panel%22%0A%09%09%09%20%20%20position%3D%22end_before%22%0A%09%09%09%20%20%20onpopuphidden%3D%22%24.onEditPanelHidden%28event%2C%20this%29%3B%22%0A%09%09%09%20%20%20onpopuphiding%3D%22%24.onEditPanelHiding%28event%2C%20this%29%3B%22%0A%09%09%09%20%20%20orient%3D%22vertical%22%26gt%3B%0A%09%09%09%26lt%3Bvbox%20flex%3D%221%22%20/%26gt%3B%0A%09%09%09%26lt%3Bspacer%20flex%3D%220%22/%26gt%3B%0A%09%09%09%26lt%3Bhbox%26gt%3B%0A%09%09%09%09%26lt%3Bspacer%20flex%3D%221%22/%26gt%3B%0A%09%09%09%09%26lt%3Bbutton%20label%3D%22Save%22%20class%3D%22save_changes%22%20oncommand%3D%22%24.onEditPanelAccept%28%29%3Bevent.stopPropagation%28%29%3B%22/%26gt%3B%0A%09%09%09%09%26lt%3Bbutton%20label%3D%22Cancel%22%20class%3D%22cancel_changes%22%20oncommand%3D%22%24.onEditPanelCancel%28%29%3Bevent.stopPropagation%28%29%3B%22/%26gt%3B%0A%09%09%09%09%26lt%3Bspacer%20flex%3D%221%22/%26gt%3B%0A%09%09%09%26lt%3B/hbox%26gt%3B%0A%09%09%09%26lt%3Bhbox%26gt%3B%0A%09%09%09%09%26lt%3Bresizer%20element%3D%22edit-user-agent-panel%22%20type%3D%22window%22%20dir%3D%22bottomleft%22%20left%3D%220%22%20bottom%3D%220%22%20width%3D%2210%22%20height%3D%2210%22/%26gt%3B%0A%09%09%09%09%26lt%3Bspacer%20flex%3D%221%22/%26gt%3B%0A%09%09%09%09%26lt%3Bresizer%20element%3D%22edit-user-agent-panel%22%20type%3D%22window%22%20dir%3D%22bottomright%22%20right%3D%220%22%20bottom%3D%220%22%20width%3D%2210%22%20height%3D%2210%22/%26gt%3B%0A%09%09%09%26lt%3B/hbox%26gt%3B%0A%09%09%26lt%3B/panel%26gt%3B%0A%09%09%26lt%3Bpanel%20id%3D%22extra_info_pop%22%20type%3D%22arrow%22%20consumeoutsideclicks%3D%22false%22%20orient%3D%22vertical%22%20position%3D%22before_end%22%20flip%3D%22slide%22%26gt%3B%0A%09%09%09%26lt%3Bdescription%26gt%3BRearrange%20items%20by%20dragging%20them%20while%20holding%20%25A_C_C_E_L%25%20key.%26lt%3B/description%26gt%3B%0A%09%09%26lt%3B/panel%26gt%3B%0A%09%26lt%3B/popupset%26gt%3B%0A%26lt%3B/window%26gt%3B%26lt%3B%21--%25UserAgentsEditor%25--%26gt%3B%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install User Agent Switcher (Basic)">
+				<![CDATA[Install this button]]>
+			</html:a>
+		</html:div>
+		<html:a id="about" href="https://addons.mozilla.org/addon/custom-buttons/">
+			<![CDATA[About CustomButtons]]>
+		</html:a>
+		<html:div id="credits">
+			<html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=3599">
+				<![CDATA[XML created with]]>
+				<html:br/>
+				<![CDATA[CB Context Menu Extended]]>
+			</html:a>
+		</html:div>
+	</html:div>
+</html:body>
+  <name>User Agent Switcher (Basic)</name>
+  <image><![CDATA[data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAEZElEQVQ4jWXMfTDUCRzH8V/TH+r+aGK4aSaGuHRGhJURzd2VburUOdGTZq3VXCI5uq08ZzMp0nQp9GBZu1PRE5PHI89OhL2jPLWsZSXSnYebMU3+ed8fXe66++P1x/fz+c5HEGBJWHaZccSVYpuwtHvr/i3y8t/+k38QcaHYJiy7zFiAJUJYdplxYtFQgbx8cj6pfJLkyinkFa+RV7wm9fEbLtS84Vz1FKfLJz+SVP6a02UT8/EPBwvDssuMBYlcZZtQMj4fpDYgVo0SqBpFojYQkDfKoVtjHH/4ipCCMfYqRtijGGFv7ggStYFAlQFx/ijxj8bnJXKVrRAQnWkfVzJOkGqEINUI/jd1HMzTsydnGIl6lEs1U6RWTeJ/cxjf6zoO5OoJUr5AerUTsXKYuJJxAqIz7YXdJzLWRxePEaTSs0+hY1eWFolKz3fXB9mVraW6b46qvjl2ZmnZlfmCQ1faubrzCP7pjUiUOqKLx9h9ImO94BOW7ih7YECSP4xUreeAYojwQgPHCg0cUg0zObfA5NwC3+f0Eh+r5sEWP3xjbhOYpyUwfxjZAwM+YemOwvYjqRsiCvWI83SLY1H3DJR0T1PTP0tN7wx1GgNPUy/T8sU2wqVnCbjRQ0DuEPtzBjlWoGf7kdQNgodU7hScP8hBxSBi5RASlZ7g/CGq+2ZIrRgj+GI9tYfD0bo4czckiqCMJ3yT0cu3mQPsu6kl5JaOr6RyJ2GDf4yzb1Yf4lwtKeVjVPfN8mp2gaqeacTXNCgz1QyvWcM1T29KH3cwMfOWuoFZ0qvGCVYOEpirZdOBRGfhc1+ZaNvFLnb89Ax5yQil3b8zMfeO6u4JSp5o6enrJykqmb0yJU0D00z9uUD9wBwXfn7JwZwBfDN7cPCViQRr7+Oum89rcJG34yJvx/1sJ6HqAX55pud57wBZd8rZEXOH5KJ+avtnCL2lY9/1F/hl97P9Ujdfpv2KtfdxV8HC6+hGUXI7DoltOCS24ZTURsydLhraurhbWkdBVQePOscp7ZridusE/lnP8c3qZWfGczzOaXBNbsfC6+hGYdXWUDf7+CfYxbVgF9eCKK4GZWkrh9MfIr7Swss/5hmbfsvXFzVsTevEM6UD78vP8Er/DdGZpzgmtrJqa6ibYOIpdV97qpm1p5qxldURe6MS59AcvM63sPHMU+53THK/Y4LFn1PNbEnT4CpvW8xMPKXugomHZJOVrAGrH+v57Oh9VkvzcYitR5TUis3JRkKUPYQoe7CSNSyyOdnImhP/3CYekk3CCpf97hYRFe/MI2tYHV6O+Q/VrItuxFpWj3lULfaxjdjHNmIeVfs/FlG1WERUvFvhst9dWGa72drMJ0VjE1m5YBfdgH1sI84JTTgnNCFKbMItqRm3pGZEiU04JTThGPd+2C66AZvIygUznxTNMtvN1oIgCEZLV5r7GZlaKozMLIuWm1oWv2dV/MmnH1tualX8oTcysywyMrVULF1p7icIgtFfxkUcJUxp7EkAAAAASUVORK5CYII=]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[/**
+ *  Button based on a script created for userChrome.js extension. http://userchromejs.mozdev.org/
+ *  Source: https://github.com/ardiman/userChrome.js/tree/master/useragentswitcherlite
+ */
+if (self.parentNode && /^wrapper-/.test(self.parentNode.id))
+	return;
+
+var $ = this.UserAgentSwitcher = {
+	init: function() {
+		if (!("Services" in window))
+			Cu.import("resource://gre/modules/Services.jsm");
+
+		if (!($._UID in window)) {
+			window[$._UID] = {
+				CustomizableUI: false,
+			};
+		}
+		$.initPrefs();
+
+		self.setAttribute("popup", $._UID + "-menupopup");
+		self.onmousedown = function(aE) {
+			if ($.accel(aE))
+				aE.preventDefault();
+			aE.stopPropagation();
+		};
+		self.onclick = function(aE) {
+			if (aE.button === 0 && !aE.shiftKey && $.accel(aE) && !aE.altKey ||
+				aE.button === 1 && !aE.shiftKey && !$.accel(aE) && !aE.altKey) {
+				aE.preventDefault();
+				$.openOptions();
+			}
+			aE.stopPropagation();
+		};
+
+		$._mainArr = JSON.parse($.gPref("pUserAgentsJSON"));
+
+		$.handlePrefObserver();
+		$.createElements();
+		$.setSelfTooltip();
+
+		if ("CustomizableUI" in window) {
+			if (!window[$._UID]["CustomizableUI"]) {
+				window[$._UID]["CustomizableUI"] = true;
+				CustomizableUI.addListener({
+					onCustomizeEnd: function(aWindow) {
+						var thisBtn = aWindow.document.getElementById(self.id);
+						setTimeout(function() {
+							aWindow[$._UID]["CustomizableUI"] && thisBtn.MultiSearch.selfDestroy();
+						}, Math.floor(Math.random() * (1 + 2000 - 200)) + 200);
+					}
+				});
+			}
+		}
+
+		addDestructor(function(aReason) {
+			if (aReason === "update" || aReason === "delete") {
+				$.handlePrefObserver(true);
+				let selfEls = document.getElementsByAttribute("cb_id", $._UID);
+				Array.prototype.slice.call(selfEls).forEach(function(aEl) { // Delete all elements created by this button.
+					aEl && aEl.parentNode.removeChild(aEl);
+				});
+			}
+			if (aReason === "delete") {
+				(Services.prefs.getBranch($.Branch)).deleteBranch("");
+				Services.prefs.savePrefFile(null);
+				delete window[$._UID];
+			}
+		});
+	},
+
+	openOptions: function() {
+		var url = "about:config?filter=" + $.Branch;
+		if ($.gPref("pOpenOptionsOnNewTab") && ("gBrowser" in window)) {
+			let tab = gBrowser.visibleTabs.find(tab => tab.linkedBrowser.currentURI.spec === url);
+			gBrowser.selectedTab = tab || gBrowser.addTab(url);
+		} else
+			toOpenWindowByType("Preferences:ConfigManager", url);
+	},
+
+	performAction: function() {
+		switch ($.gPref("pActionAfterSwitchingUserAgent")) {
+			case 0:
+				return true;
+			case 1:
+				gBrowser.reloadTab(gBrowser.selectedTab);
+				break;
+			case 2:
+				gBrowser.reloadAllTabs();
+				break;
+		}
+		return true;
+	},
+
+	getCurrentUAData: function(aType) {
+		let lbl, agent;
+		let currentUA = $._mainArr.filter(function(aUA) {
+			return aUA.hasOwnProperty("agent") && aUA["agent"] === $.uaPref;
+		});
+		lbl = currentUA.length === 0 ? "Default User Agent" : currentUA[0]["label"];
+		agent = currentUA.length === 0 ? navigator.userAgent : currentUA[0]["agent"];
+		return {
+			label: lbl,
+			agent: agent,
+		};
+	},
+
+	setSelfTooltip: function() {
+		let data = $.getCurrentUAData();
+		self.tooltipText = self.name + " - ID#: " + self.id.slice(20) + "\n\n" +
+			"𝗟𝗲𝗳𝘁 𝗰𝗹𝗶𝗰𝗸: Open User Agent selection menu\n" +
+			"𝗠𝗶𝗱𝗱𝗹𝗲 𝗼𝗿 " + $.accel() + " + 𝗟𝗲𝗳𝘁 𝗰𝗹𝗶𝗰𝗸: Open Options\n\n" +
+			($.gPref("pShowCurrentUserAgentInfoOnButtonTooltip") ?
+				("𝗖𝘂𝗿𝗿𝗲𝗻𝘁 𝗨𝘀𝗲𝗿 𝗔𝗴𝗲𝗻𝘁: " + data["label"] + "\n" +
+					data["agent"] + "\n\n") : "") +
+			"𝗥𝗲𝗮𝗱 𝘁𝗵𝗶𝘀 𝗯𝘂𝘁𝘁𝗼𝗻 𝗵𝗲𝗹𝗽 𝗳𝗼𝗿 𝘃𝗲𝗿𝘆 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁 𝘂𝘀𝗮𝗴𝗲 𝗻𝗼𝘁𝗲𝘀.\n" +
+			"𝗥𝗶𝗴𝗵𝘁 𝗰𝗹𝗶𝗰𝗸 𝗼𝗻 𝗯𝘂𝘁𝘁𝗼𝗻, \"𝗕𝘂𝘁𝘁𝗼𝗻 𝗛𝗲𝗹𝗽\" 𝗶𝘁𝗲𝗺.";
+	},
+
+	createElements: function() {
+		let popSet = $.$("mainPopupSet");
+		let m = $.$($._UID + "-menupopup");
+		if (popSet && !m) {
+			m = popSet.appendChild($.$CNS("menupopup", {
+				id: $._UID + "-menupopup",
+				cb_id: $._UID,
+				onpopupshowing: $.that + "populateMainMenu(this);event.stopPropagation();",
+				oncontextmenu: "event.stopPropagation();",
+				onpopuphiding: "event.stopPropagation();",
+				onpopupshown: "this.handleOpenState(event, true);event.stopPropagation();",
+				onpopuphidden: "this.handleOpenState(event, false);event.stopPropagation();",
+				onclick: "event.stopPropagation();",
+				oncommand: $.that + "setUserAgent(event);event.stopPropagation();",
+				orient: "vertical",
+				position: "after_start",
+				consumeoutsideclicks: false,
+			}));
+			m.handleOpenState = function(aE, aState) {
+				if (aState)
+					self.setAttribute("open", aState);
+				else
+					self.removeAttribute("open");
+			};
+			if ($.gPref("pConvertMenuToPanel")) {
+				m.style.MozAppearance = "none";
+				m.style.MozBinding = "url('chrome://global/content/bindings/popup.xml#arrowpanel')";
+				m.style.background = "transparent";
+				m.style.border = "none";
+				m.style.MozImageRegion = "auto";
+			}
+		}
+	},
+
+	setUserAgent: function(aE) {
+		let ua = aE.target.getAttribute("data-agent");
+		if (ua === "")
+			Services.prefs.clearUserPref($.uaPrefStr);
+		else {
+			let str = Cc["@mozilla.org/supports-string;1"].createInstance(Ci.nsISupportsString);
+			str.data = ua;
+			Services.prefs.setComplexValue(($.uaPrefStr), Ci.nsISupportsString, str);
+		}
+		setTimeout(function() {
+			$.performAction();
+		}, 100);
+		setTimeout(function() {
+			$.setSelfTooltip();
+		}, 100);
+	},
+
+	populateMainMenu: function(aN) {
+		aN.textContent = "";
+
+		let pref = $.uaPref;
+
+		aN.appendChild($.$CNS("menuitem", {
+			label: "Default User Agent",
+			accesskey: "D",
+			type: "radio",
+			checked: pref === null,
+			"data-agent": "",
+			onclick: "event.stopPropagation();",
+		}));
+
+		aN.appendChild($.$CNS("menuseparator"));
+
+		let arr = $._mainArr;
+		let i = 0,
+			iLen = arr.length;
+		try {
+			if (arr && arr.length > 0) {
+				for (; i < iLen; i++) {
+					switch (arr[i]["label"]) {
+						case "[menuseparator]":
+							aN.appendChild($.$CNS("menuseparator"));
+							break;
+						default:
+							aN.appendChild($.$CNS("menuitem", {
+								label: arr[i]["label"],
+								tooltiptext: arr[i]["agent"],
+								accesskey: arr[i]["accesskey"],
+								type: "radio",
+								checked: pref === arr[i]["agent"],
+								"data-agent": arr[i]["agent"],
+								onclick: "event.stopPropagation();",
+							}));
+							break;
+					}
+				}
+			}
+		} finally {
+			aN.appendChild($.$CNS("menuseparator"));
+
+			aN.appendChild($.$CNS("menuitem", {
+				label: "Edit menu",
+				tooltiptext: "Edit menu of User Agents",
+				oncommand: $.that + "editUserAgents();event.stopPropagation();",
+				onclick: "event.stopPropagation();",
+			}));
+		}
+	},
+
+	editUserAgents: function() {
+		var em = Services.ww.getWindowEnumerator();
+		var winName = $._UID + "_user_agents_editor";
+		var index = 1;
+		while (em.hasMoreElements()) {
+			let win = em.getNext();
+			if (win.name === winName) {
+				win.focus();
+				return;
+			}
+			index++;
+		}
+		let xul = $.getHelp("%UserAgentsEditor%");
+		let storage = {
+			custombuttons: custombuttons,
+			button: self,
+			accel: $.accel,
+			data: $._mainArr,
+		};
+		xul = xul.replace(/>\s+</g, "><");
+		xul = xul.split("%U_I_D%").join($._UID);
+		xul = xul.split("%A_C_C_E_L%").join($.accel());
+		let url = "data:application/vnd.mozilla.xul+xml;text/plain," + encodeURIComponent(xul);
+		let win = openDialog(url, winName, "chrome, resizable, dialog=no, centerscreen, close");
+		win._storage = storage;
+	},
+
+	/**
+	 * NEVER CHANGE TO "BRANCH OBSERVER"!!!!
+	 * Works like absolute SHEET on SeaMonkey!!!!
+	 */
+	handlePrefObserver: function(aRem) {
+		var prefs = $.DefPrefs;
+		for (let key in prefs) {
+			let pref = $.Branch + key;
+			if (prefs.hasOwnProperty(key)) {
+				if (aRem)
+					Services.prefs.removeObserver(pref, $.prefObserver, false);
+				else
+					Services.prefs.addObserver(pref, $.prefObserver, false);
+			}
+		}
+	},
+
+	prefObserver: {
+		observe: function(aSubject, aTopic, aPStr) {
+			if (aTopic === "nsPref:changed") {
+				let prefName = aPStr.slice($.Branch.length);
+				switch (prefName) {
+					case "pUserAgentsJSON":
+						$._mainArr = JSON.parse($.gPref("pUserAgentsJSON"));
+						break;
+					case "pShowCurrentUserAgentInfoOnButtonTooltip":
+						$.setSelfTooltip();
+						break;
+					case "pConvertMenuToPanel":
+						$.selfDestroy();
+						break;
+				}
+			}
+		}
+	},
+
+	$: function(aId) { // Return elements by Id
+		return document.getElementById(aId);
+	},
+
+	getHelp: function(aPlaceholder) { // Get specific data, surrounded by "placeholders", from the Help tab.
+		return $.$(self.id).getAttribute("Help").split("<!--" + aPlaceholder + "-->")[1];
+	},
+
+	selfDestroy: function() {
+		self.destroy("update");
+		setTimeout(function() {
+			self.init();
+		}, 100);
+	},
+
+	$CNS: function(aElName, aAttrs, aNameSpace) { // Creates elements
+		var el = aNameSpace ?
+			document.createElementNS(aNameSpace, aElName) :
+			document.createElement(aElName);
+		if (aAttrs)
+			Object.keys(aAttrs).forEach(function(n) {
+				if (aAttrs[n] !== "")
+					el.setAttribute(n, aAttrs[n]);
+			});
+		return el;
+	},
+
+	accel: function(aE) {
+		if (aE)
+			return $.isOSX ? aE.metaKey : aE.ctrlKey;
+		return $.isOSX ? "𝗖𝗼𝗺𝗺𝗮𝗻𝗱" : "𝗖𝗼𝗻𝘁𝗿𝗼𝗹";
+	},
+	get uaPref() {
+		return (Services.prefs.getPrefType($.uaPrefStr) === 0 ?
+			null :
+			Services.prefs.getComplexValue($.uaPrefStr, Ci.nsISupportsString).data);
+	},
+	isOSX: Services.appinfo.OS.toLowerCase().startsWith("darwin"),
+	_UID: "__user_agent_switcher" + self.id.slice(20),
+	_mainArr: null,
+	that: "document.getElementById('" + self.id + "').UserAgentSwitcher.",
+	uaPrefStr: "general.useragent.override",
+};
+
+this.UserAgentSwitcher.Branch = "CB.UserAgentSwitcher.Id" + self.id.slice(20) + ".";
+
+this.UserAgentSwitcher.DefPrefs = {
+	pOpenOptionsOnNewTab: false,
+	pConvertMenuToPanel: true,
+	pShowCurrentUserAgentInfoOnButtonTooltip: true,
+	pActionAfterSwitchingUserAgent: 0,
+	pUserAgentsJSON: JSON.stringify([{
+		"label": "Android 4.4.2 - Samsung Galaxy S5 (SM-G900P)",
+		"accesskey": "",
+		"agent": "Mozilla/5.0 (Linux; Android 4.4.2; en-us; SAMSUNG SM-G900P Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Version/1.6"
+	}, {
+		"label": "Mobile Safari 9.0 - iOS",
+		"accesskey": "",
+		"agent": "Mozilla/5.0 (iPad; CPU OS 9_3_2 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13F69 Safari/601.1"
+	}, {
+		"label": "[menuseparator]"
+	}, {
+		"label": "Chrome 50.0 - Win10 x64",
+		"accesskey": "C",
+		"agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
+	}, {
+		"label": "Chrome 50.0 - Linux x86_64",
+		"accesskey": "C",
+		"agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36"
+	}, {
+		"label": "Firefox 46.0 - Win10 x64",
+		"accesskey": "F",
+		"agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:46.0) Gecko/20100101 Firefox/46.0"
+	}, {
+		"label": "Firefox 46.0 - Linux x86_64",
+		"accesskey": "F",
+		"agent": "Mozilla/5.0 (X11; Linux x86_64; rv:46.0) Gecko/20100101 Firefox/46.0"
+	}, {
+		"label": "IE 11.0 for Desktop - Win10 x64",
+		"accesskey": "I",
+		"agent": "Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko"
+	}, {
+		"label": "Safari Generic - MacOSX",
+		"accesskey": "S",
+		"agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/601.6.17 (KHTML, like Gecko) Version/9.1.1 Safari/601.6.17"
+	}, {
+		"label": "[menuseparator]"
+	}, {
+		"label": "Google Robot",
+		"accesskey": "G",
+		"agent": "Googlebot/2.1 (+http://www.google.com/bot.html)"
+	}, {
+		"label": "Bing Robot",
+		"accesskey": "B",
+		"agent": "Mozilla/5.0 (compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm)"
+	}, {
+		"label": "Yahoo! Robot",
+		"accesskey": "Y",
+		"agent": "Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)"
+	}]),
+};
+
+this.UserAgentSwitcher.initPrefs = function() {
+	let branch = Services.prefs.getDefaultBranch(self.UserAgentSwitcher.Branch),
+		defaults = self.UserAgentSwitcher.DefPrefs;
+	for (let key in defaults) {
+		if (defaults.hasOwnProperty(key)) {
+			let val = defaults[key];
+			switch (typeof val) {
+				case "boolean":
+					branch.setBoolPref(key, val);
+					break;
+				case "number":
+					branch.setIntPref(key, val);
+					break;
+				case "string":
+					let str = Cc["@mozilla.org/supports-string;1"].createInstance(Ci.nsISupportsString);
+					str.data = val;
+					branch.setComplexValue((key), Ci.nsISupportsString, str);
+					break;
+			}
+		}
+	}
+};
+
+this.UserAgentSwitcher.gPref = function(aKey) {
+	let branch = Services.prefs.getBranch(self.UserAgentSwitcher.Branch);
+	switch (typeof self.UserAgentSwitcher.DefPrefs[aKey]) {
+		case "boolean":
+			return branch.getBoolPref(aKey);
+		case "number":
+			return branch.getIntPref(aKey);
+		case "string":
+			return branch.getComplexValue(aKey, Ci.nsISupportsString).data;
+	}
+	return null;
+};
+
+this.UserAgentSwitcher.sPref = function(aKey, aVal) {
+	let branch = Services.prefs.getBranch(self.UserAgentSwitcher.Branch);
+	switch (typeof aVal) {
+		case "boolean":
+			branch.setBoolPref(aKey, aVal);
+			break;
+		case "number":
+			branch.setIntPref(aKey, aVal);
+			break;
+		case "string":
+			let str = Cc["@mozilla.org/supports-string;1"].createInstance(Ci.nsISupportsString);
+			str.data = aVal;
+			branch.setComplexValue((aKey), Ci.nsISupportsString, str);
+			break;
+	}
+};
+
+this.UserAgentSwitcher.init();]]></initcode>
+  <code><![CDATA[/*CODE*/]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help>𝗜𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁 𝗻𝗼𝘁𝗲𝘀
+⚫ Posible values for 𝗽𝗔𝗰𝘁𝗶𝗼𝗻𝗔𝗳𝘁𝗲𝗿𝗦𝘄𝗶𝘁𝗰𝗵𝗶𝗻𝗴𝗨𝘀𝗲𝗿𝗔𝗴𝗲𝗻𝘁 preference.
+	⚫ 0 = Do nothing.
+	⚫ 1 = Reload current tab.
+	⚫ 2 = Reload all tabs.
+
+𝗪𝗔𝗥𝗡𝗜𝗡𝗚❗❗ 𝗕𝗘 𝗖𝗔𝗥𝗘𝗙𝗨𝗟 𝗜𝗙 𝗬𝗢𝗨 𝗘𝗗𝗜𝗧 𝗧𝗛𝗘 𝗛𝗘𝗟𝗣 𝗧𝗔𝗕 𝗢𝗙 𝗧𝗛𝗜𝗦 𝗕𝗨𝗧𝗧𝗢𝗡❗❗❗
+𝗜𝗧 𝗖𝗢𝗨𝗟𝗗 𝗕𝗥𝗘𝗔𝗞 𝗜𝗧𝗦 𝗙𝗨𝗡𝗖𝗜𝗢𝗡𝗔𝗟𝗜𝗧𝗬❗❗❗
+
+[,]
+
+/**
+ * 𝗙𝗥𝗢𝗠 𝗛𝗘𝗥𝗘 𝗗𝗢𝗪𝗡 𝗗𝗢 𝗡𝗢𝗧 𝗧𝗢𝗨𝗖𝗛 𝗔𝗡𝗬𝗧𝗛𝗜𝗡𝗚
+ */
+
+&lt;!--%UserAgentsEditor%--&gt;&lt;?xml version="1.0" encoding="utf-8" ?&gt;
+&lt;?xml-stylesheet href="chrome://global/skin/" ?&gt;
+&lt;?xml-stylesheet href="data:text/css;charset=utf-8,
+window * {
+	font-family: &amp;quot;Open Sans&amp;quot;, Helvetica, Arial, sans-serif !important;
+}
+.convert-to-panel {
+	-moz-appearance: none !important;
+	-moz-binding: url(&amp;quot;chrome://global/content/bindings/popup.xml%23arrowpanel&amp;quot;) !important;
+	background: transparent !important;
+	border: none !important;
+	-moz-image-region: auto !important;
+}
+caption .caption-text,
+.bold_text {
+	font-weight: bold !important;
+}
+.warning{
+	font-weight: bold !important;
+	color: red !important;
+}
+button .button-text {
+	display: inline-block !important;
+	text-align: left !important;
+}
+button {
+	min-width: 0 !important;
+}
+.optional {
+	outline: 2px solid green !important;
+}
+.required {
+	outline: 2px solid orange !important;
+}
+.optional,
+.required,
+.experimental {
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
+}
+groupbox {
+	-moz-appearance: groupbox !important;
+	border: 2px groove ThreeDFace !important;
+	border-radius: 3px !important;
+	margin: 3px !important;
+	padding: 3px 3px 6px !important;
+}
+.groupbox-body {
+	padding: inherit !important;
+}
+caption {
+	margin: 0 6px !important;
+	background-color: -moz-Dialog !important;
+}
+/* !important is needed to override label in global.css */
+.caption-text {
+	margin: 0 2px !important;
+}
+resizer {
+	-moz-appearance: none !important;
+	background-image: none !important;
+}
+.pseudo_menupopup {
+	-moz-appearance: menupopup !important;
+	padding: 5px !important;
+	overflow-x: auto  !important;
+	overflow-y: auto  !important;
+}
+.edit-user-agent {
+	list-style-image: url(&amp;quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAABbklEQVQokX2QP0sCcRzGv+kZiC7+/PNT8w/INeh2kzl0bg4SUZESDSHkWwgMMsgGIdPBMDRvUQKXIpcgiTh0EITruPfgvY+n5YYG9YEPz/SBh4fICoDtWq0mtdvtCIAt2hQATlmWDwVB+Pb5fI1OpxNdKwGwZzKZA0EQVCL6JSKNMdYEEFgpAbCXSqU8Y+ydiKYWGmPsod/vr54HwKMoSiEWiw2I6MviJxgM3m2SXOPx+DQej78Q0YfFp9frvd80zzUcDk/C4XCHiF4dDsfA7Xa/BQKBW1VVfetO8IxGo2NRFB9FUax3u90LzvlTNpvdB2BfJ7kmk8lRKpVqcs7buVzuJplMXs7ncycBsCmKEq9Wq5Ku6/5KpSLpuu5vNBrp2Wx2Vi6Xr6LR6HMoFLqu1+sJAiDIslzknLd6vV76f+fz+XMACdM091qtVnE6ne4SAJthGJKmaYXlcrmzWCwKpmlGNE0rGIYhAbBZOAEIf/lbwByZlq46AAAAAElFTkSuQmCC&amp;quot;) !important;
+	-moz-image-region: auto !important;
+}
+.delete-user-agent {
+	list-style-image: url(&amp;quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAABVklEQVQokWNgoAT8//+f+////9xofB5cigXmGemnz9LRyX97+zbf29u3+Wbp6OTPN9TP+P//vwCGyavsrdLm8HH+XCDA/X6Fo33aSif71AUC3O/n8HH+XGFnmY5i0////7n3piTVH1aVfXFAVuT/aknB96skBd8fkBX5f0RV9sXelJQGZKdCNH3+LPaot7P2vL7yi1MaUv9PaUj9P6+v/OJxT0fd/8+fxTD9cPs23/6YoPSTJipvrxsr/L9urPD/pInK2/2xgRn/b9/mw/DDDh+7/AMGcu/vWKv9f+is++Khs+6LO9Zq/w8ayL3f4W1bgOKk////89yb0F763FPv22tfkxcfF0yo+7xwYu1rX5MXzz31vj2Y0F6KEbz///+X/r16Tsn3ma21/7+8FP//+bPY95mttT9WzS79//+/NK64EPv//7/E////GaFY4v///+JYFRMLAKUewtoAYB96AAAAAElFTkSuQmCC&amp;quot;) !important;
+	-moz-image-region: auto !important;
+}
+.save_changes {
+	list-style-image: url(&amp;quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACdElEQVQ4jWNgIBGE/mdgZvjPwEiqPgYGBgaGpCOGUhX3XFO630Zapp0xZiVJc/QSFb78aw4dXe/C3k/8lnCj73OkfcN/BiaiNEfsUpfKPGfV0fDE/33jc///PR8i/nW9iz5Rez/QnoGBgYHBYT4Dh/cGNdugHZqS6Jq9l8oJppyw6ml8FvCx6Lbz/7iThv8zL1n9r37k+6fgusdGBoYGBqbQvXpOmeecbqecsu33XKUiCtNsPJOBNXiHfm/NQ78veTcd/wcf0vofsF/9f+BBjX/RR40fxBwx8WNIOWinWHnPd3/di8B/1Q/93yYcse6yWSonqDddXCxgi/bkyge+XzOu2f332qv632238n+P3Sr//XZr3wnaoRvlOUmFnaHgivu2kocevz32qf5PvGT1r+Ke/2fvDdqz3NapL25+Efol8ZLVf8edCv9tt8n+t9sm999lu9oZv42adtqrtNkYGBgYGKy2yW212S73w2Sz5D+LrTL/k6/a/C+74/u/7I7P/9gLFv9NNknC8F+LdbIX7NcqO6IEkvpyLimdNcKLtdaK/tBaK/LfYKPE//Bzpv+DThn9198g/l9rrch/7TWif3SXS14wWSLvaTyTATP+pZYLycqvFFijuJL/p+JKgf9KqwT/K60U+K+4UuC/4gqBvyoLRS6oTRW1wZsCBRdxykks5loovoT7k/gS7v/iS7j/iy/i+S81i/eCTL+gJwMDEcmXdy6DOt88toW8C9h+8s1l+88/keOMSCuPI0MaFmfjAIwM/QwKbNMY1rJ0Mp5kKGOwIFYjDLAyCDAI8ITyaHH7cOszSDMIMzAQbzuqS4jxMwMDAwDtNu92OyP2UwAAAABJRU5ErkJggg==&amp;quot;) !important;
+	-moz-image-region: auto !important;
+}
+.cancel_changes {
+	list-style-image: url(&amp;quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADdklEQVQ4jXVTb0yUBRx+3n+8977vve/BcXhIBzg5CMZRCAvGSIZQMCXpRFhkagRjTkjStdr6M9bW1/rCt1tZ0vDUU1E4QMHrAMk7F4zDY4qYRBdkyzJK0eMC9+sLOGnr+fo8z2+/Pc8eYBVtgHZSH2NzqqoJ/4Muk0l1WSxZLovFuI4oAKTjVXu2Tbd++tmNhsbac9HR0f81d8CoTVZUVk01t3x+vGJ3+U5AXuOi7BbL9q79jRf/cp5duvNRa9Cfld3YqaqxawIXNOPlrOy6UPORwJ9tX0Z69tV7X0vc9CoAHarzi2u/2P3GlZm6g0sP322lB4c/WAlVVk+NbEpp+QZQHIDcn7y5aXa7/fr95vdWHh75mGbr3444il4e3ZWZ+ybeyi89PdBwKLywrYLu5hfTvXI7LVbtodmcvJ/G8l9850p2dtN0uu3H+6U76Peicrr7wlb6e2sZ9ReWRRqyCvtRkbblpQMZz53tS9z8IGTaQLfNCfSb7XlaTH2W7lVW/fpHUfH8gmkD3TEn0A8xsRSKNpInLv7RgbiN/fbEDDsACGmCkNek6DvcmmFxVBRpWBDopiDQgiWJfjbF0QTL0iDDkJ/jyC1EhQ/xUefTgWIAurWcuAIgvUXQdZxStMcXeIHOAdQHhroB6gSoh2HIyfGPDzPc+RIgBwC/rqYagHsfyOvOsA0PWJLoGMfRUYCOAvQVw5A72kiuBEvwQ6C8BuDWmdsA8YQk5Z9R9Kd6FH3YxfPUDpCTYegEy1I7QCd5ntx6/cppWd/ZLkkFn6y97wAEF8+XXFDUbo8kh3tZjnoA8jAMjcYYadwcT98yDPUC1Mdy5JHkcK+i9BwTxTIHIOD7fXU7v0uxDg6K4pKXZWkEoHGWpRuSRBMJlvlgivX2TVmmwCrnZVkaEnVLg0bTiDstw47x6tquyS05ER/H0RhA0yxLIVlevqaqtwZEsXlA0e29ZjAEQ6r6z61VjY/jacK8cdmfneuFL7egxm8yXbouSY/mFIV+0bTlSU0LDIniwUuAwQHIHp1ubzDG4JtX1chcVBRNSfLSVVX1X7Va6/E1oBvmUTKT+Ez3fGFheNJqDfgEYb8HeLKFPkAbkaRd43GxvrlUa2TGbPaOcNwr/YDyJEh3UlLpZZvtzFRm5utjTy3tqSNiID5+x1BqivNicnJFGyACwL8fh1x5BGHtQgAAAABJRU5ErkJggg==&amp;quot;) !important;
+	-moz-image-region: auto !important;
+}
+.extra_info_pop {
+	list-style-image: url(&amp;quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACaElEQVQ4jYWSS0wTYRSFb60xaNo0TjTj1mRaFkgZkuJmNmxN7FBpiBtTqgYbSSRhIiUmoImPnc6004elPKIGdWcirKS8dFHYuZBKRIxGxyISjKFI04H0uBhEsAVP8u/u/f57zz1EZSQIotUpBit5d0sd726pqzkjOQRBtJarLVGNeKWR84cnWWk0a+vOrNq6M6uslMpy/vAk77ns2bWxqqnVYveHEkzntE4KYAoDR2N5WKI6KAyQAjDBKZ1rVuJVTa2WEoDdH0ocvJNdJxWgKHAsuYaR2WXcndCwP7oOigAUAipuabrDJ8dKxmY6p3VSAYoBdB840r+Gp6+/4dqLzzAnNkBxbEGYq2m92h1o2DKM84cnKWT8TAnAlNxA45M5SMNzuPBsHof710BJGBAVILkIrlkeFwTBSk4xWMlKo1lSNwuSgGmgiJODGjILK/i0/AvHB1dAfQacosYUbHtK470dduIbW+ps1zOrFDFGp16AHgDmhwUMz343AI9XQP0A9WyuGAJsXTO5WjHg2hMw9Hbx/4Cas5KDlVI7VqABwDxQwFBmcY8VRjTe22bfNFGd2G4i9QLm3m2AR7lSE33KWH19vZEH3nPJw3RO7TjjoXgOo++W8PVnHif6FmCKFf+esSNdcJ6+6N6RBe68Eq+4remkAvtCedx4/gap2SW8ev8DPS8/wBX/aATp5hedOydHykbZ4ZdjTDCtk1KERc3DGsnDqhrvgKyDCaYLnO9epGyU/6jaHWjgmuVxtj2l2bpmcraumRwrjWicTxlzngq4d23cLkEQrLy3w14rBly1YsDFe9vsW4b9o9/mTMrMlE74aAAAAABJRU5ErkJggg==&amp;quot;) !important;
+	-moz-image-region: auto !important;
+}
+" type="text/css" ?&gt;
+&lt;window id="%U_I_D%_user_agents_editor"
+	    onload="$.onLoad();"
+	    onunload="$.onUnLoad();"
+	    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"&gt;
+&lt;script&gt;&lt;![CDATA[
+var Cc = Components.classes;
+var Ci = Components.interfaces;
+var Cu = Components.utils;
+Cu.import("resource://gre/modules/Services.jsm");
+var stg = window._storage;
+var cb_btn = stg.button;
+
+function $id(aID, aParent) {
+	if (!aParent)
+		return document.getElementById(aID);
+	return aParent.getElementById(aID);
+}
+var $ = {
+	onLoad: function() {
+		window.editPanelTarget = null;
+		$.populateBox();
+		window.addEventListener("focus", $, false);
+		window.addEventListener("blur", $, false);
+		$.highlightButton(cb_btn, 1);
+	},
+	handleEvent: function(aE) {
+		switch (aE.type) {
+			case "focus":
+				$.highlightButton(cb_btn, 1);
+				break;
+			case "blur":
+				$.highlightButton(cb_btn, 2);
+				break;
+		}
+	},
+	onUnLoad: function() {
+		$.highlightButton(cb_btn);
+	},
+	populateBox: function() {
+		let uaArray = stg.data;
+		let o = 0,
+			oLen = uaArray.length;
+		for (; o &lt; oLen; o++) {
+			let obj = uaArray[o];
+			let lbl = obj["label"] || "";
+			$.createItems(lbl, obj);
+		}
+	},
+	highlightButtonTimer: null,
+	highlightButton: function(aEl, aStyle) {
+		aEl.style.removeProperty("border-color");
+		aEl.style.removeProperty("box-shadow");
+		aEl.style.removeProperty("outline");
+		aEl.style.removeProperty("outline-offset");
+		aEl.style.removeProperty("transition-duration");
+		if (!aStyle)
+			return true;
+		clearTimeout($.highlightButtonTimer);
+		$.highlightButtonTimer = setTimeout(function() {
+			switch (aStyle) {
+				case 1:
+					aEl.style.setProperty("border-color", "rgba(0,200,0,1)", "important");
+					aEl.style.setProperty("box-shadow", "0 0 1px 1px rgba(0,200,0,1)", "important");
+					aEl.style.setProperty("outline", "2px solid rgba(0,200,0,1)", "important");
+					aEl.style.setProperty("outline-offset", "-2px", "important");
+					aEl.style.setProperty("transition-duration", "10ms", "important");
+					break;
+				case 2:
+					aEl.style.setProperty("border-color", "rgba(0,200,0,.2)", "important");
+					aEl.style.setProperty("box-shadow", "0 0 1px 1px rgba(0,200,0,.2)", "important");
+					aEl.style.setProperty("outline", "2px dotted rgba(0,200,0,.2)", "important");
+					aEl.style.setProperty("outline-offset", "-2px", "important");
+					aEl.style.setProperty("transition-duration", "10ms", "important");
+					break;
+			}
+		}, 10);
+	},
+	highlightElement: function(aEl, aRem) {
+		aEl.style.removeProperty("background");
+		aEl.style.removeProperty("border-color");
+		aEl.style.removeProperty("box-shadow");
+		aEl.style.removeProperty("outline");
+		aEl.style.removeProperty("outline-offset");
+		if (aRem)
+			return true;
+		aEl.style.setProperty("background", "rgba(0,255,0,.25)", "important");
+		aEl.style.setProperty("border-color", "rgba(0,200,0,1)", "important");
+		aEl.style.setProperty("box-shadow", "0 0 1px 1px rgba(0,200,0,.5)", "important");
+		aEl.style.setProperty("outline", "2px solid rgba(0,200,0,1)", "important");
+		aEl.style.setProperty("outline-offset", "-2px", "important");
+	},
+	onAccept: function() {
+		let uaArray = [];
+		try {
+			let box = $id("container-box");
+			Array.prototype.slice.call(box.getElementsByTagName("menuitem")).forEach(function(aMI) {
+				uaArray.push(aMI._data);
+			});
+		} finally {
+			setTimeout(function() {
+				let JSONData = JSON.stringify(uaArray);
+				cb_btn.UserAgentSwitcher.sPref("pUserAgentsJSON", JSONData);
+			}, 100);
+		}
+	},
+	reportError: function(aRejectReason) {
+		try {
+			console.error(aRejectReason);
+		} catch (aErr) {
+			Cu.reportError([cb_btn.name + ": " + cb_btn.id, aRejectReason, aRejectReason.stack].join("\n"));
+		}
+	},
+	dummyData: function(aType) {
+		switch (aType) {
+			case "userAgent":
+				return {
+					"label": "User Agent",
+					"accesskey": "",
+					"agent": "",
+				};
+			case "[menuseparator]":
+				return {
+					"label": "[menuseparator]",
+				};
+		}
+	},
+	createItems: function(aLabel, aData) {
+		let box = $id("container-box");
+		let hbox = box.appendChild($.$CNS("hbox", {
+			align: "center"
+		}));
+		let mI = hbox.appendChild($.$CNS("menuitem", {
+			label: aLabel,
+			flex: "1",
+			class: "menuitem-iconic",
+		}));
+		mI._data = aData;
+		hbox.appendChild($.$CNS("button", {
+			tooltiptext: "Delete item",
+			mousethrough: "never",
+			class: "delete-user-agent",
+			oncommand: "$.removeItem(event, this);"
+		}));
+		if (aLabel !== "[menuseparator]") {
+			hbox.appendChild($.$CNS("button", {
+				tooltiptext: "Edit User Agent",
+				mousethrough: "never",
+				class: "edit-user-agent",
+				oncommand: "$.editItem(event);"
+			}));
+		}
+	},
+	removeItem: function(aE, aNode) {
+		if (stg.accel(aE)) {
+			aNode.parentNode.parentNode.removeChild(aNode.parentNode);
+			return true;
+		}
+		let cBox = stg.custombuttons.confirmBox("User Agent Switcher", "Delete custom engine?\n\n" +
+			"Keep the " + stg.accel() + " key pressed to delete items without confirmation.", "Yes", "Cancel");
+		if (cBox) {
+			aNode.parentNode.parentNode.removeChild(aNode.parentNode);
+		} else
+			return false;
+	},
+	populateEditPanel: function(aFakeMI, aNode, aTarget) {
+		window.editPanelTarget = aTarget.parentNode;
+		$.highlightElement(window.editPanelTarget);
+		let dataObj = aFakeMI._data;
+		let vbox = $id("user_agent_box");
+		let tempBox;
+		try {
+			try {
+				let id = vbox.getAttribute("id");
+				tempBox = vbox.cloneNode(true);
+				tempBox.setAttribute("id", id + "-cloned");
+			} finally {
+				aNode.appendChild(tempBox);
+			}
+		} finally {
+			Array.prototype.slice.call(tempBox.getElementsByAttribute("data-attr", "*")).forEach(function(aEl) {
+				let attrName = aEl.getAttribute("data-attr");
+				let attrVal = dataObj[attrName];
+				// This crap doesn't work on normal textboxes, but it does on number textboxes.
+				aEl &amp;&amp; (aEl.value = attrVal);
+				// And this crap doesn't work on number textboxes, but it does on normal textboxes. WTF!?!?!?!
+				aEl &amp;&amp; aEl.setAttribute("value", attrVal);
+			});
+		}
+	},
+	editItem: function(aE, aType) {
+		let panel = $.panel;
+		if (panel &amp;&amp; (panel.state === "open" || panel.state === "opening"))
+			return false;
+		let fakeMI = aE.target.parentNode.firstChild;
+		$.populateEditPanel(fakeMI, panel.firstChild, aE.target);
+		panel.openPopup(aE.target, "", 0, 0, false, null, null);
+	},
+	onEditPanelAccept: function() {
+		let panel = $.panel;
+		let item = window.editPanelTarget.firstChild;
+		try {
+			Array.prototype.slice.call(panel.getElementsByAttribute("data-attr", "*")).forEach(function(aEl) {
+				let attrName = aEl.getAttribute("data-attr");
+				item._data[attrName] = aEl.value || "";
+			});
+		} finally {
+			$.updateCustomEngine(item);
+			$.onEditPanelCancel();
+		}
+	},
+	updateCustomEngine: function(aItem) {
+		aItem.setAttribute("label", aItem._data["label"] || "");
+	},
+	onEditPanelCancel: function() {
+		let panel = $.panel;
+		panel &amp;&amp; panel.hidePopup();
+		if (window.editPanelTarget) {
+			$.highlightElement(window.editPanelTarget, true);
+		}
+	},
+	onEditPanelHidden: function(aE, aN) {
+		if (aE.target !== aN)
+			return false;
+		aE.stopPropagation();
+	},
+	onEditPanelHiding: function(aE, aN) {
+		if (aE.target !== aN)
+			return false;
+		aN.firstChild.textContent = "";
+		$.highlightElement(window.editPanelTarget, true)
+		window.editPanelTarget = null;
+		aE.stopPropagation();
+	},
+	$CNS: function(aElName, aAttrs) { // Creates elements
+		var el = document.createElement(aElName);
+		if (aAttrs)
+			Object.keys(aAttrs).forEach(function(n) {
+				if (aAttrs[n] !== "")
+					el.setAttribute(n, aAttrs[n])
+			});
+		return el;
+	},
+	draggedElement: null,
+	DragAndDropHandler: {
+		handleEvent: function(aE) {
+			switch (aE.type) {
+				case "dragstart":
+					if (!stg.accel(aE) || !!window.editPanelTarget)
+						return false;
+					let target = aE.target;
+					if (target.nodeName !== "hbox")
+						$.draggedElement = target.parentNode;
+					if ($.draggedElement.nodeName !== "hbox")
+						$.draggedElement = null;
+					if (getComputedStyle($.draggedElement).outlineStyle !== "none") {
+						$.draggedElement = null;
+						return false;
+					}
+					aE.dataTransfer.setData("text/plain", "dummy"); // Stupid piece of SHEET!!!!!
+					break;
+				case "dragover":
+					aE.preventDefault();
+					break;
+				case "drop":
+					aE.preventDefault();
+					let insPoint = aE.target.parentNode;
+					if (insPoint &amp;&amp; insPoint.nodeName === "hbox") {
+						insPoint.parentNode.insertBefore($.draggedElement, insPoint);
+					} else if (aE.target.nodeName === "vbox") {
+						aE.target.appendChild($.draggedElement);
+					}
+					break;
+			}
+			aE.stopPropagation();
+		}
+	},
+	setTextboxValue: function(aE, aDataAttr) {
+		let el = $.panel.getElementsByAttribute("data-attr", aDataAttr)[0];
+		el &amp;&amp; (el.value = aE.target.value);
+	},
+	get panel() {
+		return $id("edit-user-agent-panel");
+	},
+};
+]]&gt;&lt;/script&gt;
+	&lt;keyset&gt;
+		&lt;key keycode="VK_ESCAPE" oncommand="return false;"/&gt;
+	&lt;/keyset&gt;
+	&lt;vbox flex="1"&gt;
+		&lt;vbox id="container-box"
+				  minheight="50"
+				  flex="1"
+				  class="pseudo_menupopup"
+				  context="pseudo-item-context"
+				  ondragstart="$.DragAndDropHandler.handleEvent(event);"
+				  ondragover="$.DragAndDropHandler.handleEvent(event);"
+				  ondrop="$.DragAndDropHandler.handleEvent(event);"&gt;
+		&lt;/vbox&gt;
+		&lt;separator/&gt;
+		&lt;hbox&gt;
+				&lt;spacer flex="1"/&gt;
+				&lt;button label="Insert a new item" type="menu"&gt;
+					&lt;menupopup consumeoutsideclicks="false" &gt;
+						&lt;menuitem label="Add an User Agent"
+								  oncommand="event.stopPropagation();"
+								  onclick="$.createItems('User Agent', $.dummyData('userAgent'));"/&gt;
+						&lt;menuitem label="Add a menuseparator"
+								  oncommand="event.stopPropagation();"
+								  onclick="$.createItems('[menuseparator]', $.dummyData('[menuseparator]'));"/&gt;
+					&lt;/menupopup&gt;
+				&lt;/button&gt;
+				&lt;button popup="extra_info_pop" tooltiptext="Extra info" class="extra_info_pop" /&gt;
+				&lt;spacer flex="1"/&gt;
+		&lt;/hbox&gt;
+		&lt;separator/&gt;
+		&lt;hbox&gt;
+			&lt;spacer flex="1"/&gt;
+			&lt;button label="Save changes" class="save_changes" oncommand="$.onAccept();"/&gt;
+			&lt;button label="Cancel" class="cancel_changes" oncommand="close();"/&gt;
+			&lt;spacer flex="1"/&gt;
+		&lt;/hbox&gt;
+		&lt;vbox collapsed="true"&gt;
+			&lt;groupbox id="user_agent_box" orient="vertical" flex="1"&gt;
+				&lt;caption label="Edit User Agent item"/&gt;
+				&lt;grid&gt;
+					&lt;columns&gt;
+						&lt;column /&gt;
+						&lt;column flex="1"/&gt;
+					&lt;/columns&gt;
+					&lt;rows&gt;
+						&lt;row align="center"&gt;
+							&lt;label value="Label"/&gt;
+							&lt;textbox data-attr="label" class="required"/&gt;
+						&lt;/row&gt;
+						&lt;row align="center"&gt;
+							&lt;label value="User Agent"/&gt;
+							&lt;textbox data-attr="agent" class="required"/&gt;
+						&lt;/row&gt;
+						&lt;row align="center"&gt;
+							&lt;label value="Accesskey"/&gt;
+							&lt;textbox data-attr="accesskey" class="optional"/&gt;
+						&lt;/row&gt;
+					&lt;/rows&gt;
+				&lt;/grid&gt;
+			&lt;/groupbox&gt;
+		&lt;/vbox&gt;
+	&lt;/vbox&gt;
+	&lt;separator/&gt;
+	&lt;popupset&gt;
+		&lt;panel id="edit-user-agent-panel"
+			   consumeoutsideclicks="false"
+			   noautohide="true"
+			   backdrag="true"
+			   minwidth="500"
+			   flip="slide"
+			   flex="1"
+			   class="convert-to-panel"
+			   position="end_before"
+			   onpopuphidden="$.onEditPanelHidden(event, this);"
+			   onpopuphiding="$.onEditPanelHiding(event, this);"
+			   orient="vertical"&gt;
+			&lt;vbox flex="1" /&gt;
+			&lt;spacer flex="0"/&gt;
+			&lt;hbox&gt;
+				&lt;spacer flex="1"/&gt;
+				&lt;button label="Save" class="save_changes" oncommand="$.onEditPanelAccept();event.stopPropagation();"/&gt;
+				&lt;button label="Cancel" class="cancel_changes" oncommand="$.onEditPanelCancel();event.stopPropagation();"/&gt;
+				&lt;spacer flex="1"/&gt;
+			&lt;/hbox&gt;
+			&lt;hbox&gt;
+				&lt;resizer element="edit-user-agent-panel" type="window" dir="bottomleft" left="0" bottom="0" width="10" height="10"/&gt;
+				&lt;spacer flex="1"/&gt;
+				&lt;resizer element="edit-user-agent-panel" type="window" dir="bottomright" right="0" bottom="0" width="10" height="10"/&gt;
+			&lt;/hbox&gt;
+		&lt;/panel&gt;
+		&lt;panel id="extra_info_pop" type="arrow" consumeoutsideclicks="false" orient="vertical" position="before_end" flip="slide"&gt;
+			&lt;description&gt;Rearrange items by dragging them while holding %A_C_C_E_L% key.&lt;/description&gt;
+		&lt;/panel&gt;
+	&lt;/popupset&gt;
+&lt;/window&gt;&lt;!--%UserAgentsEditor%--&gt;</help>
+  <attributes/>
+</custombutton>

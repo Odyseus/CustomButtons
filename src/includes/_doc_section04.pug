@@ -1,0 +1,366 @@
+﻿.cb-docs-section
+	h1#nav_working_with_files.page-header Working with files
+	h3#nav_working_with_files-launch-notepad Launch Notepad
+	pre.official_docs.
+		<code>/*Code*/
+		var localFile = Cc[&quot;@mozilla.org/file/local;1&quot;].
+			createInstance(Ci.nsILocalFile);
+		localFile.initWithPath(&quot;C:\\WINDOWS\\system32\\notepad.exe&quot;);
+		localFile.launch();</code>
+	h3#nav_working_with_files-readme-in-notepad Open README.txt File in Notepad
+	pre.official_docs.
+		<code>/*Code*/
+		var localFile = Cc[&quot;@mozilla.org/file/local;1&quot;].
+			createInstance(Ci.nsILocalFile);
+		var process = Cc[&quot;@mozilla.org/process/util;1&quot;].
+			createInstance(Ci.nsIProcess);
+		var args = [&quot;C:\\Program Files\\Mozilla Firefox\\README.txt&quot;];
+		localFile.initWithPath(&quot;C:\\WINDOWS\\system32\\notepad.exe&quot;);
+		process.init(localFile);
+		process.run(false, args, args.length);</code>
+	h3#nav_working_with_files-userChrome-in-notepad Open userChrome.css File in Notepad
+	pre.official_docs.
+		<code>/*Code*/
+		// chrome folder does not exist by default
+		var file = Cc[&quot;@mozilla.org/file/directory_service;1&quot;].
+			getService(Ci.nsIProperties).
+			get(&quot;UChrm&quot;, Ci.nsIFile);
+		file.append(&quot;userChrome.css&quot;);
+		var localFile = Cc[&quot;@mozilla.org/file/local;1&quot;].
+			createInstance(Ci.nsILocalFile);
+		var process = Cc[&quot;@mozilla.org/process/util;1&quot;].
+			createInstance(Ci.nsIProcess);
+		var args = [file.path];
+		localFile.initWithPath(&quot;C:\\WINDOWS\\system32\\notepad.exe&quot;);
+		process.init(localFile);
+		process.run(false, args, args.length);</code>
+	h3#nav_working_with_files-personal-folder-in-explorer Open Personal Folder in Explorer
+	pre.official_docs.
+		<code>/*Code*/
+		// single pane
+		var localFile = Cc[&quot;@mozilla.org/file/directory_service;1&quot;].
+			getService(Ci.nsIProperties).
+			get(&quot;Home&quot;, Ci.nsILocalFile);
+		localFile.reveal();</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// default view
+		var file = Cc[&quot;@mozilla.org/file/directory_service;1&quot;].
+			getService(Ci.nsIProperties).
+			get(&quot;Home&quot;, Ci.nsIFile);
+		var localFile = Cc[&quot;@mozilla.org/file/local;1&quot;].
+			createInstance(Ci.nsILocalFile);
+		var process = Cc[&quot;@mozilla.org/process/util;1&quot;].
+			createInstance(Ci.nsIProcess);
+		var args = [&quot;/e,&quot;, file.path];
+		localFile.initWithPath(&quot;C:\\WINDOWS\\explorer.exe&quot;);
+		process.init(localFile);
+		process.run(false, args, args.length);</code>
+	h3#nav_working_with_files-cb-folder-in-cmd Open custombuttons Folder in Command Prompt
+	pre.official_docs.
+		<code>/*Code*/
+		var file = Cc[&quot;@mozilla.org/file/directory_service;1&quot;].
+			getService(Ci.nsIProperties).
+			get(&quot;ProfD&quot;, Ci.nsIFile);
+		file.append(&quot;custombuttons&quot;);
+		var environment = Cc[&quot;@mozilla.org/process/environment;1&quot;].
+			getService(Ci.nsIEnvironment);
+		var localFile = Cc[&quot;@mozilla.org/file/local;1&quot;].
+			createInstance(Ci.nsILocalFile);
+		var process = Cc[&quot;@mozilla.org/process/util;1&quot;].
+			createInstance(Ci.nsIProcess);
+		var args = [&quot;/k&quot;, &quot;cd /d &quot; + file.path + &quot; &amp; title Custom Buttons &amp; dir&quot;];
+		localFile.initWithPath(environment.get(&quot;ComSpec&quot;));
+		process.init(localFile);
+		process.run(false, args, args.length);</code>
+	h3#nav_working_with_files-open-any Function to open any file/folder
+	pre.tweaked_by_odyseus.
+		<code>function openPath(aPath, aArgs) {
+			var nsIFile = Cc[&quot;@mozilla.org/file/local;1&quot;].createInstance(Ci.nsIFile);
+			nsIFile.initWithPath(aPath);
+			try {
+				if (nsIFile.isDirectory())                                   // If aPath is a Directory...
+					nsIFile.reveal();                                          // ...try to open it.
+				else if (!nsIFile.isDirectory() &amp;&amp; !nsIFile.isExecutable())  // If aPath is not a Directory nor an executable...
+					nsIFile.launch();                                          // ...try to launch it.
+				else if (!nsIFile.isDirectory() &amp;&amp; nsIFile.isExecutable()) { // If aPath is an executable, try to execute it.
+					var process = Cc[&quot;@mozilla.org/process/util;1&quot;].createInstance(Ci.nsIProcess);
+					try {
+						process.init(nsIFile);                               // Initialize nsIProcess.
+						(aArgs === undefined || aArgs[0] === &quot;&quot;)             // Check if there are arguments.
+						 ? process.runw(false, null, null)                   // Run nsIFile WITHOUT arguments...
+						 : process.runw(false, aArgs, aArgs.length);         // ...or run nsIFile WITH arguments.
+					} catch (aError) {
+						Cu.reportError(aError);
+					}
+				}
+			} catch (aError) {
+				Cu.reportError(aError);
+			}
+		}</code>
+	h3 Usage
+	b Usage:
+	code openPath(aPath, aArgs);
+	ul
+		li
+			b aPath:
+			|  Any valid and existent path. Absolute or &quot;constructed&quot;.
+			ul
+				li
+					b Path examples absolute:
+					br
+					code &quot;C:\\Windows\\notepad.exe&quot; // Windows path
+					br
+					code &quot;/usr/bin/kwrite&quot; // &quot;Linux&quot; path
+				li
+					b Path example from 
+						a(href='https://developer.mozilla.org/docs/JavaScript_OS.File') OS.File API
+						| :
+					br
+					code OS.Constants.Path.desktopDir // Desktop path in all platforms
+				li
+					b Path example from 
+						a(href='https://developer.mozilla.org/Add-ons/Code_snippets/File_I_O') &quot;Directory service&quot;
+						| :
+					br
+					code Services.dirsvc.get(&quot;Desk&quot;, Ci.nsIFile) // Desktop path in all platforms
+				li
+					b Path example &quot;constructed&quot; with 
+						a(href='https://developer.mozilla.org/docs/JavaScript_OS.File') OS.File API
+						| :
+					br
+					code OS.Path.join(OS.Constants.Path.libDir, &quot;seamonkey.exe&quot;)
+				li
+					b Path example &quot;constructed&quot; with 
+						a(href='https://developer.mozilla.org/Add-ons/Code_snippets/File_I_O') &quot;Directory service&quot;
+						| :
+					br
+					code let baseDir = Services.dirsvc.get(&quot;CurProcD&quot;, Ci.nsIFile);
+					br
+					code baseDir.append(&quot;seamonkey.exe&quot;);
+		li
+			b aArgs:
+			|  An array of arguments. ONLY for executable files.
+			ul
+				li
+					b Example with one argument:
+					br
+					code [&quot;arg&quot;]
+				li
+					b Example with n arguments:
+					br
+					code [&quot;arg-1&quot;, &quot;arg-2&quot;, &quot;arg-n&quot;]
+	b(style='background:#FFC6C6;')
+	.alert.alert-info
+		strong Note: it&apos;s MANDATORY to use double backslashes &quot;\\&quot; in all Windows paths.
+	pre.tweaked_by_odyseus.
+		<code>/**
+		 * Practical examples
+		 */
+
+		// Open Desktop directory on any platform
+		// Option 1
+		openPath(OS.Constants.Path.desktopDir);
+		// Option 2
+		openPath(Services.dirsvc.get(&quot;Desk&quot;, Ci.nsIFile));
+
+		// Open Home directory on any platform
+		// Option 1
+		openPath(OS.Constants.Path.homeDir);
+		// Option 2
+		openPath(Services.dirsvc.get(&quot;Home&quot;, Ci.nsIFile));
+
+		// Execute a new instace of Firefox with profile selector.
+		// Short version
+		openPath(OS.Path.join(OS.Constants.Path.libDir, &quot;firefox.exe&quot;), [&quot;-no-remote&quot;, &quot;-p&quot;]);
+		// or long version...
+		let profDir = Services.dirsvc.get(&quot;CurProcD&quot;, Ci.nsIFile);
+		profDir.append(&quot;firefox.exe&quot;);
+		openPath(profDir, [&quot;-no-remote&quot;, &quot;-p&quot;]);
+
+		// Execute a new instace of SeaMonkey with profile selector.
+		// Short version
+		openPath(OS.Path.join(OS.Constants.Path.libDir, &quot;seamonkey.exe&quot;), [&quot;-no-remote&quot;, &quot;-p&quot;]);
+		// or long version...
+		let profDir = Services.dirsvc.get(&quot;CurProcD&quot;, Ci.nsIFile);
+		profDir.append(&quot;seamonkey.exe&quot;);
+		openPath(profDir, [&quot;-no-remote&quot;, &quot;-p&quot;]);
+
+		// Execute Notepad in Windows.
+		openPath(&quot;C:\\Windows\\notepad.exe&quot;);
+
+		// Execute KWrite in Linux.
+		openPath(&quot;/usr/bin/kwrite&quot;);
+
+		// Open a Firefox profile called &quot;default&quot; in Linux.
+		openPath(&quot;/usr/bin/firefox&quot;, [&quot;-no-remote&quot;, &quot;-p&quot;, &quot;default&quot;]);</code>
+	h3#nav_working_with_files-various-examples Examples of different functions to work with files(read/write/create) and launch programs
+	h3 File creation function
+	pre.
+		<code>
+		function addfile(parentpath, filename) {
+			var file = Cc[&quot;@mozilla.org/file/local;1&quot;].createInstance(Ci.nsILocalFile);
+			file.initWithPath(parentpath);
+			file.append(filename);
+			if (!file.exists() || !file.isFile()) { // if it doesn't exist, create
+				file.create(Ci.nsIFile.NORMAL_FILE_TYPE, 0666);
+			}
+		}
+		</code>
+	h3 Folder add function
+	pre.
+		<code>
+		function adddir(parentpath, newdir) {
+			var file = Cc[&quot;@mozilla.org/file/local;1&quot;].createInstance(Ci.nsILocalFile);
+			file.initWithPath(parentpath);
+			file.append(newdir);
+			if (!file.exists() || !file.isDirectory()) { // if it doesn't exist, create
+				file.create(Ci.nsIFile.DIRECTORY_TYPE, 0777);
+			}
+		}
+		</code>
+	h3 Profile address
+	pre.
+		<code>var currProfD = Cc[&quot;@mozilla.org/file/directory_service;1&quot;].getService(Ci.nsIProperties).get(&quot;ProfD&quot;, Ci.nsIFile);
+		var profileDir = currProfD.path;</code>
+	h3 Doubling slashes in the path.
+	pre.
+		<code>function slashdouble(path) {
+			var path = path.replace(/\\/g, &quot;\\&quot;)
+				return (path)
+		}</code>
+	h3 Function of reading from file
+	pre.
+		<code>function readfile(parentdir, filename, fileout) {
+			var filefullpath = parentdir + &quot;\\&quot; + filename;
+			var file = Cc[&quot;@mozilla.org/file/local;1&quot;].createInstance(Ci.nsILocalFile);
+			file.initWithPath(filefullpath);
+			Cu.import(&quot;resource://gre/modules/NetUtil.jsm&quot;);
+			NetUtil.asyncFetch(file, function (inputStream, status) {
+				if (!Components.isSuccessCode(status)) {
+					data = &quot;An error occured&quot;; // To notify Interval func on error
+					return;
+				}
+				data = NetUtil.readInputStreamToString(inputStream, inputStream.available());
+				if (!data) {
+					data = &quot;File contains no data&quot;;
+				} // To notify Interval func on empty file
+			});
+		}
+		readfile(feedsdir, &quot;myfeeds.txt&quot;);
+		var xInterval = setInterval(function () {
+				if (typeof(data) == &quot;undefined&quot;) {
+					return;
+				} else {
+					alert(data);
+					clearInterval(xInterval);
+					// Parser code here, data is valid
+				}
+			}, 1101);</code>
+	h3 Open folder
+	pre.
+		<code>var Dir = &quot;C:\\windows\\Media&quot;; // the path to a folder, do not forget about the double slashes in the path
+		var nsLocalFile = Components.Constructor(&quot;@mozilla.org/file/local;1&quot;, &quot;nsILocalFile&quot;, &quot;initWithPath&quot;);
+		new nsLocalFile(Dir).reveal();</code>
+	h3 Save the file with a choice
+	pre.
+		<code>MyFile = &quot;test&quot;; //the contents of the file
+		MyFilename = &quot;test.txt&quot;; // the file name
+		var nsIFilePicker = Ci.nsIFilePicker;
+		var fp = Cc[&quot;@mozilla.org/filepicker;1&quot;]
+			.createInstance(nsIFilePicker);
+		fp.init(window, &quot;&quot;, fp.modeSave);
+		fp.defaultString = MyFilename;
+		fp.appendFilters(fp.filterHTML);
+		fp.appendFilters(fp.filterAll);
+		if (fp.show() == fp.returnCancel)
+			return;
+		var stream = Cc['@mozilla.org/network/file-output-stream;1']
+			.createInstance(Ci.nsIFileOutputStream);
+		stream.init(fp.file, 0x02 | 0x20 | 0x08, 0666, 0);
+		stream.write(MyFile, MyFile.length);
+		stream.close();</code>
+	h3 Converting strings to unicode
+	pre.
+		<code>var mytext = &quot;Text&quot;
+			var uc = Cc[&quot;@mozilla.org/intl/scriptableunicodeconverter&quot;].createInstance(Ci.nsIScriptableUnicodeConverter);
+		uc.charset = &quot;utf-8&quot;;
+		unicodetext = uc.ConvertFromUnicode(mytext);</code>
+	h3 To create a new resource resource:rootc
+	pre.
+		<code>//icon
+		// data:image/png;base64,CODE
+
+		Cu.import(&quot;resource://gre/modules/FileUtils.jsm&quot;);
+		var file = Cc[&quot;@mozilla.org/file/local;1&quot;].createInstance(Ci.nsILocalFile);
+		file.initWithPath(&quot;C:\\&quot;);
+
+		var ios = Cc[&quot;@mozilla.org/network/io-service;1&quot;].getService(Ci.nsIIOService);
+		var rph = ios.getProtocolHandler(&quot;resource&quot;).QueryInterface(Ci.nsIResProtocolHandler);
+		var uri = ios.newFileURI(file);
+		rph.setSubstitution(&quot;rootc&quot;, uri);
+
+		alert(&quot;resource:rootc&quot;)
+		getBrowser().selectedTab = getBrowser().addTab(&quot;resource:rootc&quot;);</code>
+	h3 Start external program with arguments
+	pre.
+		<code>var prgpath = &quot;C:\\windows\\ping.exe&quot;; // the path to the executable file, do not forget about the double slashes in the path
+		var args = ['-n', '6', 'google.com']; // arguments are separated by a space. i.e. string bla.exe -open &quot;c:\program files\ololo\ololo.txt&quot; will have arguments var args = ['-open','&quot;c:\program', 'files\ololo\ololo.txt&quot;'];
+		var file = Cc[&quot;@mozilla.org/file/local;1&quot;].createInstance(Ci.nsILocalFile);
+		file.initWithPath(prgpath);
+		var process = Cc[&quot;@mozilla.org/process/util;1&quot;].createInstance(Ci.nsIProcess);
+		process.init(file);
+		process.run(false, args, args.length);</code>
+	h3 Function writes to the file, overwriting
+	pre.
+		<code>function data2fileoverwrite(filepath, data) {
+			var file = Cc[&quot;@mozilla.org/file/local;1&quot;].createInstance(Ci.nsILocalFile);
+			file.initWithPath(filepath);
+			Cu.import(&quot;resource://gre/modules/NetUtil.jsm&quot;);
+			Cu.import(&quot;resource://gre/modules/FileUtils.jsm&quot;);
+
+			var ostream = FileUtils.openSafeFileOutputStream(file)
+				var converter = Cc[&quot;@mozilla.org/intl/scriptableunicodeconverter&quot;].createInstance(Ci.nsIScriptableUnicodeConverter);
+			converter.charset = &quot;UTF-8&quot;;
+			var istream = converter.convertToInputStream(data);
+
+			// The last argument (the callback) is optional.
+			NetUtil.asyncCopy(istream, ostream, function (status) {
+				if (!Components.isSuccessCode(status)) {
+					// Handle error!
+					return;
+				}
+				// Data has been written to the file.
+			});
+		};</code>
+	h3 Feature writing to a file by adding at the end
+	pre.
+		<code>function append2file(filepath, text) {
+			var file = Cc[&quot;@mozilla.org/file/local;1&quot;].createInstance(Ci.nsILocalFile);
+			file.initWithPath(filepath);
+			var stream = Cc[&quot;@mozilla.org/network/file-output-stream;1&quot;].createInstance(Ci.nsIFileOutputStream);
+			var converter = Cc[&quot;@mozilla.org/intl/converter-output-stream;1&quot;].createInstance(Ci.nsIConverterOutputStream);
+			stream.init(file, 0x02 | 0x10, 0664, 0);
+			converter.init(stream, &quot;UTF-8&quot;, 0, 0x1010);
+			converter.writeString(&quot;\u101D\u101A&quot;); //If you want to add a new row
+			converter.writeString(text);
+			converter.close();
+			stream.close();
+		}
+		append2file(&quot;C:\\testfile.txt&quot;, &quot;ololololololo!&quot;);</code>
+	h3 Select the file and getting his path
+	pre.
+		<code>const nsIFilePicker = Ci.nsIFilePicker;
+		var fp = Cc[&quot;@mozilla.org/filepicker;1&quot;].createInstance(nsIFilePicker);
+		fp.init(window, &quot;Select any file!&quot;, nsIFilePicker.modeOpen);
+		fp.appendFilters(nsIFilePicker.filterAll | nsIFilePicker.filterText);
+
+		var rv = fp.show();
+		if (rv == nsIFilePicker.returnOK || rv == nsIFilePicker.returnReplace) {
+			var file = fp.file;
+			// Get the path as string. Note that you usually won't
+			// need to work with the string paths.
+			var path = fp.file.path;
+			alert(&quot;You have chosen a file:\n&quot; + path);
+			// work with returned nsILocalFile...
+		}</code>

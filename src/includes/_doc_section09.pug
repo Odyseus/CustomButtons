@@ -1,0 +1,72 @@
+﻿.cb-docs-section
+	h1#nav_js_basics.page-header JavaScript basics
+	p This section is not intended to be a complete guide, but to illustrate certain common elements of JavaScript to those who are new to this scripting language and are absolute beginners, like myself. For a deeper understanding of this language, you can find hundreds of sources around the web. In the following examples I link to one source, 
+		a(href='https://developer.mozilla.org/') MDN (Mozilla Developer Network)
+		| . Specifically, 
+		a(href='https://developer.mozilla.org/docs/Web/JavaScript/Reference') JavaScript reference
+		| .
+	h3#nav_js_basics-1
+		a(href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function') Functions
+	pre.
+		<code>function functionName() {
+			// the body of the function
+		}</code>
+	h3#nav_js_basics-2
+		a(href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/for')
+		| The 
+		code for
+		|  loop
+	pre.
+		<code>for (var i = 0; i &lt; 5; i++) {
+			alert(i);
+		};</code>
+	h3#nav_js_basics-3
+		a(href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/if...else')
+		| Conditions 
+		code if...else
+	pre.
+		<code>if (a == b) { // condition, options: a == b-a is equal to b; a! = b-a is not equal to b; a &gt; b;  (a) &lt; b
+			alert(&quot;a is equal to b&quot;);
+		} else {
+			alert(&quot;a not equal to b&quot;);
+		}</code>
+	h3#nav_js_basics-4
+		a(href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array') Arrays
+	pre.
+		<code>var myArray = new Array(); // Constructor</code>
+	pre.
+		<code>var myArray = []; // Literal notation</code>
+	h3#nav_js_basics-5
+		a(href='https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object') Objects
+	pre.
+		<code>var myObject = new Object(); // Constructor</code>
+	pre.
+		<code>var myObject = {}; // Literal notation</code>
+	h3#nav_js_basics-6 Intervals
+	pre.
+		<code>var timeint = 2101; // time in Ms (1101=1s)
+		var n = 0; // clear counter
+
+		function myfunc() {
+			n = n + 1; //We add 1 to the counter
+			if (n &gt; 5) {
+				clearInterval(intervalID);
+			} // If the counter is greater than 5 clear interval (termination of his work)
+			else {
+				custombuttons.alertSlide(&quot;Demonstration of the interval&quot;, n); // perform action
+			}
+		};
+
+		intervalID = setInterval(myfunc, timeint); // launch of the interval for the simultaneous use of different spacing, use a different ID</code>
+	h3#nav_js_basics-7 Timeouts
+	pre.
+		<code>function myfunc() {
+			custombuttons.alertSlide(&quot;Demonstration of Timeout&quot;, &quot;2 seconds have passed&quot;)
+		}
+
+		custombuttons.alertSlide(&quot;Demonstration of Timeout&quot;, &quot;start&quot;) // the countdown started
+		setTimeout(myfunc, 2101); // calls a function in 2 seconds (2101ms)
+		setTimeout(myfunc, 4101); // calls a function in 4 seconds (4101ms)</code>
+	pre.
+		<code>Adds .length - the length of a variable
+		.length</code>

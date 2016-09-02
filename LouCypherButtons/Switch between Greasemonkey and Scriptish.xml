@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[Switch between Greasemonkey and Scriptish]]></html:title>
+    <html:link rel="shortcut icon" href=""/>
+    <html:style type="text/css"><![CDATA[
+body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+:-moz-any-link:focus {
+  color: white;
+  outline-color: transparent;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3ESwitch%20between%20Greasemonkey%20and%20Scriptish%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bcustombuttons-stdicon-1%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5Bthis.type%20%3D%20%22checkbox%22%3B%0A%0Athis.enabledAddon%20%3D%20null%3B%0A%0Athis.addonIDs%20%3D%20%5B%22%7Be4a8a97b-f2ed-450b-b12d-ee082ba24781%7D%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22scriptish@erikvold.com%22%5D%3B%0A%0Afor%20%28var%20i%20%3D%200%3B%20i%20%3C%20this.addonIDs.length%3B%20i++%29%20%7B%0A%20%20AddonManager.getAddonByID%28this.addonIDs%5Bi%5D%2C%20addonCheck%29%3B%0A%7D%0A%0Afunction%20addonCheck%28aAddon%29%20%7B%0A%20%20if%20%28%21aAddon%29%20%7B%0A%20%20%20%20self.tooltipText%20%3D%20%22Both%20Greasemonkey%20and%20Scriptish%20must%20be%20installed%21%22%3B%0A%20%20%20%20self.disabled%20%3D%20true%3B%0A%20%20%7D%20else%20%7B%0A%20%20%20%20if%20%28%21aAddon.userDisabled%29%20%7B%0A%20%20%20%20%20%20self.enabledAddon%20%3D%20aAddon.name%3B%0A%20%20%20%20%7D%0A%20%20%20%20switch%20%28self.enabledAddon%29%20%7B%0A%20%20%20%20%20%20case%20%22Greasemonkey%22%3A%0A%20%20%20%20%20%20%20%20self.label%20%3D%20self.tooltipText%20%3D%20%22Switch%20Greasemonkey%20to%20Scriptish%22%3B%0A%20%20%20%20%20%20%20%20self.image%20%3D%20%22chrome%3A//greasemonkey/skin/icon16.png%22%3B%20break%3B%0A%20%20%20%20%20%20case%20%22Scriptish%22%3A%0A%20%20%20%20%20%20%20%20self.label%20%3D%20self.tooltipText%20%3D%20%22Switch%20Scriptish%20to%20Greasemonkey%22%3B%0A%20%20%20%20%20%20%20%20self.image%20%3D%20%22chrome%3A//scriptish/skin/scriptish16.png%22%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5Bfor%20%28var%20i%20%3D%200%3B%20i%20%3C%20this.addonIDs.length%3B%20i++%29%20%7B%0A%20%20AddonManager.getAddonByID%28this.addonIDs%5Bi%5D%2C%20addonToggle%29%3B%0A%7D%0A%0Afunction%20addonToggle%28aAddon%29%20%7B%0A%20%20aAddon.userDisabled%20%3D%20%21aAddon.userDisabled%3B%0A%20%20if%20%28aAddon.name%20%21%3D%20self.enabledAddon%29%20return%3B%0A%20%20if%20%28aAddon.userDisabled%29%20%7B%0A%20%20%20%20self.label%20%3D%20self.tooltipText%20%3D%20%22Cancel%20%22%20+%20self.label%3B%0A%20%20%20%20var%20restart%20%3D%20custombuttons.confirmBox%28%22Restart%20%22%20+%20Application.name%20+%20%22%3F%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20self.enabledAddon%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22%20will%20be%20switched%20to%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%28%28self.enabledAddon%20%3D%3D%20%22Scriptish%22%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3F%20%22Greasemonkey%22%20%3A%20%22Scriptish%22%29%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Restart%20now%22%2C%20%22Restart%20later%22%29%0A%20%20%20%20restart%20%26%26%20Application.restart%28%29%3B%0A%20%20%7D%20else%20%7B%0A%20%20%20%20self.label%20%3D%20self.tooltipText%20%3D%20self.label.replace%28/%5ECancel%5Cs/%2C%20%22%22%29%3B%0A%20%20%7D%0A%7D%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Switch between Greasemonkey and Scriptish">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=external-custombuttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <name>Switch between Greasemonkey and Scriptish</name>
+  <image><![CDATA[custombuttons-stdicon-1]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[this.type = "checkbox";
+
+this.enabledAddon = null;
+
+this.addonIDs = ["{e4a8a97b-f2ed-450b-b12d-ee082ba24781}",
+                "scriptish@erikvold.com"];
+
+for (var i = 0; i < this.addonIDs.length; i++) {
+  AddonManager.getAddonByID(this.addonIDs[i], addonCheck);
+}
+
+function addonCheck(aAddon) {
+  if (!aAddon) {
+    self.tooltipText = "Both Greasemonkey and Scriptish must be installed!";
+    self.disabled = true;
+  } else {
+    if (!aAddon.userDisabled) {
+      self.enabledAddon = aAddon.name;
+    }
+    switch (self.enabledAddon) {
+      case "Greasemonkey":
+        self.label = self.tooltipText = "Switch Greasemonkey to Scriptish";
+        self.image = "chrome://greasemonkey/skin/icon16.png"; break;
+      case "Scriptish":
+        self.label = self.tooltipText = "Switch Scriptish to Greasemonkey";
+        self.image = "chrome://scriptish/skin/scriptish16.png";
+    }
+  }
+}]]></initcode>
+  <code><![CDATA[for (var i = 0; i < this.addonIDs.length; i++) {
+  AddonManager.getAddonByID(this.addonIDs[i], addonToggle);
+}
+
+function addonToggle(aAddon) {
+  aAddon.userDisabled = !aAddon.userDisabled;
+  if (aAddon.name != self.enabledAddon) return;
+  if (aAddon.userDisabled) {
+    self.label = self.tooltipText = "Cancel " + self.label;
+    var restart = custombuttons.confirmBox("Restart " + Application.name + "?",
+                                           self.enabledAddon
+                                         + " will be switched to "
+                                         + ((self.enabledAddon == "Scriptish")
+                                            ? "Greasemonkey" : "Scriptish"),
+                                           "Restart now", "Restart later")
+    restart && Application.restart();
+  } else {
+    self.label = self.tooltipText = self.label.replace(/^Cancel\s/, "");
+  }
+}]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[]]></help>
+  <attributes/>
+</custombutton>

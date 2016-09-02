@@ -1,0 +1,61 @@
+﻿doctype html
+html
+	head
+		meta(http-equiv='content-type', content='text/html;charset=utf-8')
+		title Custom Buttons By Odyseus
+		link(rel='shortcut icon', type='image/x-icon', href='lib/img/IndexImages/index.png')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(type='text/css', rel='alternate stylesheet', href='lib/css/bootstrap-dark.css', title='dark')
+		link(type='text/css', rel='stylesheet', href='lib/css/bootstrap-light.css', title='light')
+		link(type='text/css', rel='stylesheet', href='lib/css/tweaks-common.css')
+		link(type='text/css', rel='alternate stylesheet', href='lib/css/tweaks-dark.css', title='dark')
+		link(type='text/css', rel='stylesheet', href='lib/css/tweaks-light.css', title='light')
+		link(type='text/css', rel='stylesheet', href='lib/css/dataTables.bootstrap.css')
+		link(type='text/css', rel='stylesheet', href='lib/css/responsive.bootstrap.min.css')
+		script(type='text/javascript', src='lib/js/themes.js')
+
+		script(type='text/javascript').
+			setTheme(); // Sets the style sheet theme
+			var metadata = {
+				"pageType" : "main_index"
+			};
+
+	body
+		include ./includes/_noscript.pug
+
+		div#mainarea
+
+			span#headmenu
+				include ./includes/_navbar.pug
+
+			.container.boxed
+				h1 Custom buttons by Odyseus
+				table#xml-dir-table.table.table-condensed.table-striped.table-bordered.table-hover(cellspacing='0', width='100%')
+					thead
+						tr
+							th Button name
+							th Updated
+							th Homepage
+					tbody#xml-dir-table-body
+						include index-data.pug
+
+						each btn in JSONData
+							tr
+								td.btn-index-name
+									img.btn-index-image(src='../' + btn["repofolder"] +'/' + btn["repofolder"] + '.png' , alt='?', title='', class= btn["customClass"])
+									a(href='../' + btn["repofolder"] +'/' + btn["repofolder"] + btn["appendix"] + '.xml', data-container='body', data-toggle='popover', data-placement='top', data-original-title= btn["name"], data-trigger="focus", role="button", data-content= btn['title']): = btn["name"]
+								td.btn-index-lastupdate: = btn['updatedate']
+								td.btn-index-homepage
+									a(title='Go to this button homepage on Custom Buttons official forum for detailed information about its features/usage.', href= btn['homepage']) CB forum
+
+			div#footer.navbar.navbar-default
+				include ./includes/_footer.pug
+
+		include ./includes/_linktotop.pug
+
+		include ./includes/_scriptsatbottom.pug
+		script(src='lib/js/myFunctions.js', type='text/javascript')
+		script(src='lib/js/dataTables.min.js', type='text/javascript')
+		script(src='lib/js/dataTables.bootstrap.js', type='text/javascript')
+		script(src='lib/js/dataTables.responsive.min.js', type='text/javascript')
+		script(src='lib/js/responsive.bootstrap.min.js', type='text/javascript')

@@ -1,0 +1,78 @@
+﻿doctype html
+html
+	head
+		meta(http-equiv='content-type', content='text/html;charset=utf-8')
+		title Custom Buttons Documentation
+		link(rel='shortcut icon', type='image/x-icon', href='lib/img/IndexImages/index.png')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(type='text/css', rel='alternate stylesheet', href='lib/css/bootstrap-dark.css', title='dark')
+		link(type='text/css', rel='stylesheet', href='lib/css/bootstrap-light.css', title='light')
+		link(type='text/css', rel='stylesheet', href='lib/css/tweaks-common.css')
+		link(type='text/css', rel='alternate stylesheet', href='lib/css/highlight-dark.css', title='dark')
+		link(type='text/css', rel='stylesheet', href='lib/css/highlight-light.css', title='light')
+		link(type='text/css', rel='alternate stylesheet', href='lib/css/tweaks-dark.css', title='dark')
+		link(type='text/css', rel='stylesheet', href='lib/css/tweaks-light.css', title='light')
+		link(type='text/css', rel='alternate stylesheet', href='lib/css/docs-dark.css', title='dark')
+		link(type='text/css', rel='stylesheet', href='lib/css/docs-light.css', title='light')
+		script(type='text/javascript', src='lib/js/themes.js')
+
+		script(type='text/javascript').
+			setTheme(); // Sets the style sheet theme
+			var metadata = {
+				"pageType": "cb_documentation"
+			};
+
+	body(style='position: relative;')
+
+		include ./includes/_noscript.pug
+
+		div
+			span#headmenu
+				include ./includes/_navbar.pug
+
+			a#effing_index
+			.container.cb-docs-container
+				#cb_jumbotron.jumbotron
+					.container
+						h2 Unofficial Custom Buttons documentation
+						p This documentation is based on the 
+							a(href='http://custombuttons.sourceforge.net/forum/viewtopic.php?t=291#p1449') recovered documentation
+							|  from the old Custom Buttons forum and also contains code snippets from the 
+							a(href='http://forum.mozilla-russia.org/viewtopic.php?id=55963') Mozilla Russian forum
+							| .
+				.row
+					.col-md-9(role='main')
+						include ./includes/_doc_section00.pug
+						include ./includes/_doc_section01.pug
+						include ./includes/_doc_section02.pug
+						include ./includes/_doc_section03.pug
+						include ./includes/_doc_section04.pug
+						include ./includes/_doc_section05.pug
+						include ./includes/_doc_section06.pug
+						include ./includes/_doc_section07.pug
+						include ./includes/_doc_section08.pug
+						include ./includes/_doc_section09.pug
+					.col-md-3(role='complementary')
+						//- nav whithout hidden-xs and hidden-sm breaks the EFFING affix!!!
+						nav#index-sidebar.hidden-print.hidden-xs.hidden-sm
+							div(style='padding-top:1px;padding-bottom:1px;padding-left:20px;')
+								br
+								a.btn.btn-info.btn-xs(style='font-size:12px;font-weight:bold;' data-toggle='tooltip', data-placement='top', data-original-title= 'Download this documentation as an standalone HTML file.',rel='nofollow', title='Download this documentation as standalone HTML file.', href='StandAloneUnofficialDocsLight.html', download)
+									span.glyphicon.glyphicon-download-alt
+									|  Light
+								| 
+								a.btn.btn-info.btn-xs(style='font-size:12px;font-weight:bold;' data-toggle='tooltip', data-placement='top', data-original-title= 'Download this documentation as an standalone HTML file.',rel='nofollow', title='Download this documentation as standalone HTML file.', href='StandAloneUnofficialDocsDark.html', download)
+									span.glyphicon.glyphicon-download-alt
+									|  Dark
+								br
+							include ./includes/_doc_index.pug
+
+			div#footer.navbar.navbar-default
+				include ./includes/_footer.pug
+
+		include ./includes/_linktotop.pug
+
+		script(type='text/javascript', src='lib/js/jquery-2.2.4.min.js')
+		script(type='text/javascript', src='lib/js/bootstrap.min.js')
+		script(type='text/javascript', src='lib/js/highlight.pack.js')
+		script(type='text/javascript', src='lib/js/myFunctions.js')

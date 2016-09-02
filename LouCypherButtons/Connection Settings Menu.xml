@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[Connection Settings Menu]]></html:title>
+    <html:link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAstJREFUeNpsU0tME1EUPTPTaafttIi0U6klRdpACFELBhQiGk0IJK5cGY1hYWJcyNKlS1cm7nThxpVBWbHAREj8BUwQi/ET+VR+JZK2Q/906GdaOr4ZWwrGl5zMzX33nHvezR2KHnmD/cMfAWVp4KFjh0BRl0nGXbnZhKK8Q6k4qWTiEqTUPkWHw8cBOfegS0DvQCvv8goc33hUj2hOkV76kxemfu4Mkpr7BGKVwFA9w/v9KaX8aPhsw2CPwHgvnbJxgeAOXZZL9MlmC3exlRd4piTMLYonUN57S+pllUQrSREqkI5d6RToPjvHuKx1Zmwni5B283C7GvD5u4jIDtDtsbs8XKFPra3ydMimtfYKMHTM2ub0rydQH8sSa4BBR+H13G8EN0WcMzmwvBqB3co5V6TEEKGMaTNQagNpofS8qVQEgvEMDAYWxCoSOT2c3i5MTgcgpuJgUTYRTkttiEW5GtOhSJwq6I3YQxnFcgnEBNLJMGLRXSgUjXq7B3IqQhEOXROgmWq8XizkfbTRyBuJCEveQBMFhWVhYE0oZDIQjjsgsaUs4azXBFjub0TRU2IofP60u5nX0TQhUdCpCuq48zKcbjsaHcDE9I9t6E1TUMoVAaO1KjYhprNXEpGo2dfucahktmJONnAQbDQCy0tiYC38CRw/oeZvD3SBwfIrVCCTDZwN6Ztas3nZ7Ky3sDbeqDMwjJKSsrsfvq5svZ/f+KgsjN/D9MO4xon9AnVgC3XaJta5muC71gdPfzeCs17tprl3FWszfnwbm0V6K0Qy4eoiHRRQJ8sTmLV8hx5YkEe0mw79YxJX1gU5Aomg9K/A4TNqf4ql4hktbme/4Eb0zv/KVNs2Ag+Bj6CToI3AglEJV59d1wTGb71QP/MEewQbldhPsKg6IF7BVeyrMKk/Ge6absJO9WttosoMnmSfV5pWn0D+DmT/CDAAu3QImARY0gcAAAAASUVORK5CYII="/>
+    <html:style type="text/css"><![CDATA[
+body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+:-moz-any-link:focus {
+  color: white;
+  outline-color: transparent;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3EConnection%20Settings%20Menu%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAstJREFUeNpsU0tME1EUPTPTaafttIi0U6klRdpACFELBhQiGk0IJK5cGY1hYWJcyNKlS1cm7nThxpVBWbHAREj8BUwQi/ET+VR+JZK2Q/906GdaOr4ZWwrGl5zMzX33nHvezR2KHnmD/cMfAWVp4KFjh0BRl0nGXbnZhKK8Q6k4qWTiEqTUPkWHw8cBOfegS0DvQCvv8goc33hUj2hOkV76kxemfu4Mkpr7BGKVwFA9w/v9KaX8aPhsw2CPwHgvnbJxgeAOXZZL9MlmC3exlRd4piTMLYonUN57S+pllUQrSREqkI5d6RToPjvHuKx1Zmwni5B283C7GvD5u4jIDtDtsbs8XKFPra3ydMimtfYKMHTM2ub0rydQH8sSa4BBR+H13G8EN0WcMzmwvBqB3co5V6TEEKGMaTNQagNpofS8qVQEgvEMDAYWxCoSOT2c3i5MTgcgpuJgUTYRTkttiEW5GtOhSJwq6I3YQxnFcgnEBNLJMGLRXSgUjXq7B3IqQhEOXROgmWq8XizkfbTRyBuJCEveQBMFhWVhYE0oZDIQjjsgsaUs4azXBFjub0TRU2IofP60u5nX0TQhUdCpCuq48zKcbjsaHcDE9I9t6E1TUMoVAaO1KjYhprNXEpGo2dfucahktmJONnAQbDQCy0tiYC38CRw/oeZvD3SBwfIrVCCTDZwN6Ztas3nZ7Ky3sDbeqDMwjJKSsrsfvq5svZ/f+KgsjN/D9MO4xon9AnVgC3XaJta5muC71gdPfzeCs17tprl3FWszfnwbm0V6K0Qy4eoiHRRQJ8sTmLV8hx5YkEe0mw79YxJX1gU5Aomg9K/A4TNqf4ql4hktbme/4Eb0zv/KVNs2Ag+Bj6CToI3AglEJV59d1wTGb71QP/MEewQbldhPsKg6IF7BVeyrMKk/Ge6absJO9WttosoMnmSfV5pWn0D+DmT/CDAAu3QImARY0gcAAAAASUVORK5CYII%3D%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5Bfunction%20%24xml%28aXML%29%20%7B%0A%20%20return%20%28new%20DOMParser%29.parseFromString%28aXML%2C%20%22application/xml%22%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.documentElement%3B%0A%7D%0A%0Avar%20prefs%20%3D%20cbu.ps.getBranch%28%22network.proxy.%22%29%3B%0A%0Athis.openSettings%20%3D%20function%28%29%20%7B%0A%20%20if%20%28Application.id%20%3D%3D%20%22%7B92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a%7D%22%29%20%7B%0A%20%20%20%20//%20SeaMonkey%0A%20%20%20%20goPreferences%28%22proxies_pane%22%29%3B%0A%20%20%20%20return%3B%0A%20%20%7D%0A%20%20var%20ww%20%3D%20Components.classes%5B%22@mozilla.org/embedcomp/window-watcher%3B1%22%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.getService%28Components.interfaces.nsIWindowWatcher%29%3B%0A%20%20var%20em%20%3D%20ww.getWindowEnumerator%28%29%3B%0A%20%20var%20winName%20%3D%20%22proxy_settings%22%3B%0A%20%20var%20index%20%3D%201%3B%0A%20%20while%20%28em.hasMoreElements%28%29%29%20%7B%0A%20%20%20%20var%20win%20%3D%20em.getNext%28%29%3B%0A%20%20%20%20if%28win.name%20%3D%3D%20winName%29%20%7B%0A%20%20%20%20%20%20win.focus%28%29%3B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%0A%20%20%20%20index++%0A%20%20%7D%0A%20%20openDialog%28%22chrome%3A//browser/content/preferences/connection.xul%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20winName%2C%20%22centerscreen%2C%20resizable%3Dno%22%29%3B%0A%7D%0A%0Athis.setManualProxy%20%3D%20function%28%29%20%7B%0A%20%20var%20httpProxy%20%3D%20prefs.getCharPref%28%22http%22%29%3B%0A%20%20var%20httpPort%20%3D%20prefs.getIntPref%28%22http_port%22%29%3B%0A%20%20var%20sslProxy%20%3D%20prefs.getCharPref%28%22ssl%22%29%3B%0A%20%20var%20sslPort%20%3D%20prefs.getIntPref%28%22ssl_port%22%29%3B%0A%20%20var%20ftpProxy%20%3D%20prefs.getCharPref%28%22ftp%22%29%3B%0A%20%20var%20ftpPort%20%3D%20prefs.getIntPref%28%22ftp_port%22%29%3B%0A%20%20var%20soxProxy%20%3D%20prefs.getCharPref%28%22socks%22%29%3B%0A%20%20var%20soxPort%20%3D%20prefs.getIntPref%28%22socks_port%22%29%3B%0A%0A%20%20if%20%28%28httpProxy%20%3D%3D%20%22%22%29%20%26%26%20%28httpPort%20%3D%3D%200%29%20%26%26%0A%20%20%20%20%20%20%28sslProxy%20%3D%3D%20%22%22%29%20%26%26%20%28sslPort%20%3D%3D%200%29%20%26%26%0A%20%20%20%20%20%20%28ftpProxy%20%3D%3D%20%22%22%29%20%26%26%20%28ftpPort%20%3D%3D%200%29%20%26%26%0A%20%20%20%20%20%20%28soxProxy%20%3D%3D%20%22%22%29%20%26%26%20%28soxPort%20%3D%3D%200%29%29%20%7B%0A%20%20%20%20this.openSettings%28%29%3B%0A%20%20%7D%0A%7D%0A%0Athis.setAutoProxy%20%3D%20function%28%29%20%7B%0A%20%20var%20autoProxy%20%3D%20prefs.getCharPref%28%22autoconfig_url%22%29%3B%0A%20%20if%20%28autoProxy%20%3D%3D%20%22%22%29%20this.openSettings%28%29%3B%0A%7D%0A%0Athis.setProxy%20%3D%20function%28aInt%29%20%7B%0A%20%20prefs.setIntPref%28%22type%22%2C%20aInt%29%3B%0A%20%20switch%20%28aInt%29%20%7B%0A%20%20%20%20case%20%222%22%3A%20this.setAutoProxy%28%29%3B%20break%3B%0A%20%20%20%20case%20%221%22%3A%20this.setManualProxy%28%29%3B%20break%3B%0A%20%20%20%20default%3A%0A%20%20%7D%0A%7D%0A%0Athis.popupShowing%20%3D%20function%28aNode%29%20%7B%0A%20%20var%20items%20%3D%20aNode.querySelectorAll%28%22menuitem%5Btype%3D%27radio%27%5D%22%29%3B%0A%20%20for%20%28var%20i%20%3D%200%3B%20i%20%3C%20items.length%3B%20i++%29%20%7B%0A%20%20%20%20if%20%28items%5Bi%5D.value%20%3D%3D%202%29%0A%20%20%20%20%20%20items%5Bi%5D.tooltipText%20%3D%20prefs.getCharPref%28%22autoconfig_url%22%29%3B%0A%20%20%20%20if%20%28items%5Bi%5D.value%20%3D%3D%20prefs.getIntPref%28%22type%22%29%29%20%7B%0A%20%20%20%20%20%20items%5Bi%5D.setAttribute%28%22checked%22%2C%20%22true%22%29%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Athis.onmouseenter%20%3D%20function%20updateTooltip%28aEvent%29%20%7B%0A%20%20var%20tooltip%20%3D%20this.label%3B%0A%20%20var%20autoconfig_url%20%3D%20prefs.getCharPref%28%22autoconfig_url%22%29%3B%0A%20%20var%20type%20%3D%20prefs.getIntPref%28%22type%22%29%3B%0A%20%20switch%20%28type%29%20%7B%0A%20%20%20%20case%205%3A%20tooltip%20%3D%20%22Use%20system%20proxy%20settings%22%3B%20break%3B%0A%20%20%20%20case%204%3A%20tooltip%20%3D%20%22Auto-detect%20proxy%20settings%20for%20this%20network%22%3B%20break%3B%0A%20%20%20%20case%202%3A%0A%20%20%20%20%20%20tooltip%20%3D%20%22Automatic%20proxy%20configuration%20URL%22%3B%0A%20%20%20%20%20%20if%20%28autoconfig_url%20%21%3D%20%22%22%29%20tooltip%20+%3D%20%22%5Cn%22%20+%20autoconfig_url%3B%0A%20%20%20%20%20%20break%3B%0A%20%20%20%20case%201%3A%20tooltip%20%3D%20%22Manual%20proxy%20configuration%22%3B%20break%3B%0A%20%20%20%20default%3A%20tooltip%20%3D%20%22No%20proxy%22%3B%0A%20%20%7D%0A%20%20this.tooltipText%20%3D%20tooltip%3B%0A%7D%0A%0Avar%20mp%20%3D%20%27%3Cmenupopup%20xmlns%3D%22%27%20+%20xulns%20+%20%27%22%20context%3D%22toolbar-context-menu%22%27%0A%20%20%20%20%20%20%20+%20%27%20oncommand%3D%22this.parentNode.setProxy%28event.target.value%29%3B%22%27%0A%20%20%20%20%20%20%20+%20%27%20onpopupshowing%3D%22this.parentNode.popupShowing%28this%29%3B%22%3E%27%0A%20%20%20%20%20%20%20+%20%27%3Cmenuitem%20type%3D%22radio%22%20value%3D%220%22%20label%3D%22No%20proxy%22/%3E%27%0A%20%20%20%20%20%20%20+%20%27%3Cmenuitem%20type%3D%22radio%22%20value%3D%224%22%20label%3D%22Auto-detect%20proxy%20settings%20for%20this%20network%22/%3E%27%0A%20%20%20%20%20%20%20+%20%27%3Cmenuitem%20type%3D%22radio%22%20value%3D%225%22%20label%3D%22Use%20system%20proxy%20settings%22/%3E%27%0A%20%20%20%20%20%20%20+%20%27%3Cmenuitem%20type%3D%22radio%22%20value%3D%221%22%20label%3D%22Manual%20proxy%20configuration%22/%3E%27%0A%20%20%20%20%20%20%20+%20%27%3Cmenuitem%20type%3D%22radio%22%20value%3D%222%22%20label%3D%22Automatic%20proxy%20configuration%20URL%22/%3E%27%0A%20%20%20%20%20%20%20+%20%27%3Cmenuseparator/%3E%27%0A%20%20%20%20%20%20%20+%20%27%3Cmenuitem%20label%3D%22Connection%20Settings...%22%27%0A%20%20%20%20%20%20%20+%20%27%20oncommand%3D%22event.stopPropagation%28%29%3B%20this.parentNode.parentNode.openSettings%28%29%3B%22/%3E%27%0A%20%20%20%20%20%20%20+%20%27%3C/menupopup%3E%27%3B%0A%0Athis.appendChild%28%24xml%28mp%29%29%3B%0Athis.type%20%3D%20%22menu%22%3B%0Athis.label%20%3D%20%22Connection%20Settings%22%0A%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Connection Settings Menu">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=external-custombuttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <name>Connection Settings Menu</name>
+  <image><![CDATA[data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAstJREFUeNpsU0tME1EUPTPTaafttIi0U6klRdpACFELBhQiGk0IJK5cGY1hYWJcyNKlS1cm7nThxpVBWbHAREj8BUwQi/ET+VR+JZK2Q/906GdaOr4ZWwrGl5zMzX33nHvezR2KHnmD/cMfAWVp4KFjh0BRl0nGXbnZhKK8Q6k4qWTiEqTUPkWHw8cBOfegS0DvQCvv8goc33hUj2hOkV76kxemfu4Mkpr7BGKVwFA9w/v9KaX8aPhsw2CPwHgvnbJxgeAOXZZL9MlmC3exlRd4piTMLYonUN57S+pllUQrSREqkI5d6RToPjvHuKx1Zmwni5B283C7GvD5u4jIDtDtsbs8XKFPra3ydMimtfYKMHTM2ub0rydQH8sSa4BBR+H13G8EN0WcMzmwvBqB3co5V6TEEKGMaTNQagNpofS8qVQEgvEMDAYWxCoSOT2c3i5MTgcgpuJgUTYRTkttiEW5GtOhSJwq6I3YQxnFcgnEBNLJMGLRXSgUjXq7B3IqQhEOXROgmWq8XizkfbTRyBuJCEveQBMFhWVhYE0oZDIQjjsgsaUs4azXBFjub0TRU2IofP60u5nX0TQhUdCpCuq48zKcbjsaHcDE9I9t6E1TUMoVAaO1KjYhprNXEpGo2dfucahktmJONnAQbDQCy0tiYC38CRw/oeZvD3SBwfIrVCCTDZwN6Ztas3nZ7Ky3sDbeqDMwjJKSsrsfvq5svZ/f+KgsjN/D9MO4xon9AnVgC3XaJta5muC71gdPfzeCs17tprl3FWszfnwbm0V6K0Qy4eoiHRRQJ8sTmLV8hx5YkEe0mw79YxJX1gU5Aomg9K/A4TNqf4ql4hktbme/4Eb0zv/KVNs2Ag+Bj6CToI3AglEJV59d1wTGb71QP/MEewQbldhPsKg6IF7BVeyrMKk/Ge6absJO9WttosoMnmSfV5pWn0D+DmT/CDAAu3QImARY0gcAAAAASUVORK5CYII=]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[function $xml(aXML) {
+  return (new DOMParser).parseFromString(aXML, "application/xml")
+                        .documentElement;
+}
+
+var prefs = cbu.ps.getBranch("network.proxy.");
+
+this.openSettings = function() {
+  if (Application.id == "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}") {
+    // SeaMonkey
+    goPreferences("proxies_pane");
+    return;
+  }
+  var ww = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
+                     .getService(Components.interfaces.nsIWindowWatcher);
+  var em = ww.getWindowEnumerator();
+  var winName = "proxy_settings";
+  var index = 1;
+  while (em.hasMoreElements()) {
+    var win = em.getNext();
+    if(win.name == winName) {
+      win.focus();
+      return;
+    }
+    index++
+  }
+  openDialog("chrome://browser/content/preferences/connection.xul",
+             winName, "centerscreen, resizable=no");
+}
+
+this.setManualProxy = function() {
+  var httpProxy = prefs.getCharPref("http");
+  var httpPort = prefs.getIntPref("http_port");
+  var sslProxy = prefs.getCharPref("ssl");
+  var sslPort = prefs.getIntPref("ssl_port");
+  var ftpProxy = prefs.getCharPref("ftp");
+  var ftpPort = prefs.getIntPref("ftp_port");
+  var soxProxy = prefs.getCharPref("socks");
+  var soxPort = prefs.getIntPref("socks_port");
+
+  if ((httpProxy == "") && (httpPort == 0) &&
+      (sslProxy == "") && (sslPort == 0) &&
+      (ftpProxy == "") && (ftpPort == 0) &&
+      (soxProxy == "") && (soxPort == 0)) {
+    this.openSettings();
+  }
+}
+
+this.setAutoProxy = function() {
+  var autoProxy = prefs.getCharPref("autoconfig_url");
+  if (autoProxy == "") this.openSettings();
+}
+
+this.setProxy = function(aInt) {
+  prefs.setIntPref("type", aInt);
+  switch (aInt) {
+    case "2": this.setAutoProxy(); break;
+    case "1": this.setManualProxy(); break;
+    default:
+  }
+}
+
+this.popupShowing = function(aNode) {
+  var items = aNode.querySelectorAll("menuitem[type='radio']");
+  for (var i = 0; i < items.length; i++) {
+    if (items[i].value == 2)
+      items[i].tooltipText = prefs.getCharPref("autoconfig_url");
+    if (items[i].value == prefs.getIntPref("type")) {
+      items[i].setAttribute("checked", "true");
+    }
+  }
+}
+
+this.onmouseenter = function updateTooltip(aEvent) {
+  var tooltip = this.label;
+  var autoconfig_url = prefs.getCharPref("autoconfig_url");
+  var type = prefs.getIntPref("type");
+  switch (type) {
+    case 5: tooltip = "Use system proxy settings"; break;
+    case 4: tooltip = "Auto-detect proxy settings for this network"; break;
+    case 2:
+      tooltip = "Automatic proxy configuration URL";
+      if (autoconfig_url != "") tooltip += "\n" + autoconfig_url;
+      break;
+    case 1: tooltip = "Manual proxy configuration"; break;
+    default: tooltip = "No proxy";
+  }
+  this.tooltipText = tooltip;
+}
+
+var mp = '<menupopup xmlns="' + xulns + '" context="toolbar-context-menu"'
+       + ' oncommand="this.parentNode.setProxy(event.target.value);"'
+       + ' onpopupshowing="this.parentNode.popupShowing(this);">'
+       + '<menuitem type="radio" value="0" label="No proxy"/>'
+       + '<menuitem type="radio" value="4" label="Auto-detect proxy settings for this network"/>'
+       + '<menuitem type="radio" value="5" label="Use system proxy settings"/>'
+       + '<menuitem type="radio" value="1" label="Manual proxy configuration"/>'
+       + '<menuitem type="radio" value="2" label="Automatic proxy configuration URL"/>'
+       + '<menuseparator/>'
+       + '<menuitem label="Connection Settings..."'
+       + ' oncommand="event.stopPropagation(); this.parentNode.parentNode.openSettings();"/>'
+       + '</menupopup>';
+
+this.appendChild($xml(mp));
+this.type = "menu";
+this.label = "Connection Settings"
+]]></initcode>
+  <code><![CDATA[]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[]]></help>
+  <attributes/>
+</custombutton>

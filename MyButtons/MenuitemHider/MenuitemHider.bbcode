@@ -1,0 +1,44 @@
+This button is based on a [url=https://forum.mozilla-russia.org/viewtopic.php?pid=600133#p600133]button by [b]Dumby[/b][/url] from the [url=https://forum.mozilla-russia.org/viewforum.php?id=34]Mozilla Russian forum[/url] and it's also very similar to another button created by [b]slbgz[/b] [url=http://custombuttons.sourceforge.net/forum/viewtopic.php?f=4&t=874]here in this forum[/url]. Its purpose is to hide from the application the selected 'menu', 'menuitem' or 'menuseparator' elements (for whatever reason). The main difference with the previous mentioned buttons is that this button can hide/un-hide items automatically without the need to manually edit the button itself. Another difference is that instead of storing the list of element IDs inside the button itself, this buttons stores them in a preference. Making the entire hide/un-hide process infinitely faster and less prone to errors. Although both buttons, including this one, share the same disadvantage of only be able to handle elements with defined IDs, I tried to solve this with the option called [b]Custom selectors[/b] (See [b]Features[/b]).
+
+[color=#FF0000][b][size=100]Disclaimer!![/size] The following link/s leads to an external page (Dropbox). This forum is not responsible for any external content.[/b][/color]
+
+[url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/MenuitemHider/MenuitemHider.xml][img]https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/MenuitemHider/MenuitemHider.png[/img] [size=150] Install Menuitem Hider[/size][/url]
+
+[b][size=150]Compatibility[/size][/b]
+Tested and working on Firefox Stable/Dev. Edition, SeaMonkey, Palemoon and Thunderbird.
+[b][color=#FF0000]Not compatible with Nightly nor Windows Vista[/color][/b]
+
+[color=#FF0000][size=150][b]Changelog - Updated June 12, 2016[/b][/size]
+[list][*] Rewritten from scratch.
+[*] Now there is absolutely no need to edit the button to change its settings.
+[*] Now any mouse button can be configured to hide/un-hide elements.
+[*] General enhancements of the kind [i]do more with less code[/i].[/list]
+[b][size=120]Note: If updating from an older version, you will lose all your elements IDs and custom selectors.[/size][/b]
+To avoid this, just do the following:
+[list]
+[*] [b]For element IDs:[/b] Install the new version alongside the old one. Then open [b]about:config[/b] and type [i]ListOfIDsToHide[/i] (this is the name of the preference that stores all IDs). There should be two matches. Copy the value from the one that it isn't empty to the one that it is empty. Done.
+[*] [b]For custom selectors:[/b] Just copy the custom selectors defined inside the Initialization tab of the old button into the settings window of the new button.[/list][/color]
+
+[b][size=150]Features[/size][/b]
+[list][*] The shortcut to hide/un-hide elements can make use of any mouse button and any modifier key.
+[*] A custom hotkey can be configured to toggle the use of the shortcut.
+[*] Another custom hotkey can be configured to toggle the hidden items visibility.
+[*] Possibility to create custom CSS selectors for elements without IDs. Items without IDs cannot be hidden automatically by clicking on them. That's why I created this option so we can specify some custom selectors to accurately determine (more or less) the exact item we want to hide.
+[b]Some examples:[/b][list]
+[*] This selector will hide the "Customise…" menu item in the entire browser:
+[b]menuitem[label='Customise…'][/b]
+[*] This selector will hide the "Customise…" menu item ONLY inside the toolbars context menu:
+[b]#toolbar-context-menu > menuitem[label='Customise…'][/b][/list]
+[/list]
+
+[b][color=red][size=150]Error report[/size][/color][/b]
+If any errors are found, report it ASAP on this post with as much details as possible.
+[list]
+[*]Which platform and its version (Linux, Mac or Windows).
+[*]Which application and its version (Any Firefox-based browser, Thunderbird or SeaMonkey).
+[*]Error/Browser console output, if any.
+[*]If it's easier for you to report an error with images, and if the image is too large or there are more than one, publish the links to them, do not post them using the IMG tag in the message.
+[*]Be willing to follow troubleshooting instructions.
+[/list]
+
+[b][url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/0www/index.html]All my buttons on Dropbox[/url][/b]

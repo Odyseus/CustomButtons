@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[Invert Colors]]></html:title>
+    <html:link rel="shortcut icon" href="data:image/gif;base64,R0lGODlhEAAQAOZKAP///yczPoGOml1ncXWBjW13gvcVAGx2gv/3AP/kAP/NAHqIkwCcAF9ocmFrdGNudz4+kWl0f2ZxfP+cFMhY7m96hc0NAABJvXSCjgBZzVNdaKMxyHJ+iXiEkB8fYn+MmP91JklJtElTXuMeAIOQmwAfk4iVoAB14wCD93LuP/+3AHIAnD/IIwA+rCgzP//4AF1lcCsravghAHkAodAbAKlAzABi0OUuAP+jJQB/5f+7AABMsnyJlf98MnrvS0xMmVNTuACK+Mxi7//mAE3MMwOhAHaAiwArmf/PAABTwf///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEoALAAAAAAQABAAAAfMgCYkAoSFhgIkJkofAI2Oj44fSgsAFjQWACA9IAAKSAoAC0odACM3IwATOBMACUMJAB1KBAAGMgYAKjoqAAgvCAAEShyQxY0cShUADEUMABk2GQAlRyUAFUoFACxELAAnOScALTstAAVKEQApPikAKEEoABdJFwARShLGxRJKDwAeYngAsGLGCgAaYGgA8ECJAwAQfkAAsKHGBgAHjBwA4EDJAAAhgIQAQEEIBQAYeGAAMEBJg32QGigR4SKAzZs4A7gQoaSnz59AewYCADs="/>
+    <html:style type="text/css"><![CDATA[
+body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+:-moz-any-link:focus {
+  color: white;
+  outline-color: transparent;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3EInvert%20Colors%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/gif%3Bbase64%2CR0lGODlhEAAQAOZKAP///yczPoGOml1ncXWBjW13gvcVAGx2gv/3AP/kAP/NAHqIkwCcAF9ocmFrdGNudz4+kWl0f2ZxfP+cFMhY7m96hc0NAABJvXSCjgBZzVNdaKMxyHJ+iXiEkB8fYn+MmP91JklJtElTXuMeAIOQmwAfk4iVoAB14wCD93LuP/+3AHIAnD/IIwA+rCgzP//4AF1lcCsravghAHkAodAbAKlAzABi0OUuAP+jJQB/5f+7AABMsnyJlf98MnrvS0xMmVNTuACK+Mxi7//mAE3MMwOhAHaAiwArmf/PAABTwf///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEoALAAAAAAQABAAAAfMgCYkAoSFhgIkJkofAI2Oj44fSgsAFjQWACA9IAAKSAoAC0odACM3IwATOBMACUMJAB1KBAAGMgYAKjoqAAgvCAAEShyQxY0cShUADEUMABk2GQAlRyUAFUoFACxELAAnOScALTstAAVKEQApPikAKEEoABdJFwARShLGxRJKDwAeYngAsGLGCgAaYGgA8ECJAwAQfkAAsKHGBgAHjBwA4EDJAAAhgIQAQEEIBQAYeGAAMEBJg32QGigR4SKAzZs4A7gQoaSnz59AewYCADs%3D%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5B//%20Original%20script%3A%20http%3A//userscripts.org/scripts/show/125970%0A%0Afunction%20RGBtoHSL%28aRGBColor%29%20%7B%0A%20%20with%20%28Math%29%20%7B%0A%20%20%20%20var%20R%2C%20G%2C%20B%3B%0A%20%20%20%20var%20cMax%2C%20cMin%3B%0A%20%20%20%20var%20sum%2C%20diff%3B%0A%20%20%20%20var%20Rdelta%2C%20Gdelta%2C%20Bdelta%3B%0A%20%20%20%20var%20H%2C%20L%2C%20S%3B%0A%20%20%20%20R%20%3D%20aRGBColor%5B0%5D%3B%0A%20%20%20%20G%20%3D%20aRGBColor%5B1%5D%3B%0A%20%20%20%20B%20%3D%20aRGBColor%5B2%5D%3B%0A%20%20%20%20cMax%20%3D%20max%28max%28R%2C%20G%29%2C%20B%29%3B%0A%20%20%20%20cMin%20%3D%20min%28min%28R%2C%20G%29%2C%20B%29%3B%0A%20%20%20%20sum%20%3D%20cMax%20+%20cMin%3B%0A%20%20%20%20diff%20%3D%20cMax%20-%20cMin%3B%0A%20%20%20%20L%20%3D%20sum%20/%202%3B%0A%20%20%20%20if%20%28cMax%20%3D%3D%20cMin%29%20%7B%0A%20%20%20%20%20%20S%20%3D%200%3B%0A%20%20%20%20%20%20H%20%3D%200%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20if%20%28L%20%3C%3D%20%281%20/%202%29%29%20S%20%3D%20diff%20/%20sum%3B%0A%20%20%20%20%20%20else%20S%20%3D%20diff%20/%20%282%20-%20sum%29%3B%0A%20%20%20%20%20%20Rdelta%20%3D%20R%20/%206%20/%20diff%3B%0A%20%20%20%20%20%20Gdelta%20%3D%20G%20/%206%20/%20diff%3B%0A%20%20%20%20%20%20Bdelta%20%3D%20B%20/%206%20/%20diff%3B%0A%20%20%20%20%20%20if%20%28R%20%3D%3D%20cMax%29%20H%20%3D%20Gdelta%20-%20Bdelta%3B%0A%20%20%20%20%20%20else%20if%20%28G%20%3D%3D%20cMax%29%20H%20%3D%20%281%20/%203%29%20+%20Bdelta%20-%20Rdelta%3B%0A%20%20%20%20%20%20else%20H%20%3D%20%282%20/%203%29%20+%20Rdelta%20-%20Gdelta%3B%0A%20%20%20%20%20%20if%20%28H%20%3C%200%29%20H%20+%3D%201%3B%0A%20%20%20%20%20%20if%20%28H%20%3E%201%29%20H%20-%3D%201%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20%5BH%2C%20S%2C%20L%5D%3B%0A%20%20%7D%0A%7D%0A%0Afunction%20getRGBColor%28aNode%2C%20aProp%29%20%7B%0A%20%20var%20rgb%20%3D%20getComputedStyle%28aNode%2C%20null%29.getPropertyValue%28aProp%29%3B%0A%20%20var%20r%2C%20g%2C%20b%3B%0A%20%20if%20%28/rgb%5C%28%28%5Cd+%29%2C%5Cs%28%5Cd+%29%2C%5Cs%28%5Cd+%29%5C%29/.exec%28rgb%29%29%20%7B%0A%20%20%20%20r%20%3D%20parseInt%28RegExp.%241%2C%2010%29%3B%0A%20%20%20%20g%20%3D%20parseInt%28RegExp.%242%2C%2010%29%3B%0A%20%20%20%20b%20%3D%20parseInt%28RegExp.%243%2C%2010%29%3B%0A%20%20%20%20return%20%5Br%20/%20255%2C%20g%20/%20255%2C%20b%20/%20255%5D%3B%0A%20%20%7D%0A%20%20return%20rgb%3B%0A%7D%0A%0Afunction%20hslToCSS%28hsl%29%20%7B%0A%20%20return%20%22hsl%28%22%20+%20Math.round%28hsl%5B0%5D%20*%20360%29%20+%20%22%2C%20%22%20+%20Math.round%28hsl%5B1%5D%20*%20100%29%20+%0A%20%20%20%20%20%20%20%20%20%22%25%2C%20%22%20+%20Math.round%28hsl%5B2%5D%20*%20100%29%20+%20%22%25%29%22%3B%0A%7D%0A%0Avar%20props%20%3D%20%5B%0A%20%20%22color%22%2C%20%22background-color%22%2C%20%22border-left-color%22%2C%20%22border-right-color%22%2C%0A%20%20%22border-top-color%22%2C%20%22border-bottom-color%22%0A%5D%3B%0A%0Avar%20props2%20%3D%20%5B%0A%20%20%22color%22%2C%20%22backgroundColor%22%2C%20%22borderLeftColor%22%2C%20%22borderRightColor%22%2C%0A%20%20%22borderTopColor%22%2C%20%22borderBottomColor%22%0A%5D%3B%0A%0Avar%20html%20%3D%20content.document.documentElement%3B%0A%0Aif%20%28typeof%20getRGBColor%28html%2C%20%22background-color%22%29%20%3D%3D%20%22string%22%29%20%7B%0A%20%20html.style.backgroundColor%20%3D%20%22white%22%3B%0A%7D%0A%0Arevl%28html%29%3B%0A%0Afunction%20revl%28aNode%29%20%7B%0A%20%20var%20i%2C%20x%2C%20color%2C%20hsl%3B%0A%20%20if%20%28aNode.nodeType%20%3D%3D%20Node.ELEMENT_NODE%29%20%7B%0A%20%20%20%20for%20%28i%20%3D%200%3B%20x%20%3D%20aNode.childNodes%5Bi%5D%3B%20++i%29%20revl%28x%29%3B%0A%20%20%20%20for%20%28i%20%3D%200%3B%20x%20%3D%20props%5Bi%5D%3B%20++i%29%20%7B%0A%20%20%20%20%20%20color%20%3D%20getRGBColor%28aNode%2C%20x%29%3B%0A%20%20%20%20%20%20if%20%28typeof%20color%20%21%3D%20%22string%22%29%20%7B%0A%20%20%20%20%20%20%20%20hsl%20%3D%20RGBtoHSL%28color%29%3B%0A%20%20%20%20%20%20%20%20hsl%5B2%5D%20%3D%201%20-%20hsl%5B2%5D%3B%0A%20%20%20%20%20%20%20%20aNode.style%5Bprops2%5Bi%5D%5D%20%3D%20hslToCSS%28hsl%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Invert Colors">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=external-custombuttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <name>Invert Colors</name>
+  <image><![CDATA[data:image/gif;base64,R0lGODlhEAAQAOZKAP///yczPoGOml1ncXWBjW13gvcVAGx2gv/3AP/kAP/NAHqIkwCcAF9ocmFrdGNudz4+kWl0f2ZxfP+cFMhY7m96hc0NAABJvXSCjgBZzVNdaKMxyHJ+iXiEkB8fYn+MmP91JklJtElTXuMeAIOQmwAfk4iVoAB14wCD93LuP/+3AHIAnD/IIwA+rCgzP//4AF1lcCsravghAHkAodAbAKlAzABi0OUuAP+jJQB/5f+7AABMsnyJlf98MnrvS0xMmVNTuACK+Mxi7//mAE3MMwOhAHaAiwArmf/PAABTwf///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAEoALAAAAAAQABAAAAfMgCYkAoSFhgIkJkofAI2Oj44fSgsAFjQWACA9IAAKSAoAC0odACM3IwATOBMACUMJAB1KBAAGMgYAKjoqAAgvCAAEShyQxY0cShUADEUMABk2GQAlRyUAFUoFACxELAAnOScALTstAAVKEQApPikAKEEoABdJFwARShLGxRJKDwAeYngAsGLGCgAaYGgA8ECJAwAQfkAAsKHGBgAHjBwA4EDJAAAhgIQAQEEIBQAYeGAAMEBJg32QGigR4SKAzZs4A7gQoaSnz59AewYCADs=]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[]]></initcode>
+  <code><![CDATA[// Original script: http://userscripts.org/scripts/show/125970
+
+function RGBtoHSL(aRGBColor) {
+  with (Math) {
+    var R, G, B;
+    var cMax, cMin;
+    var sum, diff;
+    var Rdelta, Gdelta, Bdelta;
+    var H, L, S;
+    R = aRGBColor[0];
+    G = aRGBColor[1];
+    B = aRGBColor[2];
+    cMax = max(max(R, G), B);
+    cMin = min(min(R, G), B);
+    sum = cMax + cMin;
+    diff = cMax - cMin;
+    L = sum / 2;
+    if (cMax == cMin) {
+      S = 0;
+      H = 0;
+    } else {
+      if (L <= (1 / 2)) S = diff / sum;
+      else S = diff / (2 - sum);
+      Rdelta = R / 6 / diff;
+      Gdelta = G / 6 / diff;
+      Bdelta = B / 6 / diff;
+      if (R == cMax) H = Gdelta - Bdelta;
+      else if (G == cMax) H = (1 / 3) + Bdelta - Rdelta;
+      else H = (2 / 3) + Rdelta - Gdelta;
+      if (H < 0) H += 1;
+      if (H > 1) H -= 1;
+    }
+    return [H, S, L];
+  }
+}
+
+function getRGBColor(aNode, aProp) {
+  var rgb = getComputedStyle(aNode, null).getPropertyValue(aProp);
+  var r, g, b;
+  if (/rgb\((\d+),\s(\d+),\s(\d+)\)/.exec(rgb)) {
+    r = parseInt(RegExp.$1, 10);
+    g = parseInt(RegExp.$2, 10);
+    b = parseInt(RegExp.$3, 10);
+    return [r / 255, g / 255, b / 255];
+  }
+  return rgb;
+}
+
+function hslToCSS(hsl) {
+  return "hsl(" + Math.round(hsl[0] * 360) + ", " + Math.round(hsl[1] * 100) +
+         "%, " + Math.round(hsl[2] * 100) + "%)";
+}
+
+var props = [
+  "color", "background-color", "border-left-color", "border-right-color",
+  "border-top-color", "border-bottom-color"
+];
+
+var props2 = [
+  "color", "backgroundColor", "borderLeftColor", "borderRightColor",
+  "borderTopColor", "borderBottomColor"
+];
+
+var html = content.document.documentElement;
+
+if (typeof getRGBColor(html, "background-color") == "string") {
+  html.style.backgroundColor = "white";
+}
+
+revl(html);
+
+function revl(aNode) {
+  var i, x, color, hsl;
+  if (aNode.nodeType == Node.ELEMENT_NODE) {
+    for (i = 0; x = aNode.childNodes[i]; ++i) revl(x);
+    for (i = 0; x = props[i]; ++i) {
+      color = getRGBColor(aNode, x);
+      if (typeof color != "string") {
+        hsl = RGBtoHSL(color);
+        hsl[2] = 1 - hsl[2];
+        aNode.style[props2[i]] = hslToCSS(hsl);
+      }
+    }
+  }
+}]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[]]></help>
+  <attributes/>
+</custombutton>

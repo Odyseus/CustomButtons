@@ -1,0 +1,148 @@
+﻿.cb-docs-section
+	h1#nav_notifications.page-header Prompts, alerts, etc
+	h3 Examples of the various output messages, examples of data requests from the user and so forth
+	h3#nav_notifications-1 Using Prompt Dialogs
+	pre.official_docs.
+		<code>/*Code*/
+		createMsg(&quot;title&quot;).aMsg(&quot;message&quot;);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		custombuttons.alertBox(&quot;title&quot;, &quot;description&quot;);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		custombuttons.alertSlide(&quot;title&quot;, &quot;description&quot;);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// close window or click cancel alerts &quot;false,default,false&quot;
+		var box = custombuttons.promptBox(&quot;title&quot;, &quot;description&quot;, &quot;default&quot;);
+		if (box[0]) {
+			alert(box[0] + &quot;,&quot; + box[1] + &quot;,&quot; + box[2]);
+		} else {
+			alert(box[0] + &quot;,&quot; + box[1] + &quot;,&quot; + box[2]);
+		}</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// close window or click cancel alerts &quot;false,default,true&quot;
+		var box = custombuttons.promptBox(&quot;title&quot;, &quot;description&quot;, &quot;default&quot;, {
+				value : true,
+				prompt : &quot;option&quot;
+			});
+		if (box[0]) {
+			alert(box[0] + &quot;,&quot; + box[1] + &quot;,&quot; + box[2]);
+		} else {
+			alert(box[0] + &quot;,&quot; + box[1] + &quot;,&quot; + box[2]);
+		}</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// close window alerts &quot;option b&quot;
+		var box = custombuttons.confirmBox(&quot;title&quot;, &quot;description&quot;, &quot;option a&quot;, &quot;option b&quot;);
+		if (box) {
+			alert(&quot;option a&quot;);
+		} else {
+			alert(&quot;option b&quot;);
+		}</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// close window alerts &quot;option c&quot;
+		var box = custombuttons.confirmBox3(&quot;title&quot;, &quot;description&quot;, &quot;option a&quot;, &quot;option c&quot;, &quot;option b&quot;);
+		if (box == 0)
+			alert(&quot;option a&quot;);
+		if (box == 1)
+			alert(&quot;option c&quot;);
+		if (box == 2)
+			alert(&quot;option b&quot;);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// close window or click cancel alerts &quot;false,option a&quot;
+		var arr = [&quot;option a&quot;, &quot;option b&quot;, &quot;option c&quot;];
+		var box = custombuttons.selectBox(&quot;title&quot;, &quot;description&quot;, arr);
+		if (box[0]) {
+			alert(box[0] + &quot;,&quot; + arr[box[1].value]);
+		} else {
+			alert(box[0] + &quot;,&quot; + arr[box[1].value]);
+		}</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// close window or click no alerts &quot;option a,true,option b,true,option c,true&quot;
+		var arr = new Array();
+		arr[0] = [&quot;option a&quot;, true];
+		arr[1] = [&quot;option b&quot;, true];
+		arr[2] = [&quot;option c&quot;, true];
+		var dialog = custombuttons.checkboxDialog(this, arr,
+				&quot;title&quot;, &quot;group&quot;, &quot;header&quot;, &quot;description&quot;, &quot;yes&quot;, &quot;no&quot;,
+				&quot;help&quot;, &quot;help message&quot;, &quot;disclosure&quot;, &quot;disclosure message&quot;);
+		if (dialog) {
+			alert(arr);
+			for (var i = 0; i &lt; dialog.chosen.length; i++)
+				alert(dialog.chosen[i].index + &quot;,&quot; + dialog.chosen[i].label);
+		} else {
+			alert(arr);
+		}</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// close window or click no alerts &quot;option a,true,option b,false,option c,false&quot;
+		var arr = new Array();
+		arr[0] = [&quot;option a&quot;, true];
+		arr[1] = [&quot;option b&quot;, false];
+		arr[2] = [&quot;option c&quot;, false];
+		var dialog = custombuttons.radioboxDialog(this, arr,
+				&quot;title&quot;, &quot;group&quot;, &quot;header&quot;, &quot;description&quot;, &quot;yes&quot;, &quot;no&quot;,
+				&quot;help&quot;, &quot;help message&quot;, &quot;disclosure&quot;, &quot;disclosure message&quot;);
+		if (dialog) {
+			alert(arr);
+			for (var i = 0; i &lt; dialog.chosen.length; i++)
+				alert(dialog.chosen[i].index + &quot;,&quot; + dialog.chosen[i].label);
+		} else {
+			alert(arr);
+		}</code>
+	h3#nav_notifications-not-function Notification function - Firefox, SeaMonkey and Thunderbird
+	p This function is similar to the 
+		code custombuttons.alertSlide
+		|  function, but this one allows you to use a custom image. It also works (should) on platforms that don&apos;t implement 
+		a(href='https://developer.mozilla.org/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIAlertsService') nsIAlertsService
+		| .
+	pre.tweaked_by_odyseus.
+		<code>function notifyme(aImg, aTitle, aMsg) {
+			let notFeature = custombuttons.getPrefs(&quot;notification.feature.enabled&quot;);
+			try {
+				let nsIAlertsService = Cc['@mozilla.org/alerts-service;1'].getService(Ci.nsIAlertsService);
+				if (!notFeature) {
+					custombuttons.setPrefs(&quot;notification.feature.enabled&quot;, true);
+					setTimeout(function () {
+						nsIAlertsService.showAlertNotification(aImg, aTitle, aMsg, false, &quot;&quot;, null);
+						custombuttons.setPrefs(&quot;notification.feature.enabled&quot;, false);
+					}, 100);
+				} else
+					nsIAlertsService.showAlertNotification(aImg, aTitle, aMsg, false, &quot;&quot;, null);
+			} catch (aEr) {
+				let win = Cc['@mozilla.org/embedcomp/window-watcher;1']
+					.getService(Ci.nsIWindowWatcher)
+					.openWindow(null, 'chrome://global/content/alerts/alert.xul',
+						'_blank', 'chrome,titlebar=no,popup=yes', null);
+				win.arguments = [aImg, aTitle, aMsg, false, ''];
+			}
+		}
+
+		// Usage
+		notifyme(&quot;chrome://branding/content/icon32.png&quot;, &quot;Title&quot;, &quot;Message&quot;);</code>
+	h3#nav_notifications-doorhanger Doorhanger notifications - Firefox and SeaMonkey
+	p This is a very basic example of usage of the 
+		a(href='https://developer.mozilla.org/docs/Mozilla/JavaScript_code_modules/PopupNotifications.jsm') PopupNotifications.jsm
+		|  module.
+	pre.tweaked_by_odyseus.
+		<code>function notify(aMsg, aDel) {
+			let nt = PopupNotifications.show(gBrowser.selectedBrowser, self.id +
+					&quot;-Door-Hanger&quot;, aMsg, self.id, null, null, null);
+			(aDel) &amp;&amp; nt.remove();
+		}
+
+		// Usage
+		notify(&quot;Message&quot;);          // Show door hanger notification
+		setTimeout(function () {
+			notify(&quot;&quot;, true);         // Remove after...
+		}, 5000);                   // ...5 seconds.</code>
+	h3#nav_notifications-play-sounds Play sounds
+	pre.tweaked_by_odyseus.
+		<code>var soundFile = &quot;C:\\WINDOWS\\Media\\notify.wav&quot;;
+		var sound = Cc[&quot;@mozilla.org/sound;1&quot;].createInstance(Ci.nsISound);
+		sound.playSystemSound(soundFile);</code>

@@ -1,0 +1,236 @@
+doctype html
+html
+	head
+		meta(http-equiv='content-type', content='text/html;charset=utf-8')
+		title Custom Buttons By LouCypher
+		link(rel='shortcut icon', type='image/x-icon', href='lib/img/IndexImages/index.png')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(type='text/css', rel='alternate stylesheet', href='lib/css/bootstrap-dark.css', title='dark')
+		link(type='text/css', rel='stylesheet', href='lib/css/bootstrap-light.css', title='light')
+		link(type='text/css', rel='stylesheet', href='lib/css/tweaks-common.css')
+		link(type='text/css', rel='alternate stylesheet', href='lib/css/tweaks-dark.css', title='dark')
+		link(type='text/css', rel='stylesheet', href='lib/css/tweaks-light.css', title='light')
+		script(type='text/javascript', src='lib/js/themes.js')
+
+		script(type='text/javascript').
+			setTheme(); // Sets the style sheet theme
+			var metadata = false;
+
+		style(type='text/css').
+			.aligned {
+				text-align: center !important;
+			}
+
+	body
+		include ./includes/_noscript.pug
+
+		div#mainarea
+
+			span#headmenu
+				include ./includes/_navbar.pug
+
+			.container.boxed
+				h1 Custom buttons by LouCypher
+				.alert.alert-info
+					p This is the last revision (561) of LouCypher's Custom Buttons repository on Google Code before Google murdered that service. All buttons are untouched and in XML format.
+				div.aligned
+					a.btn.btn-info.btn-xs(style='font-size:12px;font-weight:bold;' data-toggle='tooltip', data-placement='bottom', data-original-title= 'Download all this buttons in a zipped file.',rel='nofollow', title='Download all this buttons in a zipped file.', href='LouCypherButtons/LouCypherButtons.zip', download)
+						span.glyphicon.glyphicon-download-alt
+						|  Download
+					| 
+
+				h2 Custom buttons
+				ul
+					li
+						a(title='', href='./LouCypherButtons/About- Menu.xml') About- Menu
+					li
+						a(title='', href='./LouCypherButtons/Add new button next to this.xml') Add new button next to this
+					li
+						a(title='', href='./LouCypherButtons/Add-ons Manager.xml') Add-ons Manager
+					li
+						a(title='', href='./LouCypherButtons/Annoyance Options.xml') Annoyance Options
+					li
+						a(title='', href='./LouCypherButtons/Bottom Panel.xml') Bottom Panel
+					li
+						a(title='', href='./LouCypherButtons/CB Forum- Fit to Width.xml') CB Forum- Fit to Width
+					li
+						a(title='', href='./LouCypherButtons/Check for Updates.xml') Check for Updates
+					li
+						a(title='', href='./LouCypherButtons/Clipboard Viewer.xml') Clipboard Viewer
+					li
+						a(title='', href='./LouCypherButtons/Connection Settings Menu.xml') Connection Settings Menu
+					li
+						a(title='', href='./LouCypherButtons/Connection Settings Menu Button.xml') Connection Settings Menu Button
+					li
+						a(title='', href='./LouCypherButtons/Cookies.xml') Cookies
+					li
+						a(title='', href='./LouCypherButtons/Create a Restore Point.xml') Create a Restore Point
+					li
+						a(title='', href='./LouCypherButtons/CSS Beautify.xml') CSS Beautify
+					li
+						a(title='', href='./LouCypherButtons/Custom Buttons XML Exporter-Importer.xml') Custom Buttons XML Exporter-Importer
+					li
+						a(title='', href='./LouCypherButtons/Cut & Paste Button.xml') Cut & Paste Button
+					li
+						a(title='', href='./LouCypherButtons/Darken.xml') Darken
+					li
+						a(title='', href='./LouCypherButtons/data-URI Generator.xml') data-URI Generator
+					li
+						a(title='', href='./LouCypherButtons/data-URI Generator 2.xml') data-URI Generator 2
+					li
+						a(title='', href='./LouCypherButtons/data-URI Generator (with click options).xml') data-URI Generator (with click options)
+					li
+						a(title='', href='./LouCypherButtons/DOM Inspector.xml') DOM Inspector
+					li
+						a(title='', href='./LouCypherButtons/Download.xml') Download
+					li
+						a(title='', href='./LouCypherButtons/Extension List Generator.xml') Extension List Generator
+					li
+						a(title='', href='./LouCypherButtons/Extensions Options Menu.xml') Extensions Options Menu
+					li
+						a(title='', href='./LouCypherButtons/Extensions Options Menu (for Firefox 3.6.x).xml') Extensions Options Menu (for Firefox 3.6.x)
+					li
+						a(title='', href='./LouCypherButtons/Function Viewer.xml') Function Viewer
+					li
+						a(title='', href='./LouCypherButtons/Google Search by Image.xml') Google Search by Image
+					li
+						a(title='', href='./LouCypherButtons/Google Site Search.xml') Google Site Search
+					li
+						a(title='', href='./LouCypherButtons/Go to Location One Level Up.xml') Go to Location One Level Up
+					li
+						a(title='', href='./LouCypherButtons/GUID Generator.xml') GUID Generator
+					li
+						a(title='', href='./LouCypherButtons/JS Evaluator.xml') JS Evaluator
+					li
+						a(title='', href='./LouCypherButtons/JSON Inspector.xml') JSON Inspector
+					li
+						a(title='', href='./LouCypherButtons/Lightweight Theme Switcher.xml') Lightweight Theme Switcher
+					li
+						a(title='', href='./LouCypherButtons/List all windows menu.xml') List all windows menu
+					li
+						a(title='', href='./LouCypherButtons/List all windows menu button.xml') List all windows menu button
+					li
+						a(title='', href='./LouCypherButtons/Live HTTP Header.xml') Live HTTP Header
+					li
+						a(title='', href='./LouCypherButtons/Locale Switcher.xml') Locale Switcher
+					li
+						a(title='', href='./LouCypherButtons/Lock Browser.xml') Lock Browser
+					li
+						a(title='', href='./LouCypherButtons/Mr. Bunny Jumpin&#039;.xml') Mr. Bunny Jumpin&#039;
+					li
+						a(title='', href='./LouCypherButtons/Object Inspector.xml') Object Inspector
+					li
+						a(title='', href='./LouCypherButtons/Open Application Folders.xml') Open Application Folders
+					li
+						a(title='', href='./LouCypherButtons/Open Library in Tab.xml') Open Library in Tab
+					li
+						a(title='', href='./LouCypherButtons/Options Menu Button.xml') Options Menu Button
+					li
+						a(title='', href='./LouCypherButtons/Page Style.xml') Page Style
+					li
+						a(title='', href='./LouCypherButtons/Page Zoom Click.xml') Page Zoom Click
+					li
+						a(title='', href='./LouCypherButtons/Page Zoom Scroll.xml') Page Zoom Scroll
+					li
+						a(title='', href='./LouCypherButtons/Script Loader.xml') Script Loader
+					li
+						a(title='', href='./LouCypherButtons/Show Scripts.xml') Show Scripts
+					li
+						a(title='', href='./LouCypherButtons/Sidebar to the right.xml') Sidebar to the right
+					li
+						a(title='', href='./LouCypherButtons/Strikeout!.xml') Strikeout!
+					li
+						a(title='', href='./LouCypherButtons/Switch between Greasemonkey and Scriptish.xml') Switch between Greasemonkey and Scriptish
+					li
+						a(title='', href='./LouCypherButtons/Tabs.xml') Tabs
+					li
+						a(title='', href='./LouCypherButtons/The Laughing Man.xml') The Laughing Man
+					li
+						a(title='', href='./LouCypherButtons/Toggle Flash.xml') Toggle Flash
+					li
+						a(title='', href='./LouCypherButtons/Toggle Private Browsing.xml') Toggle Private Browsing
+					li
+						a(title='', href='./LouCypherButtons/Toggle Private Browsing (old school).xml') Toggle Private Browsing (old school)
+					li
+						a(title='', href='./LouCypherButtons/URLBar Search.xml') URLBar Search
+					li
+						a(title='', href='./LouCypherButtons/View as....xml') View as...
+					li
+						a(title='', href='./LouCypherButtons/View CB XML Structure.xml') View CB XML Structure
+					li
+						a(title='', href='./LouCypherButtons/View Generated Source.xml') View Generated Source
+					li
+						a(title='', href='./LouCypherButtons/View Saved Passwords.xml') View Saved Passwords
+					li
+						a(title='', href='./LouCypherButtons/Web Developer.xml') Web Developer
+					li
+						a(title='', href='./LouCypherButtons/Web Developer Menu.xml') Web Developer Menu
+					li
+						a(title='', href='./LouCypherButtons/Web Site Security and Privacy Info.xml') Web Site Security and Privacy Info
+
+				h2 Examples
+				ul
+					li
+						a(title='', href='./LouCypherButtons/examples/Blank Tab.xml') Blank Tab
+					li
+						a(title='', href='./LouCypherButtons/examples/Blank Tab(1).xml') Blank Tab(1)
+					li
+						a(title='', href='./LouCypherButtons/examples/Browser Cache Settings.xml') Browser Cache Settings
+					li
+						a(title='', href='./LouCypherButtons/examples/Cache Directory Options.xml') Cache Directory Options
+					li
+						a(title='', href='./LouCypherButtons/examples/checkbox.xml') checkbox
+					li
+						a(title='', href='./LouCypherButtons/examples/close all Firefox windows except for the active (in focus) one.xml') close all Firefox windows except for the active (in focus) one
+					li
+						a(title='', href='./LouCypherButtons/examples/custom tooltip example.xml') custom tooltip example
+					li
+						a(title='', href='./LouCypherButtons/examples/Get Button&#039;s Name example.xml') Get Button's Name example
+					li
+						a(title='', href='./LouCypherButtons/examples/Greasemonkey.xml') Greasemonkey
+					li
+						a(title='', href='./LouCypherButtons/examples/image tooltip.xml') image tooltip
+					li
+						a(title='', href='./LouCypherButtons/examples/mozillaZine Forums.xml') mozillaZine Forums
+					li
+						a(title='', href='./LouCypherButtons/examples/Multiple-column menu.xml') Multiple-column menu
+					li
+						a(title='', href='./LouCypherButtons/examples/popup panel example.xml') popup panel example
+					li
+						a(title='', href='./LouCypherButtons/examples/Update Button test.xml') Update Button test
+					li
+						a(title='', href='./LouCypherButtons/examples/WinStart.xml') WinStart
+
+				h2 Mods
+				ul
+					li
+						a(title='', href='./LouCypherButtons/mods/Clock.xml') Clock
+					li
+						a(title='', href='./LouCypherButtons/mods/Copy button data to HTML.xml') Copy button data to HTML
+					li
+						a(title='', href='./LouCypherButtons/mods/Easy Reader.xml') Easy Reader
+					li
+						a(title='', href='./LouCypherButtons/mods/Extension List.xml') Extension List
+					li
+						a(title='', href='./LouCypherButtons/mods/Extension List by morat.xml') Extension List by morat
+					li
+						a(title='', href='./LouCypherButtons/mods/Invert Colors.xml') Invert Colors
+					li
+						a(title='', href='./LouCypherButtons/mods/Linkification.xml') Linkification
+					li
+						a(title='', href='./LouCypherButtons/mods/Make Bookmark Button.xml') Make Bookmark Button
+					li
+						a(title='', href='./LouCypherButtons/mods/PrintWhatYouLike.xml') PrintWhatYouLike
+					li
+						a(title='', href='./LouCypherButtons/mods/Save-Copy Page As Image.xml') Save-Copy Page As Image
+					li
+						a(title='', href='./LouCypherButtons/mods/Troubleshoot Custom Buttons.xml') Troubleshoot Custom Buttons
+
+			div#footer.navbar.navbar-default
+				include ./includes/_footer.pug
+
+		include ./includes/_linktotop.pug
+
+		include ./includes/_scriptsatbottom.pug
+		script(src='lib/js/myFunctions.js', type='text/javascript')
+

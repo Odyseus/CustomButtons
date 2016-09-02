@@ -1,0 +1,26 @@
+<menupopup xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<menu label="Smilies 2">
+		<menupopup>
+			<menuitem label="😨" _snippet="%F0%9F%98%A8" />
+			<menuitem label="😔" _snippet="%F0%9F%98%94" />
+			<menuitem label="😦" _snippet="%F0%9F%98%A6" />
+			<menuitem label="😧" _snippet="%F0%9F%98%A7" />
+			<menuitem label="😕" _snippet="%F0%9F%98%95" />
+			<menuitem label="😖" _snippet="%F0%9F%98%96" />
+			<menuitem label="😘" _snippet="%F0%9F%98%98" />
+			<menuitem label="😗" _snippet="%F0%9F%98%97" />
+			<menuitem label="😙" _snippet="%F0%9F%98%99" />
+			<menuitem label="😚" _snippet="%F0%9F%98%9A" />
+			<menuitem label="😛" _snippet="%F0%9F%98%9B" />
+			<menuitem label="😜" _snippet="%F0%9F%98%9C" />
+			<menuitem label="😝" _snippet="%F0%9F%98%9D" />
+			<menuitem label="😞" _snippet="%F0%9F%98%9E" />
+			<menuitem label="😟" _snippet="%F0%9F%98%9F" />
+			<menuitem label="😠" _snippet="%F0%9F%98%A0" />
+			<menuitem label="😡" _snippet="%F0%9F%98%A1" />
+			<menuitem label="😢" _snippet="%F0%9F%98%A2" />
+			<menuitem label="😣" _snippet="%F0%9F%98%A3" />
+			<menuitem label="😥" _snippet="%F0%9F%98%A5" />
+		</menupopup>
+	</menu>
+</menupopup>

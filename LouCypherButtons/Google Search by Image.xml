@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[Google Search by Image]]></html:title>
+    <html:link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAYAAADphp8SAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOnAAADpwBB5RT3QAAABZ0RVh0Q3JlYXRpb24gVGltZQAwMi8yNS8xMapAVMwAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAABjklEQVQ4jZWTwWoTURSGv5lMp1OmxUIUXISCCbW06daNtGuh7uMbCHaeoOBSzBMEN92LXXThohVtoAshOyuKJQkaXWRjKi7aBjPT9v6uEsbpTGp/OHDPvf/5zjmLa0niCo0zWMODA2BZVqZTEkG1RdwhoLaxMKqTBJKWJO1JOpN0Iek8EQqeNxVXLP8jqS7pniXpe+1V9+yw058ft19yoqHKJb+9XikcOcDcYadvj4Mki+P68q1/F5hz4s1qGwsABNUWszMOD+7nWS75THk5wshw0DzhbeM3x/3zJG/CiWdBtTU6r63kuZ2f5NnmD8LI4Lk2TyoFHq7mefnm56XJMldaLE5T2+oSRgaAQWR4sdWlXJpO9WeCbvi5EWSoQWSYmkwvyQRdGOG5/z57rn0JfiWo8emY4FFhBPNcm/VKgQ/Nk1S/k3oLvN4/Ym31Jk8f38FzbQah4fPXU3be/8oEGSCXfBhEhu16j+16L6tXXKENfFwq+u3/caepXPLbwDsk3ZK0G/tr14lTSTuSin8BUMr8td343bwAAAAASUVORK5CYII="/>
+    <html:style type="text/css"><![CDATA[
+body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+:-moz-any-link:focus {
+  color: white;
+  outline-color: transparent;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3EGoogle%20Search%20by%20Image%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAYAAADphp8SAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOnAAADpwBB5RT3QAAABZ0RVh0Q3JlYXRpb24gVGltZQAwMi8yNS8xMapAVMwAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAABjklEQVQ4jZWTwWoTURSGv5lMp1OmxUIUXISCCbW06daNtGuh7uMbCHaeoOBSzBMEN92LXXThohVtoAshOyuKJQkaXWRjKi7aBjPT9v6uEsbpTGp/OHDPvf/5zjmLa0niCo0zWMODA2BZVqZTEkG1RdwhoLaxMKqTBJKWJO1JOpN0Iek8EQqeNxVXLP8jqS7pniXpe+1V9+yw058ft19yoqHKJb+9XikcOcDcYadvj4Mki+P68q1/F5hz4s1qGwsABNUWszMOD+7nWS75THk5wshw0DzhbeM3x/3zJG/CiWdBtTU6r63kuZ2f5NnmD8LI4Lk2TyoFHq7mefnm56XJMldaLE5T2+oSRgaAQWR4sdWlXJpO9WeCbvi5EWSoQWSYmkwvyQRdGOG5/z57rn0JfiWo8emY4FFhBPNcm/VKgQ/Nk1S/k3oLvN4/Ym31Jk8f38FzbQah4fPXU3be/8oEGSCXfBhEhu16j+16L6tXXKENfFwq+u3/caepXPLbwDsk3ZK0G/tr14lTSTuSin8BUMr8td343bwAAAAASUVORK5CYII%3D%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5Bfunction%20saveImage%28aImage%29%20%7B%0A%20%20let%20imageString%20%3D%20Cc%5B%27@mozilla.org/supports-string%3B1%27%5D.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20createInstance%28Ci.nsISupportsString%29%3B%0A%20%20imageString.data%20%3D%20aImage%3B%0A%20%20cbu.ps.setComplexValue%28%22custombuttons.searchImageURL.image_preview%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Ci.nsISupportsString%2C%20imageString%29%3B%0A%7D%0A%0Afunction%20addParamsToForm%28form%2C%20key%2C%20value%29%20%7B%0A%20%20let%20hiddenField%20%3D%20content.document.createElement%28%22input%22%29%3B%0A%20%20hiddenField.setAttribute%28%22type%22%2C%20%22hidden%22%29%3B%0A%20%20hiddenField.setAttribute%28%22name%22%2C%20key%29%3B%0A%20%20hiddenField.setAttribute%28%22value%22%2C%20value%29%3B%0A%20%20form.appendChild%28hiddenField%29%3B%0A%7D%0A%0Athis.searchImage%20%3D%20function%20searchImage%28aImageURL%29%20%7B%0A%20%20if%20%28aImageURL.indexOf%28%22data%3A%22%29%20%3D%3D%200%29%20%7B%0A%20%20%20%20let%20base64Offset%20%3D%20aImageURL.indexOf%28%22%2C%22%29%3B%0A%20%20%20%20if%20%28base64Offset%20%21%3D%20-1%29%20%7B%0A%20%20%20%20%20%20let%20inlineImage%20%3D%20aImageURL.substring%28base64Offset%20+%201%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.replace%28/%5C+/g%2C%20%22-%22%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.replace%28/%5C//g%2C%20%22_%22%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.replace%28/%5C./g%2C%20%22%3D%22%29%3B%0A%20%20%20%20%20%20saveImage%28aImageURL%29%3B%0A%0A%20%20%20%20%20%20let%20form%20%3D%20content.document.createElement%28%22form%22%29%3B%0A%20%20%20%20%20%20form.setAttribute%28%22method%22%2C%20%22POST%22%29%3B%0A%20%20%20%20%20%20form.setAttribute%28%22action%22%2C%20%22http%3A//www.google.com/searchbyimage/upload%22%29%3B%0A%20%20%20%20%20%20form.setAttribute%28%22enctype%22%2C%20%22multipart/form-data%22%29%3B%0A%20%20%20%20%20%20form.setAttribute%28%22target%22%2C%20%22_blank%22%29%3B%0A%20%20%20%20%20%20addParamsToForm%28form%2C%20%22image_content%22%2C%20inlineImage%29%3B%0A%20%20%20%20%20%20addParamsToForm%28form%2C%20%22filename%22%2C%20%22%22%29%3B%0A%20%20%20%20%20%20addParamsToForm%28form%2C%20%22image_url%22%2C%20%22%22%29%3B%0A%20%20%20%20%20%20content.document.body.appendChild%28form%29%3B%0A%20%20%20%20%20%20form.submit%28%29%3B%0A%20%20%20%20%7D%0A%20%20%7D%20else%20%7B%0A%20%20%20%20gBrowser.loadOneTab%28%22http%3A//www.google.com/searchbyimage%22%20+%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%3Fimage_url%3D%22%20+%20encodeURIComponent%28aImageURL%29%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20null%2C%20null%2C%20null%2C%20false%29%3B%0A%20%20%7D%0A%7D%0A%0Athis.showHelp%20%3D%20function%20showHelp%28%29%20%7B%0A%20%20var%20pref%20%3D%20cbu.ps.getBranch%28%22custombuttons.searchImageURL.%22%29%3B%0A%20%20var%20firstTime%20%3D%20true%3B%0A%20%20try%20%7B%0A%20%20%20%20firstTime%20%3D%20pref.getBoolPref%28%22firstTime%22%29%3B%0A%20%20%7D%20catch%28ex%29%20%7B%0A%20%20%7D%0A%20%20if%20%28%21firstTime%29%20return%3B%0A%20%20custombuttons.uChelpButton%28this%29%3B%0A%20%20pref.setBoolPref%28%22firstTime%22%2C%20false%29%3B%0A%7D%0A%0Athis.onclick%20%3D%20function%20checkForMiddleClick%28aEvent%29%20%7B%0A%20%20if%20%28aEvent.button%20%21%3D%201%29%20return%3B%0A%20%20new%20Function%28%22event%22%2C%20this.getAttribute%28%22cb-oncommand%22%29%29.call%28this%2C%20aEvent%29%3B%0A%7D%0A%0Athis.dndObserver%20%3D%20%7B%0A%20%20onDrop%3A%20function%28aEvent%2C%20aXferData%2C%20aDragSession%29%20%7B%0A%20%20%20%20var%20split%20%3D%20aXferData.data.split%28%22%5Cn%22%29%3B%0A%20%20%20%20var%20url%20%3D%20split%5B0%5D%3B%0A%20%20%20%20if%20%28url%20%21%3D%20aXferData.data%29%20%7B%0A%20%20%20%20%20%20var%20dialogArgs%20%3D%20%7Bname%3Asplit%5B1%5D%2C%20url%3Aurl%7D%3B%0A%20%20%20%20%20%20//Application.console.log%28this%29%3B%0A%20%20%20%20%20%20aEvent.target.searchImage%28dialogArgs.url%29%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20split%20%3D%20aXferData.data.split%28%22%20%22%29%3B%0A%20%20%20%20%20%20url%20%3D%20split%5B0%5D%3B%0A%20%20%20%20%20%20try%20%7B%0A%20%20%20%20%20%20%20%20aEvent.target.searchImage%28makeURI%28url%29.spec%29%3B%0A%20%20%20%20%20%20%7D%20catch%28ex%29%20%7B%0A%20%20%20%20%20%20%20%20custombuttons.alertBox%28aEvent.target.name%2C%20%22Invalid%20image%20URL%21%22%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%0A%20%20onDragOver%3A%20function%28aEvent%2C%20aFlavour%2C%20aDragSession%29%20%7B%0A%20%20%20%20document.getElementById%28%22statusbar-display%22%29.label%20%3D%20%22Drop%20it%21%22%3B%0A%20%20%20%20aDragSession.dragAction%20%3D%20Ci.nsIDragService.DRAGDROP_ACTION_LINK%3B%0A%20%20%7D%2C%0A%0A%20%20onDragExit%3A%20function%28aEvent%2C%20aDragSession%29%20%7B%0A%20%20%20%20document.getElementById%28%22statusbar-display%22%29.label%20%3D%20%22%22%3B%0A%20%20%7D%2C%0A%0A%20%20getSupportedFlavours%3A%20function%28%29%20%7B%0A%20%20%20%20//@https%3A//addons.mozilla.org/en-US/firefox/files/browse/122222/file/chrome/content/openInBrowser.js%23L37%0A%20%20%20%20//%20For%20image%20mime%20types%2C%20it%20relies%20on%20the%20fact%20that%20Gecko%20will%20correctly%0A%20%20%20%20//%20display%20an%20image%20even%20if%20the%20server%20sent%20it%20with%20a%20mime%20type%20that%0A%20%20%20%20//%20does%20not%20match%20the%20real%20image%20type.%20For%20instance%2C%20a%20PNG%20image%20sent%20with%0A%20%20%20%20//%20image/jpeg%20Content-Type%20will%20still%20be%20displayed%20properly.%0A%20%20%20%20var%20flavourSet%20%3D%20new%20FlavourSet%3B%0A%20%20%20%20flavourSet.appendFlavour%28%22image/jpeg%22%29%3B%0A%20%20%20%20flavourSet.appendFlavour%28%22application/x-moz-file%22%2C%20%22nsIFile%22%29%3B%20%20%20%20%0A%20%20%20%20flavourSet.appendFlavour%28%22text/unicode%22%29%3B%0A%20%20%20%20return%20flavourSet%3B%0A%20%20%7D%0A%7D%0A%0Athis.setAttribute%28%22ondragover%22%2C%20%22nsDragAndDrop.dragOver%28event%2C%20this.dndObserver%29%3B%22%29%3B%0Athis.setAttribute%28%22ondragdrop%22%2C%20%22nsDragAndDrop.drop%28event%2C%20this.dndObserver%29%3B%22%29%3B%0Athis.setAttribute%28%22ondragexit%22%2C%20%22nsDragAndDrop.dragExit%28event%2C%20this.dndObserver%29%3B%22%29%3B%0A%0A////////////////////////////////////////////////////////////////////////////%0A///////////////////////////%20Start%20Button%20updater%20///////////////////////////%0A%0A/*%20*****%20BEGIN%20LICENSE%20BLOCK%20*****%0A%20*%20Version%3A%20MPL%201.1/GPL%202.0%0A%20*%0A%20*%20The%20contents%20of%20this%20file%20are%20subject%20to%20the%20Mozilla%20Public%20License%0A%20*%20Version%201.1%20%28the%20%22License%22%29%3B%20you%20may%20not%20use%20this%20file%20except%20in%0A%20*%20compliance%20with%20the%20License.%20You%20may%20obtain%20a%20copy%20of%20the%20License%20at%0A%20*%20http%3A//www.mozilla.org/MPL/1.1/%0A%20*%0A%20*%20Software%20distributed%20under%20the%20License%20is%20distributed%20on%20an%20%22AS%20IS%22%20basis%2C%0A%20*%20WITHOUT%20WARRANTY%20OF%20ANY%20KIND%2C%20either%20express%20or%20implied.%20See%20the%20License%0A%20*%20for%20the%20specific%20language%20governing%20rights%20and%20limitations%20under%20the%0A%20*%20License.%0A%20*%0A%20*%20Original%20code%20is%20Button%20Updater%20for%20Custom%20Buttons%20extension%0A%20*%0A%20*%20The%20Initial%20Developer%20of%20the%20Original%20Code%20is%20LouCypher.%0A%20*%20Portions%20created%20by%20the%20Initial%20Developer%20are%20Copyright%20%28C%29%202011%0A%20*%20the%20Initial%20Developer.%20All%20Rights%20Reserved.%0A%20*%0A%20*%20Contributor%28s%29%3A%0A%20*%20-%20LouCypher%3A%20original%20code%0A%20*%0A%20*%20Alternatively%2C%20the%20contents%20of%20this%20file%20may%20be%20used%20under%20the%20terms%20of%0A%20*%20the%20GNU%20General%20Public%20License%20Version%202%20or%20later%20%28the%20%22GPL%22%29%2C%20in%20which%0A%20*%20case%20the%20provisions%20of%20the%20GPL%20are%20applicable%20instead%20of%20those%20above.%0A%20*%0A%20*%20*****%20END%20LICENSE%20BLOCK%20*****%20*/%0A%0Athis.updater%20%3D%20%7B%0A%20%20btnClick%3A%20self.onclick%2C%0A%20%20btnImage%3A%20self.image%2C%0A%20%20btnType%3A%20self.type%2C%0A%20%20btnTooltip%3A%20self.tooltipText%2C%0A%0A%20%20baseURL%3A%20%22https%3A//loucypher.googlecode.com/svn/custombuttons/xml/%22%2C%0A%0A%20%20get%20updateURL%28%29%20%7B%0A%20%20%20%20return%20this.baseURL%20+%20encodeURIComponent%28self.name.replace%28/%5C//g%2C%20%22-%22%29%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22.xml%22%3B%0A%20%20%7D%2C%0A%0A%20%20openUpdateURL%3A%20function%20updater_openUpdateURL%28%29%20%7B%0A%20%20%20%20switchToTabHavingURI%28this.updateURL%29%3B%0A%20%20%7D%2C%0A%0A%20%20get%20bsyIcon%28%29%20%7B%0A%20%20%20%20switch%20%28Application.id%29%20%7B%0A%20%20%20%20%20%20case%20%22%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D%22%3A%0A%20%20%20%20%20%20%20%20if%20%28Application.version%20%3E%3D%20%224%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20return%20%22chrome%3A//browser/skin/tabbrowser/connecting.png%22%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20return%20%22chrome%3A//global/skin/icons/loading_16.png%22%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20case%20%22%7B92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a%7D%22%3A%0A%20%20%20%20%20%20%20%20return%20%22chrome%3A//communicator/skin/icons/loading.gif%22%3B%0A%20%20%20%20%20%20default%3A%0A%20%20%20%20%20%20%20%20return%20%22chrome%3A//custombuttons/skin/button.png%22%3B%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%0A%20%20//%20Check%20if%20the%20URI%20is%20Custom%20Button%20URI%20%28custombutton%3A//...%29%0A%20%20isValidCbURI%3A%20function%20updater_isValidCbURI%28aURL%29%20%7B%0A%20%20%20%20if%20%28%21aURL%29%20return%20false%3B%0A%20%20%20%20return%20/%5Ecustombutton%5C%3A%5C/%5C//.test%28aURL%29%3B%0A%20%20%7D%2C%0A%0A%20%20//%20Convert%20%27custombutton%3A%27%20URI%20to%20DOM%0A%20%20convertURItoDOM%3A%20function%20updater_convertURItoDOM%28aURL%29%20%7B%0A%20%20%20%20if%20%28%21this.isValidCbURI%28aURL%29%29%20%7B%0A%20%20%20%20%20%20custombuttons.alertBox%28self.name%2C%20%22Not%20a%20Custom%20Buttons%20link%21%22%29%3B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%0A%20%20%20%20var%20string%20%3D%20unescape%28aURL.replace%28/%5Ecustombutton%5C%3A%5C/%5C//%2C%20%22%22%29.toString%28%29%29%3B%0A%20%20%20%20var%20parser%20%3D%20new%20DOMParser%28%29%3B%0A%20%20%20%20var%20dom%20%3D%20parser.parseFromString%28string%2C%20%22text/xml%22%29%3B%0A%20%20%20%20if%20%28dom.documentElement.nodeName%20%3D%3D%20%22parsererror%22%29%20%7B%0A%20%20%20%20%20%20return%20null%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20return%20dom.documentElement%3B%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%0A%20%20//%20Get%20value%20from%20XML%20element%0A%20%20getParamValue%3A%20function%20updater_getParamValue%28aDocument%2C%20aNodeName%29%20%7B%0A%20%20%20%20var%20node%20%3D%20aDocument.querySelector%28aNodeName%29%3B%0A%20%20%20%20if%20%28%21node%29%20return%20%22%22%3B%0A%20%20%20%20if%20%28%21node.firstChild%20%7C%7C%20%28node.firstChild%20%26%26%0A%20%20%20%20%20%20%20%20%28node.firstChild.nodeType%20%3D%3D%20node.TEXT_NODE%29%29%29%20%7B%0A%20%20%20%20%20%20return%20node.textContent%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20return%20node.firstChild.textContent%3B%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%0A%20%20//%20Set%20button%20parameters%20from%20XML%20alement%0A%20%20getButtonParameters%3A%20function%20updater_getButtonParameters%28aButtonLink%2C%20aURL%29%20%7B%0A%20%20%20%20var%20dom%20%3D%20this.convertURItoDOM%28aURL%29%3B%0A%20%20%20%20var%20params%20%3D%20custombuttons.cbService.getButtonParameters%28aButtonLink%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.wrappedJSObject%3B%0A%20%20%20%20params.name%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22name%22%29%0A%20%20%20%20params.date%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22date%22%29%20%7C%7C%20%22%22%3B%0A%20%20%20%20params.image%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22image%22%29%20%7C%7C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20this.getParamValue%28dom%2C%20%22stdicon%22%29%3B%0A%20%20%20%20params.code%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22code%22%29%0A%20%20%20%20params.initCode%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22initcode%22%29%0A%20%20%20%20params.help%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22help%22%29%0A%20%20%20%20params.accelkey%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22accelkey%22%29%0A%20%20%20%20params.mode%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22mode%22%29%0A%20%20%20%20params.wrappedJSObject%20%20%3D%20params%3B%0A%20%20%20%20return%20params%3B%0A%20%20%7D%2C%0A%0A%20%20//%20Reset%20button%20attribute%20if%20user%20click%20the%20button%20during%20update%0A%20%20resetAttributes%3A%20function%20updater_resetAttributes%28%29%20%7B%0A%20%20%20%20self.image%20%3D%20this.btnImage%3B%0A%20%20%20%20self.tooltipText%20%3D%20self.name%3B%0A%20%20%20%20self.removeAttribute%28%22busy%22%29%3B%0A%20%20%20%20self.onclick%20%3D%20this.btnClick%3B%0A%20%20%20%20self.type%20%3D%20this.btnType%3B%0A%20%20%20%20self.tooltipText%20%3D%20this.btnTooltip%3B%0A%20%20%7D%2C%0A%0A%20%20//%20Check%20button%20for%20update%0A%20%20checkForUpdate%3A%20function%20updater_checkForUpdate%28aCallback%29%20%7B%0A%20%20%20%20if%20%28%21navigator.onLine%29%20%7B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20If%20browser%20is%20in%20offline%20mode%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20ask%20to%20switch%20to%20online%0A%20%20%20%20%20%20var%20online%20%3D%20custombuttons.confirmBox%28self.name%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Firefox%20is%20currently%20in%20offline%20mode.%5Cn%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22Switch%20to%20online%20mode%20and%20try%20again%3F%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Yes%22%2C%20%22No%22%29%3B%0A%20%20%20%20%20%20if%20%28%21online%29%20return%3B%0A%20%20%20%20%20%20BrowserOffline.toggleOfflineStatus%28%29%3B%20//%20switch%20to%20online%0A%20%20%20%20%7D%0A%0A%20%20%20%20var%20url%20%3D%20this.updateURL%20+%20%22%3F%22%20+%20Date.now%28%29%3B%0A%20%20%20%20var%20req%20%3D%20new%20XMLHttpRequest%28%29%3B%0A%20%20%20%20req.open%28%22GET%22%2C%20url%2C%20true%29%3B%0A%20%20%20%20if%20%28self.hasAttribute%28%22busy%22%29%29%20%7B%0A%20%20%20%20%20%20this.resetAttributes%28%29%3B%0A%20%20%20%20%20%20return%0A%20%20%20%20%7D%0A%20%20%20%20var%20updater%20%3D%20this%3B%0A%20%20%20%20req.onreadystatechange%20%3D%20function%20%28aEvent%29%20%7B%0A%20%20%20%20%20%20self.onclick%20%3D%20function%28aEvent%29%20%7B%0A%20%20%20%20%20%20%20%20aEvent.preventDefault%28%29%3B%0A%20%20%20%20%20%20%20%20req.abort%28%29%3B%0A%20%20%20%20%20%20%20%20self.updater.resetAttributes%28%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20self.image%20%3D%20updater.bsyIcon%3B%0A%20%20%20%20%20%20self.setAttribute%28%22busy%22%2C%20%22%22%29%3B%0A%20%20%20%20%20%20self.removeAttribute%28%22type%22%29%3B%0A%20%20%20%20%20%20self.tooltipText%20%3D%20%22Checking%20for%20update...%5CnClick%20to%20abort.%22%3B%0A%20%20%20%20%20%20if%20%28req.readyState%20%3D%3D%204%20%26%26%20req.status%20%3D%3D%20200%29%20%7B%0A%20%20%20%20%20%20%20%20updater.resetAttributes%28%29%3B%0A%20%20%20%20%20%20%20%20aCallback%28req.responseXML%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20req.send%28null%29%3B%0A%20%20%7D%2C%0A%0A%20%20//%20Get%20update%20from%20XML%0A%20%20getUpdate%3A%20function%20updater_getUpdate%28aDocument%29%20%7B%0A%20%20%20%20if%20%28aDocument.documentElement.localName%20%21%3D%20%22custombutton%22%29%20%7B%0A%20%20%20%20%20%20custombuttons.alertBox%28self.name%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Not%20a%20valid%20Custom%20Buttons%20XML%20file%21%22%29%3B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20//inspectDOMDocument%28aDocument%29%3B%20return%3B%0A%20%20%20%20let%20button%20%3D%20aDocument.getElementById%28%22button%22%29%3B%0A%20%20%20%20let%20link%20%3D%20button.getElementsByTagNameNS%28xhtmlns%2C%20%22a%22%29%5B0%5D%3B%0A%20%20%20%20if%20%28link.href%20%3D%3D%20self.URI%29%20%7B%0A%20%20%20%20%20%20let%20as%20%3D%20Cc%5B%27@mozilla.org/alerts-service%3B1%27%5D.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20getService%28Ci.nsIAlertsService%29%3B%0A%20%20%20%20%20%20as.showAlertNotification%28self.image%2C%20%22No%20update%20found%21%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Finish%20checking%22%2C%20false%2C%20%22%22%2C%20null%29%3B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%20%0A%0A%20%20%20%20var%20install%20%3D%20custombuttons.confirmBox%28self.name%2C%20%22Update%20found%21%20%22%20+%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Update%20this%20button%3F%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Yes%22%2C%20%22No%22%29%3B%0A%20%20%20%20if%20%28%21install%29%20return%3B%0A%20%20%20%20let%20btnLink%20%3D%20custombuttons.makeButtonLink%28%22update%22%2C%20self.id%29%3B%0A%20%20%20%20let%20params%20%3D%20self.updater.getButtonParameters%28btnLink%2C%20link.href%29%3B%0A%20%20%20%20//inspectObject%28params%29%3B%20return%3B%0A%20%20%20%20custombuttons.cbService.installButton%28params%29%3B%0A%20%20%20%20custombuttons.alertBox%28self.name%2C%20%22Button%20updated%21%22%29%3B%0A%20%20%20%20self.setAttribute%28%22cb-edit-state%22%2C%20%22active%22%29%3B%0A%20%20%7D%2C%0A%0A%20%20init%3A%20function%20updater_onLoad%28%29%20%7B%0A%20%20%20%20function%20%24%28aId%29%20%7B%0A%20%20%20%20%20%20return%20document.getElementById%28aId%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20addMenuItem%28aNewIDs%2C%20aNodeIDs%2C%20aSeparator%29%20%7B%0A%20%20%20%20%20%20for%20%28var%20i%20%3D%200%3B%20i%20%3C%20aNewIDs.length%3B%20i++%29%20%7B%0A%20%20%20%20%20%20%20%20//%20Remove%20previously%20created%20menuitems%20if%20any%0A%20%20%20%20%20%20%20%20if%20%28%24%28aNewIDs%5Bi%5D%29%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20if%20%28aSeparator%20%26%26%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%28%24%28aNewIDs%5Bi%5D%29.nextSibling.localName%20%3D%3D%20%22menuseparator%22%29%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%24%28aNewIDs%5Bi%5D%29.parentNode.removeChild%28%24%28aNewIDs%5Bi%5D%29.nextSibling%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%24%28aNewIDs%5Bi%5D%29.parentNode.removeChild%28%24%28aNewIDs%5Bi%5D%29%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20let%20mi%20%3D%20cbu.makeXML%28%3Cmenuitem%20xmlns%3D%7Bxulns%7D%20id%3D%7BaNewIDs%5Bi%5D%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20class%3D%22menuitem-iconic%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20image%3D%7Bself.image%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%22Check%20for%20updates%20for%20this%20button%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20onclick%3D%7B%22if%20%28event.button%20%3D%3D%201%29%20%7B%20%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22var%20btn%20%3D%20document.getElementById%28%27%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20self.id%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22%27%29%3B%20btn.updater.openUpdateURL%28%29%3B%20%7D%22%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20oncommand%3D%7B%22var%20btn%20%3D%20document.getElementById%28%27%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20self.id%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22%27%29%3B%20btn.updater.checkForUpdate%28%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22btn.updater.getUpdate%29%3B%22%7D/%3E%29%3B%0A%20%20%20%20%20%20%20%20if%20%28i%20%3D%3D%200%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20mi.setAttribute%28%22observes%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22custombuttons-contextbroadcaster-primary%22%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%24%28aNodeIDs%5Bi%5D%29.parentNode.insertBefore%28mi%2C%20%24%28aNodeIDs%5Bi%5D%29.nextSibling%29%3B%0A%20%20%20%20%20%20%20%20if%20%28aSeparator%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20let%20sep%20%3D%20cbu.makeXML%28%3Cmenuseparator%20xmlns%3D%7Bxulns%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20id%3D%7Bmi.id%20+%20%22-separator%22%7D/%3E%29%3B%0A%20%20%20%20%20%20%20%20%20%20mi.parentNode.insertBefore%28sep%2C%20mi.nextSibling%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20initUpdaterCbPopup%28aEvent%29%20%7B%0A%20%20%20%20%20%20var%20popupNode%20%3D%20%22triggerNode%22%20in%20aEvent.target%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3F%20aEvent.target.triggerNode%20%3A%20document.popupNode%3B%0A%20%20%20%20%20%20for%20%28var%20i%20%3D%200%3B%20i%20%3C%20kIDs.length%3B%20i++%29%20%7B%0A%20%20%20%20%20%20%20%20%24%28kIDs%5Bi%5D%29.hidden%20%3D%20%28popupNode%20%21%3D%20self%29%3B%0A%20%20%20%20%20%20%20%20%28%24%28kIDs%5Bi%5D%29.nextSibling.id%20%3D%3D%20%24%28kIDs%5Bi%5D%29.id%20+%20%22-separator%22%29%20%26%26%0A%20%20%20%20%20%20%20%20%28%24%28kIDs%5Bi%5D%29.nextSibling.hidden%20%3D%20%28popupNode%20%21%3D%20self%29%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20let%20kIDs%20%3D%20%5Bself.id%20+%20%22-checkForUpdate%22%2C%20self.id%20+%20%22-checkForUpdate-sub%22%5D%3B%0A%20%20%20%20let%20uIDs%20%3D%20%5B%22custombuttons-contextpopup-updateButton%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22custombuttons-contextpopup-updateButton-sub%22%5D%3B%0A%0A%20%20%20%20//%20Add%20%27Check%20for%20Update...%27%20menuitem%20to%20CB%20contextmenu%0A%20%20%20%20addMenuItem%28kIDs%2C%20uIDs%2C%20true%29%3B%0A%0A%20%20%20%20%24%28uIDs%5B0%5D%29.parentNode.addEventListener%28%22popupshowing%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20initUpdaterCbPopup%2C%20false%29%3B%0A%20%20%20%20%24%28uIDs%5B0%5D%29.parentNode.removeEventListener%28%22popuphiding%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20initUpdaterCbPopup%2C%20false%29%3B%0A%0A%20%20%20%20self.onDestroy%20%3D%20function%28aReason%29%20%7B%0A%20%20%20%20%20%20if%20%28aReason%20%21%3D%20%22delete%22%29%20return%3B%0A%20%20%20%20%20%20for%20%28var%20i%20%3D%200%3B%20i%20%3C%20kIDs.length%3B%20i++%29%20%7B%0A%20%20%20%20%20%20%20%20%24%28kIDs%5Bi%5D%29.parentNode.removeChild%28%24%28kIDs%5Bi%5D%20+%20%22-separator%22%29%29%3B%0A%20%20%20%20%20%20%20%20%24%28kIDs%5Bi%5D%29.parentNode.removeChild%28%24%28kIDs%5Bi%5D%29%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Athis.updater.init%28%29%3B%0A%0A////////////////////////////%20End%20Button%20updater%20////////////////////////////%0A////////////////////////////////////////////////////////////////////////////%0A%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5Bthis.showHelp%28%29%3B%0AopenUILink%28%22http%3A//www.google.com/imghp%3Fsbi%3D1%22%2C%20event%2C%20false%2C%20true%29%3B%0A%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5BDrag%20image%20on%20the%20web%20page%20onto%20this%20button%0Ato%20search%20the%20image%20on%20the%20web.%0A%0AImage%20must%20be%20larger%20than%2020%20bytes.%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Google Search by Image">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=external-custombuttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <name>Google Search by Image</name>
+  <image><![CDATA[data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAYAAADphp8SAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOnAAADpwBB5RT3QAAABZ0RVh0Q3JlYXRpb24gVGltZQAwMi8yNS8xMapAVMwAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAABjklEQVQ4jZWTwWoTURSGv5lMp1OmxUIUXISCCbW06daNtGuh7uMbCHaeoOBSzBMEN92LXXThohVtoAshOyuKJQkaXWRjKi7aBjPT9v6uEsbpTGp/OHDPvf/5zjmLa0niCo0zWMODA2BZVqZTEkG1RdwhoLaxMKqTBJKWJO1JOpN0Iek8EQqeNxVXLP8jqS7pniXpe+1V9+yw058ft19yoqHKJb+9XikcOcDcYadvj4Mki+P68q1/F5hz4s1qGwsABNUWszMOD+7nWS75THk5wshw0DzhbeM3x/3zJG/CiWdBtTU6r63kuZ2f5NnmD8LI4Lk2TyoFHq7mefnm56XJMldaLE5T2+oSRgaAQWR4sdWlXJpO9WeCbvi5EWSoQWSYmkwvyQRdGOG5/z57rn0JfiWo8emY4FFhBPNcm/VKgQ/Nk1S/k3oLvN4/Ym31Jk8f38FzbQah4fPXU3be/8oEGSCXfBhEhu16j+16L6tXXKENfFwq+u3/caepXPLbwDsk3ZK0G/tr14lTSTuSin8BUMr8td343bwAAAAASUVORK5CYII=]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[function saveImage(aImage) {
+  let imageString = Cc['@mozilla.org/supports-string;1'].
+                    createInstance(Ci.nsISupportsString);
+  imageString.data = aImage;
+  cbu.ps.setComplexValue("custombuttons.searchImageURL.image_preview",
+                         Ci.nsISupportsString, imageString);
+}
+
+function addParamsToForm(form, key, value) {
+  let hiddenField = content.document.createElement("input");
+  hiddenField.setAttribute("type", "hidden");
+  hiddenField.setAttribute("name", key);
+  hiddenField.setAttribute("value", value);
+  form.appendChild(hiddenField);
+}
+
+this.searchImage = function searchImage(aImageURL) {
+  if (aImageURL.indexOf("data:") == 0) {
+    let base64Offset = aImageURL.indexOf(",");
+    if (base64Offset != -1) {
+      let inlineImage = aImageURL.substring(base64Offset + 1)
+                                 .replace(/\+/g, "-")
+                                 .replace(/\//g, "_")
+                                 .replace(/\./g, "=");
+      saveImage(aImageURL);
+
+      let form = content.document.createElement("form");
+      form.setAttribute("method", "POST");
+      form.setAttribute("action", "http://www.google.com/searchbyimage/upload");
+      form.setAttribute("enctype", "multipart/form-data");
+      form.setAttribute("target", "_blank");
+      addParamsToForm(form, "image_content", inlineImage);
+      addParamsToForm(form, "filename", "");
+      addParamsToForm(form, "image_url", "");
+      content.document.body.appendChild(form);
+      form.submit();
+    }
+  } else {
+    gBrowser.loadOneTab("http://www.google.com/searchbyimage" +
+                        "?image_url=" + encodeURIComponent(aImageURL),
+                        null, null, null, false);
+  }
+}
+
+this.showHelp = function showHelp() {
+  var pref = cbu.ps.getBranch("custombuttons.searchImageURL.");
+  var firstTime = true;
+  try {
+    firstTime = pref.getBoolPref("firstTime");
+  } catch(ex) {
+  }
+  if (!firstTime) return;
+  custombuttons.uChelpButton(this);
+  pref.setBoolPref("firstTime", false);
+}
+
+this.onclick = function checkForMiddleClick(aEvent) {
+  if (aEvent.button != 1) return;
+  new Function("event", this.getAttribute("cb-oncommand")).call(this, aEvent);
+}
+
+this.dndObserver = {
+  onDrop: function(aEvent, aXferData, aDragSession) {
+    var split = aXferData.data.split("\n");
+    var url = split[0];
+    if (url != aXferData.data) {
+      var dialogArgs = {name:split[1], url:url};
+      //Application.console.log(this);
+      aEvent.target.searchImage(dialogArgs.url);
+    } else {
+      split = aXferData.data.split(" ");
+      url = split[0];
+      try {
+        aEvent.target.searchImage(makeURI(url).spec);
+      } catch(ex) {
+        custombuttons.alertBox(aEvent.target.name, "Invalid image URL!");
+      }
+    }
+  },
+
+  onDragOver: function(aEvent, aFlavour, aDragSession) {
+    document.getElementById("statusbar-display").label = "Drop it!";
+    aDragSession.dragAction = Ci.nsIDragService.DRAGDROP_ACTION_LINK;
+  },
+
+  onDragExit: function(aEvent, aDragSession) {
+    document.getElementById("statusbar-display").label = "";
+  },
+
+  getSupportedFlavours: function() {
+    //@https://addons.mozilla.org/en-US/firefox/files/browse/122222/file/chrome/content/openInBrowser.js#L37
+    // For image mime types, it relies on the fact that Gecko will correctly
+    // display an image even if the server sent it with a mime type that
+    // does not match the real image type. For instance, a PNG image sent with
+    // image/jpeg Content-Type will still be displayed properly.
+    var flavourSet = new FlavourSet;
+    flavourSet.appendFlavour("image/jpeg");
+    flavourSet.appendFlavour("application/x-moz-file", "nsIFile");    
+    flavourSet.appendFlavour("text/unicode");
+    return flavourSet;
+  }
+}
+
+this.setAttribute("ondragover", "nsDragAndDrop.dragOver(event, this.dndObserver);");
+this.setAttribute("ondragdrop", "nsDragAndDrop.drop(event, this.dndObserver);");
+this.setAttribute("ondragexit", "nsDragAndDrop.dragExit(event, this.dndObserver);");
+
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////// Start Button updater ///////////////////////////
+
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0
+ *
+ * The contents of this file are subject to the Mozilla Public License
+ * Version 1.1 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/1.1/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * Original code is Button Updater for Custom Buttons extension
+ *
+ * The Initial Developer of the Original Code is LouCypher.
+ * Portions created by the Initial Developer are Copyright (C) 2011
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ * - LouCypher: original code
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * the GNU General Public License Version 2 or later (the "GPL"), in which
+ * case the provisions of the GPL are applicable instead of those above.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+this.updater = {
+  btnClick: self.onclick,
+  btnImage: self.image,
+  btnType: self.type,
+  btnTooltip: self.tooltipText,
+
+  baseURL: "https://loucypher.googlecode.com/svn/custombuttons/xml/",
+
+  get updateURL() {
+    return this.baseURL + encodeURIComponent(self.name.replace(/\//g, "-"))
+                        + ".xml";
+  },
+
+  openUpdateURL: function updater_openUpdateURL() {
+    switchToTabHavingURI(this.updateURL);
+  },
+
+  get bsyIcon() {
+    switch (Application.id) {
+      case "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}":
+        if (Application.version >= "4") {
+          return "chrome://browser/skin/tabbrowser/connecting.png";
+        } else {
+          return "chrome://global/skin/icons/loading_16.png";
+        }
+      case "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}":
+        return "chrome://communicator/skin/icons/loading.gif";
+      default:
+        return "chrome://custombuttons/skin/button.png";
+    }
+  },
+
+  // Check if the URI is Custom Button URI (custombutton://...)
+  isValidCbURI: function updater_isValidCbURI(aURL) {
+    if (!aURL) return false;
+    return /^custombutton\:\/\//.test(aURL);
+  },
+
+  // Convert 'custombutton:' URI to DOM
+  convertURItoDOM: function updater_convertURItoDOM(aURL) {
+    if (!this.isValidCbURI(aURL)) {
+      custombuttons.alertBox(self.name, "Not a Custom Buttons link!");
+      return;
+    }
+    var string = unescape(aURL.replace(/^custombutton\:\/\//, "").toString());
+    var parser = new DOMParser();
+    var dom = parser.parseFromString(string, "text/xml");
+    if (dom.documentElement.nodeName == "parsererror") {
+      return null;
+    } else {
+      return dom.documentElement;
+    }
+  },
+
+  // Get value from XML element
+  getParamValue: function updater_getParamValue(aDocument, aNodeName) {
+    var node = aDocument.querySelector(aNodeName);
+    if (!node) return "";
+    if (!node.firstChild || (node.firstChild &&
+        (node.firstChild.nodeType == node.TEXT_NODE))) {
+      return node.textContent;
+    } else {
+      return node.firstChild.textContent;
+    }
+  },
+
+  // Set button parameters from XML alement
+  getButtonParameters: function updater_getButtonParameters(aButtonLink, aURL) {
+    var dom = this.convertURItoDOM(aURL);
+    var params = custombuttons.cbService.getButtonParameters(aButtonLink)
+                                        .wrappedJSObject;
+    params.name             = this.getParamValue(dom, "name")
+    params.date             = this.getParamValue(dom, "date") || "";
+    params.image            = this.getParamValue(dom, "image") ||
+                              this.getParamValue(dom, "stdicon");
+    params.code             = this.getParamValue(dom, "code")
+    params.initCode         = this.getParamValue(dom, "initcode")
+    params.help             = this.getParamValue(dom, "help")
+    params.accelkey         = this.getParamValue(dom, "accelkey")
+    params.mode             = this.getParamValue(dom, "mode")
+    params.wrappedJSObject  = params;
+    return params;
+  },
+
+  // Reset button attribute if user click the button during update
+  resetAttributes: function updater_resetAttributes() {
+    self.image = this.btnImage;
+    self.tooltipText = self.name;
+    self.removeAttribute("busy");
+    self.onclick = this.btnClick;
+    self.type = this.btnType;
+    self.tooltipText = this.btnTooltip;
+  },
+
+  // Check button for update
+  checkForUpdate: function updater_checkForUpdate(aCallback) {
+    if (!navigator.onLine) {                // If browser is in offline mode
+                                            // ask to switch to online
+      var online = custombuttons.confirmBox(self.name,
+                             "Firefox is currently in offline mode.\n"
+                           + "Switch to online mode and try again?",
+                             "Yes", "No");
+      if (!online) return;
+      BrowserOffline.toggleOfflineStatus(); // switch to online
+    }
+
+    var url = this.updateURL + "?" + Date.now();
+    var req = new XMLHttpRequest();
+    req.open("GET", url, true);
+    if (self.hasAttribute("busy")) {
+      this.resetAttributes();
+      return
+    }
+    var updater = this;
+    req.onreadystatechange = function (aEvent) {
+      self.onclick = function(aEvent) {
+        aEvent.preventDefault();
+        req.abort();
+        self.updater.resetAttributes();
+      }
+      self.image = updater.bsyIcon;
+      self.setAttribute("busy", "");
+      self.removeAttribute("type");
+      self.tooltipText = "Checking for update...\nClick to abort.";
+      if (req.readyState == 4 && req.status == 200) {
+        updater.resetAttributes();
+        aCallback(req.responseXML);
+      }
+    }
+    req.send(null);
+  },
+
+  // Get update from XML
+  getUpdate: function updater_getUpdate(aDocument) {
+    if (aDocument.documentElement.localName != "custombutton") {
+      custombuttons.alertBox(self.name,
+                             "Not a valid Custom Buttons XML file!");
+      return;
+    }
+
+    //inspectDOMDocument(aDocument); return;
+    let button = aDocument.getElementById("button");
+    let link = button.getElementsByTagNameNS(xhtmlns, "a")[0];
+    if (link.href == self.URI) {
+      let as = Cc['@mozilla.org/alerts-service;1'].
+               getService(Ci.nsIAlertsService);
+      as.showAlertNotification(self.image, "No update found!",
+                               "Finish checking", false, "", null);
+      return;
+    } 
+
+    var install = custombuttons.confirmBox(self.name, "Update found! " +
+                                           "Update this button?",
+                                           "Yes", "No");
+    if (!install) return;
+    let btnLink = custombuttons.makeButtonLink("update", self.id);
+    let params = self.updater.getButtonParameters(btnLink, link.href);
+    //inspectObject(params); return;
+    custombuttons.cbService.installButton(params);
+    custombuttons.alertBox(self.name, "Button updated!");
+    self.setAttribute("cb-edit-state", "active");
+  },
+
+  init: function updater_onLoad() {
+    function $(aId) {
+      return document.getElementById(aId);
+    }
+
+    function addMenuItem(aNewIDs, aNodeIDs, aSeparator) {
+      for (var i = 0; i < aNewIDs.length; i++) {
+        // Remove previously created menuitems if any
+        if ($(aNewIDs[i])) {
+          if (aSeparator &&
+              ($(aNewIDs[i]).nextSibling.localName == "menuseparator")) {
+            $(aNewIDs[i]).parentNode.removeChild($(aNewIDs[i]).nextSibling);
+          }
+          $(aNewIDs[i]).parentNode.removeChild($(aNewIDs[i]));
+        }
+
+        let mi = cbu.makeXML(<menuitem xmlns={xulns} id={aNewIDs[i]}
+                              class="menuitem-iconic"
+                              image={self.image}
+                              label="Check for updates for this button"
+                              onclick={"if (event.button == 1) { "
+                                     + "var btn = document.getElementById('"
+                                     + self.id
+                                     + "'); btn.updater.openUpdateURL(); }"}
+                              oncommand={"var btn = document.getElementById('"
+                                       + self.id
+                                       + "'); btn.updater.checkForUpdate("
+                                       + "btn.updater.getUpdate);"}/>);
+        if (i == 0) {
+          mi.setAttribute("observes",
+                          "custombuttons-contextbroadcaster-primary");
+        }
+        $(aNodeIDs[i]).parentNode.insertBefore(mi, $(aNodeIDs[i]).nextSibling);
+        if (aSeparator) {
+          let sep = cbu.makeXML(<menuseparator xmlns={xulns}
+                                               id={mi.id + "-separator"}/>);
+          mi.parentNode.insertBefore(sep, mi.nextSibling);
+        }
+      }
+    }
+
+    function initUpdaterCbPopup(aEvent) {
+      var popupNode = "triggerNode" in aEvent.target
+                        ? aEvent.target.triggerNode : document.popupNode;
+      for (var i = 0; i < kIDs.length; i++) {
+        $(kIDs[i]).hidden = (popupNode != self);
+        ($(kIDs[i]).nextSibling.id == $(kIDs[i]).id + "-separator") &&
+        ($(kIDs[i]).nextSibling.hidden = (popupNode != self));
+      }
+    }
+
+    let kIDs = [self.id + "-checkForUpdate", self.id + "-checkForUpdate-sub"];
+    let uIDs = ["custombuttons-contextpopup-updateButton",
+                "custombuttons-contextpopup-updateButton-sub"];
+
+    // Add 'Check for Update...' menuitem to CB contextmenu
+    addMenuItem(kIDs, uIDs, true);
+
+    $(uIDs[0]).parentNode.addEventListener("popupshowing",
+                                           initUpdaterCbPopup, false);
+    $(uIDs[0]).parentNode.removeEventListener("popuphiding",
+                                              initUpdaterCbPopup, false);
+
+    self.onDestroy = function(aReason) {
+      if (aReason != "delete") return;
+      for (var i = 0; i < kIDs.length; i++) {
+        $(kIDs[i]).parentNode.removeChild($(kIDs[i] + "-separator"));
+        $(kIDs[i]).parentNode.removeChild($(kIDs[i]));
+      }
+    }
+  }
+}
+
+this.updater.init();
+
+//////////////////////////// End Button updater ////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+]]></initcode>
+  <code><![CDATA[this.showHelp();
+openUILink("http://www.google.com/imghp?sbi=1", event, false, true);
+]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[Drag image on the web page onto this button
+to search the image on the web.
+
+Image must be larger than 20 bytes.]]></help>
+  <attributes/>
+</custombutton>

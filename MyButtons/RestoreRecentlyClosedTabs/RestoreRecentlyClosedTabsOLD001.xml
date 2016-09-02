@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/" xmlns:html="http://www.w3.org/1999/xhtml">
+<html:head>
+	<html:title><![CDATA[Restore Recently Closed Tabs ]]></html:title>
+	<html:link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADfklEQVQ4jZXMbVDaBQDH8f+77a7d1a4XvehFl3fspuS5LnfXjkk+bCzdLVR0hkawTGEiBqI0QU0RmE+HQ+dUfABE0jXBZBulU5xta6UmB45Rw0LTfNp0PsTNJ/j1tt6tz/vvlyD+pbndGCGvrI/4Uq4mSyrqQgWC+gPEy+o231Q5Hz3Gw3EHHo47/GO/uJ43tBnVLz3osVifA8ALvx9rz1axubmF2qbW/f812Nvdxdb6OlafPsPCwjLm55dQVqIMlpUoAmrNtWBZlcZ+Z2Li1f+EPp/voKAqtbDD1L2zsb6Op0uLmJv9E17vDDyeGfRbbei32vBkehqaJp3ffLfTrvqG1ZdzOUk24Bx4hRC3MI/mttBXhYpi9FtMMPfq8LVRD61Oj+Z2HQqlChRKFWjqascXEhGuaqqQweeAU3l6XVCfGkYk5Bw/xu84G5DdT4FkmA7xwDmIB85BaEtAnjUefDMNvBunkN0Ti8+MUeDoKWAbT4JZfTLIyKVEEvTcE+GZGtp26R0WCi1pEF5PRsHNJAgtDHTfbYHlBwMKuphgt1KRduV9MGoikaJ5D2fyyTvUjKPhBLeWHlZkTtvUzuVD48lBpSMT6ke5mFwcwcScHYFAAO7lMRSPMnDxVhyy+z5Ato2KDDVlI62YGkoUaT89Iuv9eLlpJg9qNxfKsQu4Mi7Cmn8FXT/Xwbs8hekVN1onypB/iw6+NQbc76JxQRP7V56GQSIum0Qh0h6m7+rvuah1ZaHDKceafwUjv30Lrv5DsJtj0D/eid39bVTbREjviATLdBzsmhiPoo3/FmEYVr9ZZPjEUefh4qsHTNyYbEYgGMAD7/cQ9iThc0McWkdUeLIwBZ1djeTGcKS0vYN0OfXH1iHlG8SQx/K66FrqsPQeHdy+GBjvabCzt42hKQs8i5OwOg2YX/NheukxmgcrkNgQBoaWjPOyqNsjDt1rhM/nO5gqierMuU0Ncq5TwGw8ga779XDO/IStFxtot1fj7+0t/LH0K5iNFNAbQpGsJQfj+cf0XngPELMu1+Gs8kRVSs27e3RVBOKlZNAkYYgVHUF0HgmnRKFIKIhAlCAE0flvI+5SCGgy0j6rmKaadbkOE263+9DgaC9JXMU5XVDOPlukykyUKnnnS5QX00sVPFapgseSlfNYJfLs9EuKLIakgv2RWMk6MzhqIrnd7kP/AK2qLR9BFcpYAAAAAElFTkSuQmCC"/>
+	<html:style type="text/css"><![CDATA[body{font-size:medium;margin:0}body,code:before,help:before,initcode:before{font-family:"Verdana",sans-serif}#wrapper{position:fixed;top:1em;right:1em;max-width:15%;text-align:center}#button{background-color:#299a0b;border:1px solid #3a7404;border-radius:.5em;padding:0;margin-bottom:1em;box-shadow:1px 2px 3px rgba(0,0,0,.25)}#button a{color:#f0f0f0;font-weight:700;text-shadow:-.5pt -.5px .5pt rgba(0,0,0,1);padding:.8em;text-decoration:none}:-moz-any-link:focus{color:grey;outline-color:transparent;text-decoration:none}#button a,code,code:before,initcode,initcode:before,help,help:before{display:block}#credits{position:fixed;bottom:1em;right:1em;font-size:small}#about{font-size:small}custombutton{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABAElEQVQ4jW2TQXLFMAhDff+b2vEHYw5AF38eVTNdZAIxCEkmw31VptU5T7mvOuepc56K2B2f85TZrEwr99VxptUwm2U2695PZVrH937KfZX76txsVsTus0yrEbEr0/4F4AyQc56eDMiI2F0IbYoj9h9ZSCV2XzXUA1BVL8BvBvSMiN20zWY38VZ5gDEkYtfAYTRToA3qiQJk2hcA7W8gpaxG0nPvp4aiQ5UCzOV2GKAgLUEfpsGCfaBR92TonapmdCoAjHTIgLa6/14gbgow8oj9uwe6SMQ0qTz9P9oDZOgCkfMNJnqWaV8P3ouDRorUXEA4H1wbtMmVjcrQ7TSb9QMtXcwa4wpbXgAAAABJRU5ErkJggg==) fixed #f6f6f1;margin:1em}date,image,mode,accelkey{display:none}name{font-weight:700;font-size:x-large}code:before,help:before,initcode:before{font-weight:700;font-size:large;margin:0 0 1em;padding:.5em}code:before{content:"Code Tab"}help:before{content:"Help Tab"}initcode:before{content:"Initialization Code Tab"}code,initcode,help{background-color:#fcfcfc;font-size:.875em;font-family:Consolas,"Bitstream Vera Sans Mono","Courier New",Courier,monospace!important;margin:1em 2em 1em 0 !important;padding:1em;text-align:left;box-shadow:2px 2px 0 rgba(170,160,130,0.5),4px 4px 0 rgba(200,190,165,0.5);max-width:80%;min-width:80%;white-space:pre-wrap;word-wrap:break-word}]]></html:style>
+</html:head>
+<html:body>
+	<html:div id="wrapper">
+		<html:div id="button">
+			<html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3ERestore%20Recently%20Closed%20Tabs%20%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADfklEQVQ4jZXMbVDaBQDH8f+77a7d1a4XvehFl3fspuS5LnfXjkk+bCzdLVR0hkawTGEiBqI0QU0RmE+HQ+dUfABE0jXBZBulU5xta6UmB45Rw0LTfNp0PsTNJ/j1tt6tz/vvlyD+pbndGCGvrI/4Uq4mSyrqQgWC+gPEy+o231Q5Hz3Gw3EHHo47/GO/uJ43tBnVLz3osVifA8ALvx9rz1axubmF2qbW/f812Nvdxdb6OlafPsPCwjLm55dQVqIMlpUoAmrNtWBZlcZ+Z2Li1f+EPp/voKAqtbDD1L2zsb6Op0uLmJv9E17vDDyeGfRbbei32vBkehqaJp3ffLfTrvqG1ZdzOUk24Bx4hRC3MI/mttBXhYpi9FtMMPfq8LVRD61Oj+Z2HQqlChRKFWjqascXEhGuaqqQweeAU3l6XVCfGkYk5Bw/xu84G5DdT4FkmA7xwDmIB85BaEtAnjUefDMNvBunkN0Ti8+MUeDoKWAbT4JZfTLIyKVEEvTcE+GZGtp26R0WCi1pEF5PRsHNJAgtDHTfbYHlBwMKuphgt1KRduV9MGoikaJ5D2fyyTvUjKPhBLeWHlZkTtvUzuVD48lBpSMT6ke5mFwcwcScHYFAAO7lMRSPMnDxVhyy+z5Ato2KDDVlI62YGkoUaT89Iuv9eLlpJg9qNxfKsQu4Mi7Cmn8FXT/Xwbs8hekVN1onypB/iw6+NQbc76JxQRP7V56GQSIum0Qh0h6m7+rvuah1ZaHDKceafwUjv30Lrv5DsJtj0D/eid39bVTbREjviATLdBzsmhiPoo3/FmEYVr9ZZPjEUefh4qsHTNyYbEYgGMAD7/cQ9iThc0McWkdUeLIwBZ1djeTGcKS0vYN0OfXH1iHlG8SQx/K66FrqsPQeHdy+GBjvabCzt42hKQs8i5OwOg2YX/NheukxmgcrkNgQBoaWjPOyqNsjDt1rhM/nO5gqierMuU0Ncq5TwGw8ga779XDO/IStFxtot1fj7+0t/LH0K5iNFNAbQpGsJQfj+cf0XngPELMu1+Gs8kRVSs27e3RVBOKlZNAkYYgVHUF0HgmnRKFIKIhAlCAE0flvI+5SCGgy0j6rmKaadbkOE263+9DgaC9JXMU5XVDOPlukykyUKnnnS5QX00sVPFapgseSlfNYJfLs9EuKLIakgv2RWMk6MzhqIrnd7kP/AK2qLR9BFcpYAAAAAElFTkSuQmCC%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5Bvar%20%24%20%3D%20this.RestoreClosedTabs%20%3D%20%7B%0A%09/**%0A%09%20*%20%5BMenuOnly%20description%5D%0A%09%20*%20true%3A%20the%20button%20will%20just%20show%20a%20menu%20with%20all%20closed%20tabs.%0A%09%20*%20false%3A%20the%20button%20will%20show%20a%20menu%20with%20all%20closed%20tabs%20and%20if%20clicked%2C%0A%09%20*%20it%20will%20restor%20the%20last%20closed%20tab.%0A%09%20*%20In%20SeaMonkey%20this%20is%20forced%20to%20true.%0A%09%20*/%0A%09MenuOnly%3A%20false%2C%0A%09/**%0A%09%20*%20%5BShowAlert%20description%5D%0A%09%20*%20Show%20an%20alert%20or%20not%20when%20trying%20to%20clear%20the%20list%20of%20all%20closed%20tabs.%0A%09%20*/%0A%09ShowAlert%3A%20true%2C%0A%0A%09closedTabCount%3A%20function%28aWhich%29%20%7B%0A%09%09if%20%28%22SessionStore%22%20in%20window%29%20%7B%20//%20Firefox%0A%09%09%09return%20HistoryMenu.prototype._getClosedTabCount%3B%0A%09%09%7D%20else%20if%20%28%22updateRecentTabs%22%20in%20window%29%20%7B%20//%20SeaMonkey%0A%09%09%09return%20gBrowser.getUndoList%28%29.length%3B%0A%09%09%7D%20else%20%7B%20//%20Palemoon%0A%09%09%09let%20ss%20%3D%20Cc%5B%22@mozilla.org/browser/sessionstore%3B1%22%5D.getService%28Ci.nsISessionStore%29%3B%0A%09%09%09return%20ss.getClosedTabCount%28window%29%3B%0A%09%09%7D%0A%09%7D%2C%0A%0A%09init%3A%20function%28%29%20%7B%0A%09%09self.textContent%20%3D%20%22%22%3B%0A%09%09var%20mPop%20%3D%20document.createElementNS%28xulns%2C%20%22menupopup%22%29%3B%0A%09%09mPop.setAttribute%28%22consumeoutsideclicks%22%2C%20false%29%3B%0A%0A%09%09if%20%28%22updateRecentTabs%22%20in%20window%29%20%7B%0A%09%09%09%24.MenuOnly%20%3D%20true%3B%0A%09%09%09mPop.setAttribute%28%22oncommand%22%2C%20%22gBrowser.undoCloseTab%28event.target.value%29%3B%22%29%3B%0A%09%09%7D%20else%0A%09%09%09mPop.setAttribute%28%22oncommand%22%2C%20%22event.stopPropagation%28%29%3B%22%29%3B%0A%0A%09%09mPop.setAttribute%28%22onclick%22%2C%20%22event.stopPropagation%28%29%3B%22%29%3B%0A%09%09mPop.setAttribute%28%22onpopupshowing%22%2C%20%22document.getElementById%28%27%22%20+%20self.id%20+%0A%09%09%09%22%27%29.populateUndoSubmenu%28this%29%3Bevent.stopPropagation%28%29%3B%22%29%3B%0A%09%09mPop.setAttribute%28%22tooltip%22%2C%20%22bhTooltip%22%29%3B%0A%09%09mPop.setAttribute%28%22popupsinherittooltip%22%2C%20true%29%3B%0A%0A%09%09if%20%28%22SessionStore%22%20in%20window%29%20%7B%20//%20Firefox%0A%09%09%09self.populateUndoSubmenu%20%3D%20%24.populateUndoSubmenu%3B%0A%09%09%7D%20else%20if%20%28%22updateRecentTabs%22%20in%20window%29%20%7B%20//%20SeaMonkey%0A%09%09%09self.populateUndoSubmenu%20%3D%20updateRecentTabs%3B%0A%09%09%7D%20else%20%7B%20//%20Palemoon%0A%09%09%09self.populateUndoSubmenu%20%3D%20eval%28%22%28%22%20+%20HistoryMenu.prototype.populateUndoSubmenu.toString%28%29%0A%09%09%09%09.replace%28/._rootElt.*/%2C%20%22%22%29%0A%09%09%09%09.replace%28/this._ss/g%2C%20%22Cc%5B%5C%22@mozilla.org/browser/sessionstore%3B1%5C%22%5D.getService%28Ci.nsISessionStore%29%22%29%20+%20%22%29%22%29%3B%0A%09%09%7D%0A%0A%09%09self.tooltiptext%20%3D%20%22%22%3B%0A%09%09self.orient%20%3D%20%22horizontal%22%3B%0A%0A%09%09self.type%20%3D%20%24.MenuOnly%20%3F%20%22menu%22%20%3A%20%22menu-button%22%3B%0A%09%09self.appendChild%28mPop%29%3B%0A%09%09%24.MenuOnly%20%7C%7C%20self.setAttribute%28%22command%22%2C%20%22History%3AUndoCloseTab%22%29%3B%0A%0A%09%09gBrowser.mTabContainer.addEventListener%28%22mouseout%22%2C%20%24.setState%2C%20false%29%3B%0A%09%09gBrowser.mTabContainer.addEventListener%28%22TabClose%22%2C%20%24.setState%2C%20false%29%3B%0A%09%09gBrowser.mTabContainer.addEventListener%28%22TabOpen%22%2C%20%24.setState%2C%20false%29%3B%0A%0A%09%09self.onmouseover%20%3D%20function%28%29%20%7B%0A%09%09%09%24.setState%28%29%3B%0A%09%09%7D%3B%0A%0A%09%09addDestructor%28function%28aReason%29%20%7B%0A%09%09%09if%20%28aReason%20%3D%3D%3D%20%22delete%22%20%7C%7C%20aReason%20%3D%3D%3D%20%22update%22%29%20%7B%0A%09%09%09%09gBrowser.mTabContainer.removeEventListener%28%22TabClose%22%2C%20%24.setState%2C%20false%29%3B%0A%09%09%09%09gBrowser.mTabContainer.removeEventListener%28%22TabOpen%22%2C%20%24.setState%2C%20false%29%3B%0A%09%09%09%09gBrowser.mTabContainer.removeEventListener%28%22mouseout%22%2C%20%24.setState%2C%20false%29%3B%0A%09%09%09%7D%0A%09%09%7D%29%3B%0A%09%7D%2C%0A%0A%09setState%3A%20function%28%29%20%7B%0A%09%09if%20%28%24.closedTabCount%28%29%20%3D%3D%3D%200%29%0A%09%09%09self.setAttribute%28%22disabled%22%2C%20true%29%3B%0A%09%09else%0A%09%09%09self.removeAttribute%28%22disabled%22%29%3B%0A%09%7D%2C%0A%0A%09populateUndoSubmenu%3A%20function%28aN%29%20%7B%0A%09%09aN.textContent%20%3D%20%22%22%3B%0A%0A%09%09//%20populate%20menu%0A%09%09let%20tabsFragment%20%3D%20RecentlyClosedTabsAndWindowsMenuUtils.getTabsFragment%28window%2C%20%22menuitem%22%29%3B%0A%09%09aN.appendChild%28tabsFragment%29%3B%0A%0A%09%09let%20mI%20%3D%20aN.insertBefore%28document.createElementNS%28xulns%2C%20%22menuitem%22%29%2C%20aN.lastChild%29%3B%0A%09%09mI.setAttribute%28%22label%22%2C%20%22Clear%20closed%20Tabs%20list%22%29%3B%0A%09%09mI.setAttribute%28%22oncommand%22%2C%20%22document.getElementById%28%27%22%20+%20self.id%20+%0A%09%09%09%22%27%29.RestoreClosedTabs.removeAllClosedTabs%28this%29%3Bevent.stopPropagation%28%29%3B%22%29%3B%0A%09%7D%2C%0A%0A%09removeAllClosedTabs%3A%20function%28%29%20%7B%0A%09%09let%20msg%20%3D%20%22You%27re%20about%20to%20clear%20the%20list%20of%20all%20closed%20tabs.%5Cn%22%20+%0A%09%09%09%22Are%20you%20sure%20that%20you%20want%20to%20proceed%3F%22%3B%0A%09%09let%20cBox%20%3D%20%24.ShowAlert%20%3F%20custombuttons.confirmBox%28self.name%2C%20msg%2C%20%22Yes%22%2C%20%22Cancel%22%29%20%3A%20true%3B%0A%09%09if%20%28cBox%29%20%7B%0A%09%09%09try%20%7B%0A%09%09%09%09while%20%28%24.closedTabCount%28%29%20%21%3D%3D%200%29%0A%09%09%09%09%09SessionStore.forgetClosedTab%28window%2C%200%29%3B%0A%09%09%09%7D%20catch%20%28aErr%29%20%7B%7D%20finally%20%7B%0A%09%09%09%09%24.setState%28%29%3B%0A%09%09%09%7D%0A%0A%09%09%7D%20else%0A%09%09%09return%3B%0A%09%7D%2C%0A%7D%3B%0A%0Athis.RestoreClosedTabs.init%28%29%3B%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5B/*CODE*/%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Restore Recently Closed Tabs ">
+				<![CDATA[Install this button]]>
+			</html:a>
+		</html:div>
+		<html:a id="about" href="https://addons.mozilla.org/addon/custom-buttons/">
+			<![CDATA[About CustomButtons]]>
+		</html:a>
+		<html:div id="credits">
+			<html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=3599">
+				<![CDATA[XML created with]]>
+				<html:br/>
+				<![CDATA[CB Context Menu Extended]]>
+			</html:a>
+		</html:div>
+	</html:div>
+</html:body>
+  <name>Restore Recently Closed Tabs </name>
+  <image><![CDATA[data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADfklEQVQ4jZXMbVDaBQDH8f+77a7d1a4XvehFl3fspuS5LnfXjkk+bCzdLVR0hkawTGEiBqI0QU0RmE+HQ+dUfABE0jXBZBulU5xta6UmB45Rw0LTfNp0PsTNJ/j1tt6tz/vvlyD+pbndGCGvrI/4Uq4mSyrqQgWC+gPEy+o231Q5Hz3Gw3EHHo47/GO/uJ43tBnVLz3osVifA8ALvx9rz1axubmF2qbW/f812Nvdxdb6OlafPsPCwjLm55dQVqIMlpUoAmrNtWBZlcZ+Z2Li1f+EPp/voKAqtbDD1L2zsb6Op0uLmJv9E17vDDyeGfRbbei32vBkehqaJp3ffLfTrvqG1ZdzOUk24Bx4hRC3MI/mttBXhYpi9FtMMPfq8LVRD61Oj+Z2HQqlChRKFWjqascXEhGuaqqQweeAU3l6XVCfGkYk5Bw/xu84G5DdT4FkmA7xwDmIB85BaEtAnjUefDMNvBunkN0Ti8+MUeDoKWAbT4JZfTLIyKVEEvTcE+GZGtp26R0WCi1pEF5PRsHNJAgtDHTfbYHlBwMKuphgt1KRduV9MGoikaJ5D2fyyTvUjKPhBLeWHlZkTtvUzuVD48lBpSMT6ke5mFwcwcScHYFAAO7lMRSPMnDxVhyy+z5Ato2KDDVlI62YGkoUaT89Iuv9eLlpJg9qNxfKsQu4Mi7Cmn8FXT/Xwbs8hekVN1onypB/iw6+NQbc76JxQRP7V56GQSIum0Qh0h6m7+rvuah1ZaHDKceafwUjv30Lrv5DsJtj0D/eid39bVTbREjviATLdBzsmhiPoo3/FmEYVr9ZZPjEUefh4qsHTNyYbEYgGMAD7/cQ9iThc0McWkdUeLIwBZ1djeTGcKS0vYN0OfXH1iHlG8SQx/K66FrqsPQeHdy+GBjvabCzt42hKQs8i5OwOg2YX/NheukxmgcrkNgQBoaWjPOyqNsjDt1rhM/nO5gqierMuU0Ncq5TwGw8ga779XDO/IStFxtot1fj7+0t/LH0K5iNFNAbQpGsJQfj+cf0XngPELMu1+Gs8kRVSs27e3RVBOKlZNAkYYgVHUF0HgmnRKFIKIhAlCAE0flvI+5SCGgy0j6rmKaadbkOE263+9DgaC9JXMU5XVDOPlukykyUKnnnS5QX00sVPFapgseSlfNYJfLs9EuKLIakgv2RWMk6MzhqIrnd7kP/AK2qLR9BFcpYAAAAAElFTkSuQmCC]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[var $ = this.RestoreClosedTabs = {
+	/**
+	 * [MenuOnly description]
+	 * true: the button will just show a menu with all closed tabs.
+	 * false: the button will show a menu with all closed tabs and if clicked,
+	 * it will restor the last closed tab.
+	 * In SeaMonkey this is forced to true.
+	 */
+	MenuOnly: false,
+	/**
+	 * [ShowAlert description]
+	 * Show an alert or not when trying to clear the list of all closed tabs.
+	 */
+	ShowAlert: true,
+
+	closedTabCount: function(aWhich) {
+		if ("SessionStore" in window) { // Firefox
+			return HistoryMenu.prototype._getClosedTabCount;
+		} else if ("updateRecentTabs" in window) { // SeaMonkey
+			return gBrowser.getUndoList().length;
+		} else { // Palemoon
+			let ss = Cc["@mozilla.org/browser/sessionstore;1"].getService(Ci.nsISessionStore);
+			return ss.getClosedTabCount(window);
+		}
+	},
+
+	init: function() {
+		self.textContent = "";
+		var mPop = document.createElementNS(xulns, "menupopup");
+		mPop.setAttribute("consumeoutsideclicks", false);
+
+		if ("updateRecentTabs" in window) {
+			$.MenuOnly = true;
+			mPop.setAttribute("oncommand", "gBrowser.undoCloseTab(event.target.value);");
+		} else
+			mPop.setAttribute("oncommand", "event.stopPropagation();");
+
+		mPop.setAttribute("onclick", "event.stopPropagation();");
+		mPop.setAttribute("onpopupshowing", "document.getElementById('" + self.id +
+			"').populateUndoSubmenu(this);event.stopPropagation();");
+		mPop.setAttribute("tooltip", "bhTooltip");
+		mPop.setAttribute("popupsinherittooltip", true);
+
+		if ("SessionStore" in window) { // Firefox
+			self.populateUndoSubmenu = $.populateUndoSubmenu;
+		} else if ("updateRecentTabs" in window) { // SeaMonkey
+			self.populateUndoSubmenu = updateRecentTabs;
+		} else { // Palemoon
+			self.populateUndoSubmenu = eval("(" + HistoryMenu.prototype.populateUndoSubmenu.toString()
+				.replace(/._rootElt.*/, "")
+				.replace(/this._ss/g, "Cc[\"@mozilla.org/browser/sessionstore;1\"].getService(Ci.nsISessionStore)") + ")");
+		}
+
+		self.tooltiptext = "";
+		self.orient = "horizontal";
+
+		self.type = $.MenuOnly ? "menu" : "menu-button";
+		self.appendChild(mPop);
+		$.MenuOnly || self.setAttribute("command", "History:UndoCloseTab");
+
+		gBrowser.mTabContainer.addEventListener("mouseout", $.setState, false);
+		gBrowser.mTabContainer.addEventListener("TabClose", $.setState, false);
+		gBrowser.mTabContainer.addEventListener("TabOpen", $.setState, false);
+
+		self.onmouseover = function() {
+			$.setState();
+		};
+
+		addDestructor(function(aReason) {
+			if (aReason === "delete" || aReason === "update") {
+				gBrowser.mTabContainer.removeEventListener("TabClose", $.setState, false);
+				gBrowser.mTabContainer.removeEventListener("TabOpen", $.setState, false);
+				gBrowser.mTabContainer.removeEventListener("mouseout", $.setState, false);
+			}
+		});
+	},
+
+	setState: function() {
+		if ($.closedTabCount() === 0)
+			self.setAttribute("disabled", true);
+		else
+			self.removeAttribute("disabled");
+	},
+
+	populateUndoSubmenu: function(aN) {
+		aN.textContent = "";
+
+		// populate menu
+		let tabsFragment = RecentlyClosedTabsAndWindowsMenuUtils.getTabsFragment(window, "menuitem");
+		aN.appendChild(tabsFragment);
+
+		let mI = aN.insertBefore(document.createElementNS(xulns, "menuitem"), aN.lastChild);
+		mI.setAttribute("label", "Clear closed Tabs list");
+		mI.setAttribute("oncommand", "document.getElementById('" + self.id +
+			"').RestoreClosedTabs.removeAllClosedTabs(this);event.stopPropagation();");
+	},
+
+	removeAllClosedTabs: function() {
+		let msg = "You're about to clear the list of all closed tabs.\n" +
+			"Are you sure that you want to proceed?";
+		let cBox = $.ShowAlert ? custombuttons.confirmBox(self.name, msg, "Yes", "Cancel") : true;
+		if (cBox) {
+			try {
+				while ($.closedTabCount() !== 0)
+					SessionStore.forgetClosedTab(window, 0);
+			} catch (aErr) {} finally {
+				$.setState();
+			}
+
+		} else
+			return;
+	},
+};
+
+this.RestoreClosedTabs.init();]]></initcode>
+  <code><![CDATA[/*CODE*/]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[]]></help>
+  <attributes/>
+</custombutton>

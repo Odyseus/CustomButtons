@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[Custom Buttons XML Exporter/Importer]]></html:title>
+    <html:link rel="shortcut icon" href="data:image/gif;base64,R0lGODlhGAAQALMAAH9AAP+AAP/AgP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAGAAQAAAEUFDISaudIevNu/9gKH5SVmIBVnLDILVBO2RyPHOAPAC2K9SwTm5H0wFvnJ+raJwFN8qWwDYc2lZFgBXGddY02kx4zCOHR+i0eg3Wut/wuDsCADs="/>
+    <html:style type="text/css"><![CDATA[
+body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+:-moz-any-link:focus {
+  color: white;
+  outline-color: transparent;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3ECustom%20Buttons%20XML%20Exporter/Importer%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/gif%3Bbase64%2CR0lGODlhGAAQALMAAH9AAP+AAP/AgP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAGAAQAAAEUFDISaudIevNu/9gKH5SVmIBVnLDILVBO2RyPHOAPAC2K9SwTm5H0wFvnJ+raJwFN8qWwDYc2lZFgBXGddY02kx4zCOHR+i0eg3Wut/wuDsCADs%3D%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E/*%20*****%20BEGIN%20LICENSE%20BLOCK%20*****%0A%20*%20Version%3A%20MPL%201.1/GPL%202.0%0A%20*%0A%20*%20The%20contents%20of%20this%20file%20are%20subject%20to%20the%20Mozilla%20Public%20License%0A%20*%20Version%201.1%20%28the%20%22License%22%29%3B%20you%20may%20not%20use%20this%20file%20except%20in%0A%20*%20compliance%20with%20the%20License.%20You%20may%20obtain%20a%20copy%20of%20the%20License%20at%0A%20*%20http%3A//www.mozilla.org/MPL/1.1/%0A%20*%0A%20*%20Software%20distributed%20under%20the%20License%20is%20distributed%20on%20an%20%22AS%20IS%22%20basis%2C%0A%20*%20WITHOUT%20WARRANTY%20OF%20ANY%20KIND%2C%20either%20express%20or%20implied.%20See%20the%20License%0A%20*%20for%20the%20specific%20language%20governing%20rights%20and%20limitations%20under%20the%0A%20*%20License.%0A%20*%0A%20*%20Original%20code%20is%20Custom%20Buttons%20XML%20Exporter/Importer%0A%20*%20for%20Custom%20Buttons%20extension%0A%20*%0A%20*%20The%20Initial%20Developer%20of%20the%20Original%20Code%20is%20LouCypher.%0A%20*%20Portions%20created%20by%20the%20Initial%20Developer%20are%20Copyright%20%28C%29%202011%0A%20*%20the%20Initial%20Developer.%20All%20Rights%20Reserved.%0A%20*%0A%20*%20Contributor%28s%29%3A%0A%20*%20-%20LouCypher%3A%20original%20code%0A%20*%20-%20Morat%3A%20onDestroy%20event%2C%20bug%20report%0A%20*%0A%20*%20Alternatively%2C%20the%20contents%20of%20this%20file%20may%20be%20used%20under%20the%20terms%20of%0A%20*%20either%20the%20GNU%20General%20Public%20License%20Version%202%20or%20later%20%28the%20%22GPL%22%29%2C%0A%20*%20in%20which%20case%20the%20provisions%20of%20the%20GPL%20are%20applicable%20instead%20of%20those%0A%20*%20above.%0A%20*%0A%20*%20*****%20END%20LICENSE%20BLOCK%20*****%20*/%0A%0Athis.metadata%20%3D%20%7B%0A%20%20rel%3A%20%22author%22%2C%0A%20%20href%3A%20%22https%3A//plus.google.com/101088441440269967746%22%0A%7D%0A%0Aconst%20topicURL%20%3D%20%22http%3A//custombuttons.sourceforge.net/forum/%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22viewtopic.php%3Ft%3D78%23p197%22%0A%0Aconst%20cbNamespace%20%3D%20%22http%3A//xsms.nm.ru/custombuttons/%22%3B%0Aconst%20nsIFilePicker%20%3D%20Ci.nsIFilePicker%3B%0Aconst%20nsIFile%20%3D%20Ci.nsIFile%3B%0A%0Afunction%20%24%28aId%29%20%7B%0A%20%20return%20document.getElementById%28aId%29%3B%0A%7D%0A%0Afunction%20makeXML%28aXMLString%29%20%7B%0A%20%20return%20%28new%20DOMParser%29.parseFromString%28aXMLString%2C%20%22application/xml%22%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.documentElement%3B%0A%7D%0A%0Avar%20lastDirectory%20%3D%20%7B%0A%20%20PREF%3A%20%22custombuttons.XML.lastDir%22%2C%0A%20%20_lastDir%3A%20null%2C%0A%0A%20%20get%20path%28%29%20%7B%0A%20%20%20%20if%20%28%21this._lastDir%20%7C%7C%20%21this._lastDir.exists%28%29%29%20%7B%0A%20%20%20%20%20%20try%20%7B%0A%20%20%20%20%20%20%20%20this._lastDir%20%3D%20cbu.ps.getComplexValue%28this.PREF%2C%20Ci.nsILocalFile%29%3B%0A%20%20%20%20%20%20%20%20if%20%28%21this._lastDir.exists%28%29%29%0A%20%20%20%20%20%20%20%20%20%20this._lastDir%20%3D%20null%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20catch%28e%29%20%7B%7D%0A%20%20%20%20%7D%0A%20%20%20%20return%20this._lastDir%3B%0A%20%20%7D%2C%0A%0A%20%20set%20path%28val%29%20%7B%0A%20%20%20%20try%20%7B%0A%20%20%20%20%20%20if%20%28%21val%20%7C%7C%20%21val.isDirectory%28%29%29%0A%20%20%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%20catch%28e%29%20%7B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%0A%20%20%20%20this._lastDir%20%3D%20val.clone%28%29%3B%0A%0A%20%20%20%20//%20Don%27t%20save%20the%20last%20open%20directory%20pref%20inside%20the%20Private%20Browsing%20mode%0A%20%20%20%20if%20%28%21PrivateBrowsingUtils.isWindowPrivate%28window%29%29%0A%20%20%20%20%20%20cbu.ps.setComplexValue%28this.PREF%2C%20Ci.nsILocalFile%2C%20this._lastDir%29%3B%0A%20%20%7D%2C%0A%0A%20%20reset%3A%20function%28%29%20%7B%0A%20%20%20%20this._lastDir%20%3D%20null%3B%0A%20%20%7D%0A%7D%3B%0A%0Afunction%20saveFile%28aFileName%2C%20aStrData%29%20%7B%0A%20%20var%20fp%20%3D%20Cc%5B%22@mozilla.org/filepicker%3B1%22%5D.createInstance%28nsIFilePicker%29%3B%0A%20%20fp.appendFilters%28nsIFilePicker.filterXML%29%3B%0A%20%20fp.init%28window%2C%20%22Export%20button%20to%20XML%20file%22%2C%20nsIFilePicker.modeSave%29%3B%0A%20%20fp.defaultString%20%3D%20aFileName%3B%0A%20%20fp.displayDirectory%20%3D%20lastDirectory.path%3B%0A%20%20var%20res%20%3D%20fp.show%28%29%3B%0A%20%20if%20%28res%20%3D%3D%20nsIFilePicker.returnOK%20%7C%7C%20res%20%3D%3D%20nsIFilePicker.returnReplace%29%20%7B%0A%20%20%20%20lastDirectory.path%20%3D%20fp.file.parent.QueryInterface%28nsIFile%29%3B%0A%20%20%20%20var%20ostream%20%3D%20Cc%5B%22@mozilla.org/network/file-output-stream%3B1%22%5D.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20createInstance%28Ci.nsIFileOutputStream%29%3B%0A%20%20%20%20ostream.init%28fp.file%2C%200x02%20%7C%200x08%20%7C%200x20%2C%200664%2C%200%29%3B%0A%20%20%20%20var%20charset%20%3D%20%22UTF-8%22%3B%0A%20%20%20%20var%20os%20%3D%20Cc%5B%22@mozilla.org/intl/converter-output-stream%3B1%22%5D.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20createInstance%28Ci.nsIConverterOutputStream%29%3B%0A%20%20%20%20os.init%28ostream%2C%20charset%2C%204096%2C%200x0000%29%3B%0A%20%20%20%20os.writeString%28aStrData%29%3B%0A%20%20%20%20os.close%28%29%3B%0A%20%20%7D%0A%7D%0A%0Afunction%20readFile%28aFile%29%20%7B%0A%20%20var%20data%20%3D%20%22%22%3B%0A%20%20var%20fstream%20%3D%20Cc%5B%22@mozilla.org/network/file-input-stream%3B1%22%5D.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20createInstance%28Ci.nsIFileInputStream%29%3B%0A%20%20fstream.init%28aFile%2C%20-1%2C%200%2C%200%29%3B%0A%20%20var%20charset%20%3D%20%22UTF-8%22%3B%0A%20%20const%20replacementChar%20%3D%20Ci.nsIConverterInputStream%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.DEFAULT_REPLACEMENT_CHARACTER%3B%0A%20%20var%20is%20%3D%20Cc%5B%22@mozilla.org/intl/converter-input-stream%3B1%22%5D.%0A%20%20%20%20%20%20%20%20%20%20%20createInstance%28Ci.nsIConverterInputStream%29%3B%0A%20%20is.init%28fstream%2C%20charset%2C%201024%2C%20replacementChar%29%3B%0A%20%20var%20str%20%3D%20%7B%7D%3B%0A%20%20while%20%28is.readString%284096%2C%20str%29%20%21%3D%200%29%20%7B%0A%20%20%20%20data%20+%3D%20str.value%3B%0A%20%20%7D%0A%20%20is.close%28%29%3B%0A%0A%20%20return%20data%3B%0A%7D%0A%0Afunction%20stringToDOM%28aString%29%20%7B%0A//%20https%3A//developer.mozilla.org/en/Parsing_and_serializing_XML%0A%20%20var%20parser%20%3D%20new%20DOMParser%28%29%3B%0A%20%20var%20dom%20%3D%20parser.parseFromString%28aString%2C%20%22text/xml%22%29%3B%0A%20%20if%20%28dom.documentElement.nodeName%20%3D%3D%20%22parsererror%22%29%20%7B%0A%20%20%20%20return%20null%3B%0A%20%20%7D%20else%20%7B%0A%20%20%20%20return%20dom%3B%0A%20%20%7D%0A%7D%0A%0Afunction%20importXMLtoButton%28aStrXMLData%29%20%7B%0A%20%20loadURI%28%22custombutton%3A//%22%20+%20escape%28aStrXMLData%29%29%3B%0A%7D%0A%0Afunction%20getCBOverlay%28%29%20%7B%0A%20%20var%20dirsvc%20%3D%20Cc%5B%22@mozilla.org/file/directory_service%3B1%22%5D.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20getService%28Ci.nsIProperties%29%3B%0A%20%20var%20file%20%3D%20dirsvc.get%28%22ProfD%22%2C%20Ci.nsIFile%29%3B%0A%20%20file.append%28%22custombuttons%22%29%3B%0A%20%20file.append%28%22buttonsoverlay.xul%22%29%3B%0A%20%20return%20file%3B%0A%7D%0A%0Athis.viewCBOverlay%20%3D%20function%20viewCBOverlay%28%29%20%7B%0A%20%20var%20fileURL%20%3D%20Cc%5B%22@mozilla.org/network/io-service%3B1%22%5D.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20getService%28Ci.nsIIOService%29.getProtocolHandler%28%22file%22%29.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20QueryInterface%28Ci.nsIFileProtocolHandler%29.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20getURLSpecFromFile%28getCBOverlay%28%29%29%3B%0A%20%20gBrowser.selectedTab%20%3D%20gBrowser.addTab%28%22view-source%3A%22%20+%20fileURL%29%3B%0A%7D%0A%0Athis.inspectCBOverlay%20%3D%20function%20inspectCBOverlay%28%29%20%7B%0A%20%20var%20elmId%20%3D%20%22custombuttons-profile-overlay%22%3B%0A%20%20var%20wintype%20%3D%20document.documentElement.getAttribute%28%22windowtype%22%29%3B%0A%20%20switch%20%28wintype%29%20%7B%0A%20%20%20%20case%20%22mail%3A3pane%22%3A%20elmId%20%3D%20%22MailToolbarPalette%22%3B%20break%3B%0A%20%20%20%20case%20%22msgcompose%22%3A%20elmId%20%3D%20%22MsgComposeToolbarPalette%22%3B%20break%3B%0A%20%20%20%20case%20%22navigator%3Abrowser%22%3A%20elmId%20%3D%20%22BrowserToolbarPalette%22%3B%0A%20%20%7D%0A%20%20inspectDOMNode%28stringToDOM%28readFile%28getCBOverlay%28%29%29%29.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20getElementById%28elmId%29%29%3B%0A%7D%0A%0Athis.importFromCBOverlay%20%3D%20function%20importFromCBOverlay%28aTitle%29%20%7B%0A%20%20var%20id%20%3D%20custombuttons.promptBox%28aTitle%2C%20%22Enter%20your%20button%20id%20number%3A%22%29%3B%0A%20%20if%20%28%21id%5B1%5D%20%7C%7C%20id%5B1%5D%20%3D%3D%20%22%22%29%20return%3B%0A%20%20id%20%3D%20%22custombuttons-button%22%20+%20id%5B1%5D%3B%0A%0A%20%20var%20dom%20%3D%20stringToDOM%28readFile%28getCBOverlay%28%29%29%29%3B%0A%20%20var%20button%20%3D%20dom.getElementById%28id%29%3B%0A%20%20if%20%28%21button%29%20%7B%0A%20%20%20%20custombuttons.alertBox%28aTitle%2C%20%22Button%20Id%20%22%20+%20id%20+%20%22%20cannot%20be%20found%21%22%29%3B%0A%20%20%20%20return%3B%0A%20%20%7D%0A%20%20var%20cbName%20%3D%20button.getAttribute%28%22cb-name%22%29%20%7C%7C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20button.getAttribute%28%22label%22%29%3B%0A%20%20var%20cbImage%20%3D%20button.getAttribute%28%22image%22%29%20%7C%7C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20button.getAttribute%28%22cb-stdicon%22%29%20%7C%7C%20%22%22%3B%0A%20%20var%20cbMode%20%3D%20button.getAttribute%28%22mode%22%29%20%7C%7C%20%22%22%3B%0A%20%20var%20cbInitCode%20%3D%20button.getAttribute%28%22cb-init%22%29%3B%0A%20%20var%20cbCode%20%3D%20button.getAttribute%28%22cb-oncommand%22%29%3B%0A%20%20var%20cbKey%20%3D%20button.getAttribute%28%22accelkey%22%29%20%7C%7C%20%22%22%3B%0A%20%20var%20cbHelp%20%3D%20button.getAttribute%28%22Help%22%29%20%7C%7C%20%22%22%3B%0A%20%20var%20cbAttr%20%3D%20button.getAttribute%28%22attributes%22%29%3B%0A%20%20var%20cbXML%20%3D%20%27%26lt%3Bcustombutton%20xmlns%3Acb%3D%22%27%20+%20cbNamespace%20+%20%27%22%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20%20%26lt%3Bname%26gt%3B%27%20+%20cbName%20+%20%27%26lt%3B/name%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20%20%26lt%3Bimage%26gt%3B%27%20+%20cbImage%20+%20%27%26lt%3B/image%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20%20%26lt%3Bmode%26gt%3B%27%20+%20cbMode%20+%20%27%26lt%3B/mode%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20%20%26lt%3Binitcode%26gt%3B%27%20+%20cbInitCode%20+%20%27%26lt%3B/initcode%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20%20%26lt%3Bcode%26gt%3B%27%20+%20cbCode%20+%20%27%26lt%3B/code%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20%20%26lt%3Baccelkey%26gt%3B%27%20+%20cbKey%20+%20%27%26lt%3B/accelkey%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20%20%26lt%3Bhelp%26gt%3B%27%20+%20cbHelp%20+%20%27%26lt%3B/help%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20%20%26lt%3Battributes%26gt%3B%27%20+%20cbAttr%20+%20%27%26lt%3B/attributes%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%26lt%3B/custombutton%26gt%3B%27%3B%0A%20%20var%20xml%20%3D%20%27%26lt%3B%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%26gt%3B%27%20+%20cbXML.toString%28%29%3B%0A%20%20//inspectDOMDocument%28stringToDOM%28xml%29%29%3B%0A%20%20importXMLtoButton%28xml%29%3B%0A%7D%0A%0Athis.checkDocumentForCBXML%20%3D%20function%20checkDocumentForCBXML%28aDocument%29%20%7B%0A%20%20if%20%28%28%28aDocument.contentType%20%3D%3D%20%22text/xml%22%29%20%7C%7C%0A%20%20%20%20%20%20%20%28aDocument.contentType%20%3D%3D%20%22application/xml%22%29%29%26amp%3B%26amp%3B%0A%20%20%20%20%20%20%28aDocument.documentElement.localName%20%3D%3D%20%22custombutton%22%29%29%20%7B%0A%20%20%20%20var%20serializer%20%3D%20new%20XMLSerializer%28%29%3B%0A%20%20%20%20var%20xml%20%3D%20serializer.serializeToString%28aDocument%29%3B%0A%20%20%20%20importXMLtoButton%28xml%29%3B%0A%20%20%7D%20else%20%7B%0A%20%20%20%20this.loadXML%28%29%3B%0A%20%20%7D%0A%7D%0A%0Athis.saveXML%20%3D%20function%20saveXML%28aStrURI%29%20%7B%0A%20%20var%20cbURI%20%3D%20%28aStrURI%20%21%3D%20undefined%29%20%3F%20aStrURI%20%3A%20readFromClipboard%28%29%3B%0A%20%20if%20%28%21cbURI%20%7C%7C%20%21/%5Ecustombutton%5C%3A%5C/%5C//.test%28cbURI%29%29%20%7B%0A%20%20%20%20custombuttons.uChelpButton%28this%29%3B%0A%20%20%20%20return%3B%0A%20%20%7D%0A%0A%20%20var%20cbXML%20%3D%20cbURI.replace%28/%5Ecustombutton%5C%3A%5C/%5C//%2C%20%22%22%29%3B%0A%20%20var%20decodeXML%20%3D%20unescape%28cbXML%29%3B%0A%20%20var%20btnName%20%3D%20decodeXML.match%28/%5C%26lt%3Bname%5C/%3F.+/%29.toString%28%29%3B%0A%20%20var%20name%20%3D%20%22untitled%22%3B%0A%20%20if%20%28%21/%5C%26lt%3Bname%5C/%5C%26gt%3B/.test%28btnName%29%29%20%7B%0A%20%20%20%20name%20%3D%20btnName.replace%28/%5C%26lt%3B%5C/%3F%5Cw+%5C%26gt%3B/g%2C%20%22%22%29.toString%28%29%3B%0A%20%20%7D%0A%20%20var%20image%20%3D%20decodeXML.match%28/%5C%26lt%3Bimage%5C/%3F.+/%29.toString%28%29%3B%0A%20%20var%20icon%20%3D%20%22%22%3B%0A%20%20if%20%28%21/%5C%26lt%3B%5Cimage.*%5C%5B%5C%5D.*%5C%26gt%3B%24/.test%28image%29%29%20%7B%0A%20%20%20%20icon%20%3D%20image.match%28/%5B%5E%5C%5B%5C%5D%5D+/g%29%5B2%5D.toString%28%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.replace%28/custombuttons%5C-stdicon%5C-%5Cd/%2C%20%22%22%29.toString%28%29%3B%0A%20%20%7D%0A%0A%20%20function%20htmlEntities%28str%29%20%7B%0A%20%20%20%20%20%20return%20str.replace%28/%26amp%3B/g%2C%20%22%26amp%3Bamp%3B%22%29.replace%28/%26lt%3B/g%2C%20%22%26amp%3Blt%3B%22%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.replace%28/%26gt%3B/g%2C%20%22%26amp%3Bgt%3B%22%29.replace%28/%22/g%2C%20%22%26amp%3Bquot%3B%22%29%3B%0A%20%20%7D%0A%0A%20%20var%20xmlTemplate%20%3D%20%22custombuttons/%5C%22%5Cn%5C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20xmlns%3Ahtml%3D%5C%22http%3A//www.w3.org/1999/xhtml%5C%22%26gt%3B%5Cn%5C%0A%20%20%26lt%3Bhtml%3Ahead%26gt%3B%5Cn%5C%0A%20%20%20%20%26lt%3Bhtml%3Atitle%26gt%3B%26lt%3B%21%5BCDATA%5B%22%20+%20name%20+%20%22%5D%5D%26gt%3B%26lt%3B/html%3Atitle%26gt%3B%5Cn%5C%0A%20%20%20%20%26lt%3Bhtml%3Alink%20rel%3D%5C%22shortcut%20icon%5C%22%20href%3D%5C%22%22%20+%20icon%20+%20%22%5C%22/%26gt%3B%5Cn%5C%0A%20%20%20%20%26lt%3Bhtml%3Astyle%20type%3D%5C%22text/css%5C%22%26gt%3B%26lt%3B%21%5BCDATA%5B%5Cn%5C%0Abody%20%7B%20font-size%3A%20medium%3B%20margin%3A%200%3B%20%7D%5Cn%5C%0Abody%2C%20code%3Abefore%2C%20help%3Abefore%2C%20initcode%3Abefore%20%7B%5Cn%5C%0A%20%20font-family%3A%20%5C%22Verdana%5C%22%2C%20sans-serif%3B%5Cn%5C%0A%7D%5Cn%5C%0A%23wrapper%20%7B%20position%3A%20fixed%3B%20top%3A%201em%3B%20right%3A%201em%3B%20text-align%3A%20center%3B%20%7D%5Cn%5C%0Ap%20%7B%20font-size%3A%20small%3B%20text-align%3A%20center%3B%20%7D%5Cn%5C%0A%23button%20%7B%5Cn%5C%0A%20%20background-color%3A%20rgb%2885%2C%20168%2C%202%29%3B%5Cn%5C%0A%20%20background-image%3A%20linear-gradient%28to%20bottom%2C%20rgb%28147%2C%20200%2C%2094%29%2C%5C%0A%20rgb%2885%2C%20168%2C%202%29%29%3B%5Cn%5C%0A%20%20background-image%3A%20-moz-linear-gradient%28top%2C%20rgb%28147%2C%20200%2C%2094%29%2C%5C%0A%20rgb%2885%2C%20168%2C%202%29%29%3B%5Cn%5C%0A%20%20background-image%3A%20-o-linear-gradient%28top%2C%20rgb%28147%2C%20200%2C%2094%29%2C%5C%0A%20rgb%2885%2C%20168%2C%202%29%29%3B%5Cn%5C%0A%20%20background-image%3A%20-webkit-linear-gradient%28top%2C%20rgb%28147%2C%20200%2C%2094%29%2C%5C%0A%20rgb%2885%2C%20168%2C%202%29%29%3B%5Cn%5C%0A%20%20border%3A%201px%20solid%20rgb%2858%2C%20116%2C%204%29%3B%5Cn%5C%0A%20%20border-radius%3A%20.5em%3B%5Cn%5C%0A%20%20-moz-border-radius%3A%20.5em%3B%5Cn%5C%0A%20%20-webkit-border-radius%3A%20.5em%3B%5Cn%5C%0A%20%20padding%3A%200%3B%5Cn%5C%0A%20%20margin-bottom%3A%201em%3B%5Cn%5C%0A%20%20box-shadow%3A%201px%202px%203px%20rgba%280%2C%200%2C%200%2C%20.25%29%3B%5Cn%5C%0A%20%20-moz-box-shadow%3A%201px%202px%203px%20rgba%280%2C%200%2C%200%2C%20.25%29%3B%5Cn%5C%0A%20%20-o-box-shadow%3A%201px%202px%203px%20rgba%280%2C%200%2C%200%2C%20.25%29%3B%5Cn%5C%0A%20%20-webkit-box-shadow%3A%201px%202px%203px%20rgba%280%2C%200%2C%200%2C%20.25%29%3B%5Cn%5C%0A%7D%5Cn%5C%0A%23button%20a%20%7B%5Cn%5C%0A%20%20color%3A%20%23000%3B%5Cn%5C%0A%20%20text-shadow%3A%20-1pt%20-1px%200pt%20rgba%28255%2C%20255%2C%20255%2C%20.5%29%3B%5Cn%5C%0A%20%20padding%3A%201em%3B%5Cn%5C%0A%20%20text-decoration%3A%20none%3B%5Cn%5C%0A%7D%5Cn%5C%0A%3A-moz-any-link%3Afocus%20%7B%5Cn%5C%0A%20%20color%3A%20white%3B%5Cn%5C%0A%20%20outline-color%3A%20transparent%3B%5Cn%5C%0A%20%20text-decoration%3A%20none%3B%5Cn%5C%0A%7D%5Cn%5C%0A%23button%20a%2C%20code%2C%20code%3Abefore%2C%20initcode%2C%20initcode%3Abefore%2C%20help%2C%20help%3Abefore%20%7B%5C%0A%5Cn%20%20display%3A%20block%3B%5Cn%5C%0A%7D%5Cn%5C%0A%23credits%20%7B%20position%3A%20fixed%3B%20bottom%3A%201em%3B%20right%3A%201em%3B%20font-size%3A%20small%3B%20%7D%5Cn%5C%0Acustombutton%20%7B%20background-color%3A%20rgb%28171%2C%20171%2C%20171%29%3B%20margin%3A%201em%3B%20%7D%5Cn%5C%0Adate%2C%20image%2C%20mode%2C%20accelkey%20%7B%20display%3A%20none%3B%20%7D%5Cn%5C%0Aname%20%7B%20font-weight%3A%20bold%3B%20font-size%3A%20x-large%3B%20%7D%5Cn%5C%0Acode%3Abefore%2C%20help%3Abefore%2C%20initcode%3Abefore%20%7B%5Cn%5C%0A%20%20font-weight%3A%20bold%3B%5Cn%5C%0A%20%20font-size%3A%20large%3B%5Cn%5C%0A%20%20margin%3A%200%200%201em%3B%5Cn%5C%0A%20%20padding%3A%20.5em%3B%5Cn%5C%0A%7D%5Cn%5C%0Acode%3Abefore%20%7B%20content%3A%20%5C%22CODE%5C%22%3B%20%7D%5Cn%5C%0Ahelp%3Abefore%20%7B%20content%3A%20%5C%22Help%5C%22%3B%20%7D%5Cn%5C%0Ainitcode%3Abefore%20%7B%20content%3A%20%5C%22Initialization%20Code%5C%22%3B%20%7D%5Cn%5C%0Acode%2C%20initcode%2C%20help%20%7B%5Cn%5C%0A%20%20background-color%3A%20rgb%28255%2C%20255%2C%20255%29%3B%5Cn%5C%0A%20%20border%3A%201px%20inset%20rgb%28170%2C%20170%2C%20170%29%3B%5Cn%5C%0A%20%20font%3A%20medium%20monospace%3B%5Cn%5C%0A%20%20margin%3A%201em%201em%202em%200%3B%5Cn%5C%0A%20%20padding%3A%201em%3B%5Cn%5C%0A%20%20text-align%3A%20left%3B%5Cn%5C%0A%20%20width%3A%20840px%3B%5Cn%5C%0A%20%20white-space%3A%20pre-wrap%3B%5Cn%5C%0A%20%20word-wrap%3A%20break-word%3B%5Cn%5C%0A%7D%5Cn%5C%0A.clear%20%7B%20clear%3A%20both%3B%20%7D%5Cn%5C%0A%5D%5D%26gt%3B%26lt%3B/html%3Astyle%26gt%3B%5Cn%5C%0A%20%20%26lt%3B/html%3Ahead%26gt%3B%5Cn%5C%0A%20%20%26lt%3Bhtml%3Abody%26gt%3B%5Cn%5C%0A%20%20%20%20%26lt%3Bhtml%3Adiv%20id%3D%5C%22wrapper%5C%22%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%26lt%3Bhtml%3Adiv%20id%3D%5C%22button%5C%22%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%20%20%26lt%3Bhtml%3Aa%20href%3D%5C%22%22%20+%20cbURI%20+%20%22%5C%22%20rel%3D%5C%22nofollow%5C%22%20title%3D%5C%22Install%20%22%20+%0A%20%20%20%20%20%20%20%20htmlEntities%28name%2C%20%22ENT_COMPAT%22%29%20+%22%5C%22%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%20%20%26lt%3B%21%5BCDATA%5BInstall%20this%20button%5D%5D%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%20%20%26lt%3B/html%3Aa%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%26lt%3B/html%3Adiv%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%26lt%3Bhtml%3Aa%20href%3D%5C%22https%3A//addons.mozilla.org/addon/custom-buttons/%5C%0A%3Fsrc%3Dexternal-custombuttons-xml%5C%22%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%20%20%26lt%3B%21%5BCDATA%5BWhat%27s%20this%3F%5D%5D%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%26lt%3B/html%3Aa%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%26lt%3Bhtml%3Adiv%20id%3D%5C%22credits%5C%22%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%20%20%26lt%3Bhtml%3Aa%20href%3D%5C%22%22%20+%20topicURL%20+%22%5C%22%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%20%20%20%20%26lt%3B%21%5BCDATA%5BCustom%20Buttons%20XML%5D%5D%26gt%3B%26lt%3Bhtml%3Abr/%26gt%3B%5C%0A%26lt%3B%21%5BCDATA%5BExporter/Importer%5D%5D%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%20%20%26lt%3B/html%3Aa%26gt%3B%5Cn%5C%0A%20%20%20%20%20%20%26lt%3B/html%3Adiv%26gt%3B%5Cn%5C%0A%20%20%20%20%26lt%3B/html%3Adiv%26gt%3B%5Cn%5C%0A%20%20%26lt%3B/html%3Abody%26gt%3B%22%3B%0A%0A%20%20//%20Inspect%20unformatted%20XML%20as%20DOM%2C%20for%20debugging%20only%0A%20%20//inspectDOMDocument%28stringToDOM%28decodeXML%29%29%3B%20return%3B%0A%0A%0A%20%20decodeXML%20%3D%20decodeXML.replace%28/custombuttons%5C/%5C%22%5C%26gt%3B/%2C%20xmlTemplate%29%3B%0A%0A%20%20//%20Inspect%20formatted%20XML%20as%20DOM%2C%20for%20debugging%20only%0A%20%20//inspectDOMDocument%28stringToDOM%28decodeXML%29%29%3B%20return%3B%0A%0A%20%20name%20+%3D%20%22.xml%22%3B%0A%20%20saveFile%28name%2C%20decodeXML%29%3B%0A%7D%0A%0Athis.loadXML%20%3D%20function%20loadXML%28%29%20%7B%0A%20%20var%20fp%20%3D%20Cc%5B%22@mozilla.org/filepicker%3B1%22%5D.createInstance%28nsIFilePicker%29%3B%0A%20%20fp.init%28window%2C%20%22Import%20an%20XML%20file%20and%20install%20it%20as%20a%20new%20button%22%2C%0A%20%20%20%20%20%20%20%20%20%20nsIFilePicker.modeOpen%29%3B%0A%20%20fp.appendFilters%28nsIFilePicker.filterXML%29%3B%0A%20%20fp.appendFilter%28%22All%20Files%22%2C%20%22*.*%22%29%3B%0A%20%20fp.displayDirectory%20%3D%20lastDirectory.path%3B%0A%20%20if%20%28fp.show%28%29%20%3D%3D%20nsIFilePicker.returnOK%29%20%7B%0A%20%20%20%20if%20%28fp.file%20%26amp%3B%26amp%3B%20fp.file.exists%28%29%29%20%7B%0A%20%20%20%20%20%20lastDirectory.path%20%3D%20fp.file.parent.QueryInterface%28nsIFile%29%3B%0A%20%20%20%20%7D%0A%20%20%7D%20else%20%7B%0A%20%20%20%20return%3B%0A%20%20%7D%0A%20%20var%20xmlData%20%3D%20readFile%28fp.file%29%3B%0A%20%20var%20xmlDOM%20%3D%20stringToDOM%28xmlData%29.documentElement%3B%0A%20%20if%20%28%21xmlDOM%29%20%7B%0A%20%20%20%20//Application.console.log%28xmlDOM%29%3B%0A%20%20%20%20custombuttons.alertBox%28%22Import%20Fail%22%2C%20%22Not%20an%20XML%20file%21%22%29%3B%0A%20%20%20%20return%3B%0A%20%20%7D%0A%0A%20%20if%20%28%28xmlDOM.localName%20%3D%3D%20%22custombutton%22%29%20%26amp%3B%26amp%3B%0A%20%20%20%20%20%20%28%28xmlDOM.getAttribute%28%22xmlns%3Acb%22%29%20%3D%3D%20cbNamespace%29%20%7C%7C%0A%20%20%20%20%20%20%20%28xmlDOM.getAttribute%28%22xmlns%22%29%20%3D%3D%20cbNamespace%29%29%29%20%7B%0A%20%20%20%20importXMLtoButton%28xmlData%29%3B%0A%20%20%7D%20else%20%7B%0A%20%20%20%20custombuttons.alertBox%28%22Import%20Fail%22%2C%20%22Not%20a%20valid%20Custom%20Buttons%20XML%21%22%29%3B%0A%20%20%7D%0A%7D%0A%0A/////////////////////////////////////////////////////////////////////////////%0A///////////////////////////////%20Context%20menus%20///////////////////////////////%0A/////////////////////////////////////////////////////////////////////////////%0A%0Afunction%20addMenuItem%28aNewIDs%2C%20aNodeIDs%2C%20aLabel%2C%20aIcon%2C%20aCommand%2C%20aKey%29%20%7B%0A%20%20for%20%28var%20i%20%3D%200%3B%20i%20%26lt%3B%20aNewIDs.length%3B%20i++%29%20%7B%0A%20%20%20%20//%20Remove%20previously%20created%20menuitems%20if%20any%0A%20%20%20%20if%20%28%24%28aNewIDs%5Bi%5D%29%29%20%24%28aNewIDs%5Bi%5D%29.parentNode.removeChild%28%24%28aNewIDs%5Bi%5D%29%29%3B%0A%0A%20%20%20%20//%20Added%20%27Export%20to%20XML%27%20menuitem%20to%20CB%20contextmenu%0A%20%20%20%20let%20mi%20%3D%20makeXML%28%27%26lt%3Bmenuitem%20xmlns%3D%22%27%20+%20xulns%20+%20%27%22%20id%3D%22%27%20+%20aNewIDs%5Bi%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%22%20class%3D%22menuitem-iconic%22%20image%3D%22%27%20+%20aIcon%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%22%20label%3D%22%27%20+%20aLabel%20+%20%27%22%20accesskey%3D%22%27%20+%20aKey%20+%20%27%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20oncommand%3D%22%27%20+%20aCommand%20+%20%27%22/%26gt%3B%27%29%3B%0A%0A%20%20%20%20if%20%28i%20%3D%3D%200%29%0A%20%20%20%20%20%20mi.setAttribute%28%22observes%22%2C%20%22custombuttons-contextbroadcaster-primary%22%29%3B%0A%0A%20%20%20%20if%20%28%24%28aNodeIDs%5Bi%5D%29%29%20%7B%0A%20%20%20%20%20%20if%20%28%24%28aNodeIDs%5Bi%5D%29.nextSibling%29%20%7B%0A%20%20%20%20%20%20%20%20%24%28aNodeIDs%5Bi%5D%29.parentNode.insertBefore%28mi%2C%20%24%28aNodeIDs%5Bi%5D%29.nextSibling%29%3B%0A%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%24%28aNodeIDs%5Bi%5D%29.parentNode.appendChild%28mi%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Avar%20loadImg%20%3D%20%22data%3Aimage/x-icon%3Bbase64%2C%5C%0AAAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAA%5C%0AAAAAAAD///8B////Af///wH///8B////AQAAAB+yg2l71ZRt+daTa//Wk2v/1pNr/9aTa//Wk2v/%5C%0Av4NlywYEAycAAAAX////Af///wH///8B////Af///wHdo4M53Zx3/+Sgef/innb/4p52/+Kedv/l%5C%0Ao3r/5aR6/+mqgfvPj27N////Af///wH///8B////Af///wH///8B4KSD8+mmff/opH3/56N6/+Wh%5C%0Aef/no3r/66qB/8KBXf/Fg1//0Y5s78+Pbqn///8B////Af///wH///8B////AeGlg//trIX/7ayE%5C%0A/+6thP/urIX/9bWL/8eFYf/GhF//yYZh/9SPa/nkn3j/////Af///wH///8B////Af///wHkn3j/%5C%0A76+G/+6uh//vrob/76+G//W3jP/GhF//y4di/9ONZ//XkWr/5J94/////wH///8B////Af///wH/%5C%0A//8B5J94/++wif/wsIj/8LGJ//CxiP/0toz/y4di/8+KZf/vroP/766D/+SfeP////8B////Af//%5C%0A/wH///8B////AeSfeP/xs4v/8bOL//Cziv/ws4v/87WL/9CNa+3QjWvt3p96/96fev/en3r/////%5C%0AAf///wH///8B////Af///wHkn3j/8rWN//K2jf/ytY3/8rWN//O2jvfdo4Lj0I5sJdCObCXQjmwl%5C%0A0I5sJf///wH///8B////Af///wH///8B5J94//O3j//zuI//87iP//O4j//zuZDx3aOD7////wH/%5C%0A//8B////Af///wHdo4M/5J94/+SfeP/kn3j/5J94/++2j//zupH/9LqR//O6kv/0upL/87qR/+Sf%5C%0AeP/kn3j/5J94/+SfeP////8B////Af///wHkoXr/9cCY//W8k//0vJT/9L2T//S8lP/0vZT/9LyU%5C%0A//S8lP/1vJT/9cCY/+Shev////8B////Af///wH///8B9b+WC+SjfP/2yqP/9b+W//a/lf/2v5X/%5C%0A9b6V//W+lv/1vpX/9sqj/+SjfP////8B////Af///wH///8B////Af///wH2wZgX5aZ+//fTrP/2%5C%0AwJj/9sCY//bAmP/2wZj/99Os/+Smf/////8B////Af///wH///8B////Af///wH///8B////Af//%5C%0A/wHkqYH/99ax//fCmv/3wpn/99aw/+Sogf////8B////Af///wH///8B////Af///wH///8B////%5C%0AAf///wH///8B////AeWrhP/317L/99ey/+WrhP////8B////Af///wH///8B////Af///wH///8B%5C%0A////Af///wH///8B////Af///wH///8B5a2F/+Wthf////8B////Af///wH///8B////Af///wH/%5C%0A//8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA%5C%0A//8AAP//AAD//w%3D%3D%22%3B%0A%0Avar%20saveImg%20%3D%20%22data%3Aimage/x-icon%3Bbase64%2C%5C%0AAAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAA%5C%0AAAAAAAD///8B////Af///wH///8BAAAAHQAAACUXaE1dE55y/xOecv8XaE1dAAAAJQAAAB3///8B%5C%0A////Af///wH///8B////Af///wH///8B////Af///wEmrX85F6J2/xHEj/8RxI//GKF2/yatfzn/%5C%0A//8B////Af///wH///8B////Af///wH///8B////Af///wEmrX85Hqd6/xHHkv8Rx5L/EceS/xHH%5C%0Akv8ep3r/Jq1/Of///wH///8B////Af///wH///8B////Af///wEhs4RJJq1//xHHkv8Rx5L/EceS%5C%0A/xHHkv8Rx5L/EciT/yatgP8mrX85////Af///wH///8B////Af///wEjsYJBLLKE/xHNlv8RyJP/%5C%0AEciT/xHIk/8RyJP/EciT/xHKlf8Rzpn/LLOE/yatfzn///8B////Af///wEmrX85MbaH/xTcqP8V%5C%0A3qv/Fd2q/xHKlf8RypX/EcqV/xHKlf8W4a7/Fd6r/xTZpf8xtof/Jq1/Of///wEmrX1pMbaH/zG3%5C%0AiP8xt4j/MbeI/xfWov8RzJj/EcyY/xHMmP8RzJj/H8SR/zG3iP8xt4j/MbeI/zG2h/8mrX85////%5C%0AAf///wH///8B////Af///wEuuov/Ec+a/xHPmv8Rz5r/FNCc/xbUoPEisH7v////Af///wH///8B%5C%0A////Af///wH///8B////Af///wH///8BLrqL/xHTnv8R057/EdOe/xXUoP8a2KT3H7J/4ymaaSUp%5C%0AmmklKZppJSmaaSX///8B////Af///wH///8B////AS66i/8R1aH/EdWh/xHVof8U1qL/Idyp/ySh%5C%0Ab+0koW/tJKJw6ySlc+0noG/5////Af///wH///8B////Af///wEuuov/Edej/xHXo/8R16P/Edej%5C%0A/yzgsP8ZsH//GrOB/xm6hv8ZwI3/JqFw6////wH///8B////Af///wH///8BLrqL/xHapf8R2qX/%5C%0AEdql/xHapf895bf/KbCC/yCpef8gsH7/Hb6M/yidbNP///8B////Af///wH///8B////ASPNmv8Y%5C%0A3ar/Edyn/xHcp/8V3aj/VerA/1DNpP8moHH/JqJz/yG7ifsvv5L/////Af///wH///8B////Af//%5C%0A/wEizJn1b+/J/2nux/9k7cX/b+/J/3Dvyf9r7cb/MJ9x/yype/8jt4XzL7+S/////wH///8B////%5C%0AAf///wH///8BFL+KOTjWp/9B6Lv/Oea4/zjmuP9G6Lz/WuzD/1rcs/9B0aT7L7+S/////wH///8B%5C%0A////Af///wH///8B////Af///wEXwo5lFMWQzxPFkNUTxZDZE8WQ0xXEkNcmxJPVQsie/////wH/%5C%0A//8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA%5C%0A//8AAP//AAD//w%3D%3D%22%3B%0A%0A//%20Add%20%27Export%20to%20XML%27%20menuitem%20to%20CB%20contextmenu%0Alet%20cIDs%20%3D%20%5B%22custombuttons-contextpopup-exportXML%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22custombuttons-contextpopup-exportXML-sub%22%5D%3B%0Alet%20bIDs%20%3D%20%5B%22custombuttons-contextpopup-bookmarkButton%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22custombuttons-contextpopup-bookmarkButton-sub%22%5D%3B%0AaddMenuItem%28cIDs%2C%20bIDs%2C%20%22Export%20to%20XML%22%2C%20saveImg%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22document.getElementById%28%27%22%20+%20this.id%0A%20%20%20%20%20%20%20%20%20%20+%20%22%27%29.saveXML%28%28%27_cb_triggerNode%27%20in%20this.parentNode%29%20%22%0A%20%20%20%20%20%20%20%20%20%20+%20%22%3F%20this.parentNode._cb_triggerNode.URI%20%22%0A%20%20%20%20%20%20%20%20%20%20+%20%22%3A%20document.popupNode.URI%29%3B%22%2C%20%22X%22%29%3B%0A%0A//bug%20test%0A//addMenuItem%28cIDs%2C%20bIDs%2C%20%22Test%22%2C%20%22%22%2C%20%22Services.console.log%28this.parentNode.triggerNode.nodeName%29%3B%22%2C%20%22%22%29%3B%0A%0Alet%20xIDs%20%3D%20%5B%22custombuttons-contextpopup-importnewbutton%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22custombuttons-contextpopup-importnewbutton-sub%22%5D%3B%0Alet%20aIDs%20%3D%20%5B%22custombuttons-contextpopup-addnewbutton%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22custombuttons-contextpopup-addnewbutton-sub%22%5D%3B%0AaddMenuItem%28xIDs%2C%20aIDs%2C%20%22Add%20new%20button%20from%20an%20XML%20file%5Cu2026%22%2C%20loadImg%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22document.getElementById%28%27%22%20+%20this.id%20+%0A%20%20%20%20%20%20%20%20%20%20%20%20%22%27%29.checkDocumentForCBXML%28content.document%29%3B%22%29%3B%0A%0Alet%20aIDs%20%3D%20%5B%22toolbar-context-menu%22%2C%20%22menu_viewPopup%22%2C%20%22menu_View_Popup%22%5D%3B%0Alet%20yIDs%20%3D%20%5BaIDs%5B0%5D%20+%20%22-importnewbutton%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20aIDs%5B1%5D%20+%20%22-importnewbutton%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20aIDs%5B2%5D%20+%20%22-importnewbutton%22%5D%3B%0Alet%20zIDs%20%3D%20%5BaIDs%5B0%5D%20+%20%22-addnewbutton%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20aIDs%5B1%5D%20+%20%22-addnewbutton%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20aIDs%5B2%5D%20+%20%22-addnewbutton%22%5D%3B%0Afor%20%28var%20i%20%3D%200%3B%20i%20%26lt%3B%20aIDs.length%3B%20i++%29%20%7B%0A%20%20if%20%28%24%28aIDs%5Bi%5D%29%29%20%7B%0A%20%20%20%20%24%28aIDs%5Bi%5D%29.querySelector%28%22%5Boncommand%5E%3D%27custombuttons.%27%5D%22%29.id%20%3D%20zIDs%5Bi%5D%3B%0A%20%20%20%20//%20because%20the%20%22Add%20new%20button...%22%20in%20toolbar%20contextmenu%0A%20%20%20%20//%20and%20View%20menu%20don%27t%20have%20IDs%0A%20%20%7D%0A%7D%0AaddMenuItem%28yIDs%2C%20zIDs%2C%20%22Add%20new%20button%20from%20an%20XML%20file%5Cu2026%22%2C%20%22%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22document.getElementById%28%27%22%20+%20this.id%20+%0A%20%20%20%20%20%20%20%20%20%20%20%20%22%27%29.checkDocumentForCBXML%28content.document%29%3B%22%29%3B%0A%0A//%20Remove%20contextmenu%20items%20when%20this%20button%20is%20deleted%0Athis.onDestroy%20%3D%20function%28aReason%29%20%7B%0A%20%20if%20%28aReason%20%3D%3D%20%22delete%22%29%20%7B%0A%20%20%20%20for%20%28var%20i%20%3D%200%3B%20i%20%26lt%3B%203%3B%20i++%29%20%7B%0A%20%20%20%20%20%20%24%28cIDs%5Bi%5D%29%20%26amp%3B%26amp%3B%20%24%28cIDs%5Bi%5D%29.parentNode.removeChild%28%24%28cIDs%5Bi%5D%29%29%3B%0A%20%20%20%20%20%20%24%28xIDs%5Bi%5D%29%20%26amp%3B%26amp%3B%20%24%28xIDs%5Bi%5D%29.parentNode.removeChild%28%24%28xIDs%5Bi%5D%29%29%3B%0A%20%20%20%20%20%20%24%28yIDs%5Bi%5D%29%20%26amp%3B%26amp%3B%20%24%28yIDs%5Bi%5D%29.parentNode.removeChild%28%24%28yIDs%5Bi%5D%29%29%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0A//----------%20Remove%20old%20traces%20if%20any%20----------//%0Alet%20tbitem%20%3D%20%24%28this.id%20+%20%22-toolbaritem%22%29%3B%0Atbitem%20%26amp%3B%26amp%3B%20tbitem.parentNode.removeChild%28tbitem%29%3B%0Alet%20css%20%3D%20%22%5C%0A@namespace%20url%28http%3A//www.mozilla.org/keymaster/gatekeeper/there.is.only.xul%29%3B%5C%0A%23navigator-toolbox%3Anot%28%5Bcustomizing%3D%5C%22true%5C%22%5D%29%20%23%22%20+%20this.id%20+%20%22%2C%5C%0A%23navigator-toolbox%5Bcustomizing%3D%5C%22true%5C%22%5D%20%23%22%20+%20this.id%20+%20%22-toolbaritem%5C%0A%7B%20display%3A%20none%3B%20%7D%22%3B%0Alet%20sss%20%3D%20Cc%5B%22@mozilla.org/content/style-sheet-service%3B1%22%5D.%0A%20%20%20%20%20%20%20%20%20%20getService%28Ci.nsIStyleSheetService%29%3B%0Alet%20uri%20%3D%20makeURI%28%22data%3Atext/css%2C%22%20+%20encodeURIComponent%28css%29%2C%20null%2C%20null%29%3B%0Aif%20%28sss.sheetRegistered%28uri%2C%20sss.USER_SHEET%29%29%20%7B%0A%20%20sss.unregisterSheet%28uri%2C%20sss.USER_SHEET%29%3B%0A%7D%0A%0Athis.initPopup%20%3D%20function%20initPopup%28aNode%29%20%7B%0A%20%20this.querySelector%28%22%5Boncommand*%3D%27inspectCBOverlay%27%5D%22%29%0A%20%20%20%20%20%20.hidden%20%3D%20%21%28%22inspectDOMNode%22%20in%20window%29%3B%0A%7D%0A%0Avar%20menu%20%3D%20%27%26lt%3Bmenupopup%20xmlns%3D%22%27%20+%20xulns%20+%20%27%22%20context%3D%22toolbar-context-menu%22%27%0A%20%20%20%20%20%20%20%20%20+%20%27%20onpopupshowing%3D%22this.parentNode.initPopup%28this%29%3B%22%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20+%20%27%26lt%3Bmenuitem%20label%3D%22Import%20XML%20File%20As%20New%20Button%22%27%0A%20%20%20%20%20%20%20%20%20+%20%27%20oncommand%3D%22this.parentNode.parentNode.checkDocumentForCBXML%28content.document%29%3B%22/%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20+%20%27%26lt%3Bmenuitem%20label%3D%22Import%20Existing%20Button%20from%20Overlay%22%27%0A%20%20%20%20%20%20%20%20%20+%20%27%20oncommand%3D%22this.parentNode.parentNode.importFromCBOverlay%28this.label%29%3B%22/%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20+%20%27%26lt%3Bmenuitem%20label%3D%22View%20Custom%20Buttons%20Overlay%20in%20Browser%22%27%0A%20%20%20%20%20%20%20%20%20+%20%27%20oncommand%3D%22this.parentNode.parentNode.viewCBOverlay%28%29%3B%22/%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20+%20%27%26lt%3Bmenuitem%20label%3D%22Inspect%20Custom%20Buttons%20Overlay%22%27%0A%20%20%20%20%20%20%20%20%20+%20%27%20oncommand%3D%22this.parentNode.parentNode.inspectCBOverlay%28%29%3B%22/%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20+%20%27%26lt%3Bmenuseparator%20id%3D%22%27%20+%20this.id%20+%20%27-separator%22/%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20+%20%27%26lt%3Bmenuitem%20label%3D%22Check%20for%20Updates%20for%20this%20button%22%27%0A%20%20%20%20%20%20%20%20%20+%20%27%20class%3D%22menuitem-iconic%22%20image%3D%22%27%20+%20this.image%20+%20%27%22%27%0A%20%20%20%20%20%20%20%20%20+%20%27%20oncommand%3D%22var%20btn%20%3D%20this.parentNode.parentNode%3B%27%0A%20%20%20%20%20%20%20%20%20+%20%27%20btn.updater.checkForUpdate%28btn.updater.getUpdate%29%3B%22/%26gt%3B%27%0A%20%20%20%20%20%20%20%20%20+%20%27%26lt%3B/menupopup%26gt%3B%27%3B%0A%0Athis.appendChild%28makeXML%28menu%29%29%3B%0A//%20For%20a%20strange%20reason%2C%20I%20can%27t%20add%20the%20%27check%20for%20update%27%20menu%20item%0A//%20into%20CB%20context%20menu%20if%20button%20type%3Dmenu.%20Bug%3F%0Athis.type%20%3D%20%22menu%22%3B%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5B/*%0A%20%20Changelog%3A%0A%20%20%20%20*%202012-07-26%3A%20De-E4X-izations.%0A%20%20%20%20*%202011-08-05%3A%0A%20%20%20%20%20%20%201.%20Added%20%22Add%20new%20button%20from%20an%20XML%20file...%22%20menuitem%0A%20%20%20%20%20%20%20%20%20%20into%20toolbar%20contextmenu%20and%20View%20menu.%0A%20%20%20%20*%202011-06-26%3A%0A%20%20%20%20%20%20%201.%20Fixed%20all%20known%20issues.%0A%20%20%20%20%20%20%202.%20No%20longer%20using%20toolbaritems%2C%20the%20cause%20of%20all%20issues.%0A%20%20%20%20*%202011-06-15%3A%0A%20%20%20%20%20%20%201.%20Includes%20button%27s%20image%20as%20XML%20favicon%0A%20%20%20%20%20%20%202.%20No%20longer%20using%20%3Cscript%3E%0A%20%20%20%20%20%20%203.%20Fixed%3A%20namespace%20bug.%0A%20%20%20%20*%202011-06-14%3A%0A%20%20%20%20%20%20%201.%20Includes%20template%20and%20CSS.%0A%20%20%20%20%20%20%202.%20Yep%21%20I%20changed%20the%20name%20again.%0A%20%20%20%20*%202011-06-12%3A%20Added%20%27Export%20to%20XML%27%20to%20CB%20contextmenu.%0A%20%20%20%20*%202011-06-11%3A%20No%20more%20third%20button%20%28dropmarker%29.%0A%20%20%20%20*%202011-06-10%3A%0A%20%20%20%20%20%20%201.%20Fixed%3A%20toolbaritem%20%282-button%29%20wasn%27t%20removed%20when%20this%20button%0A%20%20%20%20%20%20%20%20%20%20was%20deleted.%20Thanks%20to%20Morat.%0A%20%20%20%20%20%20%202.%20Fixed%3A%20toolbaritem%20%282-button%29%20wasn%27t%20removed%20when%20this%20button%0A%20%20%20%20%20%20%20%20%20%20was%20moved.%0A%20%20%20%20%20%20%203.%20Import%20XML%20file%20that%20is%20opened%20in%20browser%20window.%0A%20%20%20%20%20%20%204.%20Supports%20application/xml%20content%20type%20as%20well%20as%20text/xml.%0A%20%20%20%20*%202011-06-09%3A%0A%20%20%20%20%20%20%201.%20Initial%20release%0A%20%20%20%20%20%20%202.%20Fixed%3A%20error%20with%20Cyrillic%20characters%0A%20%20%20%20%20%20%203.%20Changed%20its%20name%20from%20Save/Load%20to%20Export/Import.%0A%20%20%20%20%20%20%204.%20CB%20contextmenu%20now%20works%20with%20the%20two%20buttons.%0A%20%20%20%20%20%20%205.%20Check%20for%20valid%20CB%20XML%20before%20installing%20an%20XML%20file%20to%20a%20new%20button.%0A%0A%20%20Credits%3A%0A%20%20%20%20Contextmenu%20Icon%20by%20PixelMixer%0A%20%20%20%20%20-%20http%3A//pixelmixer.ru/%0A%20%20%20%20%20-%20http%3A//pixel-mixer.com/%0A%0A%20%20References%3A%0A%20%20-%20http%3A//code.google.com/p/extensiondev/source/browse/trunk/content/loadsaveutils.js%0A%20%20-%20https%3A//developer.mozilla.org/en/nsIFilePicker%0A%20%20-%20https%3A//developer.mozilla.org/en/Code_snippets%3AFile_I/O%0A%20%20-%20https%3A//developer.mozilla.org/en/Parsing_and_serializing_XML%0A%20%20-%20https%3A//developer.mozilla.org/en/Using_the_Stylesheet_Service%0A%0A*/%0A%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%0ATo%20export%3A%0A1.%20Right%20click%20on%20any%20custom%20buttons%0A2.%20Select%20%27Export%20to%20XML%27%0A%0A%0ATo%20import%3A%0A1.%20Click%20this%20button%0A2.%20Select%20a%20Custom%20Buttons%20XML%20file%0A%0Aor%20just%20open%20any%20Custom%20Buttons%20XML%20file%20to%20import.%0A%0A%0A%0AShift+click%3A%20Find%20update%20for%20this%20button.%0A%0A%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Custom Buttons XML Exporter/Importer">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=external-custombuttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <name>Custom Buttons XML Exporter/Importer</name>
+  <image><![CDATA[data:image/gif;base64,R0lGODlhGAAQALMAAH9AAP+AAP/AgP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAGAAQAAAEUFDISaudIevNu/9gKH5SVmIBVnLDILVBO2RyPHOAPAC2K9SwTm5H0wFvnJ+raJwFN8qWwDYc2lZFgBXGddY02kx4zCOHR+i0eg3Wut/wuDsCADs=]]></image>
+  <mode>0</mode>
+  <initcode>/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0
+ *
+ * The contents of this file are subject to the Mozilla Public License
+ * Version 1.1 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/1.1/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * Original code is Custom Buttons XML Exporter/Importer
+ * for Custom Buttons extension
+ *
+ * The Initial Developer of the Original Code is LouCypher.
+ * Portions created by the Initial Developer are Copyright (C) 2011
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ * - LouCypher: original code
+ * - Morat: onDestroy event, bug report
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"),
+ * in which case the provisions of the GPL are applicable instead of those
+ * above.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+this.metadata = {
+  rel: "author",
+  href: "https://plus.google.com/101088441440269967746"
+}
+
+const topicURL = "http://custombuttons.sourceforge.net/forum/"
+               + "viewtopic.php?t=78#p197"
+
+const cbNamespace = "http://xsms.nm.ru/custombuttons/";
+const nsIFilePicker = Ci.nsIFilePicker;
+const nsIFile = Ci.nsIFile;
+
+function $(aId) {
+  return document.getElementById(aId);
+}
+
+function makeXML(aXMLString) {
+  return (new DOMParser).parseFromString(aXMLString, "application/xml")
+                        .documentElement;
+}
+
+var lastDirectory = {
+  PREF: "custombuttons.XML.lastDir",
+  _lastDir: null,
+
+  get path() {
+    if (!this._lastDir || !this._lastDir.exists()) {
+      try {
+        this._lastDir = cbu.ps.getComplexValue(this.PREF, Ci.nsILocalFile);
+        if (!this._lastDir.exists())
+          this._lastDir = null;
+      }
+      catch(e) {}
+    }
+    return this._lastDir;
+  },
+
+  set path(val) {
+    try {
+      if (!val || !val.isDirectory())
+        return;
+    } catch(e) {
+      return;
+    }
+    this._lastDir = val.clone();
+
+    // Don't save the last open directory pref inside the Private Browsing mode
+    if (!PrivateBrowsingUtils.isWindowPrivate(window))
+      cbu.ps.setComplexValue(this.PREF, Ci.nsILocalFile, this._lastDir);
+  },
+
+  reset: function() {
+    this._lastDir = null;
+  }
+};
+
+function saveFile(aFileName, aStrData) {
+  var fp = Cc["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+  fp.appendFilters(nsIFilePicker.filterXML);
+  fp.init(window, "Export button to XML file", nsIFilePicker.modeSave);
+  fp.defaultString = aFileName;
+  fp.displayDirectory = lastDirectory.path;
+  var res = fp.show();
+  if (res == nsIFilePicker.returnOK || res == nsIFilePicker.returnReplace) {
+    lastDirectory.path = fp.file.parent.QueryInterface(nsIFile);
+    var ostream = Cc["@mozilla.org/network/file-output-stream;1"].
+                  createInstance(Ci.nsIFileOutputStream);
+    ostream.init(fp.file, 0x02 | 0x08 | 0x20, 0664, 0);
+    var charset = "UTF-8";
+    var os = Cc["@mozilla.org/intl/converter-output-stream;1"].
+             createInstance(Ci.nsIConverterOutputStream);
+    os.init(ostream, charset, 4096, 0x0000);
+    os.writeString(aStrData);
+    os.close();
+  }
+}
+
+function readFile(aFile) {
+  var data = "";
+  var fstream = Cc["@mozilla.org/network/file-input-stream;1"].
+                createInstance(Ci.nsIFileInputStream);
+  fstream.init(aFile, -1, 0, 0);
+  var charset = "UTF-8";
+  const replacementChar = Ci.nsIConverterInputStream
+                            .DEFAULT_REPLACEMENT_CHARACTER;
+  var is = Cc["@mozilla.org/intl/converter-input-stream;1"].
+           createInstance(Ci.nsIConverterInputStream);
+  is.init(fstream, charset, 1024, replacementChar);
+  var str = {};
+  while (is.readString(4096, str) != 0) {
+    data += str.value;
+  }
+  is.close();
+
+  return data;
+}
+
+function stringToDOM(aString) {
+// https://developer.mozilla.org/en/Parsing_and_serializing_XML
+  var parser = new DOMParser();
+  var dom = parser.parseFromString(aString, "text/xml");
+  if (dom.documentElement.nodeName == "parsererror") {
+    return null;
+  } else {
+    return dom;
+  }
+}
+
+function importXMLtoButton(aStrXMLData) {
+  loadURI("custombutton://" + escape(aStrXMLData));
+}
+
+function getCBOverlay() {
+  var dirsvc = Cc["@mozilla.org/file/directory_service;1"].
+               getService(Ci.nsIProperties);
+  var file = dirsvc.get("ProfD", Ci.nsIFile);
+  file.append("custombuttons");
+  file.append("buttonsoverlay.xul");
+  return file;
+}
+
+this.viewCBOverlay = function viewCBOverlay() {
+  var fileURL = Cc["@mozilla.org/network/io-service;1"].
+                getService(Ci.nsIIOService).getProtocolHandler("file").
+                QueryInterface(Ci.nsIFileProtocolHandler).
+                getURLSpecFromFile(getCBOverlay());
+  gBrowser.selectedTab = gBrowser.addTab("view-source:" + fileURL);
+}
+
+this.inspectCBOverlay = function inspectCBOverlay() {
+  var elmId = "custombuttons-profile-overlay";
+  var wintype = document.documentElement.getAttribute("windowtype");
+  switch (wintype) {
+    case "mail:3pane": elmId = "MailToolbarPalette"; break;
+    case "msgcompose": elmId = "MsgComposeToolbarPalette"; break;
+    case "navigator:browser": elmId = "BrowserToolbarPalette";
+  }
+  inspectDOMNode(stringToDOM(readFile(getCBOverlay())).
+                 getElementById(elmId));
+}
+
+this.importFromCBOverlay = function importFromCBOverlay(aTitle) {
+  var id = custombuttons.promptBox(aTitle, "Enter your button id number:");
+  if (!id[1] || id[1] == "") return;
+  id = "custombuttons-button" + id[1];
+
+  var dom = stringToDOM(readFile(getCBOverlay()));
+  var button = dom.getElementById(id);
+  if (!button) {
+    custombuttons.alertBox(aTitle, "Button Id " + id + " cannot be found!");
+    return;
+  }
+  var cbName = button.getAttribute("cb-name") ||
+               button.getAttribute("label");
+  var cbImage = button.getAttribute("image") ||
+                button.getAttribute("cb-stdicon") || "";
+  var cbMode = button.getAttribute("mode") || "";
+  var cbInitCode = button.getAttribute("cb-init");
+  var cbCode = button.getAttribute("cb-oncommand");
+  var cbKey = button.getAttribute("accelkey") || "";
+  var cbHelp = button.getAttribute("Help") || "";
+  var cbAttr = button.getAttribute("attributes");
+  var cbXML = '&lt;custombutton xmlns:cb="' + cbNamespace + '"&gt;'
+            + '  &lt;name&gt;' + cbName + '&lt;/name&gt;'
+            + '  &lt;image&gt;' + cbImage + '&lt;/image&gt;'
+            + '  &lt;mode&gt;' + cbMode + '&lt;/mode&gt;'
+            + '  &lt;initcode&gt;' + cbInitCode + '&lt;/initcode&gt;'
+            + '  &lt;code&gt;' + cbCode + '&lt;/code&gt;'
+            + '  &lt;accelkey&gt;' + cbKey + '&lt;/accelkey&gt;'
+            + '  &lt;help&gt;' + cbHelp + '&lt;/help&gt;'
+            + '  &lt;attributes&gt;' + cbAttr + '&lt;/attributes&gt;'
+            + '&lt;/custombutton&gt;';
+  var xml = '&lt;?xml version="1.0" encoding="UTF-8"?&gt;' + cbXML.toString();
+  //inspectDOMDocument(stringToDOM(xml));
+  importXMLtoButton(xml);
+}
+
+this.checkDocumentForCBXML = function checkDocumentForCBXML(aDocument) {
+  if (((aDocument.contentType == "text/xml") ||
+       (aDocument.contentType == "application/xml"))&amp;&amp;
+      (aDocument.documentElement.localName == "custombutton")) {
+    var serializer = new XMLSerializer();
+    var xml = serializer.serializeToString(aDocument);
+    importXMLtoButton(xml);
+  } else {
+    this.loadXML();
+  }
+}
+
+this.saveXML = function saveXML(aStrURI) {
+  var cbURI = (aStrURI != undefined) ? aStrURI : readFromClipboard();
+  if (!cbURI || !/^custombutton\:\/\//.test(cbURI)) {
+    custombuttons.uChelpButton(this);
+    return;
+  }
+
+  var cbXML = cbURI.replace(/^custombutton\:\/\//, "");
+  var decodeXML = unescape(cbXML);
+  var btnName = decodeXML.match(/\&lt;name\/?.+/).toString();
+  var name = "untitled";
+  if (!/\&lt;name\/\&gt;/.test(btnName)) {
+    name = btnName.replace(/\&lt;\/?\w+\&gt;/g, "").toString();
+  }
+  var image = decodeXML.match(/\&lt;image\/?.+/).toString();
+  var icon = "";
+  if (!/\&lt;\image.*\[\].*\&gt;$/.test(image)) {
+    icon = image.match(/[^\[\]]+/g)[2].toString()
+                .replace(/custombuttons\-stdicon\-\d/, "").toString();
+  }
+
+  function htmlEntities(str) {
+      return str.replace(/&amp;/g, "&amp;amp;").replace(/&lt;/g, "&amp;lt;")
+                .replace(/&gt;/g, "&amp;gt;").replace(/"/g, "&amp;quot;");
+  }
+
+  var xmlTemplate = "custombuttons/\"\n\
+              xmlns:html=\"http://www.w3.org/1999/xhtml\"&gt;\n\
+  &lt;html:head&gt;\n\
+    &lt;html:title&gt;&lt;![CDATA[" + name + "]]&gt;&lt;/html:title&gt;\n\
+    &lt;html:link rel=\"shortcut icon\" href=\"" + icon + "\"/&gt;\n\
+    &lt;html:style type=\"text/css\"&gt;&lt;![CDATA[\n\
+body { font-size: medium; margin: 0; }\n\
+body, code:before, help:before, initcode:before {\n\
+  font-family: \"Verdana\", sans-serif;\n\
+}\n\
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }\n\
+p { font-size: small; text-align: center; }\n\
+#button {\n\
+  background-color: rgb(85, 168, 2);\n\
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94),\
+ rgb(85, 168, 2));\n\
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94),\
+ rgb(85, 168, 2));\n\
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94),\
+ rgb(85, 168, 2));\n\
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94),\
+ rgb(85, 168, 2));\n\
+  border: 1px solid rgb(58, 116, 4);\n\
+  border-radius: .5em;\n\
+  -moz-border-radius: .5em;\n\
+  -webkit-border-radius: .5em;\n\
+  padding: 0;\n\
+  margin-bottom: 1em;\n\
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);\n\
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);\n\
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);\n\
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);\n\
+}\n\
+#button a {\n\
+  color: #000;\n\
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);\n\
+  padding: 1em;\n\
+  text-decoration: none;\n\
+}\n\
+:-moz-any-link:focus {\n\
+  color: white;\n\
+  outline-color: transparent;\n\
+  text-decoration: none;\n\
+}\n\
+#button a, code, code:before, initcode, initcode:before, help, help:before {\
+\n  display: block;\n\
+}\n\
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }\n\
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }\n\
+date, image, mode, accelkey { display: none; }\n\
+name { font-weight: bold; font-size: x-large; }\n\
+code:before, help:before, initcode:before {\n\
+  font-weight: bold;\n\
+  font-size: large;\n\
+  margin: 0 0 1em;\n\
+  padding: .5em;\n\
+}\n\
+code:before { content: \"CODE\"; }\n\
+help:before { content: \"Help\"; }\n\
+initcode:before { content: \"Initialization Code\"; }\n\
+code, initcode, help {\n\
+  background-color: rgb(255, 255, 255);\n\
+  border: 1px inset rgb(170, 170, 170);\n\
+  font: medium monospace;\n\
+  margin: 1em 1em 2em 0;\n\
+  padding: 1em;\n\
+  text-align: left;\n\
+  width: 840px;\n\
+  white-space: pre-wrap;\n\
+  word-wrap: break-word;\n\
+}\n\
+.clear { clear: both; }\n\
+]]&gt;&lt;/html:style&gt;\n\
+  &lt;/html:head&gt;\n\
+  &lt;html:body&gt;\n\
+    &lt;html:div id=\"wrapper\"&gt;\n\
+      &lt;html:div id=\"button\"&gt;\n\
+        &lt;html:a href=\"" + cbURI + "\" rel=\"nofollow\" title=\"Install " +
+        htmlEntities(name, "ENT_COMPAT") +"\"&gt;\n\
+        &lt;![CDATA[Install this button]]&gt;\n\
+        &lt;/html:a&gt;\n\
+      &lt;/html:div&gt;\n\
+      &lt;html:a href=\"https://addons.mozilla.org/addon/custom-buttons/\
+?src=external-custombuttons-xml\"&gt;\n\
+        &lt;![CDATA[What's this?]]&gt;\n\
+      &lt;/html:a&gt;\n\
+      &lt;html:div id=\"credits\"&gt;\n\
+        &lt;html:a href=\"" + topicURL +"\"&gt;\n\
+          &lt;![CDATA[Custom Buttons XML]]&gt;&lt;html:br/&gt;\
+&lt;![CDATA[Exporter/Importer]]&gt;\n\
+        &lt;/html:a&gt;\n\
+      &lt;/html:div&gt;\n\
+    &lt;/html:div&gt;\n\
+  &lt;/html:body&gt;";
+
+  // Inspect unformatted XML as DOM, for debugging only
+  //inspectDOMDocument(stringToDOM(decodeXML)); return;
+
+
+  decodeXML = decodeXML.replace(/custombuttons\/\"\&gt;/, xmlTemplate);
+
+  // Inspect formatted XML as DOM, for debugging only
+  //inspectDOMDocument(stringToDOM(decodeXML)); return;
+
+  name += ".xml";
+  saveFile(name, decodeXML);
+}
+
+this.loadXML = function loadXML() {
+  var fp = Cc["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+  fp.init(window, "Import an XML file and install it as a new button",
+          nsIFilePicker.modeOpen);
+  fp.appendFilters(nsIFilePicker.filterXML);
+  fp.appendFilter("All Files", "*.*");
+  fp.displayDirectory = lastDirectory.path;
+  if (fp.show() == nsIFilePicker.returnOK) {
+    if (fp.file &amp;&amp; fp.file.exists()) {
+      lastDirectory.path = fp.file.parent.QueryInterface(nsIFile);
+    }
+  } else {
+    return;
+  }
+  var xmlData = readFile(fp.file);
+  var xmlDOM = stringToDOM(xmlData).documentElement;
+  if (!xmlDOM) {
+    //Application.console.log(xmlDOM);
+    custombuttons.alertBox("Import Fail", "Not an XML file!");
+    return;
+  }
+
+  if ((xmlDOM.localName == "custombutton") &amp;&amp;
+      ((xmlDOM.getAttribute("xmlns:cb") == cbNamespace) ||
+       (xmlDOM.getAttribute("xmlns") == cbNamespace))) {
+    importXMLtoButton(xmlData);
+  } else {
+    custombuttons.alertBox("Import Fail", "Not a valid Custom Buttons XML!");
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////// Context menus ///////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+function addMenuItem(aNewIDs, aNodeIDs, aLabel, aIcon, aCommand, aKey) {
+  for (var i = 0; i &lt; aNewIDs.length; i++) {
+    // Remove previously created menuitems if any
+    if ($(aNewIDs[i])) $(aNewIDs[i]).parentNode.removeChild($(aNewIDs[i]));
+
+    // Added 'Export to XML' menuitem to CB contextmenu
+    let mi = makeXML('&lt;menuitem xmlns="' + xulns + '" id="' + aNewIDs[i]
+                   + '" class="menuitem-iconic" image="' + aIcon
+                   + '" label="' + aLabel + '" accesskey="' + aKey + '"'
+                   + ' oncommand="' + aCommand + '"/&gt;');
+
+    if (i == 0)
+      mi.setAttribute("observes", "custombuttons-contextbroadcaster-primary");
+
+    if ($(aNodeIDs[i])) {
+      if ($(aNodeIDs[i]).nextSibling) {
+        $(aNodeIDs[i]).parentNode.insertBefore(mi, $(aNodeIDs[i]).nextSibling);
+      } else {
+        $(aNodeIDs[i]).parentNode.appendChild(mi);
+      }
+    }
+  }
+}
+
+var loadImg = "data:image/x-icon;base64,\
+AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAA\
+AAAAAAD///8B////Af///wH///8B////AQAAAB+yg2l71ZRt+daTa//Wk2v/1pNr/9aTa//Wk2v/\
+v4NlywYEAycAAAAX////Af///wH///8B////Af///wHdo4M53Zx3/+Sgef/innb/4p52/+Kedv/l\
+o3r/5aR6/+mqgfvPj27N////Af///wH///8B////Af///wH///8B4KSD8+mmff/opH3/56N6/+Wh\
+ef/no3r/66qB/8KBXf/Fg1//0Y5s78+Pbqn///8B////Af///wH///8B////AeGlg//trIX/7ayE\
+/+6thP/urIX/9bWL/8eFYf/GhF//yYZh/9SPa/nkn3j/////Af///wH///8B////Af///wHkn3j/\
+76+G/+6uh//vrob/76+G//W3jP/GhF//y4di/9ONZ//XkWr/5J94/////wH///8B////Af///wH/\
+//8B5J94/++wif/wsIj/8LGJ//CxiP/0toz/y4di/8+KZf/vroP/766D/+SfeP////8B////Af//\
+/wH///8B////AeSfeP/xs4v/8bOL//Cziv/ws4v/87WL/9CNa+3QjWvt3p96/96fev/en3r/////\
+Af///wH///8B////Af///wHkn3j/8rWN//K2jf/ytY3/8rWN//O2jvfdo4Lj0I5sJdCObCXQjmwl\
+0I5sJf///wH///8B////Af///wH///8B5J94//O3j//zuI//87iP//O4j//zuZDx3aOD7////wH/\
+//8B////Af///wHdo4M/5J94/+SfeP/kn3j/5J94/++2j//zupH/9LqR//O6kv/0upL/87qR/+Sf\
+eP/kn3j/5J94/+SfeP////8B////Af///wHkoXr/9cCY//W8k//0vJT/9L2T//S8lP/0vZT/9LyU\
+//S8lP/1vJT/9cCY/+Shev////8B////Af///wH///8B9b+WC+SjfP/2yqP/9b+W//a/lf/2v5X/\
+9b6V//W+lv/1vpX/9sqj/+SjfP////8B////Af///wH///8B////Af///wH2wZgX5aZ+//fTrP/2\
+wJj/9sCY//bAmP/2wZj/99Os/+Smf/////8B////Af///wH///8B////Af///wH///8B////Af//\
+/wHkqYH/99ax//fCmv/3wpn/99aw/+Sogf////8B////Af///wH///8B////Af///wH///8B////\
+Af///wH///8B////AeWrhP/317L/99ey/+WrhP////8B////Af///wH///8B////Af///wH///8B\
+////Af///wH///8B////Af///wH///8B5a2F/+Wthf////8B////Af///wH///8B////Af///wH/\
+//8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA\
+//8AAP//AAD//w==";
+
+var saveImg = "data:image/x-icon;base64,\
+AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAA\
+AAAAAAD///8B////Af///wH///8BAAAAHQAAACUXaE1dE55y/xOecv8XaE1dAAAAJQAAAB3///8B\
+////Af///wH///8B////Af///wH///8B////Af///wEmrX85F6J2/xHEj/8RxI//GKF2/yatfzn/\
+//8B////Af///wH///8B////Af///wH///8B////Af///wEmrX85Hqd6/xHHkv8Rx5L/EceS/xHH\
+kv8ep3r/Jq1/Of///wH///8B////Af///wH///8B////Af///wEhs4RJJq1//xHHkv8Rx5L/EceS\
+/xHHkv8Rx5L/EciT/yatgP8mrX85////Af///wH///8B////Af///wEjsYJBLLKE/xHNlv8RyJP/\
+EciT/xHIk/8RyJP/EciT/xHKlf8Rzpn/LLOE/yatfzn///8B////Af///wEmrX85MbaH/xTcqP8V\
+3qv/Fd2q/xHKlf8RypX/EcqV/xHKlf8W4a7/Fd6r/xTZpf8xtof/Jq1/Of///wEmrX1pMbaH/zG3\
+iP8xt4j/MbeI/xfWov8RzJj/EcyY/xHMmP8RzJj/H8SR/zG3iP8xt4j/MbeI/zG2h/8mrX85////\
+Af///wH///8B////Af///wEuuov/Ec+a/xHPmv8Rz5r/FNCc/xbUoPEisH7v////Af///wH///8B\
+////Af///wH///8B////Af///wH///8BLrqL/xHTnv8R057/EdOe/xXUoP8a2KT3H7J/4ymaaSUp\
+mmklKZppJSmaaSX///8B////Af///wH///8B////AS66i/8R1aH/EdWh/xHVof8U1qL/Idyp/ySh\
+b+0koW/tJKJw6ySlc+0noG/5////Af///wH///8B////Af///wEuuov/Edej/xHXo/8R16P/Edej\
+/yzgsP8ZsH//GrOB/xm6hv8ZwI3/JqFw6////wH///8B////Af///wH///8BLrqL/xHapf8R2qX/\
+Edql/xHapf895bf/KbCC/yCpef8gsH7/Hb6M/yidbNP///8B////Af///wH///8B////ASPNmv8Y\
+3ar/Edyn/xHcp/8V3aj/VerA/1DNpP8moHH/JqJz/yG7ifsvv5L/////Af///wH///8B////Af//\
+/wEizJn1b+/J/2nux/9k7cX/b+/J/3Dvyf9r7cb/MJ9x/yype/8jt4XzL7+S/////wH///8B////\
+Af///wH///8BFL+KOTjWp/9B6Lv/Oea4/zjmuP9G6Lz/WuzD/1rcs/9B0aT7L7+S/////wH///8B\
+////Af///wH///8B////Af///wEXwo5lFMWQzxPFkNUTxZDZE8WQ0xXEkNcmxJPVQsie/////wH/\
+//8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA\
+//8AAP//AAD//w==";
+
+// Add 'Export to XML' menuitem to CB contextmenu
+let cIDs = ["custombuttons-contextpopup-exportXML",
+            "custombuttons-contextpopup-exportXML-sub"];
+let bIDs = ["custombuttons-contextpopup-bookmarkButton",
+            "custombuttons-contextpopup-bookmarkButton-sub"];
+addMenuItem(cIDs, bIDs, "Export to XML", saveImg,
+            "document.getElementById('" + this.id
+          + "').saveXML(('_cb_triggerNode' in this.parentNode) "
+          + "? this.parentNode._cb_triggerNode.URI "
+          + ": document.popupNode.URI);", "X");
+
+//bug test
+//addMenuItem(cIDs, bIDs, "Test", "", "Services.console.log(this.parentNode.triggerNode.nodeName);", "");
+
+let xIDs = ["custombuttons-contextpopup-importnewbutton",
+            "custombuttons-contextpopup-importnewbutton-sub"];
+let aIDs = ["custombuttons-contextpopup-addnewbutton",
+            "custombuttons-contextpopup-addnewbutton-sub"];
+addMenuItem(xIDs, aIDs, "Add new button from an XML file\u2026", loadImg,
+            "document.getElementById('" + this.id +
+            "').checkDocumentForCBXML(content.document);");
+
+let aIDs = ["toolbar-context-menu", "menu_viewPopup", "menu_View_Popup"];
+let yIDs = [aIDs[0] + "-importnewbutton",
+            aIDs[1] + "-importnewbutton",
+            aIDs[2] + "-importnewbutton"];
+let zIDs = [aIDs[0] + "-addnewbutton",
+            aIDs[1] + "-addnewbutton",
+            aIDs[2] + "-addnewbutton"];
+for (var i = 0; i &lt; aIDs.length; i++) {
+  if ($(aIDs[i])) {
+    $(aIDs[i]).querySelector("[oncommand^='custombuttons.']").id = zIDs[i];
+    // because the "Add new button..." in toolbar contextmenu
+    // and View menu don't have IDs
+  }
+}
+addMenuItem(yIDs, zIDs, "Add new button from an XML file\u2026", "",
+            "document.getElementById('" + this.id +
+            "').checkDocumentForCBXML(content.document);");
+
+// Remove contextmenu items when this button is deleted
+this.onDestroy = function(aReason) {
+  if (aReason == "delete") {
+    for (var i = 0; i &lt; 3; i++) {
+      $(cIDs[i]) &amp;&amp; $(cIDs[i]).parentNode.removeChild($(cIDs[i]));
+      $(xIDs[i]) &amp;&amp; $(xIDs[i]).parentNode.removeChild($(xIDs[i]));
+      $(yIDs[i]) &amp;&amp; $(yIDs[i]).parentNode.removeChild($(yIDs[i]));
+    }
+  }
+}
+
+//---------- Remove old traces if any ----------//
+let tbitem = $(this.id + "-toolbaritem");
+tbitem &amp;&amp; tbitem.parentNode.removeChild(tbitem);
+let css = "\
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);\
+#navigator-toolbox:not([customizing=\"true\"]) #" + this.id + ",\
+#navigator-toolbox[customizing=\"true\"] #" + this.id + "-toolbaritem\
+{ display: none; }";
+let sss = Cc["@mozilla.org/content/style-sheet-service;1"].
+          getService(Ci.nsIStyleSheetService);
+let uri = makeURI("data:text/css," + encodeURIComponent(css), null, null);
+if (sss.sheetRegistered(uri, sss.USER_SHEET)) {
+  sss.unregisterSheet(uri, sss.USER_SHEET);
+}
+
+this.initPopup = function initPopup(aNode) {
+  this.querySelector("[oncommand*='inspectCBOverlay']")
+      .hidden = !("inspectDOMNode" in window);
+}
+
+var menu = '&lt;menupopup xmlns="' + xulns + '" context="toolbar-context-menu"'
+         + ' onpopupshowing="this.parentNode.initPopup(this);"&gt;'
+         + '&lt;menuitem label="Import XML File As New Button"'
+         + ' oncommand="this.parentNode.parentNode.checkDocumentForCBXML(content.document);"/&gt;'
+         + '&lt;menuitem label="Import Existing Button from Overlay"'
+         + ' oncommand="this.parentNode.parentNode.importFromCBOverlay(this.label);"/&gt;'
+         + '&lt;menuitem label="View Custom Buttons Overlay in Browser"'
+         + ' oncommand="this.parentNode.parentNode.viewCBOverlay();"/&gt;'
+         + '&lt;menuitem label="Inspect Custom Buttons Overlay"'
+         + ' oncommand="this.parentNode.parentNode.inspectCBOverlay();"/&gt;'
+         + '&lt;menuseparator id="' + this.id + '-separator"/&gt;'
+         + '&lt;menuitem label="Check for Updates for this button"'
+         + ' class="menuitem-iconic" image="' + this.image + '"'
+         + ' oncommand="var btn = this.parentNode.parentNode;'
+         + ' btn.updater.checkForUpdate(btn.updater.getUpdate);"/&gt;'
+         + '&lt;/menupopup&gt;';
+
+this.appendChild(makeXML(menu));
+// For a strange reason, I can't add the 'check for update' menu item
+// into CB context menu if button type=menu. Bug?
+this.type = "menu";</initcode>
+  <code><![CDATA[/*
+  Changelog:
+    * 2012-07-26: De-E4X-izations.
+    * 2011-08-05:
+       1. Added "Add new button from an XML file..." menuitem
+          into toolbar contextmenu and View menu.
+    * 2011-06-26:
+       1. Fixed all known issues.
+       2. No longer using toolbaritems, the cause of all issues.
+    * 2011-06-15:
+       1. Includes button's image as XML favicon
+       2. No longer using <script>
+       3. Fixed: namespace bug.
+    * 2011-06-14:
+       1. Includes template and CSS.
+       2. Yep! I changed the name again.
+    * 2011-06-12: Added 'Export to XML' to CB contextmenu.
+    * 2011-06-11: No more third button (dropmarker).
+    * 2011-06-10:
+       1. Fixed: toolbaritem (2-button) wasn't removed when this button
+          was deleted. Thanks to Morat.
+       2. Fixed: toolbaritem (2-button) wasn't removed when this button
+          was moved.
+       3. Import XML file that is opened in browser window.
+       4. Supports application/xml content type as well as text/xml.
+    * 2011-06-09:
+       1. Initial release
+       2. Fixed: error with Cyrillic characters
+       3. Changed its name from Save/Load to Export/Import.
+       4. CB contextmenu now works with the two buttons.
+       5. Check for valid CB XML before installing an XML file to a new button.
+
+  Credits:
+    Contextmenu Icon by PixelMixer
+     - http://pixelmixer.ru/
+     - http://pixel-mixer.com/
+
+  References:
+  - http://code.google.com/p/extensiondev/source/browse/trunk/content/loadsaveutils.js
+  - https://developer.mozilla.org/en/nsIFilePicker
+  - https://developer.mozilla.org/en/Code_snippets:File_I/O
+  - https://developer.mozilla.org/en/Parsing_and_serializing_XML
+  - https://developer.mozilla.org/en/Using_the_Stylesheet_Service
+
+*/
+]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[
+To export:
+1. Right click on any custom buttons
+2. Select 'Export to XML'
+
+
+To import:
+1. Click this button
+2. Select a Custom Buttons XML file
+
+or just open any Custom Buttons XML file to import.
+
+
+
+Shift+click: Find update for this button.
+
+]]></help>
+  <attributes/>
+</custombutton>

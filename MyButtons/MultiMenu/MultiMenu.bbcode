@@ -1,0 +1,69 @@
+This button has the ability to create very complex menus with menu items that can execute from custom commands to commands from other extensions or from the application itself. You can also create menu items to open paths to any folder, open any file or execute any program with or without arguments. There are also "special items" that can create a list of all installed "add-ons" by type (Extensions, plugins, Stylish styles, Scriptish scripts and GeaseMonkey scripts), preference manipulation, open URLs and execute other Custom Buttons. I created this button as an alternative to the [url=https://addons.mozilla.org/firefox/addon/personal-menu/]Personal Menu[/url] extension.
+
+[color=#FF0000][b][size=100]Disclaimer!![/size] The following link/s leads to an external page (Dropbox). This forum is not responsible for any external content.[/b][/color]
+
+[url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/MultiMenu/MultiMenu.xml][img]https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/MultiMenu/MultiMenu.png[/img] [size=150] Install Multi Menu[/size][/url]
+
+[b][size=150]Compatibility[/size][/b]
+Tested and working on Firefox Stable/Dev. Edition, SeaMonkey, Palemoon and Thunderbird.
+[b][color=#FF0000]Not compatible with Nightly nor Windows Vista[/color][/b]
+
+[color=#FF0000][size=150][b]Changelog - Updated June 11, 2016[/b][/size]
+[list]
+[*] Rewritten from scratch.
+[*] Now there is absolutely no need to edit the button to add items.
+[*] Added a GUI to add new items to the main menu.
+[*] Added support to control other Custom Buttons with menus.
+[*] Added a GUI to edit the custom style sheet.
+[*] General enhancements of the kind [i]do more with less code[/i].[/list][/color]
+
+[b][size=150]Features[/size][/b]
+[list][*] [b]Multi Menu[/b] can be installed only once (I call it the "master" button). But an [i]infinite[/i] number of [i]slave buttons[/i] can be created with the same functionality of the main button to create countless menu buttons. Each with its own settings.
+[*] Custom menus can have [i]infinite[/i] sub-menus.
+[*] Up to 5 main menus (side by side).
+[*] A total of 14 different types of items can be created with [b]Multi Menu[/b]:[list]
+[*] [b]Custom menu item:[/b] A custom menu item that can [i]execute any code[/i] from the application itself or from any installed extension.
+[*] [b]Custom menu:[/b] A custom menu that can contain any type of item.
+[*] [b]Cloned menu/Cloned menu item:[/b] Any existent menu/menu item from the application or from any installed extension can be cloned to be added to [b]Multi Menu[/b].
+[*] [b]Path menu item (full path):[/b] A full path to any folder, file or executable can be added to [b]Multi Menu[/b] to be opened, launched or executed (with and without arguments).
+[*] [b]Path menu item (relative path):[/b] Same as full path, but a common "relative path" can be used as a start point. Useful for portable applications.
+[*] [b]Menugroup element:[/b] Menu items inside a menu group are displayed with an appearance similar to a button.
+[*] [b]Menuseparator element:[/b] Used to create a separator between menu items.
+[*] [b]Spacer element:[/b] An element that takes up space but does not display anything. It is usually used to place spacing within a container.
+[*] [b]Dialogheader element:[/b] A heading row. This element is designed to be placed inside a dialog element, but in [b]Multi Menu[/b] is used with some tweaks that shrink the element to a proper size for menupopups. The header may have a title and a description.
+[*] [b]Custom Buttons item:[/b] This type of item can control other installed Custom Buttons. With support for Custom Button with menus.
+[*] [b]List of add-ons or add-on ID:[/b] Ability to create a complete list of all installed add-ons by type (extensions, plugins, themes, Stylish styles and GreaseMonkey/Scriptish scripts). Also can create a single item by just specifying its id.
+[*] [b]Preference item:[/b] An item that can control any preference (existent or not).
+[*] [b]URL item:[/b] An item that works like a bookmark (it opens web pages).[/list]
+[/list]
+
+[b][size=150]Images[/size][/b]
+[color=#FF0000][b]Note: Do not worry about the colours in the images. That's just my system/browser themes.[/b][/color]
+
+[size=120]Featuring a menu group with several Custom Buttons with menus[/size]
+
+[img]https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/MultiMenu/MultiMenu001.png[/img]
+
+[size=120][b]More images (not posted in-line due to their large size)[/b][/size]
+[url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/MultiMenu/MultiMenu002.png]Layout emulating the old Firefox App button on Windows[/url]
+[url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/MultiMenu/MultiMenu003.png]Layout emulating the old Firefox App button on Linux[/url]
+[url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/MultiMenu/MultiMenu004.png]Cloned menu bar on SeaMonkey and Firefox[/url]
+[url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/MultiMenu/MultiMenu005.png]List of extensions and GreaseMonkey scripts[/url]
+[url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/MultiMenu/MultiMenu006.png]List of Stylish styles and plugins[/url]
+
+[b][size=150]Contributors[/size][/b]
+List of contributors whose code and/or resources I've used to create this button.
+[list]
+[*][b]Aris:[/b] I have used code from his [url=https://addons.mozilla.org/firefox/addon/classicthemerestorer/]Classic Theme Restorer[/url] add-on. Specifically, I have implemented some "tricks" to "emulate" splitmenus.
+[*][b]Infocatcher:[/b] I have used code from his [url=https://github.com/Infocatcher/Custom_Buttons/tree/master/Toggle_Restartless_Add-ons]Toggle Restartless Add-ons[/url] button. Specifically, all "Add-ons menuitems" features.
+[/list]
+
+[b][color=red][size=150]Error report[/size][/color][/b]
+If any errors are found, report it ASAP on this post with as much details as possible.
+[list]
+[*]Which platform and its version (Linux, Mac or Windows).
+[*]Which application and its version (Any Firefox-based browser, Thunderbird or SeaMonkey).
+[*]Error/Browser console output, if any.
+[*]If it's easier for you to report an error with images, and if the image is too large or there are more than one, publish the links to them, do not post them using the IMG tag in the message.
+[*]Be willing to follow troubleshooting instructions.
+[/list]

@@ -1,0 +1,164 @@
+﻿.cb-docs-section
+	h1#nav_thunder_sea_spec.page-header Thunderbird/SeaMonkey specifics
+	h3#nav_thunder_sea_spec-1 Open Pages - Thunderbird
+	pre.official_docs.
+		<code>/*Code*/
+		// open page in a new tab in the foreground
+		openContentTab(&quot;http://www.google.com/&quot;);</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// open page in a new tab in the background
+		var tabmail = document.getElementById(&quot;tabmail&quot;);
+		if (!tabmail) {
+			var win = Cc[&quot;@mozilla.org/appshell/window-mediator;1&quot;]
+				.getService(Ci.nsIWindowMediator)
+				.getMostRecentWindow(&quot;mail:3pane&quot;);
+			if (win) {
+				tabmail = win.document.getElementById(&quot;tabmail&quot;);
+				win.focus();
+			}
+		}
+		if (tabmail) {
+			tabmail.openTab(&quot;contentTab&quot;, {
+				contentPage : &quot;http://www.google.com/&quot;,
+				background : true
+			});
+		} else {
+			window.openDialog(&quot;chrome://messenger/content/&quot;, &quot;_blank&quot;, &quot;chrome,dialog=no,all&quot;, null, {
+				tabType : &quot;contentTab&quot;,
+				tabParams : {
+					contentPage : &quot;http://www.google.com/&quot;,
+					background : true
+				}
+			});
+		}</code>
+	pre.official_docs.
+		<code>/*Code*/
+		// open page in an external application e.g. Firefox
+		var eps = Cc[&quot;@mozilla.org/uriloader/external-protocol-service;1&quot;]
+			.getService(Ci.nsIExternalProtocolService);
+		var ios = Cc[&quot;@mozilla.org/network/io-service;1&quot;]
+			.getService(Ci.nsIIOService);
+		eps.loadURI(ios.newURI(&quot;http://www.google.com/&quot;, null, null));</code>
+	h3#nav_thunder_sea_spec-2 Toggle Message Pane - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		// use a boolean parameter with SeaMonkey
+		// true - toggle message pane
+		// false - show message pane splitter
+		MsgToggleMessagePane();</code>
+	h3#nav_thunder_sea_spec-3 Toggle Headers - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		var prefBranch = Cc[&quot;@mozilla.org/preferences-service;1&quot;]
+			.getService(Ci.nsIPrefBranch);
+		var intPref = prefBranch.getIntPref(&quot;mail.show_headers&quot;);
+		intPref == 1 ? MsgViewAllHeaders() : MsgViewNormalHeaders();</code>
+	h3#nav_thunder_sea_spec-4 Toggle Message Body As - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		var prefBranch = Cc[&quot;@mozilla.org/preferences-service;1&quot;]
+			.getService(Ci.nsIPrefBranch);
+		var boolPref = prefBranch.getBoolPref(&quot;mailnews.display.prefer_plaintext&quot;);
+		boolPref == true ? MsgBodyAllowHTML() : MsgBodyAsPlaintext();</code>
+	h3#nav_thunder_sea_spec-5 Toggle Mail Views - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		var customView = &quot;Last 5 Days&quot;;
+		if (document.getElementById(&quot;viewPicker&quot;).label == customView) {
+			if (&quot;ViewChangeByValue&quot; in window)
+				ViewChangeByValue(0);
+			else
+				ViewChange(0);
+		} else {
+			for (var i = 0; i &lt; gMailViewList.mailViewCount; i++) {
+				var viewInfo = gMailViewList.getMailViewAt(i);
+				if (viewInfo.prettyName == customView) {
+					if (&quot;ViewChangeByValue&quot; in window)
+						ViewChangeByValue(kViewItemFirstCustom + i);
+					else
+						ViewChange(kViewItemFirstCustom + i);
+					break;
+				}
+			}
+		}</code>
+	h3#nav_thunder_sea_spec-6 Next Message - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		var rowCount = gDBView.rowCount;
+		var viewIndex = gDBView.currentlyDisplayedMessage;
+		if (rowCount - viewIndex != 1) {
+			goDoCommand(&quot;cmd_nextMsg&quot;);
+		} else {
+			var wintype = document.documentElement.getAttribute(&quot;windowtype&quot;);
+			var tabmail = document.getElementById(&quot;tabmail&quot;);
+			if (wintype == &quot;mail:3pane&quot; &amp;&amp; tabmail.tabContainer.selectedIndex &gt; 0) {
+				tabmail.removeCurrentTab();
+			}
+			if (wintype == &quot;mail:messageWindow&quot;) {
+				window.close();
+			}
+		}</code>
+	h3#nav_thunder_sea_spec-7 Show Folder - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		alert(GetFirstSelectedMsgFolder().URI);</code>
+	h3#nav_thunder_sea_spec-8 Select Folder - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		SelectFolder(&quot;mailbox://nobody@Local%20Folders/Unsent%20Messages&quot;); // Outbox</code>
+	h3#nav_thunder_sea_spec-9 Copy Message - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		var targetUri = &quot;mailbox://nobody@Local%20Folders/Trash&quot;;
+		var targetFolder = document.getElementById(targetUri) || GetMsgFolderFromUri(targetUri);
+		MsgCopyMessage(targetFolder);</code>
+	h3#nav_thunder_sea_spec-10 Move Message - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		var targetUri = &quot;mailbox://nobody@Local%20Folders/Trash&quot;;
+		var targetFolder = document.getElementById(targetUri) || GetMsgFolderFromUri(targetUri);
+		MsgMoveMessage(targetFolder);</code>
+	h3#nav_thunder_sea_spec-11 Compose Message - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		var mcService = Cc[&quot;@mozilla.org/messengercompose;1&quot;]
+			.getService(Ci.nsIMsgComposeService);
+		var mcFields = Cc[&quot;@mozilla.org/messengercompose/composefields;1&quot;]
+			.createInstance(Ci.nsIMsgCompFields);
+		var mcParams = Cc[&quot;@mozilla.org/messengercompose/composeparams;1&quot;]
+			.createInstance(Ci.nsIMsgComposeParams);
+		mcFields.to = &quot;nobody &lt;test@example.com&gt;&quot;;
+		mcFields.subject = &quot;alpha beta&quot;;
+		mcFields.body = &quot;gamma\ndelta\nepsilon&quot;;
+		mcParams.type = Ci.nsIMsgCompType.New;
+		mcParams.format = Ci.nsIMsgCompFormat.Default;
+		mcParams.composeFields = mcFields;
+		mcService.OpenComposeWindowWithParams(null, mcParams);</code>
+	h3#nav_thunder_sea_spec-12 Insert Text - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		GetCurrentEditor().insertText(&quot;Mozilla&quot;);</code>
+	h3#nav_thunder_sea_spec-13 Insert HTML - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		GetCurrentEditor().insertHTML('&lt;a href=&quot;http://www.mozilla.org/&quot;&gt;Mozilla&lt;/a&gt;');</code>
+	h3#nav_thunder_sea_spec-14 Export Address Book to Clipboard - Thunderbird and SeaMonkey
+	pre.official_docs.
+		<code>/*Code*/
+		// abook.mab - personal address book
+		// history.mab - collected addresses
+		var abManager = Cc[&quot;@mozilla.org/abmanager;1&quot;]
+			.getService(Ci.nsIAbManager);
+		var ab;
+		ab = abManager.getDirectory(&quot;moz-abmdbdirectory://abook.mab&quot;);
+		ab = abManager.getDirectory(&quot;moz-abmdbdirectory://history.mab&quot;);
+		var enumerator = ab.childCards;
+		var out = new Array();
+		while (enumerator.hasMoreElements()) {
+			var abCard = enumerator.getNext().QueryInterface(Ci.nsIAbCard);
+			out.push('&quot;' + abCard.displayName + '&quot; &lt;' + abCard.primaryEmail + &quot;&gt;&quot;);
+		}
+		var clipboard = Cc[&quot;@mozilla.org/widget/clipboardhelper;1&quot;].
+			getService(Ci.nsIClipboardHelper);
+		clipboard.copyString(out.join(&quot;\r\n&quot;));</code>
