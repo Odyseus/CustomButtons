@@ -1,0 +1,11 @@
+<menupopup xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+	<menu xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" label="HTML Tags">
+		<menupopup>
+			<menuitem label="Bold text" _snippet="%3Cstrong%3E%7B%E2%96%88%7D%7B%7C%7D%3C%2Fstrong%3E" />
+			<menuitem label="Font small" _snippet="%3Cfont%20size%3D%221%22%3E%7B%E2%96%88%7D%7B%7C%7D%3C%2Ffont%3E" />
+			<menuitem label="Font large" _snippet="%3Cfont%20size%3D%223%22%3E%7B%E2%96%88%7D%7B%7C%7D%3C%2Ffont%3E" />
+			<menuitem label="Strikethrough" _snippet="%3Cstrike%3E%7B%E2%96%88%7D%7B%7C%7D%3C%2Fstrike%3E" />
+			<menuitem label="Insert URL" _snippet="%3Ca%20href%3D%22%7B%7C%7D%22%3E%7B%E2%96%88%7D%3C%2Fa%3E" />
+		</menupopup>
+	</menu>
+</menupopup>

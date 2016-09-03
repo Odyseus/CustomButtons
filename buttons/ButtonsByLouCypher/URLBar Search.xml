@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[URLBar Search]]></html:title>
+    <html:link rel="shortcut icon" href="data:image/png;base64,AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADs9Pt8xetPtu9FsfFNtu%2BTzvb2%2B%2Fne4dFJeBw0egA%2FfAJAfAA8ewBBegAAAAD%2B%2FPtft98Mp%2BwWsfAVsvEbs%2FQeqvF8xO7%2F%2F%2F63yqkxdgM7gwE%2FggM%2BfQA%2BegBDeQDe7PIbotgQufcMufEPtfIPsvAbs%2FQvq%2Bfz%2Bf%2F%2B%2B%2FZKhR05hgBBhQI8hgBAgAI9ewD0%2B%2Fg3pswAtO8Cxf4Kw%2FsJvvYAqupKsNv%2B%2Fv7%2F%2FP5VkSU0iQA7jQA9hgBDgQU%2BfQH%2F%2Ff%2FQ6fM4sM4KsN8AteMCruIqqdbZ7PH8%2Fv%2Fg6Nc%2Fhg05kAA8jAM9iQI%2BhQA%2BgQDQu6b97uv%2F%2F%2F7V8Pqw3eiWz97q8%2Ff%2F%2F%2F%2F7%2FPptpkkqjQE4kwA7kAA5iwI8iAA8hQCOSSKdXjiyflbAkG7u2s%2F%2B%2F%2F39%2F%2F7r8utrqEYtjQE8lgA7kwA7kwA9jwA9igA9hACiWSekVRyeSgiYSBHx6N%2F%2B%2Fv7k7OFRmiYtlAA5lwI7lwI4lAA7kgI9jwE9iwI4iQCoVhWcTxCmb0K%2BooT8%2Fv%2F7%2F%2F%2FJ2r8fdwI1mwA3mQA3mgA8lAE8lAE4jwA9iwE%2BhwGfXifWvqz%2B%2Ff%2F58u%2Fev6Dt4tr%2B%2F%2F2ZuIUsggA7mgM6mAM3lgA5lgA6kQE%2FkwBChwHt4dv%2F%2F%2F728ei1bCi7VAC5XQ7kz7n%2F%2F%2F6bsZkgcB03lQA9lgM7kwA2iQktZToPK4r9%2F%2F%2F9%2F%2F%2FSqYK5UwDKZAS9WALIkFn%2B%2F%2F3%2F%2BP8oKccGGcIRJrERILYFEMwAAuEAAdX%2F%2Ff7%2F%2FP%2B%2BfDvGXQLIZgLEWgLOjlf7%2F%2F%2F%2F%2F%2F9QU90EAPQAAf8DAP0AAfMAAOUDAtr%2F%2F%2F%2F7%2B%2Fu2bCTIYwDPZgDBWQDSr4P%2F%2Fv%2F%2F%2FP5GRuABAPkAA%2FwBAfkDAPAAAesAAN%2F%2F%2B%2Fz%2F%2F%2F64g1C5VwDMYwK8Yg7y5tz8%2Fv%2FV1PYKDOcAAP0DAf4AAf0AAfYEAOwAAuAAAAD%2F%2FPvi28ymXyChTATRrIb8%2F%2F3v8fk6P8MAAdUCAvoAAP0CAP0AAfYAAO4AAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAA"/>
+    <html:style type="text/css"><![CDATA[body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3EURLBar%20Search%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/png%3Bbase64%2CAAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADs9Pt8xetPtu9FsfFNtu%252BTzvb2%252B%252Fne4dFJeBw0egA%252FfAJAfAA8ewBBegAAAAD%252B%252FPtft98Mp%252BwWsfAVsvEbs%252FQeqvF8xO7%252F%252F%252F63yqkxdgM7gwE%252FggM%252BfQA%252BegBDeQDe7PIbotgQufcMufEPtfIPsvAbs%252FQvq%252Bfz%252Bf%252F%252B%252B%252FZKhR05hgBBhQI8hgBAgAI9ewD0%252B%252Fg3pswAtO8Cxf4Kw%252FsJvvYAqupKsNv%252B%252Fv7%252F%252FP5VkSU0iQA7jQA9hgBDgQU%252BfQH%252F%252Ff%252FQ6fM4sM4KsN8AteMCruIqqdbZ7PH8%252Fv%252Fg6Nc%252Fhg05kAA8jAM9iQI%252BhQA%252BgQDQu6b97uv%252F%252F%252F7V8Pqw3eiWz97q8%252Ff%252F%252F%252F%252F7%252FPptpkkqjQE4kwA7kAA5iwI8iAA8hQCOSSKdXjiyflbAkG7u2s%252F%252B%252F%252F39%252F%252F7r8utrqEYtjQE8lgA7kwA7kwA9jwA9igA9hACiWSekVRyeSgiYSBHx6N%252F%252B%252Fv7k7OFRmiYtlAA5lwI7lwI4lAA7kgI9jwE9iwI4iQCoVhWcTxCmb0K%252BooT8%252Fv%252F7%252F%252F%252FJ2r8fdwI1mwA3mQA3mgA8lAE8lAE4jwA9iwE%252BhwGfXifWvqz%252B%252Ff%252F58u%252Fev6Dt4tr%252B%252F%252F2ZuIUsggA7mgM6mAM3lgA5lgA6kQE%252FkwBChwHt4dv%252F%252F%252F728ei1bCi7VAC5XQ7kz7n%252F%252F%252F6bsZkgcB03lQA9lgM7kwA2iQktZToPK4r9%252F%252F%252F9%252F%252F%252FSqYK5UwDKZAS9WALIkFn%252B%252F%252F3%252F%252BP8oKccGGcIRJrERILYFEMwAAuEAAdX%252F%252Ff7%252F%252FP%252B%252BfDvGXQLIZgLEWgLOjlf7%252F%252F%252F%252F%252F%252F9QU90EAPQAAf8DAP0AAfMAAOUDAtr%252F%252F%252F%252F7%252B%252Fu2bCTIYwDPZgDBWQDSr4P%252F%252Fv%252F%252F%252FP5GRuABAPkAA%252FwBAfkDAPAAAesAAN%252F%252F%252B%252Fz%252F%252F%252F64g1C5VwDMYwK8Yg7y5tz8%252Fv%252FV1PYKDOcAAP0DAf4AAf0AAfYEAOwAAuAAAAD%252F%252FPvi28ymXyChTATRrIb8%252F%252F3v8fk6P8MAAdUCAvoAAP0CAP0AAfYAAO4AAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAA%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5Bif%20%28%21%28%22@mozilla.org/browser/search-service%3B1%22%20in%20Components.classes%29%29%20%7B%0A%20%20this.tooltipText%20%3D%20%22This%20button%20requires%20Firefox%202.0%20search%20API%22%3B%0A%20%20this.style.opacity%20%3D%20%22.25%22%3B%0A%20%20this.disabled%20%3D%20true%3B%0A%20%20return%3B%0A%7D%0A%0Afunction%20searchService%28%29%20%7B%0A%20%20return%20Components.classes%5B%22@mozilla.org/browser/search-service%3B1%22%5D%0A%20%20%20%20%20%20%20%20%20%20.getService%28Components.interfaces.nsIBrowserSearchService%29%3B%0A%7D%0A%0Afunction%20getInput%28%29%20%7B%0A%20%20var%20ss%20%3D%20searchService%28%29%3B%0A%20%20return%20prompt%28ss.currentEngine.name%2C%20%22%22%2C%20%22Search%22%29%3B%0A%7D%0A%0Athis.search%20%3D%20function%28aNode%2C%20aEvent%29%20%7B%0A%20%20var%20openInTab%2C%20loadInBackground%3B%0A%20%20try%20%7B%0A%20%20%20%20openInTab%20%3D%20gPrefService.getBoolPref%28%22browser.search.openintab%22%29%3B%0A%20%20%20%20loadInBackground%20%3D%20gPrefService.getBoolPref%28%22browser.search.openintab.loadInBackground%22%29%0A%20%20%7D%20catch%28ex%29%20%7B%0A%20%20%7D%0A%0A%20%20var%20query%20%3D%20%22%22%3B%0A%20%20if%20%28%21gURLBar%29%20%7B%0A%20%20%20%20query%20%3D%20getInput%28%29%3B%0A%20%20%7D%0A%20%20else%20if%20%28gURLBar%20%26%26%20gURLBar.focused%29%20%7B%0A%20%20%20%20query%20%3D%20gURLBar.value%3B%0A%20%20%7D%0A%20%20if%20%28query%20%3D%3D%20null%29%20return%3B%0A%0A%20%20var%20url%20%3D%20aNode.engine.getSubmission%28query%2C%20null%29.uri.spec%3B%0A%0A%20%20if%20%28openInTab%29%20%7B%0A%20%20%20%20var%20newTab%20%3D%20gBrowser.addTab%28url%29%3B%0A%20%20%20%20if%20%28%21loadInBackground%29%20gBrowser.selectedTab%20%3D%20newTab%3B%0A%20%20%7D%20else%0A%20%20%20%20openUILink%28url%2C%20aEvent%2C%20false%2C%20true%29%3B%0A%7D%0A%0Athis.checkForMiddleClick%20%3D%20function%28aNode%2C%20aEvent%29%20%7B%0A%20%20closeMenus%28aEvent.target%29%3B%0A%20%20if%20%28aEvent.button%20%3D%3D%201%29%20%7B%0A%20%20%20%20var%20fn%20%3D%20new%20Function%28%22event%22%2C%20%22this.search%28this%2C%20event%29%22%29%3B%0A%20%20%20%20fn.call%28aNode%2C%20aEvent%29%3B%0A%20%20%20%20if%20%28gURLBar%29%20handleURLBarRevert%28%29%3B%20//reset%20the%20URL%20bar%0A%20%20%7D%0A%7D%0A%0Athis.selectEngine%20%3D%20function%28aNode%2C%20aEvent%29%20%7B%0A%20%20var%20engine%20%3D%20aEvent.target.engine%3B%0A%20%20var%20ss%20%3D%20searchService%28%29%3B%0A%20%20ss.currentEngine%20%3D%20ss.getEngineByName%28engine.name%29%3B%0A%20%20aNode.engine%20%3D%20engine%3B%0A%20%20aNode.tooltipText%20%3D%20aNode.engine.name%3B%0A%20%20aNode.image%20%3D%20aEvent.target.getAttribute%28%22src%22%29%3B%0A%7D%0A%0Athis.populateMenu%20%3D%20function%28aNode%29%20%7B%0A%20%20var%20ss%20%3D%20searchService%28%29%3B%0A%20%20var%20engines%20%3D%20ss.getVisibleEngines%28%7B%20%7D%29%3B%0A%20%20const%20kXULNS%20%3D%20%22http%3A//www.mozilla.org/keymaster/gatekeeper/there.is.only.xul%22%3B%0A%0A%20%20while%28aNode.firstChild%20%26%26%20aNode.firstChild.localName%20%21%3D%20%22menuseparator%22%29%20%7B%0A%20%20%20%20aNode.removeChild%28aNode.firstChild%29%3B%0A%20%20%7D%0A%0A%20%20for%20%28var%20i%20%3D%20engines.length%20-%201%3B%20i%20%3E%3D%200%3B%20i--%29%20%7B%0A%20%20%20%20var%20mi%20%3D%20document.createElementNS%28kXULNS%2C%20%22menuitem%22%29%3B%0A%20%20%20%20mi.id%20%3D%20%22cb-search-%22%20+%20engines%5Bi%5D.name%3B%0A%20%20%20%20mi.className%20%3D%20%22menuitem-iconic%20searchbar-engine-menuitem%22%3B%0A%20%20%20%20mi.setAttribute%28%22label%22%2C%20engines%5Bi%5D.name%29%3B%0A%20%20%20%20if%20%28engines%5Bi%5D.iconURI%29%0A%20%20%20%20%20%20mi.setAttribute%28%22src%22%2C%20engines%5Bi%5D.iconURI.spec%29%3B%0A%20%20%20%20mi.engine%20%3D%20engines%5Bi%5D%3B%0A%20%20%20%20if%20%28mi.engine%20%3D%3D%20ss.currentEngine%29%0A%20%20%20%20%20%20mi.style.fontWeight%20%3D%20%22bold%22%3B%0A%20%20%20%20mi.setAttribute%28%22onclick%22%2C%0A%20%20%20%20%20%20%22parentNode.parentNode.selectEngine%28parentNode.parentNode%2C%20event%29%22%29%3B%0A%20%20%20%20aNode.insertBefore%28mi%2C%20aNode.firstChild%29%3B%0A%20%20%7D%0A%7D%0A%0Athis.currentEngine%20%3D%20searchService%28%29.currentEngine%3B%0A%0Avar%20ss%20%3D%20searchService%28%29%3B%0Athis.engine%20%3D%20ss.currentEngine%3B%0Athis.tooltipText%20%3D%20this.engine.name%3B%0Athis.image%20%3D%20this.engine.iconURI.spec%3B%0A%0Avar%20mp%20%3D%20this.appendChild%28document.createElement%28%22menupopup%22%29%29%3B%0Amp.setAttribute%28%22onpopupshowing%22%2C%20%22parentNode.populateMenu%28this%29%22%29%3B%0Amp.setAttribute%28%22oncommand%22%2C%20%22event.stopPropagation%28%29%22%29%3B%0A%0Avar%20managerSeparator%20%3D%20mp.appendChild%28document.createElement%28%22menuseparator%22%29%29%3B%0AmanagerSeparator.id%20%3D%20%22cb-searchbutton-separator%22%0Avar%20managerItem%20%3D%20mp.appendChild%28document.createElement%28%22menuitem%22%29%29%3B%0AmanagerItem.setAttribute%28%22label%22%2C%20%22Manage%20Search%20Engines...%22%29%3B%0AmanagerItem.setAttribute%28%22oncommand%22%2C%0A%20%20%22openDialog%28%27chrome%3A//browser/content/search/engineManager.xul%27%2C%20%22%20+%0A%20%20%22%27engineManager%27%2C%20%27chrome%2C%20dialog%3Dno%27%29%22%29%3B%0A%0Athis.type%20%3D%20%22menu-button%22%3B%0Athis.setAttribute%28%22onclick%22%2C%20%22this.checkForMiddleClick%28this%2C%20event%29%22%29%3B%0A%0Athis.setAttribute%28%22homepage%22%2C%0A%20%20%22http%3A//custombuttons.phpbbnow.com/viewtopic.php%3Fp%3D1049%231049%22%29%3B%0A%0Adocument.getElementById%28%22search-container%22%29.hidden%20%3D%20false%3B%0A%0Aif%20%28typeof%20keyconfig%20%3D%3D%20%22object%22%29%20%7B/*%0A%20%20var%20buttonId%20%3D%20this.id%3B%0A%20%20gPrefService.setCharPref%28%22keyconfig.main.key_search%22%2C%20%22%21%5D%5C%5B%5D%5C%5B%22%29%3B%0A%20%20gPrefService.setCharPref%28%22keyconfig.main.xxx_key__Search_URLBar%22%2C%0A%20%20%22control%5D%5C%5BK%5D%5C%5B%5D%5C%5Bvar%20btn%20%3D%20document.getElementById%28%27%22%20+%20buttonId%20+%20%22%27%29%3B%5Cnbtn.search%28btn%29%3B%5D%5C%5Bchrome%3A//browser/content/browser.xul%22%29%3B%0A*/%7D%0A%0A%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5B/*%20-------------------------------------------------------------%0A%20%20%20%20%20URLBar%20Search%0A%20%20%20%20%20by%20LouCypher%20%28aka%20Zoolcar9%29%0A%0A%20%20%20%20%20This%20button%20will%20search%20anything%20you%20type%20in%20location%20bar%0A%20%20%20%20%20For%20Firefox%202.0%20or%20above%20only%0A%20%20%20-------------------------------------------------------------%20*/%0A%0Athis.search%28this%2C%20event%29%3B%0A%0A%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install URLBar Search">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=custom-buttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <date id="date" value="20120329"/>
+  <name>URLBar Search</name>
+  <image><![CDATA[data:image/png;base64,AAABAAEAEBAAAAEAGABoAwAAFgAAACgAAAAQAAAAIAAAAAEAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADs9Pt8xetPtu9FsfFNtu%2BTzvb2%2B%2Fne4dFJeBw0egA%2FfAJAfAA8ewBBegAAAAD%2B%2FPtft98Mp%2BwWsfAVsvEbs%2FQeqvF8xO7%2F%2F%2F63yqkxdgM7gwE%2FggM%2BfQA%2BegBDeQDe7PIbotgQufcMufEPtfIPsvAbs%2FQvq%2Bfz%2Bf%2F%2B%2B%2FZKhR05hgBBhQI8hgBAgAI9ewD0%2B%2Fg3pswAtO8Cxf4Kw%2FsJvvYAqupKsNv%2B%2Fv7%2F%2FP5VkSU0iQA7jQA9hgBDgQU%2BfQH%2F%2Ff%2FQ6fM4sM4KsN8AteMCruIqqdbZ7PH8%2Fv%2Fg6Nc%2Fhg05kAA8jAM9iQI%2BhQA%2BgQDQu6b97uv%2F%2F%2F7V8Pqw3eiWz97q8%2Ff%2F%2F%2F%2F7%2FPptpkkqjQE4kwA7kAA5iwI8iAA8hQCOSSKdXjiyflbAkG7u2s%2F%2B%2F%2F39%2F%2F7r8utrqEYtjQE8lgA7kwA7kwA9jwA9igA9hACiWSekVRyeSgiYSBHx6N%2F%2B%2Fv7k7OFRmiYtlAA5lwI7lwI4lAA7kgI9jwE9iwI4iQCoVhWcTxCmb0K%2BooT8%2Fv%2F7%2F%2F%2FJ2r8fdwI1mwA3mQA3mgA8lAE8lAE4jwA9iwE%2BhwGfXifWvqz%2B%2Ff%2F58u%2Fev6Dt4tr%2B%2F%2F2ZuIUsggA7mgM6mAM3lgA5lgA6kQE%2FkwBChwHt4dv%2F%2F%2F728ei1bCi7VAC5XQ7kz7n%2F%2F%2F6bsZkgcB03lQA9lgM7kwA2iQktZToPK4r9%2F%2F%2F9%2F%2F%2FSqYK5UwDKZAS9WALIkFn%2B%2F%2F3%2F%2BP8oKccGGcIRJrERILYFEMwAAuEAAdX%2F%2Ff7%2F%2FP%2B%2BfDvGXQLIZgLEWgLOjlf7%2F%2F%2F%2F%2F%2F9QU90EAPQAAf8DAP0AAfMAAOUDAtr%2F%2F%2F%2F7%2B%2Fu2bCTIYwDPZgDBWQDSr4P%2F%2Fv%2F%2F%2FP5GRuABAPkAA%2FwBAfkDAPAAAesAAN%2F%2F%2B%2Fz%2F%2F%2F64g1C5VwDMYwK8Yg7y5tz8%2Fv%2FV1PYKDOcAAP0DAf4AAf0AAfYEAOwAAuAAAAD%2F%2FPvi28ymXyChTATRrIb8%2F%2F3v8fk6P8MAAdUCAvoAAP0CAP0AAfYAAO4AAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAQAA]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[if (!("@mozilla.org/browser/search-service;1" in Components.classes)) {
+  this.tooltipText = "This button requires Firefox 2.0 search API";
+  this.style.opacity = ".25";
+  this.disabled = true;
+  return;
+}
+
+function searchService() {
+  return Components.classes["@mozilla.org/browser/search-service;1"]
+          .getService(Components.interfaces.nsIBrowserSearchService);
+}
+
+function getInput() {
+  var ss = searchService();
+  return prompt(ss.currentEngine.name, "", "Search");
+}
+
+this.search = function(aNode, aEvent) {
+  var openInTab, loadInBackground;
+  try {
+    openInTab = gPrefService.getBoolPref("browser.search.openintab");
+    loadInBackground = gPrefService.getBoolPref("browser.search.openintab.loadInBackground")
+  } catch(ex) {
+  }
+
+  var query = "";
+  if (!gURLBar) {
+    query = getInput();
+  }
+  else if (gURLBar && gURLBar.focused) {
+    query = gURLBar.value;
+  }
+  if (query == null) return;
+
+  var url = aNode.engine.getSubmission(query, null).uri.spec;
+
+  if (openInTab) {
+    var newTab = gBrowser.addTab(url);
+    if (!loadInBackground) gBrowser.selectedTab = newTab;
+  } else
+    openUILink(url, aEvent, false, true);
+}
+
+this.checkForMiddleClick = function(aNode, aEvent) {
+  closeMenus(aEvent.target);
+  if (aEvent.button == 1) {
+    var fn = new Function("event", "this.search(this, event)");
+    fn.call(aNode, aEvent);
+    if (gURLBar) handleURLBarRevert(); //reset the URL bar
+  }
+}
+
+this.selectEngine = function(aNode, aEvent) {
+  var engine = aEvent.target.engine;
+  var ss = searchService();
+  ss.currentEngine = ss.getEngineByName(engine.name);
+  aNode.engine = engine;
+  aNode.tooltipText = aNode.engine.name;
+  aNode.image = aEvent.target.getAttribute("src");
+}
+
+this.populateMenu = function(aNode) {
+  var ss = searchService();
+  var engines = ss.getVisibleEngines({ });
+  const kXULNS = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+
+  while(aNode.firstChild && aNode.firstChild.localName != "menuseparator") {
+    aNode.removeChild(aNode.firstChild);
+  }
+
+  for (var i = engines.length - 1; i >= 0; i--) {
+    var mi = document.createElementNS(kXULNS, "menuitem");
+    mi.id = "cb-search-" + engines[i].name;
+    mi.className = "menuitem-iconic searchbar-engine-menuitem";
+    mi.setAttribute("label", engines[i].name);
+    if (engines[i].iconURI)
+      mi.setAttribute("src", engines[i].iconURI.spec);
+    mi.engine = engines[i];
+    if (mi.engine == ss.currentEngine)
+      mi.style.fontWeight = "bold";
+    mi.setAttribute("onclick",
+      "parentNode.parentNode.selectEngine(parentNode.parentNode, event)");
+    aNode.insertBefore(mi, aNode.firstChild);
+  }
+}
+
+this.currentEngine = searchService().currentEngine;
+
+var ss = searchService();
+this.engine = ss.currentEngine;
+this.tooltipText = this.engine.name;
+this.image = this.engine.iconURI.spec;
+
+var mp = this.appendChild(document.createElement("menupopup"));
+mp.setAttribute("onpopupshowing", "parentNode.populateMenu(this)");
+mp.setAttribute("oncommand", "event.stopPropagation()");
+
+var managerSeparator = mp.appendChild(document.createElement("menuseparator"));
+managerSeparator.id = "cb-searchbutton-separator"
+var managerItem = mp.appendChild(document.createElement("menuitem"));
+managerItem.setAttribute("label", "Manage Search Engines...");
+managerItem.setAttribute("oncommand",
+  "openDialog('chrome://browser/content/search/engineManager.xul', " +
+  "'engineManager', 'chrome, dialog=no')");
+
+this.type = "menu-button";
+this.setAttribute("onclick", "this.checkForMiddleClick(this, event)");
+
+this.setAttribute("homepage",
+  "http://custombuttons.phpbbnow.com/viewtopic.php?p=1049#1049");
+
+document.getElementById("search-container").hidden = false;
+
+if (typeof keyconfig == "object") {/*
+  var buttonId = this.id;
+  gPrefService.setCharPref("keyconfig.main.key_search", "!]\[]\[");
+  gPrefService.setCharPref("keyconfig.main.xxx_key__Search_URLBar",
+  "control]\[K]\[]\[var btn = document.getElementById('" + buttonId + "');\nbtn.search(btn);]\[chrome://browser/content/browser.xul");
+*/}
+
+]]></initcode>
+  <code><![CDATA[/* -------------------------------------------------------------
+     URLBar Search
+     by LouCypher (aka Zoolcar9)
+
+     This button will search anything you type in location bar
+     For Firefox 2.0 or above only
+   ------------------------------------------------------------- */
+
+this.search(this, event);
+
+]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[]]></help>
+  <attributes/>
+</custombutton>

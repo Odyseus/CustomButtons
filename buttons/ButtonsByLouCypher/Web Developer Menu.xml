@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[Web Developer Menu]]></html:title>
+    <html:link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAABGdBTUEAANf7bzMYAQAAACBjSFJNAABsmwAAcm8AAPauAACFgwAAbvcAAOhBAAAxdAAAF2yhti2bAAABrUlEQVQYGU3BTUiTAQDH4T+9smkmrdrCLiIh6Fivk6BLH2a7dBBzKxYRKS4cFXQwC1cLyiAiKQ9qJJEJ5aFDHYT0okUsiOnqEEFQYrEgtC/DKGzg3v1qK9aeRxUek7qUEVLekfozDwaSnbE9ZcpatVBPB7WW0aac8M6hXz9JcjzeUqosY9mJlwhm2ghJ3SuisWUWaH/od0hBo2ml1G5PuzA5iWkZbcG1fYsZXhMYkRqKg5PBJ/ojZLdcmJxgU9p2KDKTZI5Rdt9uHp8m8lU5h+1pF5tpwfGq69MkT5lmghgvaJzSPyGbtY5tmFSxgxuMMUGMLqqblXewaGY1TYjTHPjROtvxZe9UzT79VxO+bBmsZ5BrGV+gobhijQq5zw7Rg5f9XOQDvW+6bSrk6b3LAFH6OU/Vhei3eS7NnirVX0GbOfyI+wxyj2GKotKxjZ2LH4m+81cqq/ZqjCtWTybOOCV9yglWH/0ON1OBc5IC8y/xpfqt55SNKM+39XoG4vhvyXz8lvckcIx5bCqw606Cz4SXVN5Ymdg+VzJqM7VBTjlVrkq55VXdlmf+JXfrb0i92HYaP+PsAAAAAElFTkSuQmCC"/>
+    <html:style type="text/css"><![CDATA[
+body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+:-moz-any-link:focus {
+  color: white;
+  outline-color: transparent;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3EWeb%20Developer%20Menu%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAABGdBTUEAANf7bzMYAQAAACBjSFJNAABsmwAAcm8AAPauAACFgwAAbvcAAOhBAAAxdAAAF2yhti2bAAABrUlEQVQYGU3BTUiTAQDH4T+9smkmrdrCLiIh6Fivk6BLH2a7dBBzKxYRKS4cFXQwC1cLyiAiKQ9qJJEJ5aFDHYT0okUsiOnqEEFQYrEgtC/DKGzg3v1qK9aeRxUek7qUEVLekfozDwaSnbE9ZcpatVBPB7WW0aac8M6hXz9JcjzeUqosY9mJlwhm2ghJ3SuisWUWaH/od0hBo2ml1G5PuzA5iWkZbcG1fYsZXhMYkRqKg5PBJ/ojZLdcmJxgU9p2KDKTZI5Rdt9uHp8m8lU5h+1pF5tpwfGq69MkT5lmghgvaJzSPyGbtY5tmFSxgxuMMUGMLqqblXewaGY1TYjTHPjROtvxZe9UzT79VxO+bBmsZ5BrGV+gobhijQq5zw7Rg5f9XOQDvW+6bSrk6b3LAFH6OU/Vhei3eS7NnirVX0GbOfyI+wxyj2GKotKxjZ2LH4m+81cqq/ZqjCtWTybOOCV9yglWH/0ON1OBc5IC8y/xpfqt55SNKM+39XoG4vhvyXz8lvckcIx5bCqw606Cz4SXVN5Ymdg+VzJqM7VBTjlVrkq55VXdlmf+JXfrb0i92HYaP+PsAAAAAElFTkSuQmCC%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5Bthis.type%20%3D%20%22menu%22%3B%0Athis.label%20%3D%20this.tooltipText%20%3D%20%22Developer%20Tools%22%3B%0A%0Athis.options%20%3D%20function%20options%28aXUL%29%20%7B%0A%20%20var%20em%20%3D%20Services.ww.getWindowEnumerator%28%29%3B%0A%20%20var%20winName%20%3D%20%22devtools-menu-options%22%3B%0A%20%20var%20index%20%3D%201%3B%0A%20%20while%20%28em.hasMoreElements%28%29%29%20%7B%0A%20%20%20%20let%20win%20%3D%20em.getNext%28%29%3B%0A%20%20%20%20if%28win.name%20%3D%3D%20winName%29%20%7B%0A%20%20%20%20%20%20win.focus%28%29%3B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%0A%20%20%20%20index++%0A%20%20%7D%0A%20%20openDialog%28%22data%3Aapplication/vnd.mozilla.xul+xml%3Bbase64%2C%22%20+%0A%20%20%20%20%20%20%20%20%20%20%20%20%20encodeURIComponent%28btoa%28aXUL%29%29%2C%20winName%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%22chrome%2C%20dialog%2C%20centerscreen%2C%20close%2C%20resizable%22%29%3B%0A%7D%0A%0Athis.onclick%20%3D%20function%20onclick%28aEvent%29%20%7B%0A%20%20if%20%28aEvent.button%20%21%3D%201%29%20return%3B%0A%20%20this.options%28this.Help%29%3B%0A%7D%0A%0Afunction%20%24%28aId%29%20%7B%0A%20%20return%20document.getElementById%28aId%29%3B%0A%7D%0A%0Afunction%20pref%28aPrefStr%29%20%7B%0A%20%20return%20cbu.ps.getBranch%28%22devtools.%22%29.getBoolPref%28aPrefStr%29%3B%0A%7D%0A%0Afunction%20toggle%28aNodeId%2C%20aPref%29%20%7B%0A%20%20%24%28aNodeId%29.hidden%20%3D%20%21pref%28aPref%29%3B%0A%20%20%24%28aNodeId%29.disabled%20%3D%20%21pref%28aPref%29%3B%0A%7D%0A%0Afunction%20onContextMenu%28aEvent%29%20%7B%0A%20%20if%20%28%22inspectDOMNode%22%20in%20window%29%20%7B%0A%20%20%20%20aEvent.preventDefault%28%29%3B%0A%20%20%20%20inspectDOMNode%28aEvent.target%29%3B%0A%20%20%20%20closeMenus%28aEvent.target%29%3B%0A%20%20%7D%0A%7D%0A%0Afunction%20onPopupShowing%28aNode%29%20%7B%0A%20%20//onWebDeveloperMenuShowing%28%29%3B%0A%20%20//toggle%28aNode.id%20+%20%22-appmenuitem_inspector%22%2C%20%22inspector.enabled%22%29%3B%0A%20%20toggle%28aNode.id%20+%20%22-appmenu_scratchpad%22%2C%20%22scratchpad.enabled%22%29%3B%0A%20%20toggle%28aNode.id%20+%20%22-appmenuitem_styleeditor%22%2C%20%22styleeditor.enabled%22%29%3B%0A%7D%0A%0Afunction%20makeXML%28aXMLString%29%20%7B%0A%20%20return%20%28new%20DOMParser%29.parseFromString%28aXMLString%2C%20%22application/xml%22%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.documentElement%3B%0A%7D%0A%0Avar%20mpop%20%3D%20makeXML%28%27%3Cmenupopup%20xmlns%3D%22%27%20+%20xulns%20+%20%27%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20id%3D%22%27%20+%20this.id%20+%20%27pop%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20context%3D%22toolbar-context-menu%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20onclick%3D%22event.stopPropagation%28%29%3B%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20oncontextmenu%3D%22onContextMenu%28event%29%3B%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20onpopupshowing%3D%22onPopupShowing%28this%29%3B%22%3E%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%3Cmenuseparator%20id%3D%22%27%20+%20this.id%20+%20%27sep%22/%3E%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%3Cmenuitem%20id%3D%22%27%20+%20this.id%20+%20%27-options%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20label%3D%22Developer%20Tools%20Menu%20Options%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20accesskey%3D%22D%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20oncommand%3D%22this.options%28this.XUL%29%3B%22/%3E%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%3C/menupopup%3E%27%29%3B%0A%0Ampop.onPopupShowing%20%3D%20onPopupShowing.bind%28%29%3B%0Ampop.onContextMenu%20%3D%20onContextMenu.bind%28%29%3B%0A%0Athis.appendChild%28mpop%29%3B%0A%24%28this.id%20+%20%22-options%22%29.options%20%3D%20this.options%3B%0A%24%28this.id%20+%20%22-options%22%29.XUL%20%3D%20this.Help%3B%0A%0A//%20Add%20Execute%20JS%20menuitem%20to%20DevTool%20menu%20if%20available%0Avar%20exJS2%20%3D%20%24%28%22appmenu_EJS_menuitem%22%29%3B%0Aif%20%28exJS2%29%20exJS2.parentNode.removeChild%28exJS2%29%3B%0Avar%20exJS%20%3D%20%24%28%22EJS_menuitem%22%29%3B%0Aif%20%28exJS%29%20%7B%0A%20%20var%20mi%20%3D%20exJS.cloneNode%28true%29%3B%0A%20%20mi.id%20%3D%20%22appmenu_%22%20+%20exJS.id%3B%0A%20%20mi.label%20%3D%20%22Execute%20JS%22%3B%0A%20%20mi.accessKey%20%3D%20%22j%22%3B%0A%20%20var%20sp%20%3D%20%24%28%22appmenu_scratchpad%22%29%3B%0A%20%20sp.parentNode.insertBefore%28mi%2C%20sp.nextSibling%29%3B%0A%7D%0A%0Avar%20wdPop%20%3D%20%24%28%22appmenu_webDeveloper_popup%22%29%3B%0Afor%20%28var%20i%20%3D%200%3B%20i%20%3C%20wdPop.childNodes.length%3B%20i++%29%20%7B%0A%20%20let%20item%20%3D%20wdPop.childNodes%5Bi%5D.cloneNode%28true%29%3B%0A%20%20if%20%28item.id%20%21%3D%20%22%22%29%20item.id%20%3D%20mpop.id%20+%20%22-%22%20+%20item.id%3B%0A%20%20let%20cmd%20%3D%20item.getAttribute%28%22command%22%29%3B%0A%20%20if%20%28%28cmd%20%3D%3D%20%22Tools%3AInspect%22%29%20%7C%7C%20%28cmd%20%3D%3D%20%22Tools%3AScratchpad%22%29%20%7C%7C%0A%20%20%20%20%20%20%28cmd%20%3D%3D%20%22Tools%3AStyleEditor%22%29%29%20item.removeAttribute%28%22command%22%29%3B%0A%20%20switch%20%28cmd%29%20%7B%0A%20%20%20%20case%20%22Tools%3AInspect%22%3A%0A%20%20%20%20%20%20item.setAttribute%28%22oncommand%22%2C%20%22InspectorUI.toggleInspectorUI%28%29%3B%22%29%3B%0A%20%20%20%20%20%20break%3B%0A%20%20%20%20case%20%22Tools%3AScratchpad%22%3A%0A%20%20%20%20%20%20item.setAttribute%28%22oncommand%22%2C%20%22Scratchpad.openScratchpad%28%29%3B%22%29%3B%0A%20%20%20%20%20%20break%3B%0A%20%20%20%20case%20%22Tools%3AStyleEditor%22%3A%0A%20%20%20%20%20%20item.setAttribute%28%22oncommand%22%2C%20%22StyleEditor.openChrome%28%29%3B%22%29%3B%0A%20%20%7D%0A%20%20mpop.insertBefore%28item%2C%20%24%28this.id%20+%20%22sep%22%29%29%3B%0A%7D%0A%0A////////////////////////////////////////////////////////////////////////////%0A///////////////////////////%20Start%20Button%20updater%20///////////////////////////%0A%0A/*%20*****%20BEGIN%20LICENSE%20BLOCK%20*****%0A%20*%20Version%3A%20MPL%201.1/GPL%202.0%0A%20*%0A%20*%20The%20contents%20of%20this%20file%20are%20subject%20to%20the%20Mozilla%20Public%20License%0A%20*%20Version%201.1%20%28the%20%22License%22%29%3B%20you%20may%20not%20use%20this%20file%20except%20in%0A%20*%20compliance%20with%20the%20License.%20You%20may%20obtain%20a%20copy%20of%20the%20License%20at%0A%20*%20http%3A//www.mozilla.org/MPL/1.1/%0A%20*%0A%20*%20Software%20distributed%20under%20the%20License%20is%20distributed%20on%20an%20%22AS%20IS%22%20basis%2C%0A%20*%20WITHOUT%20WARRANTY%20OF%20ANY%20KIND%2C%20either%20express%20or%20implied.%20See%20the%20License%0A%20*%20for%20the%20specific%20language%20governing%20rights%20and%20limitations%20under%20the%0A%20*%20License.%0A%20*%0A%20*%20Original%20code%20is%20Button%20Updater%20for%20Custom%20Buttons%20extension%0A%20*%0A%20*%20The%20Initial%20Developer%20of%20the%20Original%20Code%20is%20LouCypher.%0A%20*%20Portions%20created%20by%20the%20Initial%20Developer%20are%20Copyright%20%28C%29%202011%0A%20*%20the%20Initial%20Developer.%20All%20Rights%20Reserved.%0A%20*%0A%20*%20Contributor%28s%29%3A%0A%20*%20-%20LouCypher%3A%20original%20code%0A%20*%0A%20*%20Alternatively%2C%20the%20contents%20of%20this%20file%20may%20be%20used%20under%20the%20terms%20of%0A%20*%20the%20GNU%20General%20Public%20License%20Version%202%20or%20later%20%28the%20%22GPL%22%29%2C%20in%20which%0A%20*%20case%20the%20provisions%20of%20the%20GPL%20are%20applicable%20instead%20of%20those%20above.%0A%20*%0A%20*%20*****%20END%20LICENSE%20BLOCK%20*****%20*/%0A%0Athis.updater%20%3D%20%7B%0A%20%20btnClick%3A%20self.onclick%2C%0A%20%20btnType%3A%20self.type%2C%0A%20%20btnImage%3A%20self.image%2C%0A%20%20btnTooltip%3A%20self.tooltipText%2C%0A%0A%20%20baseURL%3A%20%22https%3A//loucypher.googlecode.com/svn/custombuttons/xml/%22%2C%0A%0A%20%20get%20updateURL%28%29%20%7B%0A%20%20%20%20return%20this.baseURL%20+%20encodeURIComponent%28self.name.replace%28/%28%5C/%7C%3A%29/g%2C%20%22-%22%29%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22.xml%22%3B%0A%20%20%7D%2C%0A%0A%20%20openUpdateURL%3A%20function%20updater_openUpdateURL%28%29%20%7B%0A%20%20%20%20switchToTabHavingURI%28this.updateURL%29%3B%0A%20%20%7D%2C%0A%0A%20%20get%20stdIcon%28%29%20%7B%0A%20%20%20%20var%20stdIcon%20%3D%20parseInt%28self.cbStdIcon.match%28/%5Cd/%29%29%3B%0A%20%20%20%20switch%20%28stdIcon%29%20%7B%0A%20%20%20%20%20%20%20case%204%3A%20return%20%22chrome%3A//custombuttons/skin/stdicons/bbutton.png%22%3B%0A%20%20%20%20%20%20%20case%203%3A%20return%20%22chrome%3A//custombuttons/skin/stdicons/gbutton.png%22%3B%0A%20%20%20%20%20%20%20case%202%3A%20return%20%22chrome%3A//custombuttons/skin/stdicons/rbutton.png%22%3B%0A%20%20%20%20%20%20default%3A%20return%20%22chrome%3A//custombuttons/skin/button.png%22%3B%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%0A%20%20get%20bsyIcon%28%29%20%7B%0A%20%20%20%20switch%20%28Application.id%29%20%7B%0A%20%20%20%20%20%20case%20%22%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D%22%3A%0A%20%20%20%20%20%20%20%20if%20%28Application.version%20%3E%3D%20%224%22%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20return%20%22chrome%3A//browser/skin/tabbrowser/connecting.png%22%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20return%20%22chrome%3A//global/skin/icons/loading_16.png%22%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20case%20%22%7B92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a%7D%22%3A%0A%20%20%20%20%20%20%20%20return%20%22chrome%3A//communicator/skin/icons/loading.gif%22%3B%0A%20%20%20%20%20%20default%3A%0A%20%20%20%20%20%20%20%20return%20%22chrome%3A//global/skin/icons/loading_16.png%22%3B%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%0A%20%20//%20Check%20if%20the%20URI%20is%20Custom%20Button%20URI%20%28custombutton%3A//...%29%0A%20%20isValidCbURI%3A%20function%20updater_isValidCbURI%28aURL%29%20%7B%0A%20%20%20%20if%20%28%21aURL%29%20return%20false%3B%0A%20%20%20%20return%20/%5Ecustombutton%5C%3A%5C/%5C//.test%28aURL%29%3B%0A%20%20%7D%2C%0A%0A%20%20//%20Convert%20%27custombutton%3A%27%20URI%20to%20DOM%0A%20%20convertURItoDOM%3A%20function%20updater_convertURItoDOM%28aURL%29%20%7B%0A%20%20%20%20if%20%28%21this.isValidCbURI%28aURL%29%29%20%7B%0A%20%20%20%20%20%20custombuttons.alertBox%28self.name%2C%20%22Not%20a%20Custom%20Buttons%20link%21%22%29%3B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%0A%20%20%20%20var%20string%20%3D%20unescape%28aURL.replace%28/%5Ecustombutton%5C%3A%5C/%5C//%2C%20%22%22%29.toString%28%29%29%3B%0A%20%20%20%20var%20parser%20%3D%20new%20DOMParser%28%29%3B%0A%20%20%20%20var%20dom%20%3D%20parser.parseFromString%28string%2C%20%22text/xml%22%29%3B%0A%20%20%20%20if%20%28dom.documentElement.nodeName%20%3D%3D%20%22parsererror%22%29%20%7B%0A%20%20%20%20%20%20return%20null%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20return%20dom.documentElement%3B%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%0A%20%20//%20Get%20value%20from%20XML%20element%0A%20%20getParamValue%3A%20function%20updater_getParamValue%28aDocument%2C%20aNodeName%29%20%7B%0A%20%20%20%20var%20node%20%3D%20aDocument.querySelector%28aNodeName%29%3B%0A%20%20%20%20if%20%28%21node%29%20return%20%22%22%3B%0A%20%20%20%20if%20%28%21node.firstChild%20%7C%7C%20%28node.firstChild%20%26%26%0A%20%20%20%20%20%20%20%20%28node.firstChild.nodeType%20%3D%3D%20node.TEXT_NODE%29%29%29%20%7B%0A%20%20%20%20%20%20return%20node.textContent%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20return%20node.firstChild.textContent%3B%0A%20%20%20%20%7D%0A%20%20%7D%2C%0A%0A%20%20//%20Set%20button%20parameters%20from%20XML%20alement%0A%20%20getButtonParameters%3A%20function%20updater_getButtonParameters%28aButtonLink%2C%20aURL%29%20%7B%0A%20%20%20%20var%20dom%20%3D%20this.convertURItoDOM%28aURL%29%3B%0A%20%20%20%20var%20params%20%3D%20custombuttons.cbService.getButtonParameters%28aButtonLink%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.wrappedJSObject%3B%0A%20%20%20%20params.name%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22name%22%29%0A%20%20%20%20params.date%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22date%22%29%20%7C%7C%20%22%22%3B%0A%20%20%20%20params.image%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22image%22%29%20%7C%7C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20this.getParamValue%28dom%2C%20%22stdicon%22%29%3B%0A%20%20%20%20params.code%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22code%22%29%0A%20%20%20%20params.initCode%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22initcode%22%29%0A%20%20%20%20params.help%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22help%22%29%0A%20%20%20%20params.accelkey%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22accelkey%22%29%0A%20%20%20%20params.mode%20%20%20%20%20%20%20%20%20%20%20%20%20%3D%20this.getParamValue%28dom%2C%20%22mode%22%29%0A%20%20%20%20params.wrappedJSObject%20%20%3D%20params%3B%0A%20%20%20%20return%20params%3B%0A%20%20%7D%2C%0A%0A%20%20//%20Reset%20button%20attribute%20if%20user%20click%20the%20button%20during%20update%0A%20%20resetAttributes%3A%20function%20updater_resetAttributes%28%29%20%7B%0A%20%20%20%20self.image%20%3D%20this.btnImage%3B%0A%20%20%20%20self.tooltipText%20%3D%20self.name%3B%0A%20%20%20%20self.removeAttribute%28%22busy%22%29%3B%0A%20%20%20%20self.onclick%20%3D%20this.btnClick%3B%0A%20%20%20%20self.type%20%3D%20this.btnType%3B%0A%20%20%20%20self.tooltipText%20%3D%20this.btnTooltip%3B%0A%20%20%7D%2C%0A%0A%20%20//%20Check%20button%20for%20update%0A%20%20checkForUpdate%3A%20function%20updater_checkForUpdate%28aCallback%29%20%7B%0A%20%20%20%20if%20%28%21navigator.onLine%29%20%7B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20If%20browser%20is%20in%20offline%20mode%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20ask%20to%20switch%20to%20online%0A%20%20%20%20%20%20var%20online%20%3D%20custombuttons.confirmBox%28self.name%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Firefox%20is%20currently%20in%20offline%20mode.%5Cn%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22Switch%20to%20online%20mode%20and%20try%20again%3F%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Yes%22%2C%20%22No%22%29%3B%0A%20%20%20%20%20%20if%20%28%21online%29%20return%3B%0A%20%20%20%20%20%20BrowserOffline.toggleOfflineStatus%28%29%3B%20//%20switch%20to%20online%0A%20%20%20%20%7D%0A%0A%20%20%20%20var%20url%20%3D%20this.updateURL%20+%20%22%3F%22%20+%20Date.now%28%29%3B%0A%20%20%20%20var%20req%20%3D%20new%20XMLHttpRequest%28%29%3B%0A%20%20%20%20req.open%28%22GET%22%2C%20url%2C%20true%29%3B%0A%20%20%20%20if%20%28self.hasAttribute%28%22busy%22%29%29%20%7B%0A%20%20%20%20%20%20this.resetAttributes%28%29%3B%0A%20%20%20%20%20%20return%0A%20%20%20%20%7D%0A%20%20%20%20var%20updater%20%3D%20this%3B%0A%20%20%20%20req.onreadystatechange%20%3D%20function%20%28aEvent%29%20%7B%0A%20%20%20%20%20%20self.onclick%20%3D%20function%28aEvent%29%20%7B%0A%20%20%20%20%20%20%20%20aEvent.preventDefault%28%29%3B%0A%20%20%20%20%20%20%20%20req.abort%28%29%3B%0A%20%20%20%20%20%20%20%20self.updater.resetAttributes%28%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20self.image%20%3D%20updater.bsyIcon%3B%0A%20%20%20%20%20%20self.setAttribute%28%22busy%22%2C%20%22%22%29%3B%0A%20%20%20%20%20%20self.removeAttribute%28%22type%22%29%3B%0A%20%20%20%20%20%20self.tooltipText%20%3D%20%22Checking%20for%20update...%5CnClick%20to%20abort.%22%3B%0A%20%20%20%20%20%20if%20%28req.readyState%20%3D%3D%204%20%26%26%20req.status%20%3D%3D%20200%29%20%7B%0A%20%20%20%20%20%20%20%20updater.resetAttributes%28%29%3B%0A%20%20%20%20%20%20%20%20aCallback%28req.responseXML%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20req.send%28null%29%3B%0A%20%20%7D%2C%0A%0A%20%20//%20Get%20update%20from%20XML%0A%20%20getUpdate%3A%20function%20updater_getUpdate%28aDocument%29%20%7B%0A%20%20%20%20if%20%28aDocument.documentElement.localName%20%21%3D%20%22custombutton%22%29%20%7B%0A%20%20%20%20%20%20custombuttons.alertBox%28self.name%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Not%20a%20valid%20Custom%20Buttons%20XML%20file%21%22%29%3B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20//inspectDOMDocument%28aDocument%29%3B%20return%3B%0A%20%20%20%20let%20icon%20%3D%20self.updater.btnImage%20%3F%20self.updater.btnImage%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3A%20self.updater.stdIcon%3B%0A%20%20%20%20let%20button%20%3D%20aDocument.getElementById%28%22button%22%29%3B%0A%20%20%20%20let%20link%20%3D%20button.getElementsByTagNameNS%28xhtmlns%2C%20%22a%22%29%5B0%5D%3B%0A%20%20%20%20if%20%28link.href%20%3D%3D%20self.URI%29%20%7B%0A%20%20%20%20%20%20let%20as%20%3D%20Cc%5B%27@mozilla.org/alerts-service%3B1%27%5D.%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20getService%28Ci.nsIAlertsService%29%3B%0A%20%20%20%20%20%20as.showAlertNotification%28icon%2C%20%22No%20update%20found%21%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Finish%20checking%22%2C%20false%2C%20%22%22%2C%20null%29%3B%0A%20%20%20%20%20%20return%3B%0A%20%20%20%20%7D%20%0A%0A%20%20%20%20var%20install%20%3D%20custombuttons.confirmBox%28self.name%2C%20%22Update%20found%21%20%22%20+%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Update%20this%20button%3F%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Yes%22%2C%20%22No%22%29%3B%0A%20%20%20%20if%20%28%21install%29%20return%3B%0A%20%20%20%20let%20btnLink%20%3D%20custombuttons.makeButtonLink%28%22update%22%2C%20self.id%29%3B%0A%20%20%20%20let%20params%20%3D%20self.updater.getButtonParameters%28btnLink%2C%20link.href%29%3B%0A%20%20%20%20//inspectObject%28params%29%3B%20return%3B%0A%20%20%20%20custombuttons.cbService.installButton%28params%29%3B%0A%20%20%20%20custombuttons.alertBox%28self.name%2C%20%22Button%20updated%21%22%29%3B%0A%20%20%20%20self.setAttribute%28%22cb-edit-state%22%2C%20%22active%22%29%3B%0A%20%20%7D%2C%0A%0A%20%20init%3A%20function%20updater_onLoad%28%29%20%7B%0A%0A%20%20%20%20var%20icon%20%3D%20this.btnImage%20%3F%20this.btnImage%20%3A%20this.stdIcon%3B%0A%0A%20%20%20%20function%20%24%28aId%29%20%7B%0A%20%20%20%20%20%20return%20document.getElementById%28aId%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20addMenuItem%28aNewIDs%2C%20aNodeIDs%2C%20aSeparator%29%20%7B%0A%20%20%20%20%20%20//%20Remove%20previously%20created%20menuitems%20if%20any%0A%20%20%20%20%20%20if%20%28%24%28aNewIDs%29%29%20%7B%0A%20%20%20%20%20%20%20%20if%20%28aSeparator%20%26%26%0A%20%20%20%20%20%20%20%20%20%20%20%20%28%24%28aNewIDs%29.nextSibling.localName%20%3D%3D%20%22menuseparator%22%29%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%24%28aNewIDs%29.parentNode.removeChild%28%24%28aNewIDs%29.nextSibling%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%24%28aNewIDs%29.parentNode.removeChild%28%24%28aNewIDs%29%29%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20var%20mi%20%3D%20makeXML%28%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%27%3Cmenuitem%20xmlns%3D%22%27%20+%20xulns%20+%20%27%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20id%3D%22%27%20+%20aNewIDs%20+%20%27%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20class%3D%22menuitem-iconic%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20image%3D%22%27%20+%20icon%20+%20%27%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20label%3D%22Check%20for%20updates%20for%20this%20button%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20onclick%3D%22if%20%28event.button%20%3D%3D%201%29%20%7B%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20var%20btn%20%3D%20document.getElementById%28%5C%27%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20self.id%20+%20%27%5C%27%29%3B%20btn.updater.openUpdateURL%28%29%3B%20%7D%22%20%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20oncommand%3D%22var%20btn%20%3D%20document.getElementById%28%5C%27%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20self.id%20+%20%27%5C%27%29%3B%20btn.updater.checkForUpdate%28%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27btn.updater.getUpdate%29%3B%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20observes%3D%22custombuttons-contextbroadcaster-primary%22/%3E%27%29%3B%0A%20%20%20%20%20%20%24%28aNodeIDs%29.parentNode.insertBefore%28mi%2C%20%24%28aNodeIDs%29.nextSibling%29%3B%0A%20%20%20%20%20%20if%20%28aSeparator%29%20%7B%0A%20%20%20%20%20%20%20%20var%20sep%20%3D%20makeXML%28%27%3Cmenuseparator%20xmlns%3D%22%27%20+%20xulns%20+%20%27%22%27%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%27%20id%3D%22%27%20+%20mi.id%20+%20%27-separator%22/%3E%27%29%3B%0A%20%20%20%20%20%20%20%20mi.parentNode.insertBefore%28sep%2C%20mi.nextSibling%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20initUpdaterCbPopup%28aEvent%29%20%7B%0A%20%20%20%20%20%20var%20popupNode%20%3D%20%22triggerNode%22%20in%20aEvent.target%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3F%20aEvent.target.triggerNode%20%3A%20document.popupNode%3B%0A%20%20%20%20%20%20%24%28kIDs%29.hidden%20%3D%20%28popupNode%20%21%3D%20self%29%3B%0A%20%20%20%20%20%20%28%24%28kIDs%29.nextSibling.id%20%3D%3D%20%24%28kIDs%29.id%20+%20%22-separator%22%29%20%26%26%0A%20%20%20%20%20%20%28%24%28kIDs%29.nextSibling.hidden%20%3D%20%28popupNode%20%21%3D%20self%29%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20var%20kIDs%20%3D%20self.id%20+%20%22-checkForUpdate%22%3B%0A%20%20%20%20var%20uIDs%20%3D%20%22custombuttons-contextpopup-updateButton%22%3B%0A%0A%20%20%20%20//%20Add%20%27Check%20for%20Update...%27%20menuitem%20to%20CB%20contextmenu%0A%20%20%20%20addMenuItem%28kIDs%2C%20uIDs%2C%20true%29%3B%0A%0A%20%20%20%20%24%28uIDs%29.parentNode.addEventListener%28%22popupshowing%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20initUpdaterCbPopup%2C%20false%29%3B%0A%20%20%20%20%24%28uIDs%29.parentNode.removeEventListener%28%22popuphiding%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20initUpdaterCbPopup%2C%20false%29%3B%0A%0A%20%20%20%20self.onDestroy%20%3D%20function%28aReason%29%20%7B%0A%20%20%20%20%20%20if%20%28aReason%20%21%3D%20%22delete%22%29%20return%3B%0A%20%20%20%20%20%20%24%28uIDs%29.parentNode.removeEventListener%28%22popupshowing%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20initUpdaterCbPopup%2C%20false%29%3B%0A%20%20%20%20%20%20%24%28kIDs%29.parentNode.removeChild%28%24%28kIDs%20+%20%22-separator%22%29%29%3B%0A%20%20%20%20%20%20%24%28kIDs%29.parentNode.removeChild%28%24%28kIDs%29%29%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0Athis.updater.init%28%29%3B%0A%0A////////////////////////////%20End%20Button%20updater%20////////////////////////////%0A////////////////////////////////////////////////////////////////////////////%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5B/*%20Web%20Developer%20Menu%20*/%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%3C%3Fxml%20version%3D%221.0%22%3F%3E%0A%3C%3Fxml-stylesheet%20href%3D%22chrome%3A//global/skin/%22%3F%3E%0A%0A%3Cprefwindow%0A%20%20xmlns%3D%22http%3A//www.mozilla.org/keymaster/gatekeeper/there.is.only.xul%22%0A%20%20id%3D%22custombuttons-devtools-menu%22%20title%3D%22Developer%20Tools%20Menu%22%0A%20%20width%3D%22200%22%20height%3D%22150%22%20onload%3D%22sizeToContent%28%29%3B%22%3E%0A%0A%20%20%3Cprefpane%20id%3D%22prefpane-menu%22%20label%3D%22Prefpane%20menu%22%20accesskey%3D%22P%22%3E%0A%0A%20%20%20%20%3Cpreferences%3E%0A%20%20%20%20%20%20%3Cpreference%20id%3D%22devtools.inspector.enabled%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%3D%22devtools.inspector.enabled%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3D%22bool%22/%3E%0A%20%20%20%20%20%20%3Cpreference%20id%3D%22devtools.scratchpad.enabled%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%3D%22devtools.scratchpad.enabled%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3D%22bool%22/%3E%0A%20%20%20%20%20%20%3Cpreference%20id%3D%22devtools.styleeditor.enabled%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20name%3D%22devtools.styleeditor.enabled%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3D%22bool%22/%3E%0A%20%20%20%20%3C/preferences%3E%0A%0A%20%20%20%20%3Cgroupbox%3E%0A%20%20%20%20%20%20%3Ccaption%20label%3D%22Menu%20Options%22/%3E%0A%20%20%20%20%20%20%3Ccheckbox%20id%3D%22devtools.inspector.enabled-checkbox%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%22Enable%20Page%20Inspector%22%20accesskey%3D%22I%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20preference%3D%22devtools.inspector.enabled%22/%3E%0A%20%20%20%20%20%20%3Ccheckbox%20id%3D%22devtools.scratchpad.enabled-checkbox%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%22Enable%20Scratchpad%22%20accesskey%3D%22a%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20preference%3D%22devtools.scratchpad.enabled%22/%3E%0A%20%20%20%20%20%20%3Ccheckbox%20id%3D%22devtools.styleeditor.enabled-checkbox%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20label%3D%22Enable%20Style%20Editor%22%20accesskey%3D%22S%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20preference%3D%22devtools.styleeditor.enabled%22/%3E%0A%20%20%20%3C/groupbox%3E%0A%0A%20%20%3C/prefpane%3E%0A%0A%3C/prefwindow%3E%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Web Developer Menu">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=external-custombuttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <name>Web Developer Menu</name>
+  <image><![CDATA[data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAABGdBTUEAANf7bzMYAQAAACBjSFJNAABsmwAAcm8AAPauAACFgwAAbvcAAOhBAAAxdAAAF2yhti2bAAABrUlEQVQYGU3BTUiTAQDH4T+9smkmrdrCLiIh6Fivk6BLH2a7dBBzKxYRKS4cFXQwC1cLyiAiKQ9qJJEJ5aFDHYT0okUsiOnqEEFQYrEgtC/DKGzg3v1qK9aeRxUek7qUEVLekfozDwaSnbE9ZcpatVBPB7WW0aac8M6hXz9JcjzeUqosY9mJlwhm2ghJ3SuisWUWaH/od0hBo2ml1G5PuzA5iWkZbcG1fYsZXhMYkRqKg5PBJ/ojZLdcmJxgU9p2KDKTZI5Rdt9uHp8m8lU5h+1pF5tpwfGq69MkT5lmghgvaJzSPyGbtY5tmFSxgxuMMUGMLqqblXewaGY1TYjTHPjROtvxZe9UzT79VxO+bBmsZ5BrGV+gobhijQq5zw7Rg5f9XOQDvW+6bSrk6b3LAFH6OU/Vhei3eS7NnirVX0GbOfyI+wxyj2GKotKxjZ2LH4m+81cqq/ZqjCtWTybOOCV9yglWH/0ON1OBc5IC8y/xpfqt55SNKM+39XoG4vhvyXz8lvckcIx5bCqw606Cz4SXVN5Ymdg+VzJqM7VBTjlVrkq55VXdlmf+JXfrb0i92HYaP+PsAAAAAElFTkSuQmCC]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[this.type = "menu";
+this.label = this.tooltipText = "Developer Tools";
+
+this.options = function options(aXUL) {
+  var em = Services.ww.getWindowEnumerator();
+  var winName = "devtools-menu-options";
+  var index = 1;
+  while (em.hasMoreElements()) {
+    let win = em.getNext();
+    if(win.name == winName) {
+      win.focus();
+      return;
+    }
+    index++
+  }
+  openDialog("data:application/vnd.mozilla.xul+xml;base64," +
+             encodeURIComponent(btoa(aXUL)), winName,
+             "chrome, dialog, centerscreen, close, resizable");
+}
+
+this.onclick = function onclick(aEvent) {
+  if (aEvent.button != 1) return;
+  this.options(this.Help);
+}
+
+function $(aId) {
+  return document.getElementById(aId);
+}
+
+function pref(aPrefStr) {
+  return cbu.ps.getBranch("devtools.").getBoolPref(aPrefStr);
+}
+
+function toggle(aNodeId, aPref) {
+  $(aNodeId).hidden = !pref(aPref);
+  $(aNodeId).disabled = !pref(aPref);
+}
+
+function onContextMenu(aEvent) {
+  if ("inspectDOMNode" in window) {
+    aEvent.preventDefault();
+    inspectDOMNode(aEvent.target);
+    closeMenus(aEvent.target);
+  }
+}
+
+function onPopupShowing(aNode) {
+  //onWebDeveloperMenuShowing();
+  //toggle(aNode.id + "-appmenuitem_inspector", "inspector.enabled");
+  toggle(aNode.id + "-appmenu_scratchpad", "scratchpad.enabled");
+  toggle(aNode.id + "-appmenuitem_styleeditor", "styleeditor.enabled");
+}
+
+function makeXML(aXMLString) {
+  return (new DOMParser).parseFromString(aXMLString, "application/xml")
+                        .documentElement;
+}
+
+var mpop = makeXML('<menupopup xmlns="' + xulns + '"'
+                     + ' id="' + this.id + 'pop"'
+                     + ' context="toolbar-context-menu"'
+                     + ' onclick="event.stopPropagation();"'
+                     + ' oncontextmenu="onContextMenu(event);"'
+                     + ' onpopupshowing="onPopupShowing(this);">'
+                     + '<menuseparator id="' + this.id + 'sep"/>'
+                     + '<menuitem id="' + this.id + '-options"'
+                     + ' label="Developer Tools Menu Options"'
+                     + ' accesskey="D"'
+                     + ' oncommand="this.options(this.XUL);"/>'
+                     + '</menupopup>');
+
+mpop.onPopupShowing = onPopupShowing.bind();
+mpop.onContextMenu = onContextMenu.bind();
+
+this.appendChild(mpop);
+$(this.id + "-options").options = this.options;
+$(this.id + "-options").XUL = this.Help;
+
+// Add Execute JS menuitem to DevTool menu if available
+var exJS2 = $("appmenu_EJS_menuitem");
+if (exJS2) exJS2.parentNode.removeChild(exJS2);
+var exJS = $("EJS_menuitem");
+if (exJS) {
+  var mi = exJS.cloneNode(true);
+  mi.id = "appmenu_" + exJS.id;
+  mi.label = "Execute JS";
+  mi.accessKey = "j";
+  var sp = $("appmenu_scratchpad");
+  sp.parentNode.insertBefore(mi, sp.nextSibling);
+}
+
+var wdPop = $("appmenu_webDeveloper_popup");
+for (var i = 0; i < wdPop.childNodes.length; i++) {
+  let item = wdPop.childNodes[i].cloneNode(true);
+  if (item.id != "") item.id = mpop.id + "-" + item.id;
+  let cmd = item.getAttribute("command");
+  if ((cmd == "Tools:Inspect") || (cmd == "Tools:Scratchpad") ||
+      (cmd == "Tools:StyleEditor")) item.removeAttribute("command");
+  switch (cmd) {
+    case "Tools:Inspect":
+      item.setAttribute("oncommand", "InspectorUI.toggleInspectorUI();");
+      break;
+    case "Tools:Scratchpad":
+      item.setAttribute("oncommand", "Scratchpad.openScratchpad();");
+      break;
+    case "Tools:StyleEditor":
+      item.setAttribute("oncommand", "StyleEditor.openChrome();");
+  }
+  mpop.insertBefore(item, $(this.id + "sep"));
+}
+
+////////////////////////////////////////////////////////////////////////////
+/////////////////////////// Start Button updater ///////////////////////////
+
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0
+ *
+ * The contents of this file are subject to the Mozilla Public License
+ * Version 1.1 (the "License"); you may not use this file except in
+ * compliance with the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/1.1/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * Original code is Button Updater for Custom Buttons extension
+ *
+ * The Initial Developer of the Original Code is LouCypher.
+ * Portions created by the Initial Developer are Copyright (C) 2011
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ * - LouCypher: original code
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * the GNU General Public License Version 2 or later (the "GPL"), in which
+ * case the provisions of the GPL are applicable instead of those above.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+this.updater = {
+  btnClick: self.onclick,
+  btnType: self.type,
+  btnImage: self.image,
+  btnTooltip: self.tooltipText,
+
+  baseURL: "https://loucypher.googlecode.com/svn/custombuttons/xml/",
+
+  get updateURL() {
+    return this.baseURL + encodeURIComponent(self.name.replace(/(\/|:)/g, "-"))
+                        + ".xml";
+  },
+
+  openUpdateURL: function updater_openUpdateURL() {
+    switchToTabHavingURI(this.updateURL);
+  },
+
+  get stdIcon() {
+    var stdIcon = parseInt(self.cbStdIcon.match(/\d/));
+    switch (stdIcon) {
+       case 4: return "chrome://custombuttons/skin/stdicons/bbutton.png";
+       case 3: return "chrome://custombuttons/skin/stdicons/gbutton.png";
+       case 2: return "chrome://custombuttons/skin/stdicons/rbutton.png";
+      default: return "chrome://custombuttons/skin/button.png";
+    }
+  },
+
+  get bsyIcon() {
+    switch (Application.id) {
+      case "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}":
+        if (Application.version >= "4") {
+          return "chrome://browser/skin/tabbrowser/connecting.png";
+        } else {
+          return "chrome://global/skin/icons/loading_16.png";
+        }
+      case "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}":
+        return "chrome://communicator/skin/icons/loading.gif";
+      default:
+        return "chrome://global/skin/icons/loading_16.png";
+    }
+  },
+
+  // Check if the URI is Custom Button URI (custombutton://...)
+  isValidCbURI: function updater_isValidCbURI(aURL) {
+    if (!aURL) return false;
+    return /^custombutton\:\/\//.test(aURL);
+  },
+
+  // Convert 'custombutton:' URI to DOM
+  convertURItoDOM: function updater_convertURItoDOM(aURL) {
+    if (!this.isValidCbURI(aURL)) {
+      custombuttons.alertBox(self.name, "Not a Custom Buttons link!");
+      return;
+    }
+    var string = unescape(aURL.replace(/^custombutton\:\/\//, "").toString());
+    var parser = new DOMParser();
+    var dom = parser.parseFromString(string, "text/xml");
+    if (dom.documentElement.nodeName == "parsererror") {
+      return null;
+    } else {
+      return dom.documentElement;
+    }
+  },
+
+  // Get value from XML element
+  getParamValue: function updater_getParamValue(aDocument, aNodeName) {
+    var node = aDocument.querySelector(aNodeName);
+    if (!node) return "";
+    if (!node.firstChild || (node.firstChild &&
+        (node.firstChild.nodeType == node.TEXT_NODE))) {
+      return node.textContent;
+    } else {
+      return node.firstChild.textContent;
+    }
+  },
+
+  // Set button parameters from XML alement
+  getButtonParameters: function updater_getButtonParameters(aButtonLink, aURL) {
+    var dom = this.convertURItoDOM(aURL);
+    var params = custombuttons.cbService.getButtonParameters(aButtonLink)
+                                        .wrappedJSObject;
+    params.name             = this.getParamValue(dom, "name")
+    params.date             = this.getParamValue(dom, "date") || "";
+    params.image            = this.getParamValue(dom, "image") ||
+                              this.getParamValue(dom, "stdicon");
+    params.code             = this.getParamValue(dom, "code")
+    params.initCode         = this.getParamValue(dom, "initcode")
+    params.help             = this.getParamValue(dom, "help")
+    params.accelkey         = this.getParamValue(dom, "accelkey")
+    params.mode             = this.getParamValue(dom, "mode")
+    params.wrappedJSObject  = params;
+    return params;
+  },
+
+  // Reset button attribute if user click the button during update
+  resetAttributes: function updater_resetAttributes() {
+    self.image = this.btnImage;
+    self.tooltipText = self.name;
+    self.removeAttribute("busy");
+    self.onclick = this.btnClick;
+    self.type = this.btnType;
+    self.tooltipText = this.btnTooltip;
+  },
+
+  // Check button for update
+  checkForUpdate: function updater_checkForUpdate(aCallback) {
+    if (!navigator.onLine) {                // If browser is in offline mode
+                                            // ask to switch to online
+      var online = custombuttons.confirmBox(self.name,
+                             "Firefox is currently in offline mode.\n"
+                           + "Switch to online mode and try again?",
+                             "Yes", "No");
+      if (!online) return;
+      BrowserOffline.toggleOfflineStatus(); // switch to online
+    }
+
+    var url = this.updateURL + "?" + Date.now();
+    var req = new XMLHttpRequest();
+    req.open("GET", url, true);
+    if (self.hasAttribute("busy")) {
+      this.resetAttributes();
+      return
+    }
+    var updater = this;
+    req.onreadystatechange = function (aEvent) {
+      self.onclick = function(aEvent) {
+        aEvent.preventDefault();
+        req.abort();
+        self.updater.resetAttributes();
+      }
+      self.image = updater.bsyIcon;
+      self.setAttribute("busy", "");
+      self.removeAttribute("type");
+      self.tooltipText = "Checking for update...\nClick to abort.";
+      if (req.readyState == 4 && req.status == 200) {
+        updater.resetAttributes();
+        aCallback(req.responseXML);
+      }
+    }
+    req.send(null);
+  },
+
+  // Get update from XML
+  getUpdate: function updater_getUpdate(aDocument) {
+    if (aDocument.documentElement.localName != "custombutton") {
+      custombuttons.alertBox(self.name,
+                             "Not a valid Custom Buttons XML file!");
+      return;
+    }
+
+    //inspectDOMDocument(aDocument); return;
+    let icon = self.updater.btnImage ? self.updater.btnImage
+                                     : self.updater.stdIcon;
+    let button = aDocument.getElementById("button");
+    let link = button.getElementsByTagNameNS(xhtmlns, "a")[0];
+    if (link.href == self.URI) {
+      let as = Cc['@mozilla.org/alerts-service;1'].
+               getService(Ci.nsIAlertsService);
+      as.showAlertNotification(icon, "No update found!",
+                               "Finish checking", false, "", null);
+      return;
+    } 
+
+    var install = custombuttons.confirmBox(self.name, "Update found! " +
+                                           "Update this button?",
+                                           "Yes", "No");
+    if (!install) return;
+    let btnLink = custombuttons.makeButtonLink("update", self.id);
+    let params = self.updater.getButtonParameters(btnLink, link.href);
+    //inspectObject(params); return;
+    custombuttons.cbService.installButton(params);
+    custombuttons.alertBox(self.name, "Button updated!");
+    self.setAttribute("cb-edit-state", "active");
+  },
+
+  init: function updater_onLoad() {
+
+    var icon = this.btnImage ? this.btnImage : this.stdIcon;
+
+    function $(aId) {
+      return document.getElementById(aId);
+    }
+
+    function addMenuItem(aNewIDs, aNodeIDs, aSeparator) {
+      // Remove previously created menuitems if any
+      if ($(aNewIDs)) {
+        if (aSeparator &&
+            ($(aNewIDs).nextSibling.localName == "menuseparator")) {
+          $(aNewIDs).parentNode.removeChild($(aNewIDs).nextSibling);
+        }
+        $(aNewIDs).parentNode.removeChild($(aNewIDs));
+      }
+
+      var mi = makeXML(
+                    '<menuitem xmlns="' + xulns + '"'
+                  + ' id="' + aNewIDs + '"'
+                  + ' class="menuitem-iconic"'
+                  + ' image="' + icon + '"'
+                  + ' label="Check for updates for this button"'
+                  + ' onclick="if (event.button == 1) {'
+                  + ' var btn = document.getElementById(\''
+                  + self.id + '\'); btn.updater.openUpdateURL(); }" '
+                  + ' oncommand="var btn = document.getElementById(\''
+                  + self.id + '\'); btn.updater.checkForUpdate('
+                  + 'btn.updater.getUpdate);"'
+                  + ' observes="custombuttons-contextbroadcaster-primary"/>');
+      $(aNodeIDs).parentNode.insertBefore(mi, $(aNodeIDs).nextSibling);
+      if (aSeparator) {
+        var sep = makeXML('<menuseparator xmlns="' + xulns + '"'
+                            + ' id="' + mi.id + '-separator"/>');
+        mi.parentNode.insertBefore(sep, mi.nextSibling);
+      }
+    }
+
+    function initUpdaterCbPopup(aEvent) {
+      var popupNode = "triggerNode" in aEvent.target
+                        ? aEvent.target.triggerNode : document.popupNode;
+      $(kIDs).hidden = (popupNode != self);
+      ($(kIDs).nextSibling.id == $(kIDs).id + "-separator") &&
+      ($(kIDs).nextSibling.hidden = (popupNode != self));
+    }
+
+    var kIDs = self.id + "-checkForUpdate";
+    var uIDs = "custombuttons-contextpopup-updateButton";
+
+    // Add 'Check for Update...' menuitem to CB contextmenu
+    addMenuItem(kIDs, uIDs, true);
+
+    $(uIDs).parentNode.addEventListener("popupshowing",
+                                           initUpdaterCbPopup, false);
+    $(uIDs).parentNode.removeEventListener("popuphiding",
+                                              initUpdaterCbPopup, false);
+
+    self.onDestroy = function(aReason) {
+      if (aReason != "delete") return;
+      $(uIDs).parentNode.removeEventListener("popupshowing",
+                                             initUpdaterCbPopup, false);
+      $(kIDs).parentNode.removeChild($(kIDs + "-separator"));
+      $(kIDs).parentNode.removeChild($(kIDs));
+    }
+  }
+}
+
+this.updater.init();
+
+//////////////////////////// End Button updater ////////////////////////////
+////////////////////////////////////////////////////////////////////////////]]></initcode>
+  <code><![CDATA[/* Web Developer Menu */]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/"?>
+
+<prefwindow
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  id="custombuttons-devtools-menu" title="Developer Tools Menu"
+  width="200" height="150" onload="sizeToContent();">
+
+  <prefpane id="prefpane-menu" label="Prefpane menu" accesskey="P">
+
+    <preferences>
+      <preference id="devtools.inspector.enabled"
+                  name="devtools.inspector.enabled"
+                  type="bool"/>
+      <preference id="devtools.scratchpad.enabled"
+                  name="devtools.scratchpad.enabled"
+                  type="bool"/>
+      <preference id="devtools.styleeditor.enabled"
+                  name="devtools.styleeditor.enabled"
+                  type="bool"/>
+    </preferences>
+
+    <groupbox>
+      <caption label="Menu Options"/>
+      <checkbox id="devtools.inspector.enabled-checkbox"
+                label="Enable Page Inspector" accesskey="I"
+                preference="devtools.inspector.enabled"/>
+      <checkbox id="devtools.scratchpad.enabled-checkbox"
+                label="Enable Scratchpad" accesskey="a"
+                preference="devtools.scratchpad.enabled"/>
+      <checkbox id="devtools.styleeditor.enabled-checkbox"
+                label="Enable Style Editor" accesskey="S"
+                preference="devtools.styleeditor.enabled"/>
+   </groupbox>
+
+  </prefpane>
+
+</prefwindow>]]></help>
+  <attributes/>
+</custombutton>

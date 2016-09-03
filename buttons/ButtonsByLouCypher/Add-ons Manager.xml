@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[Add-ons Manager]]></html:title>
+    <html:link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABVUlEQVQ4y2P4//8/AyWYoALpQsb9ftPM/4tnM+4nywCQ5s5jRf8d+7T+k2VAxHzH/TUHkv57TDMgzgWyJYz74xZ6/E9Y4vU/ZaXv/9Jd0f/LDkb+j13v8N9xmtp/oy6J/xqN/P+5Ihj2YzUApHnxtb7/My83/e8+W/C/9nj8//yD/v+T99j/D99u8N9nk/J/h9Vi/+Vq2P5jNQBkMz7NTuvE/1ut5v0vV8+M3QCQs3Fptlsh+l93Ktd/pTaW/wKpjAgDYFEFCjCQn3HZDNLME8tYANLDEcrgADcAFlWg0AYFGC5nK3ew/McaC6BEAopnUFSBQhubZpMVbP81JrFgdwEyBkUVup9BNoM0681hBdMYYYCMQfGMzc8gGqQZ5BIQxhkLoEQCimeQs0E2IcuB+CDNxkvZ/ktX4jAAlMJAiQRkA8iZML+CaBAfJA7SDOTvJyovEMIAruB4gKjNkYMAAAAASUVORK5CYII="/>
+    <html:style type="text/css"><![CDATA[
+body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+:-moz-any-link:focus {
+  color: white;
+  outline-color: transparent;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3EAdd-ons%20Manager%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABVUlEQVQ4y2P4//8/AyWYoALpQsb9ftPM/4tnM+4nywCQ5s5jRf8d+7T+k2VAxHzH/TUHkv57TDMgzgWyJYz74xZ6/E9Y4vU/ZaXv/9Jd0f/LDkb+j13v8N9xmtp/oy6J/xqN/P+5Ihj2YzUApHnxtb7/My83/e8+W/C/9nj8//yD/v+T99j/D99u8N9nk/J/h9Vi/+Vq2P5jNQBkMz7NTuvE/1ut5v0vV8+M3QCQs3Fptlsh+l93Ktd/pTaW/wKpjAgDYFEFCjCQn3HZDNLME8tYANLDEcrgADcAFlWg0AYFGC5nK3ew/McaC6BEAopnUFSBQhubZpMVbP81JrFgdwEyBkUVup9BNoM0681hBdMYYYCMQfGMzc8gGqQZ5BIQxhkLoEQCimeQs0E2IcuB+CDNxkvZ/ktX4jAAlMJAiQRkA8iZML+CaBAfJA7SDOTvJyovEMIAruB4gKjNkYMAAAAASUVORK5CYII%3D%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5Bvar%20buttonId%20%3D%20this.id%3B%0A%0Afunction%20createMenuitem%28aTypeId%2C%20aName%29%20%7B%0A%20%20var%20mi%20%3D%20document.createElement%28%22menuitem%22%29%3B%0A%20%20if%20%28aName%20%26%26%20aName%20%3D%3D%3D%20%22User%20Scripts%22%29%20%7B%0A%20%20%20%20switch%20%28aTypeId%29%20%7B%0A%20%20%20%20%20%20case%20%22greasemonkey-user-script%22%3A%20aName%20+%3D%20%22%20%28Greasemonkey%29%22%3B%20break%3B%0A%20%20%20%20%20%20case%20%22userscript%22%3A%20aName%20+%3D%20%22%20%28Scriptish%29%22%3B%20break%3B%0A%20%20%20%20%7D%0A%20%20%7D%0A%0A%20%20if%20%28%21aName%29%20%7B%0A%20%20%20%20if%20%28aTypeId%20%3D%3D%3D%20%22user-script%22%29%0A%20%20%20%20%20%20aName%20%3D%20%22User%20Scripts%20%28Greasemonkey%29%22%3B%0A%20%20%20%20else%0A%20%20%20%20%20%20aName%20%3D%20aTypeId%3B%0A%20%20%7D%0A%0A%20%20mi.setAttribute%28%22label%22%2C%20aName%29%3B%0A%20%20mi.tooltipText%20%3D%20aTypeId%3B%0A%20%20mi.setAttribute%28%22value%22%2C%20%22addons%3A//list/%22%20+%20aTypeId%29%3B%0A%20%20return%20mi%3B%0A%7D%0A%0Afunction%20createSeparator%28aId%29%20%7B%0A%20%20var%20msp%20%3D%20document.createElement%28%22menuseparator%22%29%3B%0A%20%20msp.id%20%3D%20buttonId%20+%20aId%3B%0A%20%20return%20msp%3B%0A%7D%0A%0Afunction%20openAddonsMgr%28aView%29%20%7B%0A%20%20if%20%28%22toEM%22%20in%20window%29%0A%20%20%20%20toEM%28aView%29%3B%0A%0A%20%20else%20if%20%28%22openAddonsMgr%22%20in%20window%29%0A%20%20%20%20openAddonsMgr%28aView%29%3B%0A%0A%20%20else%0A%20%20%20%20BrowserOpenAddonsMgr%28aView%29%3B%0A%7D%0A%0Afunction%20searchAddons%28%29%20%7B%0A%20%20var%20prefs%20%3D%20Services.prefs.getBranch%28%22custombuttons.searchAddons%22%20+%20%22.%22%29%3B%0A%20%20var%20text%20%3D%20%22%22%3B%0A%20%20try%20%7B%0A%20%20%20%20text%20%3D%20prefs.getCharPref%28%22search%22%29%3B%0A%20%20%7D%0A%20%20catch%20%28ex%29%20%7B%0A%20%20%7D%0A%20%20var%20query%20%3D%20custombuttons.promptBox%28%22Search%20add-ons%22%2C%20%22Enter%20add-on%20name%22%2C%20text%2C%20null%29%3B%0A%20%20if%20%28%21query%5B0%5D%20%7C%7C%20query%5B1%5D%20%3D%3D%3D%20%22%22%29%0A%20%20%20%20return%3B%0A%0A%20%20prefs.setCharPref%28%22search%22%2C%20query%5B1%5D%29%3B%0A%20%20openAddonsMgr%28%22addons%3A//search/%22%20+%20encodeURIComponent%28query%5B1%5D%29%29%3B%0A%7D%0A%0Afunction%20popupshowing%28aNode%29%20%7B%0A%20%20while%20%28aNode.firstChild%29%0A%20%20%20%20aNode.removeChild%28aNode.firstChild%29%3B%0A%0A%20%20var%20addonTypes%20%3D%20AddonManager.addonTypes%3B%0A%20%20for%20%28var%20i%20in%20addonTypes%29%20%7B%0A%20%20%20%20//LOG%28i%29%3B%0A%20%20%20%20aNode.appendChild%28createMenuitem%28addonTypes%5Bi%5D.id%2C%20addonTypes%5Bi%5D.name%29%29%3B%0A%20%20%7D%0A%0A%20%20aNode.appendChild%28createSeparator%28%22-separator-updates%22%29%29%3B%0A%20%20%5B%22Recent%22%2C%20%22Available%22%5D.forEach%28function%28aItem%29%20%7B%0A%20%20%20%20var%20mu%20%3D%20aNode.appendChild%28document.createElement%28%22menuitem%22%29%29%3B%0A%20%20%20%20mu.setAttribute%28%22label%22%2C%20aItem%20+%20%22%20updates%22%29%3B%0A%20%20%20%20mu.setAttribute%28%22value%22%2C%20%22addons%3A//updates/%22%20+%20aItem.toLowerCase%28%29%29%3B%0A%20%20%7D%29%0A%0A%20%20aNode.appendChild%28createSeparator%28%22-separator-search%22%29%29%3B%0A%20%20var%20ms%20%3D%20aNode.appendChild%28document.createElement%28%22menuitem%22%29%29%3B%0A%20%20ms.searchAddons%20%3D%20searchAddons.bind%28%29%3B%0A%20%20ms.setAttribute%28%22label%22%2C%20%22Search%20add-ons%22%29%3B%0A%20%20ms.setAttribute%28%22oncommand%22%2C%20%22event.stopPropagation%28%29%3B%20searchAddons%28%29%3B%22%29%3B%0A%7D%0A%0Avar%20popup%20%3D%20this.appendChild%28document.createElement%28%22menupopup%22%29%29%3B%0Apopup.openAddonsMgr%20%3D%20openAddonsMgr.bind%28%29%3B%0Apopup.popupshowing%20%3D%20popupshowing.bind%28%29%3B%0Apopup.setAttribute%28%22oncommand%22%2C%20%22event.stopPropagation%28%29%3B%20openAddonsMgr%28event.target.value%29%3B%22%29%3B%0Apopup.setAttribute%28%22onpopupshowing%22%2C%20%22popupshowing%28this%29%3B%22%29%3B%0A%0Athis.type%20%3D%20%22menu%22%3B%0A%0Athis.onclick%20%3D%20function%20onclick%28e%29%20%7B%0A%20%20if%20%28e.button%20%3D%3D%3D%201%29%0A%20%20%20%20searchAddons%28%29%3B%0A%7D%0A%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Add-ons Manager">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=external-custombuttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <name>Add-ons Manager</name>
+  <image><![CDATA[data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABVUlEQVQ4y2P4//8/AyWYoALpQsb9ftPM/4tnM+4nywCQ5s5jRf8d+7T+k2VAxHzH/TUHkv57TDMgzgWyJYz74xZ6/E9Y4vU/ZaXv/9Jd0f/LDkb+j13v8N9xmtp/oy6J/xqN/P+5Ihj2YzUApHnxtb7/My83/e8+W/C/9nj8//yD/v+T99j/D99u8N9nk/J/h9Vi/+Vq2P5jNQBkMz7NTuvE/1ut5v0vV8+M3QCQs3Fptlsh+l93Ktd/pTaW/wKpjAgDYFEFCjCQn3HZDNLME8tYANLDEcrgADcAFlWg0AYFGC5nK3ew/McaC6BEAopnUFSBQhubZpMVbP81JrFgdwEyBkUVup9BNoM0681hBdMYYYCMQfGMzc8gGqQZ5BIQxhkLoEQCimeQs0E2IcuB+CDNxkvZ/ktX4jAAlMJAiQRkA8iZML+CaBAfJA7SDOTvJyovEMIAruB4gKjNkYMAAAAASUVORK5CYII=]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[var buttonId = this.id;
+
+function createMenuitem(aTypeId, aName) {
+  var mi = document.createElement("menuitem");
+  if (aName && aName === "User Scripts") {
+    switch (aTypeId) {
+      case "greasemonkey-user-script": aName += " (Greasemonkey)"; break;
+      case "userscript": aName += " (Scriptish)"; break;
+    }
+  }
+
+  if (!aName) {
+    if (aTypeId === "user-script")
+      aName = "User Scripts (Greasemonkey)";
+    else
+      aName = aTypeId;
+  }
+
+  mi.setAttribute("label", aName);
+  mi.tooltipText = aTypeId;
+  mi.setAttribute("value", "addons://list/" + aTypeId);
+  return mi;
+}
+
+function createSeparator(aId) {
+  var msp = document.createElement("menuseparator");
+  msp.id = buttonId + aId;
+  return msp;
+}
+
+function openAddonsMgr(aView) {
+  if ("toEM" in window)
+    toEM(aView);
+
+  else if ("openAddonsMgr" in window)
+    openAddonsMgr(aView);
+
+  else
+    BrowserOpenAddonsMgr(aView);
+}
+
+function searchAddons() {
+  var prefs = Services.prefs.getBranch("custombuttons.searchAddons" + ".");
+  var text = "";
+  try {
+    text = prefs.getCharPref("search");
+  }
+  catch (ex) {
+  }
+  var query = custombuttons.promptBox("Search add-ons", "Enter add-on name", text, null);
+  if (!query[0] || query[1] === "")
+    return;
+
+  prefs.setCharPref("search", query[1]);
+  openAddonsMgr("addons://search/" + encodeURIComponent(query[1]));
+}
+
+function popupshowing(aNode) {
+  while (aNode.firstChild)
+    aNode.removeChild(aNode.firstChild);
+
+  var addonTypes = AddonManager.addonTypes;
+  for (var i in addonTypes) {
+    //LOG(i);
+    aNode.appendChild(createMenuitem(addonTypes[i].id, addonTypes[i].name));
+  }
+
+  aNode.appendChild(createSeparator("-separator-updates"));
+  ["Recent", "Available"].forEach(function(aItem) {
+    var mu = aNode.appendChild(document.createElement("menuitem"));
+    mu.setAttribute("label", aItem + " updates");
+    mu.setAttribute("value", "addons://updates/" + aItem.toLowerCase());
+  })
+
+  aNode.appendChild(createSeparator("-separator-search"));
+  var ms = aNode.appendChild(document.createElement("menuitem"));
+  ms.searchAddons = searchAddons.bind();
+  ms.setAttribute("label", "Search add-ons");
+  ms.setAttribute("oncommand", "event.stopPropagation(); searchAddons();");
+}
+
+var popup = this.appendChild(document.createElement("menupopup"));
+popup.openAddonsMgr = openAddonsMgr.bind();
+popup.popupshowing = popupshowing.bind();
+popup.setAttribute("oncommand", "event.stopPropagation(); openAddonsMgr(event.target.value);");
+popup.setAttribute("onpopupshowing", "popupshowing(this);");
+
+this.type = "menu";
+
+this.onclick = function onclick(e) {
+  if (e.button === 1)
+    searchAddons();
+}
+]]></initcode>
+  <code><![CDATA[]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[]]></help>
+  <attributes/>
+</custombutton>

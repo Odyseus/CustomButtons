@@ -1,0 +1,48 @@
+This button allows to resize any image loaded into the browser from the page context menu. It is based on a Firefox addon that I used to use ([url=https://addons.mozilla.org/firefox/addon/image2icon]Image2Icon[/url]) that has not been updated for three years and it doesn't work on Firefox multi-process.
+
+[color=#FF0000][b][size=100]Disclaimer!![/size] The following link/s leads to an external page (Dropbox). This forum is NOT responsible for any external content.[/b][/color]
+
+[url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/ImageResizer/ImageResizer.xml][img]https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/ImageResizer/ImageResizer.png[/img] [size=150]Install Image Resizer[/size][/url]
+
+[b][size=150]Compatibility[/size][/b]
+Tested and working on Firefox Stable/Dev. Edition, SeaMonkey and Palemoon.
+[b][color=#FF0000]Not compatible with Nightly nor Windows Vista[/color][/b]
+
+[color=red][size=150][b]Changelog April 30, 2016[/b][/size]
+[list]
+[*] [b]Changed:[/b] Switched from a panel element to a window for the floating image.
+[*] [b]Changed:[/b] Now all copy functions added by this button can copy the image as data and as Base64. This allows to paste the copied image directly into any image editor software and also paste it into any text editor as Base64.
+[*] [b]Added:[/b] Added context menu to the floating image from which 3 actions can be performed ([b]Copy image[/b], [b]Save image[/b] and [b]Set as Desktop Background[/b]).
+[*] [b]Added:[/b] Added direct access to this button's options window from the context menu.
+[/list]
+[/color]
+
+[size=150][b]Features[/b][/size]
+The options for this button can be accessed by Left clicking on it.
+[list]
+[*] All tasks added by this button are performed from the page context menu.
+[*] Possibility to resize an image to a fixed size or to a percentage of the original image size.
+[*] Possibility to convert an image to Base64 without resizing it.
+[*] The list of sizes in the context menu can be edited to add your own sizes and/or remove the sizes that you don't need/want.
+[*] Possibility to view the current site`s favicon from the [b]View current site`s favicon[/b] item on the context menu.[/list]
+
+[size=150][b]Images[/b][/size]
+[size=120][b]Image Resizer on the context menu[/b][/size]
+[img]https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/ImageResizer/ImageInserter001.png[/img]
+
+[size=120][b]Options window[/b][/size]
+[img]https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/ImageResizer/ImageInserter002.png[/img]
+
+[size=150][b]Limitations[/b][/size]
+All resizing options will convert the image into a PNG image no matter the original image's format. This wouldn't be a problem, until you try to resize an animated GIF and end up with a PNG file without animation. This is a limitation of the HTML canvases. Nothing can be done about this, other than resize the image with an image editor software (GIMP, Photoshop, etc.) and then load it into the browser to convert it to Base64.
+[u]The item [b]Convert to Base64[/b] on the context menu is not affected by this. It will respect the original image's MIME type.[/u]
+
+[color=red][size=150][b]Error report[/b][/size][/color]
+If any errors are found, report it ASAP on this post with as much details as possible.
+[list]
+[*]Which platform and its version (Linux, Mac or Windows).[/*]
+[*]Which application and its version.[/*]
+[*]Error/Browser console output, if any.[/*]
+[*]If it's easier for you to report an error with images, and if the image is too large or there are more than one, publish the links to them, do not post them using the IMG tag in the message.[/*]
+[*]Be willing to follow troubleshooting instructions.[/*]
+[/list]

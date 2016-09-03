@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[CSS Beautify]]></html:title>
+    <html:link rel="shortcut icon" href=""/>
+    <html:style type="text/css"><![CDATA[
+body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+:-moz-any-link:focus {
+  color: white;
+  outline-color: transparent;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3ECSS%20Beautify%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bcustombuttons-stdicon-1%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5B/*Initialization%20Code*/%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5B/**%0A%20*%20%20CSS%20Beautifier%0A%20*%20%20Based%20on%20cssprettifier%20user%20script%20by%20Sindre%20Sorhus%0A%20*%20%20http%3A//userscripts.org/scripts/review/162004%0A%20*/%0A%0Avar%20%7Bdocument%7D%20%3D%20content%3B%0A%0A//%20CSSBeautify%20%28c%29%20Sencha%2C%20Ariya%20Hidayat%2C%20MIT%20License%0A%28function%28%29%7B%22use%20strict%22%3Bfunction%20a%28a%2Cb%29%7Bfunction%20s%28a%29%7Breturn%22%20%22%3D%3D%3Da%7C%7C%22%5Cn%22%3D%3D%3Da%7C%7C%22%09%22%3D%3D%3Da%7C%7C%22%5Cr%22%3D%3D%3Da%7C%7C%22%5Cf%22%3D%3D%3Da%7Dfunction%20t%28a%29%7Breturn%22%27%22%3D%3D%3Da%7C%7C%27%22%27%3D%3D%3Da%7Dfunction%20u%28a%29%7Breturn%20h%3E%3D%22a%22%26%26%22z%22%3E%3Dh%7C%7Ch%3E%3D%22A%22%26%26%22Z%22%3E%3Dh%7C%7Ch%3E%3D%220%22%26%26%229%22%3E%3Dh%7C%7C%22-_*.%3A%23%22.indexOf%28a%29%3E%3D0%7Dfunction%20v%28%29%7Bvar%20a%3Bfor%28a%3Dm%3Ba%3E0%3Ba-%3D1%29g+%3Dc.indent%7Dfunction%20w%28%29%7Bg%3Dr%28g%29%2Cp%3Fg+%3D%22%20%7B%22%3A%28g+%3D%22%5Cn%22%2Cv%28%29%2Cg+%3D%22%7B%22%29%2C%22%5Cn%22%21%3D%3Di%26%26%28g+%3D%22%5Cn%22%29%2Cm+%3D1%7Dfunction%20x%28%29%7Bvar%20a%3Bm-%3D1%2Cg%3Dr%28g%29%2Cq%26%26%28a%3Dg.charAt%28g.length-1%29%2C%22%3B%22%21%3D%3Da%26%26%22%7B%22%21%3D%3Da%26%26%28g+%3D%22%3B%22%29%29%2Cg+%3D%22%5Cn%22%2Cv%28%29%2Cg+%3D%22%7D%22%2Cf.push%28g%29%2Cg%3D%22%22%7Dvar%20c%2Cf%2Ch%2Ci%2Cj%2Ck%2Cl%2Cm%2Cn%2Co%2Cr%2Cd%3D0%2Ce%3Da.length%2Cg%3D%22%22%2Cp%3D%210%2Cq%3D%211%3Bfor%28c%3Darguments.length%3E1%3Fb%3A%7B%7D%2Cc.indent%3D%3D%3Dvoid%200%26%26%28c.indent%3D%22%20%20%20%20%22%29%2C%22string%22%3D%3Dtypeof%20c.openbrace%26%26%28p%3D%22end-of-line%22%3D%3D%3Dc.openbrace%29%2C%22boolean%22%3D%3Dtypeof%20c.autosemicolon%26%26%28q%3Dc.autosemicolon%29%2Cr%3DString.prototype.trimRight%3Ffunction%28a%29%7Breturn%20a.trimRight%28%29%7D%3Afunction%28a%29%7Breturn%20a.replace%28/%5Cs+%24/%2C%22%22%29%7D%2Cl%3D%7BStart%3A0%2CAtRule%3A1%2CBlock%3A2%2CSelector%3A3%2CRuleset%3A4%2CProperty%3A5%2CSeparator%3A6%2CExpression%3A7%2CURL%3A8%7D%2Cm%3D0%2Ck%3Dl.Start%2Co%3D%211%2Cf%3D%5B%5D%2Ca%3Da.replace%28/%5Cr%5Cn/g%2C%22%5Cn%22%29%3Be%3Ed%3B%29if%28h%3Da.charAt%28d%29%2Ci%3Da.charAt%28d+1%29%2Cd+%3D1%2Ct%28n%29%29g+%3Dh%2Ch%3D%3D%3Dn%26%26%28n%3Dnull%29%2C%22%5C%5C%22%3D%3D%3Dh%26%26i%3D%3D%3Dn%26%26%28g+%3Di%2Cd+%3D1%29%3Belse%20if%28t%28h%29%29g+%3Dh%2Cn%3Dh%3Belse%20if%28o%29g+%3Dh%2C%22*%22%3D%3D%3Dh%26%26%22/%22%3D%3D%3Di%26%26%28o%3D%211%2Cg+%3Di%2Cd+%3D1%29%3Belse%20if%28%22/%22%21%3D%3Dh%7C%7C%22*%22%21%3D%3Di%29%7Bif%28k%3D%3D%3Dl.Start%29%7Bif%280%3D%3D%3Df.length%26%26s%28h%29%26%260%3D%3D%3Dg.length%29continue%3Bif%28%22%20%22%3E%3Dh%7C%7Ch.charCodeAt%280%29%3E%3D128%29%7Bk%3Dl.Start%2Cg+%3Dh%3Bcontinue%7Dif%28u%28h%29%7C%7C%22%5B%22%3D%3D%3Dh%7C%7C%22@%22%3D%3D%3Dh%29%7Bif%28j%3Dr%28g%29%2C0%3D%3D%3Dj.length%29f.length%3E0%26%26%28g%3D%22%5Cn%5Cn%22%29%3Belse%20if%28%22%7D%22%3D%3D%3Dj.charAt%28j.length-1%29%7C%7C%22%3B%22%3D%3D%3Dj.charAt%28j.length-1%29%29g%3Dj+%22%5Cn%5Cn%22%3Belse%20for%28%3B%3B%29%7Bif%28i%3Dg.charAt%28g.length-1%29%2C%22%20%22%21%3D%3Di%26%269%21%3D%3Di.charCodeAt%280%29%29break%3Bg%3Dg.substr%280%2Cg.length-1%29%7Dg+%3Dh%2Ck%3D%22@%22%3D%3D%3Dh%3Fl.AtRule%3Al.Selector%3Bcontinue%7D%7Dif%28k%21%3D%3Dl.AtRule%29if%28k%21%3D%3Dl.Block%29if%28k%21%3D%3Dl.Selector%29if%28k%21%3D%3Dl.Ruleset%29if%28k%21%3D%3Dl.Property%29if%28k%21%3D%3Dl.Separator%29if%28k%21%3D%3Dl.Expression%29k%3D%3D%3Dl.URL%26%26%22%29%22%3D%3D%3Dh%26%26g.charAt%28%22%5C%5C%22%21%3D%3Dg.length-1%29%3F%28g+%3Dh%2Ck%3Dl.Expression%29%3Ag+%3Dh%3Belse%7Bif%28%22%7D%22%3D%3D%3Dh%29%7Bx%28%29%2Ck%3Dl.Start%2Cm%3E0%26%26%28k%3Dl.Block%29%3Bcontinue%7Dif%28%22%3B%22%3D%3D%3Dh%29%7Bg%3Dr%28g%29%2Cg+%3D%22%3B%5Cn%22%2Ck%3Dl.Ruleset%3Bcontinue%7Dif%28g+%3Dh%2C%22%28%22%3D%3D%3Dh%26%26%22l%22%3D%3D%3Dg.charAt%28g.length-2%29%26%26%22r%22%3D%3D%3Dg.charAt%28g.length-3%29%26%26%22u%22%3D%3D%3Dg.charAt%28g.length-4%29%29%7Bk%3Dl.URL%3Bcontinue%7D%7Delse%7Bif%28%21s%28h%29%29%7Bg+%3Dh%2Ck%3Dl.Expression%3Bcontinue%7Dt%28i%29%26%26%28k%3Dl.Expression%29%7Delse%7Bif%28%22%3A%22%3D%3D%3Dh%29%7Bg%3Dr%28g%29%2Cg+%3D%22%3A%20%22%2Ck%3Dl.Expression%2Cs%28i%29%26%26%28k%3Dl.Separator%29%3Bcontinue%7Dif%28%22%7D%22%3D%3D%3Dh%29%7Bx%28%29%2Ck%3Dl.Start%2Cm%3E0%26%26%28k%3Dl.Block%29%3Bcontinue%7Dg+%3Dh%7Delse%7Bif%28%22%7D%22%3D%3D%3Dh%29%7Bx%28%29%2Ck%3Dl.Start%2Cm%3E0%26%26%28k%3Dl.Block%29%3Bcontinue%7Dif%28%22%5Cn%22%3D%3D%3Dh%29%7Bg%3Dr%28g%29%2Cg+%3D%22%5Cn%22%3Bcontinue%7Dif%28%21s%28h%29%29%7Bg%3Dr%28g%29%2Cg+%3D%22%5Cn%22%2Cv%28%29%2Cg+%3Dh%2Ck%3Dl.Property%3Bcontinue%7Dg+%3Dh%7Delse%7Bif%28%22%7B%22%3D%3D%3Dh%29%7Bw%28%29%2Ck%3Dl.Ruleset%3Bcontinue%7Dif%28%22%7D%22%3D%3D%3Dh%29%7Bx%28%29%2Ck%3Dl.Start%3Bcontinue%7Dg+%3Dh%7Delse%7Bif%28u%28h%29%29%7Bif%28j%3Dr%28g%29%2C0%3D%3D%3Dj.length%29f.length%3E0%26%26%28g%3D%22%5Cn%5Cn%22%29%3Belse%20if%28%22%7D%22%3D%3D%3Dj.charAt%28j.length-1%29%29g%3Dj+%22%5Cn%5Cn%22%3Belse%20for%28%3B%3B%29%7Bif%28i%3Dg.charAt%28g.length-1%29%2C%22%20%22%21%3D%3Di%26%269%21%3D%3Di.charCodeAt%280%29%29break%3Bg%3Dg.substr%280%2Cg.length-1%29%7Dv%28%29%2Cg+%3Dh%2Ck%3Dl.Selector%3Bcontinue%7Dif%28%22%7D%22%3D%3D%3Dh%29%7Bx%28%29%2Ck%3Dl.Start%3Bcontinue%7Dg+%3Dh%7Delse%7Bif%28%22%3B%22%3D%3D%3Dh%29%7Bg+%3Dh%2Ck%3Dl.Start%3Bcontinue%7Dif%28%22%7B%22%3D%3D%3Dh%29%7Bj%3Dr%28g%29%2Cw%28%29%2Ck%3D%22@font-face%22%3D%3D%3Dj%3Fl.Ruleset%3Al.Block%3Bcontinue%7Dg+%3Dh%7D%7Delse%20o%3D%210%2Cg+%3Dh%2Cg+%3Di%2Cd+%3D1%3Breturn%20g%3Df.join%28%22%22%29+g%7D%22undefined%22%21%3Dtypeof%20exports%3Fmodule.exports%3Dexports%3Da%3A%22object%22%3D%3Dtypeof%20self%26%26%28self.cssbeautify%3Da%29%7D%29%28%29%3B%0A%0A//%20Prism%20%28c%29%20Lea%20Verou%2C%20MIT%20License%0A%28function%28%29%7Bvar%20e%3D/%5Cblang%28%3F%3Auage%29%3F-%28%3F%21%5C*%29%28%5Cw+%29%5Cb/i%2Ct%3Dself.Prism%3D%7Butil%3A%7Btype%3Afunction%28e%29%7Breturn%20Object.prototype.toString.call%28e%29.match%28/%5C%5Bobject%20%28%5Cw+%29%5C%5D/%29%5B1%5D%7D%2Cclone%3Afunction%28e%29%7Bvar%20n%3Dt.util.type%28e%29%3Bswitch%28n%29%7Bcase%22Object%22%3Avar%20r%3D%7B%7D%3Bfor%28var%20i%20in%20e%29e.hasOwnProperty%28i%29%26%26%28r%5Bi%5D%3Dt.util.clone%28e%5Bi%5D%29%29%3Breturn%20r%3Bcase%22Array%22%3Areturn%20e.slice%28%29%7Dreturn%20e%7D%7D%2Clanguages%3A%7Bextend%3Afunction%28e%2Cn%29%7Bvar%20r%3Dt.util.clone%28t.languages%5Be%5D%29%3Bfor%28var%20i%20in%20n%29r%5Bi%5D%3Dn%5Bi%5D%3Breturn%20r%7D%2CinsertBefore%3Afunction%28e%2Cn%2Cr%2Ci%29%7Bi%3Di%7C%7Ct.languages%3Bvar%20s%3Di%5Be%5D%2Co%3D%7B%7D%3Bfor%28var%20u%20in%20s%29if%28s.hasOwnProperty%28u%29%29%7Bif%28u%3D%3Dn%29for%28var%20a%20in%20r%29r.hasOwnProperty%28a%29%26%26%28o%5Ba%5D%3Dr%5Ba%5D%29%3Bo%5Bu%5D%3Ds%5Bu%5D%7Dreturn%20i%5Be%5D%3Do%7D%2CDFS%3Afunction%28e%2Cn%29%7Bfor%28var%20r%20in%20e%29%7Bn.call%28e%2Cr%2Ce%5Br%5D%29%3Bt.util.type%28e%29%3D%3D%3D%22Object%22%26%26t.languages.DFS%28e%5Br%5D%2Cn%29%7D%7D%7D%2ChighlightAll%3Afunction%28e%2Cn%29%7Bvar%20r%3Ddocument.querySelectorAll%28%27code%5Bclass*%3D%22language-%22%5D%2C%20%5Bclass*%3D%22language-%22%5D%20code%2C%20code%5Bclass*%3D%22lang-%22%5D%2C%20%5Bclass*%3D%22lang-%22%5D%20code%27%29%3Bfor%28var%20i%3D0%2Cs%3Bs%3Dr%5Bi++%5D%3B%29t.highlightElement%28s%2Ce%3D%3D%3D%210%2Cn%29%7D%2ChighlightElement%3Afunction%28r%2Ci%2Cs%29%7Bvar%20o%2Cu%2Ca%3Dr%3Bwhile%28a%26%26%21e.test%28a.className%29%29a%3Da.parentNode%3Bif%28a%29%7Bo%3D%28a.className.match%28e%29%7C%7C%5B%2C%22%22%5D%29%5B1%5D%3Bu%3Dt.languages%5Bo%5D%7Dif%28%21u%29return%3Br.className%3Dr.className.replace%28e%2C%22%22%29.replace%28/%5Cs+/g%2C%22%20%22%29+%22%20language-%22+o%3Ba%3Dr.parentNode%3B/pre/i.test%28a.nodeName%29%26%26%28a.className%3Da.className.replace%28e%2C%22%22%29.replace%28/%5Cs+/g%2C%22%20%22%29+%22%20language-%22+o%29%3Bvar%20f%3Dr.textContent%3Bif%28%21f%29return%3Bf%3Df.replace%28/%26/g%2C%22%26amp%3B%22%29.replace%28/%3C/g%2C%22%26lt%3B%22%29.replace%28/%3E/g%2C%22%26gt%3B%22%29.replace%28/%5Cu00a0/g%2C%22%20%22%29%3Bvar%20l%3D%7Belement%3Ar%2Clanguage%3Ao%2Cgrammar%3Au%2Ccode%3Af%7D%3Bt.hooks.run%28%22before-highlight%22%2Cl%29%3Bif%28i%26%26self.Worker%29%7Bvar%20c%3Dnew%20Worker%28t.filename%29%3Bc.onmessage%3Dfunction%28e%29%7Bl.highlightedCode%3Dn.stringify%28JSON.parse%28e.data%29%29%3Bl.element.innerHTML%3Dl.highlightedCode%3Bs%26%26s.call%28l.element%29%3Bt.hooks.run%28%22after-highlight%22%2Cl%29%7D%3Bc.postMessage%28JSON.stringify%28%7Blanguage%3Al.language%2Ccode%3Al.code%7D%29%29%7Delse%7Bl.highlightedCode%3Dt.highlight%28l.code%2Cl.grammar%29%3Bl.element.innerHTML%3Dl.highlightedCode%3Bs%26%26s.call%28r%29%3Bt.hooks.run%28%22after-highlight%22%2Cl%29%7D%7D%2Chighlight%3Afunction%28e%2Cr%29%7Breturn%20n.stringify%28t.tokenize%28e%2Cr%29%29%7D%2Ctokenize%3Afunction%28e%2Cn%29%7Bvar%20r%3Dt.Token%2Ci%3D%5Be%5D%2Cs%3Dn.rest%3Bif%28s%29%7Bfor%28var%20o%20in%20s%29n%5Bo%5D%3Ds%5Bo%5D%3Bdelete%20n.rest%7De%3Afor%28var%20o%20in%20n%29%7Bif%28%21n.hasOwnProperty%28o%29%7C%7C%21n%5Bo%5D%29continue%3Bvar%20u%3Dn%5Bo%5D%2Ca%3Du.inside%2Cf%3D%21%21u.lookbehind%7C%7C0%3Bu%3Du.pattern%7C%7Cu%3Bfor%28var%20l%3D0%3Bl%3Ci.length%3Bl++%29%7Bvar%20c%3Di%5Bl%5D%3Bif%28i.length%3Ee.length%29break%20e%3Bif%28c%20instanceof%20r%29continue%3Bu.lastIndex%3D0%3Bvar%20h%3Du.exec%28c%29%3Bif%28h%29%7Bf%26%26%28f%3Dh%5B1%5D.length%29%3Bvar%20p%3Dh.index-1+f%2Ch%3Dh%5B0%5D.slice%28f%29%2Cd%3Dh.length%2Cv%3Dp+d%2Cm%3Dc.slice%280%2Cp+1%29%2Cg%3Dc.slice%28v+1%29%2Cy%3D%5Bl%2C1%5D%3Bm%26%26y.push%28m%29%3Bvar%20b%3Dnew%20r%28o%2Ca%3Ft.tokenize%28h%2Ca%29%3Ah%29%3By.push%28b%29%3Bg%26%26y.push%28g%29%3BArray.prototype.splice.apply%28i%2Cy%29%7D%7D%7Dreturn%20i%7D%2Chooks%3A%7Ball%3A%7B%7D%2Cadd%3Afunction%28e%2Cn%29%7Bvar%20r%3Dt.hooks.all%3Br%5Be%5D%3Dr%5Be%5D%7C%7C%5B%5D%3Br%5Be%5D.push%28n%29%7D%2Crun%3Afunction%28e%2Cn%29%7Bvar%20r%3Dt.hooks.all%5Be%5D%3Bif%28%21r%7C%7C%21r.length%29return%3Bfor%28var%20i%3D0%2Cs%3Bs%3Dr%5Bi++%5D%3B%29s%28n%29%7D%7D%7D%2Cn%3Dt.Token%3Dfunction%28e%2Ct%29%7Bthis.type%3De%3Bthis.content%3Dt%7D%3Bn.stringify%3Dfunction%28e%29%7Bif%28typeof%20e%3D%3D%22string%22%29return%20e%3Bif%28Object.prototype.toString.call%28e%29%3D%3D%22%5Bobject%20Array%5D%22%29return%20e.map%28n.stringify%29.join%28%22%22%29%3Bvar%20r%3D%7Btype%3Ae.type%2Ccontent%3An.stringify%28e.content%29%2Ctag%3A%22span%22%2Cclasses%3A%5B%22token%22%2Ce.type%5D%2Cattributes%3A%7B%7D%7D%3Br.type%3D%3D%22comment%22%26%26%28r.attributes.spellcheck%3D%22true%22%29%3Bt.hooks.run%28%22wrap%22%2Cr%29%3Bvar%20i%3D%22%22%3Bfor%28var%20s%20in%20r.attributes%29i+%3Ds+%27%3D%22%27+%28r.attributes%5Bs%5D%7C%7C%22%22%29+%27%22%27%3Breturn%22%3C%22+r.tag+%27%20class%3D%22%27+r.classes.join%28%22%20%22%29+%27%22%20%27+i+%22%3E%22+r.content+%22%3C/%22+r.tag+%22%3E%22%7D%3Bif%28%21self.document%29%7Bself.addEventListener%28%22message%22%2Cfunction%28e%29%7Bvar%20n%3DJSON.parse%28e.data%29%2Cr%3Dn.language%2Ci%3Dn.code%3Bself.postMessage%28JSON.stringify%28t.tokenize%28i%2Ct.languages%5Br%5D%29%29%29%3B%7D%2C%211%29%3Breturn%7Dvar%20r%3Ddocument.getElementsByTagName%28%22script%22%29%3Br%3Dr%5Br.length-1%5D%3Bif%28r%29%7Bt.filename%3Dr.src%3Bdocument.addEventListener%26%26%21r.hasAttribute%28%22data-manual%22%29%26%26document.addEventListener%28%22DOMContentLoaded%22%2Ct.highlightAll%29%7D%7D%29%28%29%3B%3B%0Athis.Prism.languages.css%3D%7Bcomment%3A/%5C/%5C*%5B%5Cw%5CW%5D*%3F%5C*%5C//g%2Catrule%3A/@%5B%5Cw-%5D+%3F%28%5Cs+%5B%5E%3B%7B%5D+%29%3F%28%3F%3D%5Cs*%7B%7C%5Cs*%3B%29/gi%2Curl%3A/url%5C%28%28%5B%22%27%5D%3F%29.*%3F%5C1%5C%29/gi%2Cselector%3A/%5B%5E%5C%7B%5C%7D%5Cs%5D%5B%5E%5C%7B%5C%7D%5D*%28%3F%3D%5Cs*%5C%7B%29/g%2Cproperty%3A/%28%5Cb%7C%5CB%29%5Ba-z-%5D+%28%3F%3D%5Cs*%3A%29/ig%2Cstring%3A/%28%22%7C%27%29%28%5C%5C%3F.%29*%3F%5C1/g%2Cimportant%3A/%5CB%21important%5Cb/gi%2Cignore%3A/%26%28lt%7Cgt%7Camp%29%3B/gi%2Cpunctuation%3A/%5B%5C%7B%5C%7D%3B%3A%5D/g%7D%3Bthis.Prism.languages.markup%26%26this.Prism.languages.insertBefore%28%22markup%22%2C%22tag%22%2C%7Bstyle%3A%7Bpattern%3A/%28%26lt%3B%7C%3C%29style%5B%5Cw%5CW%5D*%3F%28%3E%7C%26gt%3B%29%5B%5Cw%5CW%5D*%3F%28%26lt%3B%7C%3C%29%5C/style%28%3E%7C%26gt%3B%29/ig%2Cinside%3A%7Btag%3A%7Bpattern%3A/%28%26lt%3B%7C%3C%29style%5B%5Cw%5CW%5D*%3F%28%3E%7C%26gt%3B%29%7C%28%26lt%3B%7C%3C%29%5C/style%28%3E%7C%26gt%3B%29/ig%2Cinside%3Athis.Prism.languages.markup.tag.inside%7D%2Crest%3Athis.Prism.languages.css%7D%7D%7D%29%3B%0A%0Avar%20prismCSS%20%3D%20this.Help%3B%0A%0A%22use%20strict%22%3B%0A//%20Avoids%20prettification%20of%20normal%20html-pages%20with%20url%27s%20ending%20with%20%27.css%27%0Aif%20%28document.body.childNodes.length%20%21%3D%3D%201%29%0A%20%20return%3B%0A%0Avar%20styleId%20%3D%20%22prism-style%22%3B%0Avar%20prismStyle%20%3D%20document.getElementById%28styleId%29%3B%0Aif%20%28prismStyle%29%20%7B%0A%20%20document.head.removeChild%28prismStyle%29%3B%0A%20%20return%3B%0A%7D%0A%0AprismStyle%20%3D%20document.createElement%28%22style%22%29%3B%0AprismStyle.id%20%3D%20styleId%3B%0Avar%20beautified%20%3D%20this.cssbeautify%28document.body.textContent%2C%20%7Bautosemicolon%3A%20true%7D%29%3B%0Avar%20highlighted%20%3D%20this.Prism.highlight%28beautified%2C%20this.Prism.languages.css%29%3B%0AprismStyle.textContent%20%3D%20prismCSS%3B%0Adocument.head.innerHTML%20%3D%20%22%22%3B%0Adocument.head.appendChild%28prismStyle%29%3B%0Adocument.body.innerHTML%20%3D%20%22%3Ccode%3E%3Cpre%3E%22%20+%20highlighted%20+%20%22%3C/pre%3E%3C/code%3E%22%3B%0A%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5Bcode%5Bclass*%3D%22language-%22%5D%2C%20pre%5Bclass*%3D%22language-%22%5D%20%7B%0A%20%20color%3A%20black%3B%0A%20%20text-shadow%3A%200%201px%20white%3B%0A%20%20font-family%3A%20monospace%3B%0A%20%20font-size%3A%2024pt%20%21important%3B%0A%20%20direction%3A%20ltr%3B%0A%20%20text-align%3A%20left%3B%0A%20%20white-space%3A%20pre%3B%0A%20%20word-spacing%3A%20normal%3B%0A%20%20-moz-tab-size%3A%204%3B%0A%20%20-o-tab-size%3A%204%3B%0A%20%20tab-size%3A%204%3B%0A%20%20-webkit-hyphens%3A%20none%3B%0A%20%20-moz-hyphens%3A%20none%3B%0A%20%20-ms-hyphens%3A%20none%3B%0A%20%20hyphens%3A%20none%3B%0A%7D%0A%0A@media%20print%20%7B%0A%20%20code%5Bclass*%3D%22language-%22%5D%2C%20pre%5Bclass*%3D%22language-%22%5D%20%7B%0A%20%20%20%20text-shadow%3A%20none%3B%0A%20%20%7D%0A%7D%0A%0Apre%5Bclass*%3D%22language-%22%5D%20%7B%0A%20%20padding%3A%201em%3B%0A%20%20margin%3A%20.5em%200%3B%0A%20%20overflow%3A%20auto%3B%0A%7D%0A%0A%3Anot%28pre%29%20%3E%20code%5Bclass*%3D%22language-%22%5D%2C%20pre%5Bclass*%3D%22language-%22%5D%20%7B%0A%20%20background%3A%20%23f5f2f0%3B%0A%7D%0A%0A%3Anot%28pre%29%20%3E%20code%5Bclass*%3D%22language-%22%5D%20%7B%0A%20%20padding%3A%20.1em%3B%0A%20%20border-radius%3A%20.3em%3B%0A%7D%0A%0A.token.comment%2C%20.token.prolog%2C%20.token.doctype%2C%20.token.cdata%20%7B%0A%20%20color%3A%20slategray%3B%0A%7D%0A%0A.token.punctuation%20%7B%0A%20%20color%3A%20%23999%3B%0A%7D%0A%0A.namespace%20%7B%0A%20%20opacity%3A%20.7%3B%0A%7D%0A%0A.token.property%2C%20.token.tag%2C%20.token.boolean%2C%20.token.number%20%7B%0A%20%20color%3A%20%23905%3B%0A%7D%0A%0A.token.selector%2C%20.token.attr-name%2C%20.token.string%20%7B%0A%20%20color%3A%20%23690%3B%0A%7D%0A%0A.token.operator%2C%20.token.entity%2C%20.token.url%2C%20.language-css%20.token.string%2C%20.style%20.token.string%20%7B%0A%20%20color%3A%20%23a67f59%3B%0A%20%20background%3A%20hsla%280%2C%200%25%2C%20100%25%2C%20.5%29%3B%0A%7D%0A%0A.token.atrule%2C%20.token.attr-value%2C%20.token.keyword%20%7B%0A%20%20color%3A%20%2307a%3B%0A%7D%0A%0A.token.regex%2C%20.token.important%20%7B%0A%20%20color%3A%20%23e90%3B%0A%7D%0A%0A.token.important%20%7B%0A%20%20font-weight%3A%20bold%3B%0A%7D%0A%0A.token.entity%20%7B%0A%20%20cursor%3A%20help%3B%0A%7D%0A%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install CSS Beautify">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=external-custombuttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <name>CSS Beautify</name>
+  <image><![CDATA[custombuttons-stdicon-1]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[/*Initialization Code*/]]></initcode>
+  <code><![CDATA[/**
+ *  CSS Beautifier
+ *  Based on cssprettifier user script by Sindre Sorhus
+ *  http://userscripts.org/scripts/review/162004
+ */
+
+var {document} = content;
+
+// CSSBeautify (c) Sencha, Ariya Hidayat, MIT License
+(function(){"use strict";function a(a,b){function s(a){return" "===a||"\n"===a||"	"===a||"\r"===a||"\f"===a}function t(a){return"'"===a||'"'===a}function u(a){return h>="a"&&"z">=h||h>="A"&&"Z">=h||h>="0"&&"9">=h||"-_*.:#".indexOf(a)>=0}function v(){var a;for(a=m;a>0;a-=1)g+=c.indent}function w(){g=r(g),p?g+=" {":(g+="\n",v(),g+="{"),"\n"!==i&&(g+="\n"),m+=1}function x(){var a;m-=1,g=r(g),q&&(a=g.charAt(g.length-1),";"!==a&&"{"!==a&&(g+=";")),g+="\n",v(),g+="}",f.push(g),g=""}var c,f,h,i,j,k,l,m,n,o,r,d=0,e=a.length,g="",p=!0,q=!1;for(c=arguments.length>1?b:{},c.indent===void 0&&(c.indent="    "),"string"==typeof c.openbrace&&(p="end-of-line"===c.openbrace),"boolean"==typeof c.autosemicolon&&(q=c.autosemicolon),r=String.prototype.trimRight?function(a){return a.trimRight()}:function(a){return a.replace(/\s+$/,"")},l={Start:0,AtRule:1,Block:2,Selector:3,Ruleset:4,Property:5,Separator:6,Expression:7,URL:8},m=0,k=l.Start,o=!1,f=[],a=a.replace(/\r\n/g,"\n");e>d;)if(h=a.charAt(d),i=a.charAt(d+1),d+=1,t(n))g+=h,h===n&&(n=null),"\\"===h&&i===n&&(g+=i,d+=1);else if(t(h))g+=h,n=h;else if(o)g+=h,"*"===h&&"/"===i&&(o=!1,g+=i,d+=1);else if("/"!==h||"*"!==i){if(k===l.Start){if(0===f.length&&s(h)&&0===g.length)continue;if(" ">=h||h.charCodeAt(0)>=128){k=l.Start,g+=h;continue}if(u(h)||"["===h||"@"===h){if(j=r(g),0===j.length)f.length>0&&(g="\n\n");else if("}"===j.charAt(j.length-1)||";"===j.charAt(j.length-1))g=j+"\n\n";else for(;;){if(i=g.charAt(g.length-1)," "!==i&&9!==i.charCodeAt(0))break;g=g.substr(0,g.length-1)}g+=h,k="@"===h?l.AtRule:l.Selector;continue}}if(k!==l.AtRule)if(k!==l.Block)if(k!==l.Selector)if(k!==l.Ruleset)if(k!==l.Property)if(k!==l.Separator)if(k!==l.Expression)k===l.URL&&")"===h&&g.charAt("\\"!==g.length-1)?(g+=h,k=l.Expression):g+=h;else{if("}"===h){x(),k=l.Start,m>0&&(k=l.Block);continue}if(";"===h){g=r(g),g+=";\n",k=l.Ruleset;continue}if(g+=h,"("===h&&"l"===g.charAt(g.length-2)&&"r"===g.charAt(g.length-3)&&"u"===g.charAt(g.length-4)){k=l.URL;continue}}else{if(!s(h)){g+=h,k=l.Expression;continue}t(i)&&(k=l.Expression)}else{if(":"===h){g=r(g),g+=": ",k=l.Expression,s(i)&&(k=l.Separator);continue}if("}"===h){x(),k=l.Start,m>0&&(k=l.Block);continue}g+=h}else{if("}"===h){x(),k=l.Start,m>0&&(k=l.Block);continue}if("\n"===h){g=r(g),g+="\n";continue}if(!s(h)){g=r(g),g+="\n",v(),g+=h,k=l.Property;continue}g+=h}else{if("{"===h){w(),k=l.Ruleset;continue}if("}"===h){x(),k=l.Start;continue}g+=h}else{if(u(h)){if(j=r(g),0===j.length)f.length>0&&(g="\n\n");else if("}"===j.charAt(j.length-1))g=j+"\n\n";else for(;;){if(i=g.charAt(g.length-1)," "!==i&&9!==i.charCodeAt(0))break;g=g.substr(0,g.length-1)}v(),g+=h,k=l.Selector;continue}if("}"===h){x(),k=l.Start;continue}g+=h}else{if(";"===h){g+=h,k=l.Start;continue}if("{"===h){j=r(g),w(),k="@font-face"===j?l.Ruleset:l.Block;continue}g+=h}}else o=!0,g+=h,g+=i,d+=1;return g=f.join("")+g}"undefined"!=typeof exports?module.exports=exports=a:"object"==typeof self&&(self.cssbeautify=a)})();
+
+// Prism (c) Lea Verou, MIT License
+(function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=self.Prism={util:{type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var r={};for(var i in e)e.hasOwnProperty(i)&&(r[i]=t.util.clone(e[i]));return r;case"Array":return e.slice()}return e}},languages:{extend:function(e,n){var r=t.util.clone(t.languages[e]);for(var i in n)r[i]=n[i];return r},insertBefore:function(e,n,r,i){i=i||t.languages;var s=i[e],o={};for(var u in s)if(s.hasOwnProperty(u)){if(u==n)for(var a in r)r.hasOwnProperty(a)&&(o[a]=r[a]);o[u]=s[u]}return i[e]=o},DFS:function(e,n){for(var r in e){n.call(e,r,e[r]);t.util.type(e)==="Object"&&t.languages.DFS(e[r],n)}}},highlightAll:function(e,n){var r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code');for(var i=0,s;s=r[i++];)t.highlightElement(s,e===!0,n)},highlightElement:function(r,i,s){var o,u,a=r;while(a&&!e.test(a.className))a=a.parentNode;if(a){o=(a.className.match(e)||[,""])[1];u=t.languages[o]}if(!u)return;r.className=r.className.replace(e,"").replace(/\s+/g," ")+" language-"+o;a=r.parentNode;/pre/i.test(a.nodeName)&&(a.className=a.className.replace(e,"").replace(/\s+/g," ")+" language-"+o);var f=r.textContent;if(!f)return;f=f.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\u00a0/g," ");var l={element:r,language:o,grammar:u,code:f};t.hooks.run("before-highlight",l);if(i&&self.Worker){var c=new Worker(t.filename);c.onmessage=function(e){l.highlightedCode=n.stringify(JSON.parse(e.data));l.element.innerHTML=l.highlightedCode;s&&s.call(l.element);t.hooks.run("after-highlight",l)};c.postMessage(JSON.stringify({language:l.language,code:l.code}))}else{l.highlightedCode=t.highlight(l.code,l.grammar);l.element.innerHTML=l.highlightedCode;s&&s.call(r);t.hooks.run("after-highlight",l)}},highlight:function(e,r){return n.stringify(t.tokenize(e,r))},tokenize:function(e,n){var r=t.Token,i=[e],s=n.rest;if(s){for(var o in s)n[o]=s[o];delete n.rest}e:for(var o in n){if(!n.hasOwnProperty(o)||!n[o])continue;var u=n[o],a=u.inside,f=!!u.lookbehind||0;u=u.pattern||u;for(var l=0;l<i.length;l++){var c=i[l];if(i.length>e.length)break e;if(c instanceof r)continue;u.lastIndex=0;var h=u.exec(c);if(h){f&&(f=h[1].length);var p=h.index-1+f,h=h[0].slice(f),d=h.length,v=p+d,m=c.slice(0,p+1),g=c.slice(v+1),y=[l,1];m&&y.push(m);var b=new r(o,a?t.tokenize(h,a):h);y.push(b);g&&y.push(g);Array.prototype.splice.apply(i,y)}}}return i},hooks:{all:{},add:function(e,n){var r=t.hooks.all;r[e]=r[e]||[];r[e].push(n)},run:function(e,n){var r=t.hooks.all[e];if(!r||!r.length)return;for(var i=0,s;s=r[i++];)s(n)}}},n=t.Token=function(e,t){this.type=e;this.content=t};n.stringify=function(e){if(typeof e=="string")return e;if(Object.prototype.toString.call(e)=="[object Array]")return e.map(n.stringify).join("");var r={type:e.type,content:n.stringify(e.content),tag:"span",classes:["token",e.type],attributes:{}};r.type=="comment"&&(r.attributes.spellcheck="true");t.hooks.run("wrap",r);var i="";for(var s in r.attributes)i+=s+'="'+(r.attributes[s]||"")+'"';return"<"+r.tag+' class="'+r.classes.join(" ")+'" '+i+">"+r.content+"</"+r.tag+">"};if(!self.document){self.addEventListener("message",function(e){var n=JSON.parse(e.data),r=n.language,i=n.code;self.postMessage(JSON.stringify(t.tokenize(i,t.languages[r])));},!1);return}var r=document.getElementsByTagName("script");r=r[r.length-1];if(r){t.filename=r.src;document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)}})();;
+this.Prism.languages.css={comment:/\/\*[\w\W]*?\*\//g,atrule:/@[\w-]+?(\s+[^;{]+)?(?=\s*{|\s*;)/gi,url:/url\((["']?).*?\1\)/gi,selector:/[^\{\}\s][^\{\}]*(?=\s*\{)/g,property:/(\b|\B)[a-z-]+(?=\s*:)/ig,string:/("|')(\\?.)*?\1/g,important:/\B!important\b/gi,ignore:/&(lt|gt|amp);/gi,punctuation:/[\{\};:]/g};this.Prism.languages.markup&&this.Prism.languages.insertBefore("markup","tag",{style:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)[\w\W]*?(&lt;|<)\/style(>|&gt;)/ig,inside:{tag:{pattern:/(&lt;|<)style[\w\W]*?(>|&gt;)|(&lt;|<)\/style(>|&gt;)/ig,inside:this.Prism.languages.markup.tag.inside},rest:this.Prism.languages.css}}});
+
+var prismCSS = this.Help;
+
+"use strict";
+// Avoids prettification of normal html-pages with url's ending with '.css'
+if (document.body.childNodes.length !== 1)
+  return;
+
+var styleId = "prism-style";
+var prismStyle = document.getElementById(styleId);
+if (prismStyle) {
+  document.head.removeChild(prismStyle);
+  return;
+}
+
+prismStyle = document.createElement("style");
+prismStyle.id = styleId;
+var beautified = this.cssbeautify(document.body.textContent, {autosemicolon: true});
+var highlighted = this.Prism.highlight(beautified, this.Prism.languages.css);
+prismStyle.textContent = prismCSS;
+document.head.innerHTML = "";
+document.head.appendChild(prismStyle);
+document.body.innerHTML = "<code><pre>" + highlighted + "</pre></code>";
+]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[code[class*="language-"], pre[class*="language-"] {
+  color: black;
+  text-shadow: 0 1px white;
+  font-family: monospace;
+  font-size: 24pt !important;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+@media print {
+  code[class*="language-"], pre[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+  background: #f5f2f0;
+}
+
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+}
+
+.token.comment, .token.prolog, .token.doctype, .token.cdata {
+  color: slategray;
+}
+
+.token.punctuation {
+  color: #999;
+}
+
+.namespace {
+  opacity: .7;
+}
+
+.token.property, .token.tag, .token.boolean, .token.number {
+  color: #905;
+}
+
+.token.selector, .token.attr-name, .token.string {
+  color: #690;
+}
+
+.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string {
+  color: #a67f59;
+  background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule, .token.attr-value, .token.keyword {
+  color: #07a;
+}
+
+.token.regex, .token.important {
+  color: #e90;
+}
+
+.token.important {
+  font-weight: bold;
+}
+
+.token.entity {
+  cursor: help;
+}
+]]></help>
+  <attributes/>
+</custombutton>

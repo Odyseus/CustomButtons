@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[Create a Restore Point]]></html:title>
+    <html:link rel="shortcut icon" href=""/>
+    <html:style type="text/css"><![CDATA[
+body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+:-moz-any-link:focus {
+  color: white;
+  outline-color: transparent;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3ECreate%20a%20Restore%20Point%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bcustombuttons-stdicon-2%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5Bvar%20prefstring%20%3D%20%22custombuttons.SystemRestore.prompt%22%3B%0A%0Avar%20ask%20%3D%20true%3B%0Atry%20%7B%0A%20%20ask%20%3D%20cbu.ps.getBoolPref%28prefstring%29%3B%0A%7D%20catch%28ex%29%20%7B%7D%0A%0Avar%20desc%20%3D%20%22Restore%20point%20created%20from%20Firefox%22%3B%20//%20Default%20description%0A%0Aif%20%28ask%29%20%7B%20//%20Ask%20for%20description%0A%20%20var%20checkbox%20%3D%20%7B%20prompt%3A%20%22Don%27t%20ask%20again%22%2C%20value%3A%20%21ask%20%7D%3B%0A%20%20var%20prompts%20%3D%20custombuttons.promptBox%28this.name%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Restore%20point%20description%3A%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20desc%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20checkbox%29%3B%0A%20%20if%20%28%21prompts%5B0%5D%29%20return%3B%0A%20%20cbu.ps.setBoolPref%28prefstring%2C%20%21prompts%5B2%5D%29%3B%0A%20%20desc%20%3D%20prompts%5B1%5D%3B%0A%7D%0A%0A//%20Credit%3A%20Frank%20Lion%20at%20http%3A//forums.mozillazine.org/viewtopic.php%3Ft%3D2646443%0Avar%20vbs%20%3D%20%27set%20SRP%20%3D%20getobject%28%22winmgmts%3A%5C%5C%5C%5C.%5C%5Croot%5C%5Cdefault%3ASystemrestore%22%29%5Cn%27%0A%20%20%20%20%20%20%20%20+%20%27CSRP%20%3D%20SRP.createrestorepoint%20%28%22%27%20+%20desc%20+%20%27%22%2C%200%2C%20100%29%27%3B%0A%0Avar%20tempDir%20%3D%20Services.dirsvc.get%28%22TmpD%22%2C%20Components.interfaces.nsIFile%29.path%3B%0Avar%20file%20%3D%20Components.classes%5B%22@mozilla.org/file/local%3B1%22%5D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20.createInstance%28Components.interfaces.nsIFile%29%3B%0Afile.initWithPath%28tempDir%29%3B%0Afile.append%28%22sysres.vbs%22%29%3B%0A%0Acbu.writeFile%28file.path%2C%20vbs%29%3B%0A%0Afile.launch%28%29%3B%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Create a Restore Point">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=external-custombuttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <name>Create a Restore Point</name>
+  <image><![CDATA[custombuttons-stdicon-2]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[]]></initcode>
+  <code><![CDATA[var prefstring = "custombuttons.SystemRestore.prompt";
+
+var ask = true;
+try {
+  ask = cbu.ps.getBoolPref(prefstring);
+} catch(ex) {}
+
+var desc = "Restore point created from Firefox"; // Default description
+
+if (ask) { // Ask for description
+  var checkbox = { prompt: "Don't ask again", value: !ask };
+  var prompts = custombuttons.promptBox(this.name,
+                                        "Restore point description:",
+                                        desc,
+                                        checkbox);
+  if (!prompts[0]) return;
+  cbu.ps.setBoolPref(prefstring, !prompts[2]);
+  desc = prompts[1];
+}
+
+// Credit: Frank Lion at http://forums.mozillazine.org/viewtopic.php?t=2646443
+var vbs = 'set SRP = getobject("winmgmts:\\\\.\\root\\default:Systemrestore")\n'
+        + 'CSRP = SRP.createrestorepoint ("' + desc + '", 0, 100)';
+
+var tempDir = Services.dirsvc.get("TmpD", Components.interfaces.nsIFile).path;
+var file = Components.classes["@mozilla.org/file/local;1"]
+                     .createInstance(Components.interfaces.nsIFile);
+file.initWithPath(tempDir);
+file.append("sysres.vbs");
+
+cbu.writeFile(file.path, vbs);
+
+file.launch();]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[]]></help>
+  <attributes/>
+</custombutton>

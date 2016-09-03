@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/" xmlns:html="http://www.w3.org/1999/xhtml">
+<html:head>
+	<html:title><![CDATA[Restore Recently Closed Tabs ]]></html:title>
+	<html:link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADfklEQVQ4jZXMbVDaBQDH8f+77a7d1a4XvehFl3fspuS5LnfXjkk+bCzdLVR0hkawTGEiBqI0QU0RmE+HQ+dUfABE0jXBZBulU5xta6UmB45Rw0LTfNp0PsTNJ/j1tt6tz/vvlyD+pbndGCGvrI/4Uq4mSyrqQgWC+gPEy+o231Q5Hz3Gw3EHHo47/GO/uJ43tBnVLz3osVifA8ALvx9rz1axubmF2qbW/f812Nvdxdb6OlafPsPCwjLm55dQVqIMlpUoAmrNtWBZlcZ+Z2Li1f+EPp/voKAqtbDD1L2zsb6Op0uLmJv9E17vDDyeGfRbbei32vBkehqaJp3ffLfTrvqG1ZdzOUk24Bx4hRC3MI/mttBXhYpi9FtMMPfq8LVRD61Oj+Z2HQqlChRKFWjqascXEhGuaqqQweeAU3l6XVCfGkYk5Bw/xu84G5DdT4FkmA7xwDmIB85BaEtAnjUefDMNvBunkN0Ti8+MUeDoKWAbT4JZfTLIyKVEEvTcE+GZGtp26R0WCi1pEF5PRsHNJAgtDHTfbYHlBwMKuphgt1KRduV9MGoikaJ5D2fyyTvUjKPhBLeWHlZkTtvUzuVD48lBpSMT6ke5mFwcwcScHYFAAO7lMRSPMnDxVhyy+z5Ato2KDDVlI62YGkoUaT89Iuv9eLlpJg9qNxfKsQu4Mi7Cmn8FXT/Xwbs8hekVN1onypB/iw6+NQbc76JxQRP7V56GQSIum0Qh0h6m7+rvuah1ZaHDKceafwUjv30Lrv5DsJtj0D/eid39bVTbREjviATLdBzsmhiPoo3/FmEYVr9ZZPjEUefh4qsHTNyYbEYgGMAD7/cQ9iThc0McWkdUeLIwBZ1djeTGcKS0vYN0OfXH1iHlG8SQx/K66FrqsPQeHdy+GBjvabCzt42hKQs8i5OwOg2YX/NheukxmgcrkNgQBoaWjPOyqNsjDt1rhM/nO5gqierMuU0Ncq5TwGw8ga779XDO/IStFxtot1fj7+0t/LH0K5iNFNAbQpGsJQfj+cf0XngPELMu1+Gs8kRVSs27e3RVBOKlZNAkYYgVHUF0HgmnRKFIKIhAlCAE0flvI+5SCGgy0j6rmKaadbkOE263+9DgaC9JXMU5XVDOPlukykyUKnnnS5QX00sVPFapgseSlfNYJfLs9EuKLIakgv2RWMk6MzhqIrnd7kP/AK2qLR9BFcpYAAAAAElFTkSuQmCC"/>
+	<html:style type="text/css"><![CDATA[body{font-size:medium;margin:0}body,code:before,help:before,initcode:before{font-family:"Verdana",sans-serif}#wrapper{position:fixed;top:1em;right:1em;max-width:15%;text-align:center}#button{background-color:#299a0b;border:1px solid #3a7404;border-radius:.5em;padding:0;margin-bottom:1em;box-shadow:1px 2px 3px rgba(0,0,0,.25)}#button a{color:#f0f0f0;font-weight:700;text-shadow:-.5pt -.5px .5pt rgba(0,0,0,1);padding:.8em;text-decoration:none}:-moz-any-link:focus{color:grey;outline-color:transparent;text-decoration:none}#button a,code,code:before,initcode,initcode:before,help,help:before{display:block}#credits{position:fixed;bottom:1em;right:1em;font-size:small}#about{font-size:small}custombutton{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABAElEQVQ4jW2TQXLFMAhDff+b2vEHYw5AF38eVTNdZAIxCEkmw31VptU5T7mvOuepc56K2B2f85TZrEwr99VxptUwm2U2695PZVrH937KfZX76txsVsTus0yrEbEr0/4F4AyQc56eDMiI2F0IbYoj9h9ZSCV2XzXUA1BVL8BvBvSMiN20zWY38VZ5gDEkYtfAYTRToA3qiQJk2hcA7W8gpaxG0nPvp4aiQ5UCzOV2GKAgLUEfpsGCfaBR92TonapmdCoAjHTIgLa6/14gbgow8oj9uwe6SMQ0qTz9P9oDZOgCkfMNJnqWaV8P3ouDRorUXEA4H1wbtMmVjcrQ7TSb9QMtXcwa4wpbXgAAAABJRU5ErkJggg==) fixed #f6f6f1;margin:1em}date,image,mode,accelkey{display:none}name{font-weight:700;font-size:x-large}code:before,help:before,initcode:before{font-weight:700;font-size:large;margin:0 0 1em;padding:.5em}code:before{content:"Code Tab"}help:before{content:"Help Tab"}initcode:before{content:"Initialization Code Tab"}code,initcode,help{background-color:#fcfcfc;font-size:.875em;font-family:Consolas,"Bitstream Vera Sans Mono","Courier New",Courier,monospace!important;margin:1em 2em 1em 0 !important;padding:1em;text-align:left;box-shadow:2px 2px 0 rgba(170,160,130,0.5),4px 4px 0 rgba(200,190,165,0.5);max-width:80%;min-width:80%;white-space:pre-wrap;word-wrap:break-word}]]></html:style>
+</html:head>
+<html:body>
+	<html:div id="wrapper">
+		<html:div id="button">
+			<html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3ERestore%20Recently%20Closed%20Tabs%20%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADfklEQVQ4jZXMbVDaBQDH8f+77a7d1a4XvehFl3fspuS5LnfXjkk+bCzdLVR0hkawTGEiBqI0QU0RmE+HQ+dUfABE0jXBZBulU5xta6UmB45Rw0LTfNp0PsTNJ/j1tt6tz/vvlyD+pbndGCGvrI/4Uq4mSyrqQgWC+gPEy+o231Q5Hz3Gw3EHHo47/GO/uJ43tBnVLz3osVifA8ALvx9rz1axubmF2qbW/f812Nvdxdb6OlafPsPCwjLm55dQVqIMlpUoAmrNtWBZlcZ+Z2Li1f+EPp/voKAqtbDD1L2zsb6Op0uLmJv9E17vDDyeGfRbbei32vBkehqaJp3ffLfTrvqG1ZdzOUk24Bx4hRC3MI/mttBXhYpi9FtMMPfq8LVRD61Oj+Z2HQqlChRKFWjqascXEhGuaqqQweeAU3l6XVCfGkYk5Bw/xu84G5DdT4FkmA7xwDmIB85BaEtAnjUefDMNvBunkN0Ti8+MUeDoKWAbT4JZfTLIyKVEEvTcE+GZGtp26R0WCi1pEF5PRsHNJAgtDHTfbYHlBwMKuphgt1KRduV9MGoikaJ5D2fyyTvUjKPhBLeWHlZkTtvUzuVD48lBpSMT6ke5mFwcwcScHYFAAO7lMRSPMnDxVhyy+z5Ato2KDDVlI62YGkoUaT89Iuv9eLlpJg9qNxfKsQu4Mi7Cmn8FXT/Xwbs8hekVN1onypB/iw6+NQbc76JxQRP7V56GQSIum0Qh0h6m7+rvuah1ZaHDKceafwUjv30Lrv5DsJtj0D/eid39bVTbREjviATLdBzsmhiPoo3/FmEYVr9ZZPjEUefh4qsHTNyYbEYgGMAD7/cQ9iThc0McWkdUeLIwBZ1djeTGcKS0vYN0OfXH1iHlG8SQx/K66FrqsPQeHdy+GBjvabCzt42hKQs8i5OwOg2YX/NheukxmgcrkNgQBoaWjPOyqNsjDt1rhM/nO5gqierMuU0Ncq5TwGw8ga779XDO/IStFxtot1fj7+0t/LH0K5iNFNAbQpGsJQfj+cf0XngPELMu1+Gs8kRVSs27e3RVBOKlZNAkYYgVHUF0HgmnRKFIKIhAlCAE0flvI+5SCGgy0j6rmKaadbkOE263+9DgaC9JXMU5XVDOPlukykyUKnnnS5QX00sVPFapgseSlfNYJfLs9EuKLIakgv2RWMk6MzhqIrnd7kP/AK2qLR9BFcpYAAAAAElFTkSuQmCC%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E2%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5Bif%20%28self.parentNode%20%26%26%20/%5Ewrapper-/.test%28self.parentNode.id%29%29%0A%09return%3B%0A%0Avar%20%24%20%3D%20this.RestoreRecentlyClosedTabs%20%3D%20%7B%0A%09init%3A%20function%28%29%20%7B%0A%09%09%24.initPrefs%28%29%3B%0A%0A%09%09//%20All%20the%20code%20using%20this%20crap%20is%20to%20deal%20with%20buttons%20initializing%20a%20million%20times.%0A%09%09//%20Stil%2C%20it%20doesn%27t%20fix%20SHEET%21%21%20But%20I%27m%20sick%20of%20trying%20to%20fix%20the%20un-fixable%21%21%21%0A%09%09if%20%28%21%28%24._UID%20in%20window%29%29%20%7B%0A%09%09%09window%5B%24._UID%5D%20%3D%20%7B%0A%09%09%09%09CustomizableUI%3A%20false%2C%0A%09%09%09%09Initialized%3A%20false%2C%0A%09%09%09%09SetState%3A%20null%2C%0A%09%09%09%09UndoCloseTab%3A%20null%2C%0A%09%09%09%09PopulateUndoSubmenu%3A%20null%2C%0A%09%09%09%7D%3B%0A%09%09%7D%0A%0A%09%09if%20%28%21self.type%29%0A%09%09%09self.type%20%3D%20%24.gPref%28%22pMenuOnly%22%29%20%3F%20%22menu%22%20%3A%20%22menu-button%22%3B%0A%0A%09%09window%5B%24._UID%5D%5B%22SetState%22%5D%20%3D%20%24.setState%3B%0A%09%09window%5B%24._UID%5D%5B%22PopulateUndoSubmenu%22%5D%20%3D%20%24._populateUndoSubmenu%3B%0A%09%09window%5B%24._UID%5D%5B%22UndoCloseTab%22%5D%20%3D%20%24._undoCloseTab%3B%0A%0A%09%09let%20mPop%20%3D%20%24.%24CNS%28%22menupopup%22%2C%20%7B%0A%09%09%09id%3A%20%24._UID%20+%20%22-menupopup%22%2C%0A%09%09%09consumeoutsideclicks%3A%20false%2C%0A%09%09%09onmouseover%3A%20%22event.stopPropagation%28%29%3B%22%2C%0A%09%09%09onclick%3A%20%22event.stopPropagation%28%29%3B%22%2C%0A%09%09%09oncommand%3A%20%22this.undoCloseTab%28%29%3Bevent.stopPropagation%28%29%3B%22%2C%0A%09%09%09onpopupshowing%3A%20%22this.populateUndoSubmenu%28this%29%3Bevent.stopPropagation%28%29%3B%22%2C%0A%09%09%09tooltip%3A%20%22bhTooltip%22%2C%0A%09%09%09popupsinherittooltip%3A%20true%2C%0A%09%09%7D%29%3B%0A%0A%09%09mPop.populateUndoSubmenu%20%3D%20window%5B%24._UID%5D%5B%22PopulateUndoSubmenu%22%5D%3B%0A%09%09mPop.undoCloseTab%20%3D%20window%5B%24._UID%5D%5B%22UndoCloseTab%22%5D%3B%0A%0A%09%09self.onmousedown%20%3D%20function%28aE%29%20%7B%0A%09%09%09if%20%28%24.accel%28aE%29%29%0A%09%09%09%09aE.preventDefault%28%29%3B%0A%09%09%09aE.stopPropagation%28%29%3B%0A%09%09%7D%3B%0A%09%09self.onclick%20%3D%20function%28aE%29%20%7B%0A%09%09%09if%20%28aE.button%20%3D%3D%3D%200%20%26%26%20%21aE.shiftKey%20%26%26%20%24.accel%28aE%29%20%26%26%20%21aE.altKey%20%7C%7C%0A%09%09%09%09aE.button%20%3D%3D%3D%201%20%26%26%20%21aE.shiftKey%20%26%26%20%21%24.accel%28aE%29%20%26%26%20%21aE.altKey%29%20%7B%0A%09%09%09%09aE.preventDefault%28%29%3B%0A%09%09%09%09%24.openOptions%28%29%3B%0A%09%09%09%7D%0A%09%09%09aE.stopPropagation%28%29%3B%0A%09%09%7D%3B%0A%0A%09%09self.textContent%20%3D%20%22%22%3B%0A%09%09self.tooltipText%20%3D%20self.name%20+%20%22%20-%20ID%23%3A%20%22%20+%20self.id.slice%2820%29%20+%20%22%5Cn%5Cn%22%20+%0A%09%09%09%28%24.gPref%28%22pMenuOnly%22%29%20%3F%0A%09%09%09%09%22%uD835%uDDDF%uD835%uDDF2%uD835%uDDF3%uD835%uDE01%20%uD835%uDDF0%uD835%uDDF9%uD835%uDDF6%uD835%uDDF0%uD835%uDDF8%3A%20Open%20closed%20tabs%20menu%5Cn%22%20%3A%0A%09%09%09%09%22%uD835%uDDDF%uD835%uDDF2%uD835%uDDF3%uD835%uDE01%20%uD835%uDDF0%uD835%uDDF9%uD835%uDDF6%uD835%uDDF0%uD835%uDDF8%3A%20Restore%20last%20closed%20tab%5Cn%22%20+%0A%09%09%09%09%22%uD835%uDDD7%uD835%uDDFF%uD835%uDDFC%uD835%uDDFD%uD835%uDDFA%uD835%uDDEE%uD835%uDDFF%uD835%uDDF8%uD835%uDDF2%uD835%uDDFF%3A%20Open%20closed%20tabs%20menu%5Cn%22%29%20+%0A%09%09%09%22%uD835%uDDE0%uD835%uDDF6%uD835%uDDF1%uD835%uDDF1%uD835%uDDF9%uD835%uDDF2%20%uD835%uDDFC%uD835%uDDFF%20%22%20+%20%24.accel%28%29%20+%20%22%20+%20%uD835%uDDDF%uD835%uDDF2%uD835%uDDF3%uD835%uDE01%20%uD835%uDDF0%uD835%uDDF9%uD835%uDDF6%uD835%uDDF0%uD835%uDDF8%3A%20Open%20Options%5Cn%5Cn%22%20+%0A%09%09%09%22%uD835%uDDE5%uD835%uDDF2%uD835%uDDEE%uD835%uDDF1%20%uD835%uDE01%uD835%uDDF5%uD835%uDDF6%uD835%uDE00%20%uD835%uDDEF%uD835%uDE02%uD835%uDE01%uD835%uDE01%uD835%uDDFC%uD835%uDDFB%20%uD835%uDDF5%uD835%uDDF2%uD835%uDDF9%uD835%uDDFD%20%uD835%uDDF3%uD835%uDDFC%uD835%uDDFF%20%uD835%uDE03%uD835%uDDF2%uD835%uDDFF%uD835%uDE06%20%uD835%uDDF6%uD835%uDDFA%uD835%uDDFD%uD835%uDDFC%uD835%uDDFF%uD835%uDE01%uD835%uDDEE%uD835%uDDFB%uD835%uDE01%20%uD835%uDE02%uD835%uDE00%uD835%uDDEE%uD835%uDDF4%uD835%uDDF2%20%uD835%uDDFB%uD835%uDDFC%uD835%uDE01%uD835%uDDF2%uD835%uDE00.%5Cn%22%20+%0A%09%09%09%22%uD835%uDDE5%uD835%uDDF6%uD835%uDDF4%uD835%uDDF5%uD835%uDE01%20%uD835%uDDF0%uD835%uDDF9%uD835%uDDF6%uD835%uDDF0%uD835%uDDF8%20%uD835%uDDFC%uD835%uDDFB%20%uD835%uDDEF%uD835%uDE02%uD835%uDE01%uD835%uDE01%uD835%uDDFC%uD835%uDDFB%2C%20%5C%22%uD835%uDDD5%uD835%uDE02%uD835%uDE01%uD835%uDE01%uD835%uDDFC%uD835%uDDFB%20%uD835%uDDDB%uD835%uDDF2%uD835%uDDF9%uD835%uDDFD%5C%22%20%uD835%uDDF6%uD835%uDE01%uD835%uDDF2%uD835%uDDFA.%22%3B%0A%09%09self.orient%20%3D%20%22horizontal%22%3B%0A%0A%09%09if%20%28%21%24.gPref%28%22pMenuOnly%22%29%29%20%7B%0A%09%09%09if%20%28%24.isSM%29%0A%09%09%09%09self.setAttribute%28%22oncommand%22%2C%20%22gBrowser.undoCloseTab%280%29%3B%22%29%3B%0A%09%09%09else%0A%09%09%09%09self.setAttribute%28%22command%22%2C%20%22History%3AUndoCloseTab%22%29%3B%0A%09%09%7D%0A%0A%09%09self.onmouseover%20%3D%20function%28%29%20%7B%0A%09%09%09%24.setState%28%29%3B%0A%09%09%7D%3B%0A%0A%09%09self.appendChild%28mPop%29%3B%0A%0A%09%09if%20%28%22CustomizableUI%22%20in%20window%29%20%7B%0A%09%09%09if%20%28%21window%5B%24._UID%5D%5B%22CustomizableUI%22%5D%29%20%7B%0A%09%09%09%09window%5B%24._UID%5D%5B%22CustomizableUI%22%5D%20%3D%20true%3B%0A%09%09%09%09CustomizableUI.addListener%28%7B%0A%09%09%09%09%09onCustomizeEnd%3A%20function%28aWindow%29%20%7B%0A%09%09%09%09%09%09var%20thisBtn%20%3D%20aWindow.document.getElementById%28self.id%29%3B%0A%09%09%09%09%09%09setTimeout%28function%28%29%20%7B%0A%09%09%09%09%09%09%09aWindow%5B%24._UID%5D%5B%22CustomizableUI%22%5D%20%26%26%20thisBtn.RestoreRecentlyClosedTabs.selfDestroy%28%29%3B%0A%09%09%09%09%09%09%7D%2C%20Math.floor%28Math.random%28%29%20*%20%281%20+%202000%20-%20200%29%29%20+%20200%29%3B%0A%09%09%09%09%09%7D%0A%09%09%09%09%7D%29%3B%0A%09%09%09%7D%0A%09%09%7D%0A%0A%09%09addDestructor%28function%28aReason%29%20%7B%0A%09%09%09if%20%28aReason%20%3D%3D%3D%20%22delete%22%20%7C%7C%20aReason%20%3D%3D%3D%20%22update%22%29%20%7B%0A%09%09%09%09window%5B%24._UID%5D%5B%22Initialized%22%5D%20%3D%20false%3B%0A%09%09%09%09%24.handlePrefObserver%28true%29%3B%0A%09%09%09%09gBrowser.mTabContainer.removeEventListener%28%22TabClose%22%2C%20window%5B%24._UID%5D%5B%22SetState%22%5D%2C%20false%29%3B%0A%09%09%09%09gBrowser.mTabContainer.removeEventListener%28%22TabOpen%22%2C%20window%5B%24._UID%5D%5B%22SetState%22%5D%2C%20false%29%3B%0A%09%09%09%7D%0A%09%09%09if%20%28aReason%20%3D%3D%3D%20%22delete%22%29%20%7B%0A%09%09%09%09delete%20window%5B%24._UID%5D%3B%0A%09%09%09%7D%0A%09%09%7D%29%3B%0A%0A%09%09/**%0A%09%09%20*%20Without%20this%20timeout%2C%20the%20stupid%20listeners%20are%20not%20removed%20by%20the%20destructor%21%21%21%20%AC%AC%0A%09%09%20*%20And%20the%20setState%20function%20throws%20an%20error%20on%20startup.%20It%20seems%20that%20the%20SessionStore%20service%0A%09%09%20*%20%20needs%20half%20an%20hour%20to%20freaking%20start%21%21%21%20%AC%AC%0A%09%09%20*/%0A%09%09setTimeout%28function%28%29%20%7B%0A%09%09%09if%20%28%21window%5B%24._UID%5D%5B%22Initialized%22%5D%29%20%7B%0A%09%09%09%09window%5B%24._UID%5D%5B%22Initialized%22%5D%20%3D%20true%3B%0A%09%09%09%09%24.handlePrefObserver%28%29%3B%0A%09%09%09%09gBrowser.mTabContainer.addEventListener%28%22TabClose%22%2C%20window%5B%24._UID%5D%5B%22SetState%22%5D%2C%20false%29%3B%0A%09%09%09%09gBrowser.mTabContainer.addEventListener%28%22TabOpen%22%2C%20window%5B%24._UID%5D%5B%22SetState%22%5D%2C%20false%29%3B%0A%09%09%09%7D%0A%09%09%09%24.setState%28%29%3B%0A%09%09%7D%2C%201000%29%3B%0A%09%7D%2C%0A%0A%09setState%3A%20function%28%29%20%7B%0A%09%09if%20%28%24.closedTabCount%20%3D%3D%3D%200%29%0A%09%09%09self.setAttribute%28%22disabled%22%2C%20true%29%3B%0A%09%09else%0A%09%09%09self.removeAttribute%28%22disabled%22%29%3B%0A%09%7D%2C%0A%0A%09_undoCloseTab%3A%20function%28aE%29%20%7B%0A%09%09if%20%28%21aE.originalTarget.value%29%0A%09%09%09return%20true%3B%0A%0A%09%09if%20%28%24.isSM%29%0A%09%09%09gBrowser.undoCloseTab%28aE.originalTarget.value%29%3B%0A%09%09else%0A%09%09%09undoCloseTab%28aE.originalTarget.value%29%3B%0A%09%7D%2C%0A%0A%09_populateUndoSubmenu%3A%20function%28aN%29%20%7B%0A%09%09aN.textContent%20%3D%20%22%22%3B%0A%0A%09%09let%20closedTabsCount%20%3D%20%24.closedTabCount%2C%0A%09%09%09showAccesskeys%20%3D%20%24.gPref%28%22pShowAccessKeys%22%29%3B%0A%0A%09%09if%20%28closedTabsCount%20%3D%3D%3D%200%29%20%7B%0A%09%09%09aN.hidePopup%28%29%3B%20//%20Needed%20for%20SeaMonkey.%20%AC%AC%0A%09%09%09return%20false%3B%0A%09%09%7D%0A%0A%09%09try%20%7B%0A%09%09%09let%20closedTabs%20%3D%20JSON.parse%28%24._ss.getClosedTabData%28window%29%29%3B%0A%09%09%09let%20i%20%3D%200%2C%0A%09%09%09%09iLen%20%3D%20closedTabs.length%3B%0A%09%09%09for%20%28%3B%20i%20%3C%20iLen%3B%20i++%29%20%7B%0A%09%09%09%09let%20label%20%3D%20closedTabs%5Bi%5D.title%3B%0A%09%09%09%09let%20iconURL%20%3D%20%22%22%3B%0A%09%09%09%09if%20%28showAccesskeys%20%26%26%20i%20%3C%209%29%0A%09%09%09%09%09label%20%3D%20%28i%20+%201%29%20+%20%22%20%22%20+%20label%3B%0A%09%09%09%09if%20%28closedTabs%5Bi%5D.image%29%20%7B%0A%09%09%09%09%09iconURL%20%3D%20closedTabs%5Bi%5D.image%3B%0A%09%09%09%09%09if%20%28/%5Ehttps%3F%3A/.test%28iconURL%29%29%0A%09%09%09%09%09%09iconURL%20%3D%20%22moz-anno%3Afavicon%3A%22%20+%20iconURL%3B%0A%09%09%09%09%7D%0A%09%09%09%09let%20mI%20%3D%20aN.appendChild%28%24.%24CNS%28%22menuitem%22%2C%20%7B%0A%09%09%09%09%09label%3A%20label%2C%0A%09%09%09%09%09image%3A%20iconURL%2C%0A%09%09%09%09%09value%3A%20i%2C%0A%09%09%09%09%09class%3A%20%24.isSM%20%3F%20%22%22%20%3A%20%22menuitem-iconic%20bookmark-item%20menuitem-with-favicon%22%2C%0A%09%09%09%09%09oncommand%3A%20%22undoCloseTab%28%22%20+%20i%20+%20%22%29%3B%22%2C%0A%09%09%09%09%09key%3A%20%28i%20%3D%3D%3D%200%29%20%3F%20%22key_undoCloseTab%22%20%3A%20%22%22%2C%0A%09%09%09%09%09accesskey%3A%20%28showAccesskeys%20%26%26%20i%20%3C%209%29%20%3F%20%28i%20+%201%29%20%3A%20%22%22%2C%0A%09%09%09%09%7D%29%29%3B%0A%09%09%09%09let%20tabData%20%3D%20closedTabs%5Bi%5D.state%3B%0A%09%09%09%09let%20activeIndex%20%3D%20%28tabData.index%20%7C%7C%20tabData.entries.length%29%20-%201%3B%0A%09%09%09%09if%20%28activeIndex%20%3E%3D%200%20%26%26%20tabData.entries%5BactiveIndex%5D%29%20%7B%0A%09%09%09%09%09mI.setAttribute%28%22targetURI%22%2C%20tabData.entries%5BactiveIndex%5D.url%29%3B%0A%09%09%09%09%7D%0A%09%09%09%09mI.addEventListener%28%22click%22%2C%20%24._undoCloseMiddleClick%2C%20false%29%3B%0A%09%09%09%7D%0A%09%09%7D%20finally%20%7B%0A%09%09%09let%20lbl%3B%0A%09%09%09try%20%7B%0A%09%09%09%09lbl%20%3D%20gNavigatorBundle.getString%28%22menuRestoreAllTabs.label%22%29%3B%0A%09%09%09%7D%20catch%20%28aErr%29%20%7B%0A%09%09%09%09lbl%20%3D%20%24.gPref%28%22pRestoreAllTabsLabel%22%29%3B%0A%09%09%09%7D%0A%09%09%09aN.appendChild%28%24.%24CNS%28%22menuseparator%22%29%29%3B%0A%09%09%09aN.appendChild%28%24.%24CNS%28%22menuitem%22%2C%20%7B%0A%09%09%09%09label%3A%20%24.gPref%28%22pClearTabsListLabel%22%29%2C%0A%09%09%09%09oncommand%3A%20%22document.getElementById%28%27%22%20+%20self.id%20+%0A%09%09%09%09%09%22%27%29.RestoreRecentlyClosedTabs.removeAllClosedTabs%28this%29%3Bevent.stopPropagation%28%29%3B%22%0A%09%09%09%7D%29%29%3B%0A%09%09%09aN.appendChild%28%24.%24CNS%28%22menuitem%22%2C%20%7B%0A%09%09%09%09id%3A%20%24._UID%20+%20%22menu_restoreAllTabs%22%2C%0A%09%09%09%09label%3A%20lbl%2C%0A%09%09%09%09oncommand%3A%20%22document.getElementById%28%27%22%20+%20self.id%20+%0A%09%09%09%09%09%22%27%29.RestoreRecentlyClosedTabs.restoreAllClosedTabs%28%29%3Bevent.stopPropagation%28%29%3B%22%0A%09%09%09%7D%29%29%3B%0A%09%09%7D%0A%09%7D%2C%0A%0A%09_undoCloseMiddleClick%3A%20function%28aE%29%20%7B%0A%09%09if%20%28aE.button%20%21%3D%3D%201%29%0A%09%09%09return%3B%0A%09%09if%20%28%24.isSM%29%0A%09%09%09gBrowser.undoCloseTab%28aE.originalTarget.value%29%3B%0A%09%09else%0A%09%09%09undoCloseTab%28aE.originalTarget.value%29%3B%0A%09%09gBrowser.moveTabToEnd%28%29%3B%0A%09%09%24._populateUndoSubmenu%28%24.mPop%29%3B%0A%09%7D%2C%0A%0A%09restoreAllClosedTabs%3A%20function%28%29%20%7B%0A%09%09let%20msg%20%3D%20%22You%27re%20about%20to%20restore%20all%20closed%20tabs.%5Cn%22%20+%0A%09%09%09%22Are%20you%20sure%20that%20you%20want%20to%20proceed%3F%22%3B%0A%09%09let%20cBox%20%3D%20%24.gPref%28%22pShowRestoreAllTabsAlert%22%29%20%3F%20custombuttons.confirmBox%28self.name%2C%20msg%2C%20%22Yes%22%2C%20%22Cancel%22%29%20%3A%20true%3B%0A%09%09if%20%28cBox%29%20%7B%0A%09%09%09let%20iLen%20%3D%20%24.closedTabCount%3B%0A%09%09%09for%20%28var%20i%20%3D%20iLen%3B%20i%20%3E%3D%200%3B%20i--%29%20%7B%0A%09%09%09%09if%20%28%24.isSM%29%0A%09%09%09%09%09gBrowser.undoCloseTab%28%29%3B%0A%09%09%09%09else%0A%09%09%09%09%09undoCloseTab%28%29%3B%0A%09%09%09%7D%0A%09%09%7D%20else%0A%09%09%09return%3B%0A%09%7D%2C%0A%0A%09removeAllClosedTabs%3A%20function%28%29%20%7B%0A%09%09let%20msg%20%3D%20%22You%27re%20about%20to%20clear%20the%20list%20of%20all%20closed%20tabs.%5Cn%22%20+%0A%09%09%09%22Are%20you%20sure%20that%20you%20want%20to%20proceed%3F%22%3B%0A%09%09let%20cBox%20%3D%20%24.gPref%28%22pShowClearClosedTabsListAlert%22%29%20%3F%20custombuttons.confirmBox%28self.name%2C%20msg%2C%20%22Yes%22%2C%20%22Cancel%22%29%20%3A%20true%3B%0A%09%09if%20%28cBox%29%20%7B%0A%09%09%09try%20%7B%0A%09%09%09%09let%20iLen%20%3D%20%24.closedTabCount%3B%0A%09%09%09%09while%20%28iLen%20%21%3D%3D%200%29%20%7B%0A%09%09%09%09%09--iLen%3B%0A%09%09%09%09%09if%20%28%22SessionStore%22%20in%20window%29%20//%20Firefox%0A%09%09%09%09%09%09SessionStore.forgetClosedTab%28window%2C%200%29%3B%0A%09%09%09%09%09else%0A%09%09%09%09%09%09%24._ss.forgetClosedTab%28window%2C%200%29%3B%0A%09%09%09%09%7D%0A%09%09%09%7D%20catch%20%28aErr%29%20%7B%7D%20finally%20%7B%0A%09%09%09%09%24.setState%28%29%3B%0A%09%09%09%7D%0A%09%09%7D%20else%0A%09%09%09return%3B%0A%09%7D%2C%0A%0A%09handlePrefObserver%3A%20function%28aRem%29%20%7B%0A%09%09var%20prefs%20%3D%20%24.DefPrefs%3B%0A%09%09for%20%28let%20key%20in%20prefs%29%20%7B%0A%09%09%09let%20pref%20%3D%20%24.Branch%20+%20key%3B%0A%09%09%09if%20%28prefs.hasOwnProperty%28key%29%29%20%7B%0A%09%09%09%09if%20%28aRem%29%0A%09%09%09%09%09Services.prefs.removeObserver%28pref%2C%20%24.prefObserver%2C%20false%29%3B%0A%09%09%09%09else%0A%09%09%09%09%09Services.prefs.addObserver%28pref%2C%20%24.prefObserver%2C%20false%29%3B%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%2C%0A%0A%09prefObserver%3A%20%7B%0A%09%09observe%3A%20function%28aSubject%2C%20aTopic%2C%20aPStr%29%20%7B%0A%09%09%09if%20%28aTopic%20%3D%3D%3D%20%22nsPref%3Achanged%22%29%20%7B%0A%09%09%09%09let%20prefName%20%3D%20aPStr.slice%28%24.Branch.length%29%3B%0A%09%09%09%09console.info%28prefName%29%3B%0A%09%09%09%09switch%20%28prefName%29%20%7B%0A%09%09%09%09%09case%20%22pMenuOnly%22%3A%0A%09%09%09%09%09%09self.type%20%3D%20%24.gPref%28%22pMenuOnly%22%29%20%3F%20%22menu%22%20%3A%20%22menu-button%22%3B%0A%09%09%09%09%09%09break%3B%0A%09%09%09%09%7D%0A%09%09%09%09window%5B%24._UID%5D%5B%22SetState%22%5D%20%3D%20%24.setState%3B%0A%09%09%09%09window%5B%24._UID%5D%5B%22PopulateUndoSubmenu%22%5D%20%3D%20%24._populateUndoSubmenu%3B%0A%09%09%09%09window%5B%24._UID%5D%5B%22UndoCloseTab%22%5D%20%3D%20%24._undoCloseTab%3B%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%2C%0A%0A%09openOptions%3A%20function%28%29%20%7B%0A%09%09var%20url%20%3D%20%22about%3Aconfig%3Ffilter%3D%22%20+%20%24.Branch%3B%0A%09%09if%20%28%24.gPref%28%22pOpenOptionsOnNewTab%22%29%20%26%26%20%28%22gBrowser%22%20in%20window%29%29%20%7B%0A%09%09%09let%20tab%20%3D%20gBrowser.visibleTabs.find%28tab%20%3D%3E%20tab.linkedBrowser.currentURI.spec%20%3D%3D%3D%20url%29%3B%0A%09%09%09gBrowser.selectedTab%20%3D%20tab%20%7C%7C%20gBrowser.addTab%28url%29%3B%0A%09%09%7D%20else%0A%09%09%09toOpenWindowByType%28%22Preferences%3AConfigManager%22%2C%20url%29%3B%0A%09%7D%2C%0A%0A%09%24CNS%3A%20function%28aElName%2C%20aAttrs%2C%20aNameSpace%29%20%7B%20//%20Creates%20elements%0A%09%09var%20el%20%3D%20aNameSpace%20%3F%0A%09%09%09document.createElementNS%28aNameSpace%2C%20aElName%29%20%3A%0A%09%09%09document.createElement%28aElName%29%3B%0A%09%09if%20%28aAttrs%29%0A%09%09%09Object.keys%28aAttrs%29.forEach%28function%28n%29%20%7B%0A%09%09%09%09if%20%28aAttrs%5Bn%5D%20%21%3D%3D%20%22%22%29%0A%09%09%09%09%09el.setAttribute%28n%2C%20aAttrs%5Bn%5D%29%3B%0A%09%09%09%7D%29%3B%0A%09%09return%20el%3B%0A%09%7D%2C%0A%0A%09selfDestroy%3A%20function%28%29%20%7B%0A%09%09setTimeout%28function%28%29%20%7B%0A%09%09%09self.destroy%28%22update%22%29%3B%0A%09%09%09setTimeout%28function%28%29%20%7B%0A%09%09%09%09self.init%28%29%3B%0A%09%09%09%7D%2C%20100%29%3B%0A%09%09%7D%2C%20100%29%3B%0A%09%7D%2C%0A%0A%09hotkeyPressed%3A%20function%28aE%29%20%7B%0A%09%09let%20p%20%3D%20%24.mPop%3B%0A%09%09if%20%28p%20%26%26%20p.state%20%3D%3D%3D%20%22open%22%29%0A%09%09%09p.hidePopup%28%29%3B%0A%09%09else%0A%09%09%09p.openPopup%28self%2C%20%22after_start%22%2C%200%2C%200%2C%20false%2C%20null%2C%20null%29%3B%0A%09%7D%2C%0A%0A%09accel%3A%20function%28aE%29%20%7B%0A%09%09if%20%28aE%29%0A%09%09%09return%20%24.isOSX%20%3F%20aE.metaKey%20%3A%20aE.ctrlKey%3B%0A%09%09return%20%24.isOSX%20%3F%20%22%uD835%uDDD6%uD835%uDDFC%uD835%uDDFA%uD835%uDDFA%uD835%uDDEE%uD835%uDDFB%uD835%uDDF1%22%20%3A%20%22%uD835%uDDD6%uD835%uDDFC%uD835%uDDFB%uD835%uDE01%uD835%uDDFF%uD835%uDDFC%uD835%uDDF9%22%3B%0A%09%7D%2C%0A%0A%09isSM%3A%20Services.appinfo.ID%20%3D%3D%3D%20%22%7B92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a%7D%22%2C%0A%09isOSX%3A%20Services.appinfo.OS.toLowerCase%28%29.startsWith%28%22darwin%22%29%2C%0A%09_UID%3A%20%22__restore_recently_closed_tabs_%22%20+%20self.id.slice%2820%29%2C%0A%0A%09get%20mPop%28%29%20%7B%0A%09%09return%20document.getElementById%28%24._UID%20+%20%22-menupopup%22%29%3B%0A%09%7D%2C%0A%09get%20closedTabCount%28%29%20%7B%0A%09%09return%20%24._ss.getClosedTabCount%28window%29%3B%0A%09%7D%2C%0A%09get%20_ss%28%29%20%7B%0A%09%09if%20%28%24.isSM%29%0A%09%09%09return%20Cc%5B%22@mozilla.org/suite/sessionstore%3B1%22%5D.getService%28Ci.nsISessionStore%29%3B%0A%09%09else%0A%09%09%09return%20Cc%5B%22@mozilla.org/browser/sessionstore%3B1%22%5D.getService%28Ci.nsISessionStore%29%3B%0A%09%7D%2C%0A%7D%3B%0A%0Athis.RestoreRecentlyClosedTabs.initPrefs%20%3D%20function%28%29%20%7B%0A%09let%20branch%20%3D%20Services.prefs.getDefaultBranch%28self.RestoreRecentlyClosedTabs.Branch%29%2C%0A%09%09defaults%20%3D%20self.RestoreRecentlyClosedTabs.DefPrefs%3B%0A%09for%20%28let%20key%20in%20defaults%29%20%7B%0A%09%09if%20%28defaults.hasOwnProperty%28key%29%29%20%7B%0A%09%09%09let%20val%20%3D%20defaults%5Bkey%5D%3B%0A%09%09%09switch%20%28typeof%20val%29%20%7B%0A%09%09%09%09case%20%22boolean%22%3A%0A%09%09%09%09%09branch.setBoolPref%28key%2C%20val%29%3B%0A%09%09%09%09%09break%3B%0A%09%09%09%09case%20%22number%22%3A%0A%09%09%09%09%09branch.setIntPref%28key%2C%20val%29%3B%0A%09%09%09%09%09break%3B%0A%09%09%09%09case%20%22string%22%3A%0A%09%09%09%09%09let%20str%20%3D%20Cc%5B%22@mozilla.org/supports-string%3B1%22%5D.createInstance%28Ci.nsISupportsString%29%3B%0A%09%09%09%09%09str.data%20%3D%20val%3B%0A%09%09%09%09%09branch.setComplexValue%28%28key%29%2C%20Ci.nsISupportsString%2C%20str%29%3B%0A%09%09%09%09%09break%3B%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%7D%3B%0A%0Athis.RestoreRecentlyClosedTabs.gPref%20%3D%20function%28aKey%29%20%7B%0A%09let%20branch%20%3D%20Services.prefs.getBranch%28self.RestoreRecentlyClosedTabs.Branch%29%3B%0A%09switch%20%28typeof%20self.RestoreRecentlyClosedTabs.DefPrefs%5BaKey%5D%29%20%7B%0A%09%09case%20%22boolean%22%3A%0A%09%09%09return%20branch.getBoolPref%28aKey%29%3B%0A%09%09case%20%22number%22%3A%0A%09%09%09return%20branch.getIntPref%28aKey%29%3B%0A%09%09case%20%22string%22%3A%0A%09%09%09return%20branch.getComplexValue%28aKey%2C%20Ci.nsISupportsString%29.data%3B%0A%09%7D%0A%09return%20null%3B%0A%7D%3B%0A%0Athis.RestoreRecentlyClosedTabs.sPref%20%3D%20function%28aKey%2C%20aVal%29%20%7B%0A%09let%20branch%20%3D%20Services.prefs.getBranch%28self.RestoreRecentlyClosedTabs.Branch%29%3B%0A%09switch%20%28typeof%20aVal%29%20%7B%0A%09%09case%20%22boolean%22%3A%0A%09%09%09branch.setBoolPref%28aKey%2C%20aVal%29%3B%0A%09%09%09break%3B%0A%09%09case%20%22number%22%3A%0A%09%09%09branch.setIntPref%28aKey%2C%20aVal%29%3B%0A%09%09%09break%3B%0A%09%09case%20%22string%22%3A%0A%09%09%09let%20str%20%3D%20Cc%5B%22@mozilla.org/supports-string%3B1%22%5D.createInstance%28Ci.nsISupportsString%29%3B%0A%09%09%09str.data%20%3D%20aVal%3B%0A%09%09%09branch.setComplexValue%28%28aKey%29%2C%20Ci.nsISupportsString%2C%20str%29%3B%0A%09%09%09break%3B%0A%09%7D%0A%7D%3B%0A%0Athis.RestoreRecentlyClosedTabs.Branch%20%3D%20%22CB.RestoreRecentlyClosedTabs.Id%22%20+%20self.id.slice%2820%29%20+%20%22.%22%3B%0A%0Athis.RestoreRecentlyClosedTabs.DefPrefs%20%3D%20%7B%0A%09pMenuOnly%3A%20false%2C%0A%09pShowClearClosedTabsListAlert%3A%20true%2C%0A%09pShowRestoreAllTabsAlert%3A%20true%2C%0A%09pShowAccessKeys%3A%20true%2C%0A%09pOpenOptionsOnNewTab%3A%20false%2C%0A%09pRestoreAllTabsLabel%3A%20%22Restore%20All%20Tabs%22%2C%0A%09pClearTabsListLabel%3A%20%22Clear%20closed%20Tabs%20list%22%2C%0A%7D%3B%0A%0Athis.RestoreRecentlyClosedTabs.init%28%29%3B%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5Bif%28%21event.target%20%26%26%20%21this.disabled%29%0A%09this.RestoreRecentlyClosedTabs.hotkeyPressed%28this%29%3B%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5BCtrl+Shift+T%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%uD835%uDDDC%uD835%uDDFA%uD835%uDDFD%uD835%uDDFC%uD835%uDDFF%uD835%uDE01%uD835%uDDEE%uD835%uDDFB%uD835%uDE01%20%uD835%uDDFB%uD835%uDDFC%uD835%uDE01%uD835%uDDF2%uD835%uDE00%0A%u26AB%20%uD835%uDDD7%uD835%uDDE2%20%uD835%uDDE1%uD835%uDDE2%uD835%uDDE7%20%uD835%uDDF6%uD835%uDDFB%uD835%uDE00%uD835%uDE01%uD835%uDDEE%uD835%uDDF9%uD835%uDDF9%20%uD835%uDDFA%uD835%uDDFC%uD835%uDDFF%uD835%uDDF2%20%uD835%uDE01%uD835%uDDF5%uD835%uDDEE%uD835%uDDFB%20%uD835%uDDFC%uD835%uDDFB%uD835%uDDF2%20%uD835%uDE03%uD835%uDDF2%uD835%uDDFF%uD835%uDE00%uD835%uDDF6%uD835%uDDFC%uD835%uDDFB%20%uD835%uDDFC%uD835%uDDF3%20%uD835%uDE01%uD835%uDDF5%uD835%uDDF6%uD835%uDE00%20%uD835%uDDEF%uD835%uDE02%uD835%uDE01%uD835%uDE01%uD835%uDDFC%uD835%uDDFB%20%uD835%uDDEE%uD835%uDE01%20%uD835%uDE01%uD835%uDDF5%uD835%uDDF2%20%uD835%uDE00%uD835%uDDEE%uD835%uDDFA%uD835%uDDF2%20%uD835%uDE01%uD835%uDDF6%uD835%uDDFA%uD835%uDDF2%u2757%u2757%u2757%0A%u26AB%20%uD835%uDDD7%uD835%uDDE2%20%uD835%uDDE1%uD835%uDDE2%uD835%uDDE7%20%uD835%uDDF0%uD835%uDDF9%uD835%uDDFC%uD835%uDDFB%uD835%uDDF2%20%uD835%uDE01%uD835%uDDF5%uD835%uDDF6%uD835%uDE00%20%uD835%uDDEF%uD835%uDE02%uD835%uDE01%uD835%uDE01%uD835%uDDFC%uD835%uDDFB%u2757%u2757%u2757%0A%u26AB%20If%20you%20did%20any%20of%20the%20previous%20actions%2C%20delete%20all%20extra%20buttons%20leaving%20only%20one%20version%20of%20%uD835%uDDE5%uD835%uDDF2%uD835%uDE00%uD835%uDE01%uD835%uDDFC%uD835%uDDFF%uD835%uDDF2%20%uD835%uDDE5%uD835%uDDF2%uD835%uDDF0%uD835%uDDF2%uD835%uDDFB%uD835%uDE01%uD835%uDDF9%uD835%uDE06%20%uD835%uDDD6%uD835%uDDF9%uD835%uDDFC%uD835%uDE00%uD835%uDDF2%uD835%uDDF1%20%uD835%uDDE7%uD835%uDDEE%uD835%uDDEF%uD835%uDE00%20%20and%20restart%20your%20application.%0A%0A%5B%2C%5D%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Restore Recently Closed Tabs ">
+				<![CDATA[Install this button]]>
+			</html:a>
+		</html:div>
+		<html:a id="about" href="https://addons.mozilla.org/addon/custom-buttons/">
+			<![CDATA[About CustomButtons]]>
+		</html:a>
+		<html:div id="credits">
+			<html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=3599">
+				<![CDATA[XML created with]]>
+				<html:br/>
+				<![CDATA[CB Context Menu Extended]]>
+			</html:a>
+		</html:div>
+	</html:div>
+</html:body>
+  <name>Restore Recently Closed Tabs </name>
+  <image><![CDATA[data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADfklEQVQ4jZXMbVDaBQDH8f+77a7d1a4XvehFl3fspuS5LnfXjkk+bCzdLVR0hkawTGEiBqI0QU0RmE+HQ+dUfABE0jXBZBulU5xta6UmB45Rw0LTfNp0PsTNJ/j1tt6tz/vvlyD+pbndGCGvrI/4Uq4mSyrqQgWC+gPEy+o231Q5Hz3Gw3EHHo47/GO/uJ43tBnVLz3osVifA8ALvx9rz1axubmF2qbW/f812Nvdxdb6OlafPsPCwjLm55dQVqIMlpUoAmrNtWBZlcZ+Z2Li1f+EPp/voKAqtbDD1L2zsb6Op0uLmJv9E17vDDyeGfRbbei32vBkehqaJp3ffLfTrvqG1ZdzOUk24Bx4hRC3MI/mttBXhYpi9FtMMPfq8LVRD61Oj+Z2HQqlChRKFWjqascXEhGuaqqQweeAU3l6XVCfGkYk5Bw/xu84G5DdT4FkmA7xwDmIB85BaEtAnjUefDMNvBunkN0Ti8+MUeDoKWAbT4JZfTLIyKVEEvTcE+GZGtp26R0WCi1pEF5PRsHNJAgtDHTfbYHlBwMKuphgt1KRduV9MGoikaJ5D2fyyTvUjKPhBLeWHlZkTtvUzuVD48lBpSMT6ke5mFwcwcScHYFAAO7lMRSPMnDxVhyy+z5Ato2KDDVlI62YGkoUaT89Iuv9eLlpJg9qNxfKsQu4Mi7Cmn8FXT/Xwbs8hekVN1onypB/iw6+NQbc76JxQRP7V56GQSIum0Qh0h6m7+rvuah1ZaHDKceafwUjv30Lrv5DsJtj0D/eid39bVTbREjviATLdBzsmhiPoo3/FmEYVr9ZZPjEUefh4qsHTNyYbEYgGMAD7/cQ9iThc0McWkdUeLIwBZ1djeTGcKS0vYN0OfXH1iHlG8SQx/K66FrqsPQeHdy+GBjvabCzt42hKQs8i5OwOg2YX/NheukxmgcrkNgQBoaWjPOyqNsjDt1rhM/nO5gqierMuU0Ncq5TwGw8ga779XDO/IStFxtot1fj7+0t/LH0K5iNFNAbQpGsJQfj+cf0XngPELMu1+Gs8kRVSs27e3RVBOKlZNAkYYgVHUF0HgmnRKFIKIhAlCAE0flvI+5SCGgy0j6rmKaadbkOE263+9DgaC9JXMU5XVDOPlukykyUKnnnS5QX00sVPFapgseSlfNYJfLs9EuKLIakgv2RWMk6MzhqIrnd7kP/AK2qLR9BFcpYAAAAAElFTkSuQmCC]]></image>
+  <mode>2</mode>
+  <initcode><![CDATA[if (self.parentNode && /^wrapper-/.test(self.parentNode.id))
+	return;
+
+var $ = this.RestoreRecentlyClosedTabs = {
+	init: function() {
+		$.initPrefs();
+
+		// All the code using this crap is to deal with buttons initializing a million times.
+		// Stil, it doesn't fix SHEET!! But I'm sick of trying to fix the un-fixable!!!
+		if (!($._UID in window)) {
+			window[$._UID] = {
+				CustomizableUI: false,
+				Initialized: false,
+				SetState: null,
+				UndoCloseTab: null,
+				PopulateUndoSubmenu: null,
+			};
+		}
+
+		if (!self.type)
+			self.type = $.gPref("pMenuOnly") ? "menu" : "menu-button";
+
+		window[$._UID]["SetState"] = $.setState;
+		window[$._UID]["PopulateUndoSubmenu"] = $._populateUndoSubmenu;
+		window[$._UID]["UndoCloseTab"] = $._undoCloseTab;
+
+		let mPop = $.$CNS("menupopup", {
+			id: $._UID + "-menupopup",
+			consumeoutsideclicks: false,
+			onmouseover: "event.stopPropagation();",
+			onclick: "event.stopPropagation();",
+			oncommand: "this.undoCloseTab();event.stopPropagation();",
+			onpopupshowing: "this.populateUndoSubmenu(this);event.stopPropagation();",
+			tooltip: "bhTooltip",
+			popupsinherittooltip: true,
+		});
+
+		mPop.populateUndoSubmenu = window[$._UID]["PopulateUndoSubmenu"];
+		mPop.undoCloseTab = window[$._UID]["UndoCloseTab"];
+
+		self.onmousedown = function(aE) {
+			if ($.accel(aE))
+				aE.preventDefault();
+			aE.stopPropagation();
+		};
+		self.onclick = function(aE) {
+			if (aE.button === 0 && !aE.shiftKey && $.accel(aE) && !aE.altKey ||
+				aE.button === 1 && !aE.shiftKey && !$.accel(aE) && !aE.altKey) {
+				aE.preventDefault();
+				$.openOptions();
+			}
+			aE.stopPropagation();
+		};
+
+		self.textContent = "";
+		self.tooltipText = self.name + " - ID#: " + self.id.slice(20) + "\n\n" +
+			($.gPref("pMenuOnly") ?
+				"𝗟𝗲𝗳𝘁 𝗰𝗹𝗶𝗰𝗸: Open closed tabs menu\n" :
+				"𝗟𝗲𝗳𝘁 𝗰𝗹𝗶𝗰𝗸: Restore last closed tab\n" +
+				"𝗗𝗿𝗼𝗽𝗺𝗮𝗿𝗸𝗲𝗿: Open closed tabs menu\n") +
+			"𝗠𝗶𝗱𝗱𝗹𝗲 𝗼𝗿 " + $.accel() + " + 𝗟𝗲𝗳𝘁 𝗰𝗹𝗶𝗰𝗸: Open Options\n\n" +
+			"𝗥𝗲𝗮𝗱 𝘁𝗵𝗶𝘀 𝗯𝘂𝘁𝘁𝗼𝗻 𝗵𝗲𝗹𝗽 𝗳𝗼𝗿 𝘃𝗲𝗿𝘆 𝗶𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁 𝘂𝘀𝗮𝗴𝗲 𝗻𝗼𝘁𝗲𝘀.\n" +
+			"𝗥𝗶𝗴𝗵𝘁 𝗰𝗹𝗶𝗰𝗸 𝗼𝗻 𝗯𝘂𝘁𝘁𝗼𝗻, \"𝗕𝘂𝘁𝘁𝗼𝗻 𝗛𝗲𝗹𝗽\" 𝗶𝘁𝗲𝗺.";
+		self.orient = "horizontal";
+
+		if (!$.gPref("pMenuOnly")) {
+			if ($.isSM)
+				self.setAttribute("oncommand", "gBrowser.undoCloseTab(0);");
+			else
+				self.setAttribute("command", "History:UndoCloseTab");
+		}
+
+		self.onmouseover = function() {
+			$.setState();
+		};
+
+		self.appendChild(mPop);
+
+		if ("CustomizableUI" in window) {
+			if (!window[$._UID]["CustomizableUI"]) {
+				window[$._UID]["CustomizableUI"] = true;
+				CustomizableUI.addListener({
+					onCustomizeEnd: function(aWindow) {
+						var thisBtn = aWindow.document.getElementById(self.id);
+						setTimeout(function() {
+							aWindow[$._UID]["CustomizableUI"] && thisBtn.RestoreRecentlyClosedTabs.selfDestroy();
+						}, Math.floor(Math.random() * (1 + 2000 - 200)) + 200);
+					}
+				});
+			}
+		}
+
+		addDestructor(function(aReason) {
+			if (aReason === "delete" || aReason === "update") {
+				window[$._UID]["Initialized"] = false;
+				$.handlePrefObserver(true);
+				gBrowser.mTabContainer.removeEventListener("TabClose", window[$._UID]["SetState"], false);
+				gBrowser.mTabContainer.removeEventListener("TabOpen", window[$._UID]["SetState"], false);
+			}
+			if (aReason === "delete") {
+				delete window[$._UID];
+			}
+		});
+
+		/**
+		 * Without this timeout, the stupid listeners are not removed by the destructor!!! ¬¬
+		 * And the setState function throws an error on startup. It seems that the SessionStore service
+		 *  needs half an hour to freaking start!!! ¬¬
+		 */
+		setTimeout(function() {
+			if (!window[$._UID]["Initialized"]) {
+				window[$._UID]["Initialized"] = true;
+				$.handlePrefObserver();
+				gBrowser.mTabContainer.addEventListener("TabClose", window[$._UID]["SetState"], false);
+				gBrowser.mTabContainer.addEventListener("TabOpen", window[$._UID]["SetState"], false);
+			}
+			$.setState();
+		}, 1000);
+	},
+
+	setState: function() {
+		if ($.closedTabCount === 0)
+			self.setAttribute("disabled", true);
+		else
+			self.removeAttribute("disabled");
+	},
+
+	_undoCloseTab: function(aE) {
+		if (!aE.originalTarget.value)
+			return true;
+
+		if ($.isSM)
+			gBrowser.undoCloseTab(aE.originalTarget.value);
+		else
+			undoCloseTab(aE.originalTarget.value);
+	},
+
+	_populateUndoSubmenu: function(aN) {
+		aN.textContent = "";
+
+		let closedTabsCount = $.closedTabCount,
+			showAccesskeys = $.gPref("pShowAccessKeys");
+
+		if (closedTabsCount === 0) {
+			aN.hidePopup(); // Needed for SeaMonkey. ¬¬
+			return false;
+		}
+
+		try {
+			let closedTabs = JSON.parse($._ss.getClosedTabData(window));
+			let i = 0,
+				iLen = closedTabs.length;
+			for (; i < iLen; i++) {
+				let label = closedTabs[i].title;
+				let iconURL = "";
+				if (showAccesskeys && i < 9)
+					label = (i + 1) + " " + label;
+				if (closedTabs[i].image) {
+					iconURL = closedTabs[i].image;
+					if (/^https?:/.test(iconURL))
+						iconURL = "moz-anno:favicon:" + iconURL;
+				}
+				let mI = aN.appendChild($.$CNS("menuitem", {
+					label: label,
+					image: iconURL,
+					value: i,
+					class: $.isSM ? "" : "menuitem-iconic bookmark-item menuitem-with-favicon",
+					oncommand: "undoCloseTab(" + i + ");",
+					key: (i === 0) ? "key_undoCloseTab" : "",
+					accesskey: (showAccesskeys && i < 9) ? (i + 1) : "",
+				}));
+				let tabData = closedTabs[i].state;
+				let activeIndex = (tabData.index || tabData.entries.length) - 1;
+				if (activeIndex >= 0 && tabData.entries[activeIndex]) {
+					mI.setAttribute("targetURI", tabData.entries[activeIndex].url);
+				}
+				mI.addEventListener("click", $._undoCloseMiddleClick, false);
+			}
+		} finally {
+			let lbl;
+			try {
+				lbl = gNavigatorBundle.getString("menuRestoreAllTabs.label");
+			} catch (aErr) {
+				lbl = $.gPref("pRestoreAllTabsLabel");
+			}
+			aN.appendChild($.$CNS("menuseparator"));
+			aN.appendChild($.$CNS("menuitem", {
+				label: $.gPref("pClearTabsListLabel"),
+				oncommand: "document.getElementById('" + self.id +
+					"').RestoreRecentlyClosedTabs.removeAllClosedTabs(this);event.stopPropagation();"
+			}));
+			aN.appendChild($.$CNS("menuitem", {
+				id: $._UID + "menu_restoreAllTabs",
+				label: lbl,
+				oncommand: "document.getElementById('" + self.id +
+					"').RestoreRecentlyClosedTabs.restoreAllClosedTabs();event.stopPropagation();"
+			}));
+		}
+	},
+
+	_undoCloseMiddleClick: function(aE) {
+		if (aE.button !== 1)
+			return;
+		if ($.isSM)
+			gBrowser.undoCloseTab(aE.originalTarget.value);
+		else
+			undoCloseTab(aE.originalTarget.value);
+		gBrowser.moveTabToEnd();
+		$._populateUndoSubmenu($.mPop);
+	},
+
+	restoreAllClosedTabs: function() {
+		let msg = "You're about to restore all closed tabs.\n" +
+			"Are you sure that you want to proceed?";
+		let cBox = $.gPref("pShowRestoreAllTabsAlert") ? custombuttons.confirmBox(self.name, msg, "Yes", "Cancel") : true;
+		if (cBox) {
+			let iLen = $.closedTabCount;
+			for (var i = iLen; i >= 0; i--) {
+				if ($.isSM)
+					gBrowser.undoCloseTab();
+				else
+					undoCloseTab();
+			}
+		} else
+			return;
+	},
+
+	removeAllClosedTabs: function() {
+		let msg = "You're about to clear the list of all closed tabs.\n" +
+			"Are you sure that you want to proceed?";
+		let cBox = $.gPref("pShowClearClosedTabsListAlert") ? custombuttons.confirmBox(self.name, msg, "Yes", "Cancel") : true;
+		if (cBox) {
+			try {
+				let iLen = $.closedTabCount;
+				while (iLen !== 0) {
+					--iLen;
+					if ("SessionStore" in window) // Firefox
+						SessionStore.forgetClosedTab(window, 0);
+					else
+						$._ss.forgetClosedTab(window, 0);
+				}
+			} catch (aErr) {} finally {
+				$.setState();
+			}
+		} else
+			return;
+	},
+
+	handlePrefObserver: function(aRem) {
+		var prefs = $.DefPrefs;
+		for (let key in prefs) {
+			let pref = $.Branch + key;
+			if (prefs.hasOwnProperty(key)) {
+				if (aRem)
+					Services.prefs.removeObserver(pref, $.prefObserver, false);
+				else
+					Services.prefs.addObserver(pref, $.prefObserver, false);
+			}
+		}
+	},
+
+	prefObserver: {
+		observe: function(aSubject, aTopic, aPStr) {
+			if (aTopic === "nsPref:changed") {
+				let prefName = aPStr.slice($.Branch.length);
+				console.info(prefName);
+				switch (prefName) {
+					case "pMenuOnly":
+						self.type = $.gPref("pMenuOnly") ? "menu" : "menu-button";
+						break;
+				}
+				window[$._UID]["SetState"] = $.setState;
+				window[$._UID]["PopulateUndoSubmenu"] = $._populateUndoSubmenu;
+				window[$._UID]["UndoCloseTab"] = $._undoCloseTab;
+			}
+		}
+	},
+
+	openOptions: function() {
+		var url = "about:config?filter=" + $.Branch;
+		if ($.gPref("pOpenOptionsOnNewTab") && ("gBrowser" in window)) {
+			let tab = gBrowser.visibleTabs.find(tab => tab.linkedBrowser.currentURI.spec === url);
+			gBrowser.selectedTab = tab || gBrowser.addTab(url);
+		} else
+			toOpenWindowByType("Preferences:ConfigManager", url);
+	},
+
+	$CNS: function(aElName, aAttrs, aNameSpace) { // Creates elements
+		var el = aNameSpace ?
+			document.createElementNS(aNameSpace, aElName) :
+			document.createElement(aElName);
+		if (aAttrs)
+			Object.keys(aAttrs).forEach(function(n) {
+				if (aAttrs[n] !== "")
+					el.setAttribute(n, aAttrs[n]);
+			});
+		return el;
+	},
+
+	selfDestroy: function() {
+		setTimeout(function() {
+			self.destroy("update");
+			setTimeout(function() {
+				self.init();
+			}, 100);
+		}, 100);
+	},
+
+	hotkeyPressed: function(aE) {
+		let p = $.mPop;
+		if (p && p.state === "open")
+			p.hidePopup();
+		else
+			p.openPopup(self, "after_start", 0, 0, false, null, null);
+	},
+
+	accel: function(aE) {
+		if (aE)
+			return $.isOSX ? aE.metaKey : aE.ctrlKey;
+		return $.isOSX ? "𝗖𝗼𝗺𝗺𝗮𝗻𝗱" : "𝗖𝗼𝗻𝘁𝗿𝗼𝗹";
+	},
+
+	isSM: Services.appinfo.ID === "{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}",
+	isOSX: Services.appinfo.OS.toLowerCase().startsWith("darwin"),
+	_UID: "__restore_recently_closed_tabs_" + self.id.slice(20),
+
+	get mPop() {
+		return document.getElementById($._UID + "-menupopup");
+	},
+	get closedTabCount() {
+		return $._ss.getClosedTabCount(window);
+	},
+	get _ss() {
+		if ($.isSM)
+			return Cc["@mozilla.org/suite/sessionstore;1"].getService(Ci.nsISessionStore);
+		else
+			return Cc["@mozilla.org/browser/sessionstore;1"].getService(Ci.nsISessionStore);
+	},
+};
+
+this.RestoreRecentlyClosedTabs.initPrefs = function() {
+	let branch = Services.prefs.getDefaultBranch(self.RestoreRecentlyClosedTabs.Branch),
+		defaults = self.RestoreRecentlyClosedTabs.DefPrefs;
+	for (let key in defaults) {
+		if (defaults.hasOwnProperty(key)) {
+			let val = defaults[key];
+			switch (typeof val) {
+				case "boolean":
+					branch.setBoolPref(key, val);
+					break;
+				case "number":
+					branch.setIntPref(key, val);
+					break;
+				case "string":
+					let str = Cc["@mozilla.org/supports-string;1"].createInstance(Ci.nsISupportsString);
+					str.data = val;
+					branch.setComplexValue((key), Ci.nsISupportsString, str);
+					break;
+			}
+		}
+	}
+};
+
+this.RestoreRecentlyClosedTabs.gPref = function(aKey) {
+	let branch = Services.prefs.getBranch(self.RestoreRecentlyClosedTabs.Branch);
+	switch (typeof self.RestoreRecentlyClosedTabs.DefPrefs[aKey]) {
+		case "boolean":
+			return branch.getBoolPref(aKey);
+		case "number":
+			return branch.getIntPref(aKey);
+		case "string":
+			return branch.getComplexValue(aKey, Ci.nsISupportsString).data;
+	}
+	return null;
+};
+
+this.RestoreRecentlyClosedTabs.sPref = function(aKey, aVal) {
+	let branch = Services.prefs.getBranch(self.RestoreRecentlyClosedTabs.Branch);
+	switch (typeof aVal) {
+		case "boolean":
+			branch.setBoolPref(aKey, aVal);
+			break;
+		case "number":
+			branch.setIntPref(aKey, aVal);
+			break;
+		case "string":
+			let str = Cc["@mozilla.org/supports-string;1"].createInstance(Ci.nsISupportsString);
+			str.data = aVal;
+			branch.setComplexValue((aKey), Ci.nsISupportsString, str);
+			break;
+	}
+};
+
+this.RestoreRecentlyClosedTabs.Branch = "CB.RestoreRecentlyClosedTabs.Id" + self.id.slice(20) + ".";
+
+this.RestoreRecentlyClosedTabs.DefPrefs = {
+	pMenuOnly: false,
+	pShowClearClosedTabsListAlert: true,
+	pShowRestoreAllTabsAlert: true,
+	pShowAccessKeys: true,
+	pOpenOptionsOnNewTab: false,
+	pRestoreAllTabsLabel: "Restore All Tabs",
+	pClearTabsListLabel: "Clear closed Tabs list",
+};
+
+this.RestoreRecentlyClosedTabs.init();]]></initcode>
+  <code><![CDATA[if(!event.target && !this.disabled)
+	this.RestoreRecentlyClosedTabs.hotkeyPressed(this);]]></code>
+  <accelkey><![CDATA[Ctrl+Shift+T]]></accelkey>
+  <help><![CDATA[𝗜𝗺𝗽𝗼𝗿𝘁𝗮𝗻𝘁 𝗻𝗼𝘁𝗲𝘀
+⚫ 𝗗𝗢 𝗡𝗢𝗧 𝗶𝗻𝘀𝘁𝗮𝗹𝗹 𝗺𝗼𝗿𝗲 𝘁𝗵𝗮𝗻 𝗼𝗻𝗲 𝘃𝗲𝗿𝘀𝗶𝗼𝗻 𝗼𝗳 𝘁𝗵𝗶𝘀 𝗯𝘂𝘁𝘁𝗼𝗻 𝗮𝘁 𝘁𝗵𝗲 𝘀𝗮𝗺𝗲 𝘁𝗶𝗺𝗲❗❗❗
+⚫ 𝗗𝗢 𝗡𝗢𝗧 𝗰𝗹𝗼𝗻𝗲 𝘁𝗵𝗶𝘀 𝗯𝘂𝘁𝘁𝗼𝗻❗❗❗
+⚫ If you did any of the previous actions, delete all extra buttons leaving only one version of 𝗥𝗲𝘀𝘁𝗼𝗿𝗲 𝗥𝗲𝗰𝗲𝗻𝘁𝗹𝘆 𝗖𝗹𝗼𝘀𝗲𝗱 𝗧𝗮𝗯𝘀  and restart your application.
+
+[,]]]></help>
+  <attributes/>
+</custombutton>

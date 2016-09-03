@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[JSON Inspector]]></html:title>
+    <html:link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAmFJREFUeNqkU0trGmEUvcbx/UIq0fqoBhW7kEChNIvookIL3RYK2RfyA1KyqfvuGvIH/AVCF1220I10kVKoQqIhYH1XfNuoo4mP9NxhlFkUuugHxw9n7jn33PN9o7q7u6P/WQL/bG1tKZ9tA8+AR8B9+VkT+AF8BtrrwtVqRSp2oBBICILw2uVyRb1er8/j8Vh2dnYI+6hQKNTS6fT5YDBIoe7L3wQSOp3uTSgU2rdhaTQa0mq1pNfryWKxUCwWI7vd/vv4+PhrvV5/zyIssG7tROfDcDgskZnIAu12m5rNJqlUKsrlcjSbzWzJZHLfarUeMkcaXxZ4Adu76GAzGo0UCAQII1wuFovofD6PjkajS7PZTLVajYVt8Xh8lzlKgSc+n89tMpnI7/fTwcEBwciR2+2+gLOL6XR6xALsih1FIhE3czangOVzOp1mFEuzci7D4fAMAut8zlicBYrFImdjZo5SQOCg1Go1dyZY5nmlF5wHLxYYj8fU7/elus0VWJ8zEhURjlSE7oT59xqNhuQG4nvsJJ/PS+8qlYoo342Ng2+lUukpjtDS6/Xo9vaWDAbDCfYqEzH/SSaTkea/ubmhcrncY45S4GM2m32FdLeXy6URl4VwGg9h9RxnTpPJRBqJ9+vra7HVav1kjnKEX6IonqZSqSskPuM88J8cDscmE7be7XZn1Wr1Ck1OmcNE6SbyRZHXS9h9m0gkAsFg0NLpdDSYl63PQR6hexlZvUPdBy6WuLIAj3IPcAAe4DnwGHggC1eB78AnObwO0AV3sRbgUYwyhH98wUtgAojgrv4IMADcJxyfbR6BIwAAAABJRU5ErkJggg=="/>
+    <html:style type="text/css"><![CDATA[
+body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+:-moz-any-link:focus {
+  color: white;
+  outline-color: transparent;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3EJSON%20Inspector%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAmFJREFUeNqkU0trGmEUvcbx/UIq0fqoBhW7kEChNIvookIL3RYK2RfyA1KyqfvuGvIH/AVCF1220I10kVKoQqIhYH1XfNuoo4mP9NxhlFkUuugHxw9n7jn33PN9o7q7u6P/WQL/bG1tKZ9tA8+AR8B9+VkT+AF8BtrrwtVqRSp2oBBICILw2uVyRb1er8/j8Vh2dnYI+6hQKNTS6fT5YDBIoe7L3wQSOp3uTSgU2rdhaTQa0mq1pNfryWKxUCwWI7vd/vv4+PhrvV5/zyIssG7tROfDcDgskZnIAu12m5rNJqlUKsrlcjSbzWzJZHLfarUeMkcaXxZ4Adu76GAzGo0UCAQII1wuFovofD6PjkajS7PZTLVajYVt8Xh8lzlKgSc+n89tMpnI7/fTwcEBwciR2+2+gLOL6XR6xALsih1FIhE3czangOVzOp1mFEuzci7D4fAMAut8zlicBYrFImdjZo5SQOCg1Go1dyZY5nmlF5wHLxYYj8fU7/elus0VWJ8zEhURjlSE7oT59xqNhuQG4nvsJJ/PS+8qlYoo342Ng2+lUukpjtDS6/Xo9vaWDAbDCfYqEzH/SSaTkea/ubmhcrncY45S4GM2m32FdLeXy6URl4VwGg9h9RxnTpPJRBqJ9+vra7HVav1kjnKEX6IonqZSqSskPuM88J8cDscmE7be7XZn1Wr1Ck1OmcNE6SbyRZHXS9h9m0gkAsFg0NLpdDSYl63PQR6hexlZvUPdBy6WuLIAj3IPcAAe4DnwGHggC1eB78AnObwO0AV3sRbgUYwyhH98wUtgAojgrv4IMADcJxyfbR6BIwAAAABJRU5ErkJggg%3D%3D%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5B//%20Check%20if%20DOMI%20is%20available%0Aif%20%28typeof%20inspectDOMDocument%20%21%3D%20%22function%22%29%20%7B%0A%20%20var%20domi%20%3D%20%22DOM%20Inspector%22%0A%20%20//%20Change%20button%20tooltip%0A%20%20this.tooltipText%20%3D%20this.name%20+%20%22%20button%20requires%20%22%20+%20domi%20+%20%22%20extension.%5Cn%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22Click%20the%20button%20to%20%22%0A%20%20AddonManager.getAddonByID%28%22inspector@mozilla.org%22%2C%20function%28addon%29%20%7B%0A%20%20%20%20if%20%28addon%29%20//%20If%20DOMI%20is%20installed%0A%20%20%20%20%20%20self.tooltipText%20+%3D%20%22enable%20%22%20+%20domi%20+%20%22.%22%3B%20%20%20//%20change%20button%20tooltip%0A%20%20%20%20else%20%20//%20If%20DOMI%20is%20not%20installed%0A%20%20%20%20%20%20self.tooltipText%20+%3D%20%22install%20%22%20+%20domi%20+%20%22.%22%3B%20%20//%20change%20button%20tooltip%0A%0A%20%20%20%20self.Help%20%3D%20self.tooltipText%3B%20//%20Change%20button%20help%20text%0A%20%20%7D%29%0A%20%20return%20false%3B%0A%7D%0A%0Avar%20helpText%20%3D%20%22Left-click%3A%20enter%20JSON%20data%5Cn%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20+%20%22Middle-click%3A%20inspect%20JSON%20data%20from%20web%20content%22%3B%0A%0Athis.tooltipText%20%3D%20this.name%20+%20%22%5Cn%5Cn%22%20+%20helpText%3B%0A%0Athis.onclick%20%3D%20function%20onclick%28aEvent%29%20%7B%0A%20%20if%20%28aEvent.button%20%21%3D%3D%201%29%0A%20%20%20%20return%3B%20%20//%20Return%20if%20not%20middle%20click%0A%20%20aEvent.preventDefault%28%29%3B%0A%20%20var%20pre%20%3D%20content.document.querySelector%28%22body%20%3E%20pre%22%29%3B%0A%20%20var%20obj%3B%0A%20%20if%20%28pre%29%20%7B%0A%20%20%20%20try%20%7B%0A%20%20%20%20%20%20obj%20%3D%20JSON.parse%28pre.textContent%29%3B%20//%20Parse%20data%20as%20JSON%20object%0A%20%20%20%20%7D%20catch%28ex%29%20%7B%0A%20%20%20%20%20%20custombuttons.alertBox%28this.name%2C%20ex%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20if%20%28typeof%20obj%20%3D%3D%3D%20%22object%22%29%0A%20%20%20%20%20%20inspectObject%28obj%29%3B%0A%20%20%7D%20else%20%7B%0A%20%20%20%20custombuttons.alertBox%28this.name%2C%20%22Not%20JSON%20file%22%29%3B%0A%20%20%7D%0A%7D%0A%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5B//%20Check%20if%20DOMI%20is%20available%0Aif%20%28typeof%20inspectObject%20%21%3D%20%22function%22%29%20%7B%0A%20%20AddonManager.getAddonByID%28%22inspector@mozilla.org%22%2C%20function%28addon%29%20%7B%0A%20%20%20%20let%20msg%20%3D%20%22This%20button%20requires%20DOM%20Inspector%20extension.%5Cn%22%3B%0A%20%20%20%20if%20%28addon%29%20%7B%20//%20If%20DOMI%20is%20installed%0A%20%20%20%20%20%20addon.userDisabled%20%3D%20false%3B%20//%20enable%20it%0A%20%20%20%20%20%20//%20Ask%20to%20restart%0A%20%20%20%20%20%20let%20restart%20%3D%20custombuttons.confirmBox%28self.name%2C%20msg%20+%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20addon.name%20+%20%22%20will%20be%20enabled%20after%20you%20restart%20%22%20+%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20Application.name%20+%20%22.%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Restart%20now%22%2C%20%22Undo%22%29%3B%0A%20%20%20%20%20%20if%20%28restart%29%20%7B%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20If%20%27Yes%27%0A%20%20%20%20%20%20%20%20Application.restart%28%29%3B%20%20%20%20%20%20//%20restart%20application%0A%20%20%20%20%20%20%20%20return%20true%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20else%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20//%20If%20%27No%27%0A%20%20%20%20%20%20%09addon.userDisabled%20%3D%20true%3B%20%20//%20disable%20DOMI%0A%20%20%20%20%7D%0A%20%20%20%20else%20%7B%20%20//%20If%20DOMI%20is%20not%20installed%0A%20%20%20%20%20%20//%20Ask%20to%20install%0A%20%20%20%20%20%20let%20install%20%3D%20custombuttons.confirmBox%28self.name%2C%20msg%20+%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Install%20DOM%20Inspector%20from%20Mozilla%20Add-ons%3F%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22Install%22%2C%20%22Cancel%22%29%3B%0A%20%20%20%20%20%20if%20%28%21install%29%0A%20%20%20%20%20%20%20%20return%20false%3B%0A%0A%20%20%20%20%20%20//%20install%20DOMI%20latest%20version%20from%20AMO%0A%20%20%20%20%20%20loadURI%28%22https%3A//addons.mozilla.org/firefox/downloads/latest/dom-inspector-6622/%22%20+%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%3Fsrc%3Dexternal-LouCypher%22%29%3B%0A%20%20%20%20%7D%0A%20%20%7D%29%0A%20%20return%20false%3B%0A%7D%0A%0Avar%20ww%20%3D%20Services.ww%3B%0Avar%20em%20%3D%20ww.getWindowEnumerator%28%29%3B%0Avar%20winName%20%3D%20%22json_inspect%22%3B%0Avar%20index%20%3D%201%3B%0Awhile%20%28em.hasMoreElements%28%29%29%20%7B%0A%20%20let%20win%20%3D%20em.getNext%28%29%3B%0A%20%20if%28win.name%20%3D%3D%20winName%29%20%7B%0A%20%20%20%20win.focus%28%29%3B%0A%20%20%20%20return%3B%0A%20%20%7D%0A%20%20index++%0A%7D%0Avar%20xurl%20%3D%20%22data%3Aapplication/vnd.mozilla.xul+xml%3Bbase64%2C%22%20+%0A%20%20%20%20%20%20%20%20%20%20%20encodeURIComponent%28btoa%28this.Help%29%29%3B%0AopenDialog%28xurl%2C%20winName%2C%20%22chrome%2C%20dialog%3Dno%2C%20centerscreen%2C%20minimizable%2C%20resizable%22%29%3B%0A%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%26lt%3B%3Fxml%20version%3D%221.0%22%3F%26gt%3B%0A%26lt%3B%3Fxml-stylesheet%20type%3D%22text/css%22%20href%3D%22chrome%3A//global/skin/%22%3F%26gt%3B%0A%26lt%3B%3Fxml-stylesheet%20type%3D%22text/css%22%20href%3D%22data%3Atext/css%3Bbase64%2CbGFiZWwsIHRleHRib3ggeyBmb250LXNpemU6IDEwcHQgfQojZGF0YSB7IGZvbnQtZmFtaWx5OiBtb25vc3BhY2UgfQojdXJsIHsgcGFkZGluZzogM3B4IH0K%22%3F%26gt%3B%0A%0A%26lt%3Bdialog%20xmlns%3D%22http%3A//www.mozilla.org/keymaster/gatekeeper/there.is.only.xul%22%0A%20%20%20%20%20%20%20%20id%3D%22json-inspector%22%0A%20%20%20%20%20%20%20%20persist%3D%22width%20height%20screenX%20screenY%20sizemode%22%0A%20%20%20%20%20%20%20%20title%3D%22JSON%20Inspector%22%0A%20%20%20%20%20%20%20%20buttons%3D%22extra1%2C%20extra2%2C%20cancel%22%0A%20%20%20%20%20%20%20%20buttonlabelextra1%3D%22Inspect%22%0A%20%20%20%20%20%20%20%20buttonlabelextra2%3D%22Clear%22%0A%20%20%20%20%20%20%20%20buttonlabelcancel%3D%22Close%22%0A%20%20%20%20%20%20%20%20buttonaccesskeyextra1%3D%22I%22%0A%20%20%20%20%20%20%20%20buttonaccesskeyextra2%3D%22r%22%0A%20%20%20%20%20%20%20%20buttonaccesskeycancel%3D%22C%22%0A%20%20%20%20%20%20%20%20ondialogaccept%3D%22inspect%28url%29%3B%22%0A%20%20%20%20%20%20%20%20ondialogextra1%3D%22inspect%28data%29%3B%22%0A%20%20%20%20%20%20%20%20ondialogextra2%3D%22clear%28%29%3B%22%0A%20%20%20%20%20%20%20%20ondialogcancel%3D%22close%28%29%3B%22%26gt%3B%0A%0A%20%20%26lt%3Bhbox%26gt%3B%0A%20%20%20%20%26lt%3Btextbox%20id%3D%22url%22%20flex%3D%221%22%20placeholder%3D%22Insert%20URL%20of%20JSON%20file%20here%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20type%3D%22autocomplete%22%20autocompletesearch%3D%22history%22%20enablehistory%3D%22true%22/%26gt%3B%0A%20%20%20%20%26lt%3Bbutton%20oncommand%3D%22inspect%28url%29%3B%22%26gt%3B%26lt%3Blabel%26gt%3BInspect%26lt%3B/label%26gt%3B%26lt%3B/button%26gt%3B%0A%20%20%26lt%3B/hbox%26gt%3B%0A%20%20%26lt%3Blabel%26gt%3Bor%26lt%3B/label%26gt%3B%0A%20%20%26lt%3Btextbox%20id%3D%22data%22%20multiline%3D%22true%22%20flex%3D%221%22%20placeholder%3D%22Insert%20JSON%20data%20here%22/%26gt%3B%0A%0A%20%20%26lt%3Bscript%20type%3D%22application/javascript%22%20src%3D%22chrome%3A//inspector/content/hooks.js%22/%26gt%3B%0A%0A%20%20%26lt%3Bscript%20type%3D%22application/x-javascript%22%26gt%3B%26lt%3B%21%5BCDATA%5B%0A%20%20%20%20const%20data%20%3D%20document.getElementById%28%22data%22%29%3B%0A%20%20%20%20const%20url%20%3D%20document.getElementById%28%22url%22%29%3B%0A%0A%20%20%20%20function%20showAlert%28aText%29%20%7B%0A%20%20%20%20%20%20Components.utils.import%28%22resource%3A//gre/modules/Services.jsm%22%29%3B%0A%20%20%20%20%20%20Services.prompt.alert%28null%2C%20document.title%2C%20aText%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20clear%28%29%20%7B%0A%20%20%20%20%20%20data.value%20%3D%20url.value%20%3D%20%22%22%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20inspectJSONObject%28aStrJSON%29%20%7B%0A%20%20%20%20%20%20try%20%7B%0A%20%20%20%20%20%20%20%20inspectObject%28JSON.parse%28aStrJSON%29%29%3B%0A%20%20%20%20%20%20%20%20//close%28%29%3B%0A%20%20%20%20%20%20%7D%20catch%20%28ex%29%20%7B%0A%20%20%20%20%20%20%20%20showAlert%28ex%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%20%20%20%20function%20inspect%28aInputNode%29%20%7B%0A%20%20%20%20%20%20let%20str%20%3D%20aInputNode.value%3B%0A%0A%20%20%20%20%20%20if%20%28str%20%3D%3D%3D%20%22%22%29%20%7B%0A%20%20%20%20%20%20%20%20showAlert%28%22Data%20is%20empty%21%22%29%3B%0A%20%20%20%20%20%20%20%20return%20false%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20if%20%28aInputNode.id%20%3D%3D%3D%20%22url%22%29%20%7B%0A%20%20%20%20%20%20%20%20if%20%28/%5E%28%28ht%7Cf%29tps%3F%7Cchrome%7Cresource%7Cabout%7Cdata%7Cfile%29%3A/.test%28str%29%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20let%20req%20%3D%20new%20XMLHttpRequest%28%29%3B%0A%20%20%20%20%20%20%20%20%20%20req.open%28%22GET%22%2C%20str%2C%20true%29%3B%0A%20%20%20%20%20%20%20%20%20%20req.onreadystatechange%20%3D%20function%28%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28req.readyState%20%3D%3D%3D%204%29%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20inspectJSONObject%28req.responseText%29%3B%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20req.send%28null%29%3B%0A%20%20%20%20%20%20%20%20%7D%20else%0A%20%20%20%20%20%20%20%20%20%20showAlert%28%22Invalid%20URL%21%22%29%3B%0A%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20else%0A%20%20%20%20%20%20%20%20inspectJSONObject%28str%29%3B%0A%20%20%20%20%7D%0A%20%20%5D%5D%26gt%3B%26lt%3B/script%26gt%3B%0A%0A%26lt%3B/dialog%26gt%3B%0A%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install JSON Inspector">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=external-custombuttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <name>JSON Inspector</name>
+  <image><![CDATA[data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAmFJREFUeNqkU0trGmEUvcbx/UIq0fqoBhW7kEChNIvookIL3RYK2RfyA1KyqfvuGvIH/AVCF1220I10kVKoQqIhYH1XfNuoo4mP9NxhlFkUuugHxw9n7jn33PN9o7q7u6P/WQL/bG1tKZ9tA8+AR8B9+VkT+AF8BtrrwtVqRSp2oBBICILw2uVyRb1er8/j8Vh2dnYI+6hQKNTS6fT5YDBIoe7L3wQSOp3uTSgU2rdhaTQa0mq1pNfryWKxUCwWI7vd/vv4+PhrvV5/zyIssG7tROfDcDgskZnIAu12m5rNJqlUKsrlcjSbzWzJZHLfarUeMkcaXxZ4Adu76GAzGo0UCAQII1wuFovofD6PjkajS7PZTLVajYVt8Xh8lzlKgSc+n89tMpnI7/fTwcEBwciR2+2+gLOL6XR6xALsih1FIhE3czangOVzOp1mFEuzci7D4fAMAut8zlicBYrFImdjZo5SQOCg1Go1dyZY5nmlF5wHLxYYj8fU7/elus0VWJ8zEhURjlSE7oT59xqNhuQG4nvsJJ/PS+8qlYoo342Ng2+lUukpjtDS6/Xo9vaWDAbDCfYqEzH/SSaTkea/ubmhcrncY45S4GM2m32FdLeXy6URl4VwGg9h9RxnTpPJRBqJ9+vra7HVav1kjnKEX6IonqZSqSskPuM88J8cDscmE7be7XZn1Wr1Ck1OmcNE6SbyRZHXS9h9m0gkAsFg0NLpdDSYl63PQR6hexlZvUPdBy6WuLIAj3IPcAAe4DnwGHggC1eB78AnObwO0AV3sRbgUYwyhH98wUtgAojgrv4IMADcJxyfbR6BIwAAAABJRU5ErkJggg==]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[// Check if DOMI is available
+if (typeof inspectDOMDocument != "function") {
+  var domi = "DOM Inspector"
+  // Change button tooltip
+  this.tooltipText = this.name + " button requires " + domi + " extension.\n"
+                   + "Click the button to "
+  AddonManager.getAddonByID("inspector@mozilla.org", function(addon) {
+    if (addon) // If DOMI is installed
+      self.tooltipText += "enable " + domi + ".";   // change button tooltip
+    else  // If DOMI is not installed
+      self.tooltipText += "install " + domi + ".";  // change button tooltip
+
+    self.Help = self.tooltipText; // Change button help text
+  })
+  return false;
+}
+
+var helpText = "Left-click: enter JSON data\n"
+             + "Middle-click: inspect JSON data from web content";
+
+this.tooltipText = this.name + "\n\n" + helpText;
+
+this.onclick = function onclick(aEvent) {
+  if (aEvent.button !== 1)
+    return;  // Return if not middle click
+  aEvent.preventDefault();
+  var pre = content.document.querySelector("body > pre");
+  var obj;
+  if (pre) {
+    try {
+      obj = JSON.parse(pre.textContent); // Parse data as JSON object
+    } catch(ex) {
+      custombuttons.alertBox(this.name, ex);
+    }
+    if (typeof obj === "object")
+      inspectObject(obj);
+  } else {
+    custombuttons.alertBox(this.name, "Not JSON file");
+  }
+}
+]]></initcode>
+  <code><![CDATA[// Check if DOMI is available
+if (typeof inspectObject != "function") {
+  AddonManager.getAddonByID("inspector@mozilla.org", function(addon) {
+    let msg = "This button requires DOM Inspector extension.\n";
+    if (addon) { // If DOMI is installed
+      addon.userDisabled = false; // enable it
+      // Ask to restart
+      let restart = custombuttons.confirmBox(self.name, msg +
+                                             addon.name + " will be enabled after you restart " +
+                                             Application.name + ".",
+                                             "Restart now", "Undo");
+      if (restart) {                // If 'Yes'
+        Application.restart();      // restart application
+        return true;
+      }
+      else                          // If 'No'
+      	addon.userDisabled = true;  // disable DOMI
+    }
+    else {  // If DOMI is not installed
+      // Ask to install
+      let install = custombuttons.confirmBox(self.name, msg +
+                                             "Install DOM Inspector from Mozilla Add-ons?",
+                                             "Install", "Cancel");
+      if (!install)
+        return false;
+
+      // install DOMI latest version from AMO
+      loadURI("https://addons.mozilla.org/firefox/downloads/latest/dom-inspector-6622/" +
+              "?src=external-LouCypher");
+    }
+  })
+  return false;
+}
+
+var ww = Services.ww;
+var em = ww.getWindowEnumerator();
+var winName = "json_inspect";
+var index = 1;
+while (em.hasMoreElements()) {
+  let win = em.getNext();
+  if(win.name == winName) {
+    win.focus();
+    return;
+  }
+  index++
+}
+var xurl = "data:application/vnd.mozilla.xul+xml;base64," +
+           encodeURIComponent(btoa(this.Help));
+openDialog(xurl, winName, "chrome, dialog=no, centerscreen, minimizable, resizable");
+]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help>&lt;?xml version="1.0"?&gt;
+&lt;?xml-stylesheet type="text/css" href="chrome://global/skin/"?&gt;
+&lt;?xml-stylesheet type="text/css" href="data:text/css;base64,bGFiZWwsIHRleHRib3ggeyBmb250LXNpemU6IDEwcHQgfQojZGF0YSB7IGZvbnQtZmFtaWx5OiBtb25vc3BhY2UgfQojdXJsIHsgcGFkZGluZzogM3B4IH0K"?&gt;
+
+&lt;dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        id="json-inspector"
+        persist="width height screenX screenY sizemode"
+        title="JSON Inspector"
+        buttons="extra1, extra2, cancel"
+        buttonlabelextra1="Inspect"
+        buttonlabelextra2="Clear"
+        buttonlabelcancel="Close"
+        buttonaccesskeyextra1="I"
+        buttonaccesskeyextra2="r"
+        buttonaccesskeycancel="C"
+        ondialogaccept="inspect(url);"
+        ondialogextra1="inspect(data);"
+        ondialogextra2="clear();"
+        ondialogcancel="close();"&gt;
+
+  &lt;hbox&gt;
+    &lt;textbox id="url" flex="1" placeholder="Insert URL of JSON file here"
+             type="autocomplete" autocompletesearch="history" enablehistory="true"/&gt;
+    &lt;button oncommand="inspect(url);"&gt;&lt;label&gt;Inspect&lt;/label&gt;&lt;/button&gt;
+  &lt;/hbox&gt;
+  &lt;label&gt;or&lt;/label&gt;
+  &lt;textbox id="data" multiline="true" flex="1" placeholder="Insert JSON data here"/&gt;
+
+  &lt;script type="application/javascript" src="chrome://inspector/content/hooks.js"/&gt;
+
+  &lt;script type="application/x-javascript"&gt;&lt;![CDATA[
+    const data = document.getElementById("data");
+    const url = document.getElementById("url");
+
+    function showAlert(aText) {
+      Components.utils.import("resource://gre/modules/Services.jsm");
+      Services.prompt.alert(null, document.title, aText);
+    }
+
+    function clear() {
+      data.value = url.value = "";
+    }
+
+    function inspectJSONObject(aStrJSON) {
+      try {
+        inspectObject(JSON.parse(aStrJSON));
+        //close();
+      } catch (ex) {
+        showAlert(ex);
+      }
+    }
+
+    function inspect(aInputNode) {
+      let str = aInputNode.value;
+
+      if (str === "") {
+        showAlert("Data is empty!");
+        return false;
+      }
+
+      if (aInputNode.id === "url") {
+        if (/^((ht|f)tps?|chrome|resource|about|data|file):/.test(str)) {
+          let req = new XMLHttpRequest();
+          req.open("GET", str, true);
+          req.onreadystatechange = function() {
+            if (req.readyState === 4)
+              inspectJSONObject(req.responseText);
+          }
+          req.send(null);
+        } else
+          showAlert("Invalid URL!");
+      }
+
+      else
+        inspectJSONObject(str);
+    }
+  ]]&gt;&lt;/script&gt;
+
+&lt;/dialog&gt;
+</help>
+  <attributes/>
+</custombutton>

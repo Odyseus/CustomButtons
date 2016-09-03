@@ -42,8 +42,8 @@ html
 						each btn in JSONData
 							tr
 								td.btn-index-name
-									img.btn-index-image(src='MyButtons/' + btn["repofolder"] +'/' + btn["repofolder"] + '.png' , alt='?', title='', class= btn["customClass"])
-									a(href='MyButtons/' + btn["repofolder"] +'/' + btn["repofolder"] + btn["appendix"] + '.xml', data-container='body', data-toggle='popover', data-placement='top', data-original-title= btn["name"], data-trigger="focus", role="button", data-content= btn['title']): = btn["name"]
+									img.btn-index-image(src='buttons/ButtonsByOdyseus/' + btn["repofolder"] +'/' + btn["repofolder"] + '.png' , alt='?', title='', class= btn["customClass"])
+									a(href='buttons/ButtonsByOdyseus/' + btn["repofolder"] +'/' + btn["repofolder"] + btn["appendix"] + '.xml', data-container='body', data-toggle='popover', data-placement='top', data-original-title= btn["name"], data-trigger="focus", role="button", data-content= btn['title']): = btn["name"]
 								td.btn-index-lastupdate: = btn['updatedate']
 								td.btn-index-homepage
 									a(title='Go to this button homepage on Custom Buttons official forum for detailed information about its features/usage.', href= btn['homepage']) CB forum

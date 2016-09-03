@@ -1,0 +1,56 @@
+The purpose of this buttons is very simple. Manage all opened tabs in a simple way without ever having to open the [b]List all tabs[/b] menu. And while doing so, [b]display all tabs at all times[/b] without having to use the scroll wheel (like in the [i]List all tabs[/i] menu). This is accomplished by displaying all opened tabs in a grid inside a panel (see [b]Images[/b]).
+
+[color=#FF0000][b][size=100]Disclaimer!![/size] The following link/s leads to an external page (Dropbox). This forum is NOT responsible for any external content.[/b][/color]
+
+[url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/TabsManager/TabsManager.xml][img]https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/TabsManager/TabsManager.png[/img] [size=150][b]Install Tabs Manager[/size][/b][/url]
+
+[color=red][size=150][b]Changelog - Updated June 11, 2016[/b][/size]
+[list]
+[*] Removed everything related to tabs groups. [b]Reasons:[/b] Mozilla removed tabs groups from Firefox and every single add-on that add this feature to Firefox uses totally different methods to implement it.
+[*] Now there is no need to edit the button to change its settings.
+[*] Added a settings window to manage [b]Tabs Manager[/b] options. The previous method that I used to manage options was kind of annoying.
+[*] Added [b]Mute/Unmute selected tabs[/b] to the tabs context menu [i]bulk actions[/i].
+[*] General enhancements of the kind [i]do more with less code[/i].[/list][/color]
+
+[b][size=150]Compatibility[/size][/b]
+Compatible [b]ONLY[/b] with Firefox and any Firefox-fork based on recent versions of Firefox.
+[b][color=#FF0000]Not compatible with Palemoon and SeaMonkey and NEVER will be. Do not even try it on these applications.[/color][/b]
+[b][color=#FF0000]Not compatible with Nightly nor Windows Vista[/color][/b]
+
+[b][size=150]Images[/size] (not posted in-line due to their large size)[/b]
+[url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/TabsManager/TabsManager001.png]Image 1[/url] - [url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/TabsManager/TabsManager002.png]Image 2[/url] - [url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/TabsManager/TabsManager003.png]Image 3[/url] - [url=https://dl.dropboxusercontent.com/u/5194280/0PublishedCB/TabsManager/TabsManager004.png]Image 4[/url]
+
+[b][size=150]Features[/size][/b]
+[list][*] A hotkey can be configured to open/close the main panel ([i]Edit button... > Button settings tab[/i]).
+[*] Each [i]tab[/i] in the grid has the tabs context menu available and [i][u]it should[/u][/i] be compatible with any menu item added by any extension.
+[*] The amount of tabs per row in the grid can be customized from a minimum of 1 to a maximum of 30 tabs per row.
+[*] Tabs can be [i]multi-selected[/i] (with Ctrl/Cmd + Left click) to perform [i]in bulk actions[/i]. Currently only four [i]in bulk actions[/i] are available from the context menu ([b]Mute/Unmute selected tabs[/b], [b]Pin/Unpin selected tabs[/b], [b]Reload selected tabs[/b] and [b]Close selected tabs[/b]). Selected tabs can also be dragged to other groups of tabs.
+[*] Tabs can be dragged to be re-arranged.
+[*] Tabs can be directly closed by middle clicking.
+[*] Tab content can be previewed.
+[*] Tab preview can be zoomed/in-out.
+[*] Clicks can be sent to the page content [i]through the preview[/i]. [b][color=red](1)[/color][/b]
+[*] The page content can be scrolled [i]through the preview[/i]. [b][color=red](2)[/color][/b]
+[*] Some options can be changed from inside the main panel itself ([i]Show in-line options[/i] button, bottom-right corner of the main panel) and their effects will be shown [i]on the fly[/i] without having to close the main panel.[/list]
+
+[b][size=150][color=red]Important notes[/color][/size][/b]
+[list]
+[*] [b][color=red](1)[/color][/b] Do not expect miracles to happen! LOL You can only send clicks to activate certain elements on the page content [i]through the preview[/i]. You can't select text. You can't open context menus. You can't type inside textboxes.
+[*] [b][color=red](2)[/color][/b] Scroll [i]through the preview[/i] will not work on XUL content (about:config, preferences in content, etc.).
+[*] After editing this button (to change its image or customize the style sheet inside the Help tab) and/or enabling/disabling the tab preview feature, [b]the browser needs to be restarted[/b]. If you plan never to use tab preview, a restart will never be needed.
+[*] This button is designed to be anchored to the Navigation toolbar when opened and have a width equal to the browser's window width. But it can be configured to be anchored wherever you want and have whatever width you want. It can also be configured to [i]play nice[/i] with the Tabs toolbar located at the bottom of the browser's window or even in either of its sides. If in doubt, just ask.
+[*] This button [b]will interfere[/b] with the [i]List all tabs[/i] menu button making it unusable. [b]So choose one or the other.[/b]
+[*] This button [b]will NOT interfere[/b] with the Tab Scope add-on (Read [b]Contributors[/b] section). Neither that add-on will interfere with this button.[/list]
+
+[b][size=150]Contributors[/size][/b]
+All the tab preview features from this button are based on code found on [url=https://addons.mozilla.org/en-US/firefox/addon/tab-scope/]Tab Scope add-on[/url] by [b]Gomita[/b]. Thanks to that add-on, the previews are actually useful.
+Special thanks to [b]InfoCatcher[/b] who, by reading the code of one of his buttons, [i]taught me[/i] how to use a [i]frame script[/i] (for use in multi-process Firefox) without going bald in the process. LOL
+
+[color=red][b][size=150]Error report[/size][/b][/color]
+If any errors are found, report it ASAP on this post with as much details as possible.
+[list]
+[*] Which platform and its version (Linux, Mac or Windows).
+[*] Which application and its version (See Compatibility).
+[*] Error/Browser console output, if any.
+[*] If it's easier for you to report an error with images, and if the image is too large or there are more than one, publish the links to them, do not post them using the IMG tag in the message.
+[*] Be willing to follow troubleshooting instructions.[/list]

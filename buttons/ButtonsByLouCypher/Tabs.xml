@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[Tabs]]></html:title>
+    <html:link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAEG0lEQVR4AQEQBO/7Af///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABVmyEyDQsJTUFAwMCAAAAAAAAAAAAAAAAAAAAAAAAAADv9PX8zdPbhrSdg38AAAAAAAAAAAAAAAAAAAAAAAAAAACToLP99fj3/+nu7//m6+r/+ffq//j26P/39eb/9vTl//X27P9meI/ERFV3D////wD///8A////AP///wD///8ABA0NCwLz9fsA6/MBAOHn9gBFLwUAytTdAPv6+QAIBwUAMyspAAsJBiscFPmnZmxy+gAAAAD+AP4A+Pj67/Py+YgEAgMDAP/9/wD9/wMAAQIIAAIDAQAMCwsABQ0JAAgGBgABAQIAHR0ZEGxdRUkNCgcA//8AAAECAADZ3OL/foKL3QT9+/wAAf/4AOzh6wD++foA+vgMACIXCAD+/v0A/f39APn48QD49fQA7ezoAPgJBgD+/v4AAAD+ABIQCwEQFBMKBP///wAWFAgAQToQAP38/AD7+/oAAQAAAAAAAAAAAAAAAAEAAPf3+gDd4uoACAcEAP///wD//v0AAgQJAPb6+wEE////AAECAwABAQcAAQIDAAABAQAAAQEAAf38AAECAgACAgQASkIxAO/y8QAAAAAAAAAAAAAAAADw8fYA8fICAATx8u4A3eDdAAAA/gAA//8A/v39AP3+/QD//v4A/v7+AAAA8QANCgEADQkHAAAAAAAAAAAAAAAAAAsG+wAGAvwABAsIBgAdGyUAAAAAAAD//wAAAP8A////AP//AAAAAP8A////AAAAAAAA//8AAAAAAAAAAAAAAAAACQruAP4AAAAEAgIAAAYFAAAAAP8AAP//AP7+/QD9/f0A/wD/AP7+/gAA//8A//7+AAAA/wAAAAAAAAAAAAAAAAD//vgAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATp7PD7zdTcBQAAAAAA//8A//7+AP7//gD//v4A////AP///gD///8A/wD/AAAAAAAAAAAAAAAAAO7v8//8/Pz9ASdAVmf79vMdAP//AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf8A/vLw58N94SKDc2huvgAAAABJRU5ErkJggg=="/>
+    <html:style type="text/css"><![CDATA[body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3ETabs%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/png%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAEG0lEQVR4AQEQBO/7Af///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABVmyEyDQsJTUFAwMCAAAAAAAAAAAAAAAAAAAAAAAAAADv9PX8zdPbhrSdg38AAAAAAAAAAAAAAAAAAAAAAAAAAACToLP99fj3/+nu7//m6+r/+ffq//j26P/39eb/9vTl//X27P9meI/ERFV3D////wD///8A////AP///wD///8ABA0NCwLz9fsA6/MBAOHn9gBFLwUAytTdAPv6+QAIBwUAMyspAAsJBiscFPmnZmxy+gAAAAD+AP4A+Pj67/Py+YgEAgMDAP/9/wD9/wMAAQIIAAIDAQAMCwsABQ0JAAgGBgABAQIAHR0ZEGxdRUkNCgcA//8AAAECAADZ3OL/foKL3QT9+/wAAf/4AOzh6wD++foA+vgMACIXCAD+/v0A/f39APn48QD49fQA7ezoAPgJBgD+/v4AAAD+ABIQCwEQFBMKBP///wAWFAgAQToQAP38/AD7+/oAAQAAAAAAAAAAAAAAAAEAAPf3+gDd4uoACAcEAP///wD//v0AAgQJAPb6+wEE////AAECAwABAQcAAQIDAAABAQAAAQEAAf38AAECAgACAgQASkIxAO/y8QAAAAAAAAAAAAAAAADw8fYA8fICAATx8u4A3eDdAAAA/gAA//8A/v39AP3+/QD//v4A/v7+AAAA8QANCgEADQkHAAAAAAAAAAAAAAAAAAsG+wAGAvwABAsIBgAdGyUAAAAAAAD//wAAAP8A////AP//AAAAAP8A////AAAAAAAA//8AAAAAAAAAAAAAAAAACQruAP4AAAAEAgIAAAYFAAAAAP8AAP//AP7+/QD9/f0A/wD/AP7+/gAA//8A//7+AAAA/wAAAAAAAAAAAAAAAAD//vgAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATp7PD7zdTcBQAAAAAA//8A//7+AP7//gD//v4A////AP///gD///8A/wD/AAAAAAAAAAAAAAAAAO7v8//8/Pz9ASdAVmf79vMdAP//AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf8A/vLw58N94SKDc2huvgAAAABJRU5ErkJggg%3D%3D%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5Bfunction%20populate%28aNode%29%20%7B%0A%20%20var%20tabs%20%3D%20gBrowser.mTabs%3B%0A%20%20for%20%28var%20j%20%3D%200%3B%20j%20%3C%20tabs.length%3B%20j++%29%20%7B%0A%20%20%20%20mi%20%3D%20document.createElement%28%22menuitem%22%29%3B%0A%20%20%20%20mi.closeTab%20%3D%20closeTab%3B%0A%20%20%20%20mi.index%20%3D%20j%3B%0A%20%20%20%20mi.className%20%3D%20%22menuitem-iconic%22%3B%0A%20%20%20%20mi.setAttribute%28%22label%22%2C%20tabs%5Bj%5D.label%29%3B%0A%20%20%20%20if%20%28tabs%5Bj%5D.selected%29%20mi.style.fontWeight%20%3D%20%22bold%22%3B%0A%20%20%20%20mi.setAttribute%28%22image%22%2C%20tabs%5Bj%5D.image%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3F%20tabs%5Bj%5D.image%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3A%20%22chrome%3A//mozapps/skin/places/defaultFavicon.png%22%29%3B%0A%20%20%20%20mi.tooltipText%20%3D%20tabs%5Bj%5D.linkedBrowser.currentURI.spec%3B%0A%20%20%20%20mi.setAttribute%28%22oncommand%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22gBrowser.selectedTab%20%3D%20gBrowser.mTabs%5B%22%20+%20j%20+%20%22%5D%22%29%3B%0A%20%20%20%20mi.setAttribute%28%22onclick%22%2C%20%22this.closeTab%28event%29%3B%22%29%3B%0A%20%20%20%20aNode.appendChild%28mi%29%3B%0A%20%20%7D%0A%7D%0A%0Afunction%20clear%28aNode%29%20%7B%0A%20%20var%20list%20%3D%20aNode.childNodes.length%3B%0A%20%20for%20%28var%20i%20%3D%200%3B%20i%20%3C%20list%3B%20i++%29%20%7B%0A%20%20%20%20aNode.removeChild%28aNode.lastChild%29%3B%0A%20%20%7D%0A%7D%0A%0Afunction%20closeTab%28aEvent%29%20%7B%0A%20%20if%20%28aEvent.button%20%21%3D%201%29%20return%3B%0A%20%20gBrowser.closeTab%28gBrowser.mTabs%5BaEvent.target.index%5D%29%3B%0A%20%20closeMenus%28aEvent.target%29%3B%0A%7D%0A%0Avar%20mPopup%20%3D%20document.createElement%28%22menupopup%22%29%3B%0AmPopup.setAttribute%28%22context%22%2C%20%22tabContextMenu%22%29%3B%0AmPopup.popupShowing%20%3D%20populate%3B%0AmPopup.popupHiding%20%3D%20clear%3B%0AmPopup.setAttribute%28%22onpopupshowing%22%2C%20%22this.popupShowing%28this%29%22%29%3B%0AmPopup.setAttribute%28%22onpopuphiding%22%2C%20%22this.popupHiding%28this%29%22%29%3B%0A%0Athis.appendChild%28mPopup%29%3B%0Athis.type%20%3D%20%22menu%22%3B%0A%0A//from%20archive%0A//http%3A//web.archive.org/web/20100711122604/http%3A//custombuttons2.com/en-us/forum/buttons/buttons-database/tabs-list-button-menu.html%0A%0A%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5B/*%20-------------------------------------------------------------%0A%20%20%20%20%20%20Tabs%20List%20Menu%0A%20%20%20%20%20%20by%20LouCypher%20%28aka%20Zoolcar9%29%0A%0A%20%20%20%20%20%20Displays%20opened%20tabs%0A-------------------------------------------------------------%20*/%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%0ALeft%20click%20on%20menu%20item%20to%20select%20the%20tab.%0A%0AMiddle%20click%20on%20menu%20item%20to%20close%20the%20tab.%0A%0A%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Tabs">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=custom-buttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <date id="date" value="20120329"/>
+  <name>Tabs</name>
+  <image><![CDATA[data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAEG0lEQVR4AQEQBO/7Af///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABVmyEyDQsJTUFAwMCAAAAAAAAAAAAAAAAAAAAAAAAAADv9PX8zdPbhrSdg38AAAAAAAAAAAAAAAAAAAAAAAAAAACToLP99fj3/+nu7//m6+r/+ffq//j26P/39eb/9vTl//X27P9meI/ERFV3D////wD///8A////AP///wD///8ABA0NCwLz9fsA6/MBAOHn9gBFLwUAytTdAPv6+QAIBwUAMyspAAsJBiscFPmnZmxy+gAAAAD+AP4A+Pj67/Py+YgEAgMDAP/9/wD9/wMAAQIIAAIDAQAMCwsABQ0JAAgGBgABAQIAHR0ZEGxdRUkNCgcA//8AAAECAADZ3OL/foKL3QT9+/wAAf/4AOzh6wD++foA+vgMACIXCAD+/v0A/f39APn48QD49fQA7ezoAPgJBgD+/v4AAAD+ABIQCwEQFBMKBP///wAWFAgAQToQAP38/AD7+/oAAQAAAAAAAAAAAAAAAAEAAPf3+gDd4uoACAcEAP///wD//v0AAgQJAPb6+wEE////AAECAwABAQcAAQIDAAABAQAAAQEAAf38AAECAgACAgQASkIxAO/y8QAAAAAAAAAAAAAAAADw8fYA8fICAATx8u4A3eDdAAAA/gAA//8A/v39AP3+/QD//v4A/v7+AAAA8QANCgEADQkHAAAAAAAAAAAAAAAAAAsG+wAGAvwABAsIBgAdGyUAAAAAAAD//wAAAP8A////AP//AAAAAP8A////AAAAAAAA//8AAAAAAAAAAAAAAAAACQruAP4AAAAEAgIAAAYFAAAAAP8AAP//AP7+/QD9/f0A/wD/AP7+/gAA//8A//7+AAAA/wAAAAAAAAAAAAAAAAD//vgAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATp7PD7zdTcBQAAAAAA//8A//7+AP7//gD//v4A////AP///gD///8A/wD/AAAAAAAAAAAAAAAAAO7v8//8/Pz9ASdAVmf79vMdAP//AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf8A/vLw58N94SKDc2huvgAAAABJRU5ErkJggg==]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[function populate(aNode) {
+  var tabs = gBrowser.mTabs;
+  for (var j = 0; j < tabs.length; j++) {
+    mi = document.createElement("menuitem");
+    mi.closeTab = closeTab;
+    mi.index = j;
+    mi.className = "menuitem-iconic";
+    mi.setAttribute("label", tabs[j].label);
+    if (tabs[j].selected) mi.style.fontWeight = "bold";
+    mi.setAttribute("image", tabs[j].image
+                    ? tabs[j].image
+                    : "chrome://mozapps/skin/places/defaultFavicon.png");
+    mi.tooltipText = tabs[j].linkedBrowser.currentURI.spec;
+    mi.setAttribute("oncommand",
+                    "gBrowser.selectedTab = gBrowser.mTabs[" + j + "]");
+    mi.setAttribute("onclick", "this.closeTab(event);");
+    aNode.appendChild(mi);
+  }
+}
+
+function clear(aNode) {
+  var list = aNode.childNodes.length;
+  for (var i = 0; i < list; i++) {
+    aNode.removeChild(aNode.lastChild);
+  }
+}
+
+function closeTab(aEvent) {
+  if (aEvent.button != 1) return;
+  gBrowser.closeTab(gBrowser.mTabs[aEvent.target.index]);
+  closeMenus(aEvent.target);
+}
+
+var mPopup = document.createElement("menupopup");
+mPopup.setAttribute("context", "tabContextMenu");
+mPopup.popupShowing = populate;
+mPopup.popupHiding = clear;
+mPopup.setAttribute("onpopupshowing", "this.popupShowing(this)");
+mPopup.setAttribute("onpopuphiding", "this.popupHiding(this)");
+
+this.appendChild(mPopup);
+this.type = "menu";
+
+//from archive
+//http://web.archive.org/web/20100711122604/http://custombuttons2.com/en-us/forum/buttons/buttons-database/tabs-list-button-menu.html
+
+]]></initcode>
+  <code><![CDATA[/* -------------------------------------------------------------
+      Tabs List Menu
+      by LouCypher (aka Zoolcar9)
+
+      Displays opened tabs
+------------------------------------------------------------- */]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[
+Left click on menu item to select the tab.
+
+Middle click on menu item to close the tab.
+
+]]></help>
+  <attributes/>
+</custombutton>

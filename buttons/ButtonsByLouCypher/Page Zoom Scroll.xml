@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custombutton xmlns:cb="http://xsms.nm.ru/custombuttons/"
+              xmlns:html="http://www.w3.org/1999/xhtml">
+  <html:head>
+    <html:title><![CDATA[Page Zoom Scroll]]></html:title>
+    <html:link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8B////Af///wH///8B////Af///wH///8B////Af///wEAAAApAAAAOQAAAEkNGSyFBDRk/y83Ov8vNzr/////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wEOIT9BBDRk/wU/ev/d4cD/Lzc6/////wH///8B////AWNdUA1jXVBvY11Qu2NdUNNjXVDPY11Qt2NdUGceOVw/AT57/wU/ev8XZKX/n9f0/xNcnP////8B////AWNdUEljXVDne2xZ/6mLbf/Ionv/yqR9/6uPcP9/cFz/WlhS/yc9XP8EMmH/yvP9/xNcnP////8B////AWNdUEtjXVD9wJ98//3fq//++t7////z////8v/+8t///tSh/7mZdv9jXVH/Jz1c/xNcnP8TM145////AWNdUBNjXVDtyKqE//7suf//9sP//u20//3pr//+67L//vG9//7wwf/+4K//sZFx/1tZUf8iO1tB////Af///wFjXVCFkYRr//3erf/83a3//Naf//zWjv/82ZL//NiP//vXov/82Kb//Nim//3Yqf+Ab1v/Y11Qdf///wH///8BZWBS0cKhff/7y5r/+b2J//nBkP/6zJb/+c6R//jMkP/4xZP/+MOR//rEkf/9yJb/xZl3/2NdUMH///8B////AWhiVPnYsIn/+bqI//S2g//xsn7/77OC//C1g//usoD/7rB+//CygP/2vIn/+bmH/96thf9jXVDn////Af///wFjXVD91qqE//i5hf/vrnv/7Kp4/+yqeP/sqnj/7Kp4/+yqeP/sqnj/7rB9//W1gv/apn7/Y11Q6////wH///8BY11Q27yYeP/1tYP/87SB/+6sev/sqnj/7Kp4/+yqeP/sqnj/7at4//Cwff/wr3//vph2/2NdUM3///8B////AWNdUJOOf2j/6ah7//m8iP/2uIT/8rN///Gwff/xsX7/87OA//S2gv/0t4T/4J51/49+Zv9jXVCF////Af///wFjXVAlcGpa+ayEZv/qqnz/+8+e///88f/////////////77//4w5H/3Z90/6J9Yf9xa1v1Y11QGf///wH///8B////AWNdUG9mX1H/rYRm/+esgf/44Mf///37//78+//23MH/2KB4/6d/Yv9nX1L/Y11QW////wH///8B////Af///wH///8BZV9RW2NdUPF+a1j/rINl/8WQbf/Djmv/qYBj/31qV/9jXVDraWJUU////wH///8B////Af///wH///8B////Af///wFjXVAbY11QnWNdUOtjXVD/Y11Q/2NdUOdjXVCXY11QFf///wH///8B////Af///wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//w=="/>
+    <html:style type="text/css"><![CDATA[body { font-size: medium; margin: 0; }
+body, code:before, help:before, initcode:before {
+  font-family: "Verdana", sans-serif;
+}
+#wrapper { position: fixed; top: 1em; right: 1em; text-align: center; }
+p { font-size: small; text-align: center; }
+#button {
+  background-color: rgb(85, 168, 2);
+  background-image: linear-gradient(to bottom, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -moz-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -o-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  background-image: -webkit-linear-gradient(top, rgb(147, 200, 94), rgb(85, 168, 2));
+  border: 1px solid rgb(58, 116, 4);
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  padding: 0;
+  margin-bottom: 1em;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -o-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, .25);
+}
+#button a {
+  color: #000;
+  text-shadow: -1pt -1px 0pt rgba(255, 255, 255, .5);
+  padding: 1em;
+  text-decoration: none;
+}
+#button a, code, code:before, initcode, initcode:before, help, help:before {
+  display: block;
+}
+#credits { position: fixed; bottom: 1em; right: 1em; font-size: small; }
+custombutton { background-color: rgb(171, 171, 171); margin: 1em; }
+date, image, mode, accelkey { display: none; }
+name { font-weight: bold; font-size: x-large; }
+code:before, help:before, initcode:before {
+  font-weight: bold;
+  font-size: large;
+  margin: 0 0 1em;
+  padding: .5em;
+}
+code:before { content: "CODE"; }
+help:before { content: "Help"; }
+initcode:before { content: "Initialization Code"; }
+code, initcode, help {
+  background-color: rgb(255, 255, 255);
+  border: 1px inset rgb(170, 170, 170);
+  font: medium monospace;
+  margin: 1em 1em 2em 0;
+  padding: 1em;
+  text-align: left;
+  width: 840px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.clear { clear: both; }
+]]></html:style>
+  </html:head>
+  <html:body>
+    <html:div id="wrapper">
+      <html:div id="button">
+        <html:a href="custombutton://%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0D%0A%3Ccustombutton%20xmlns%3Acb%3D%22http%3A//xsms.nm.ru/custombuttons/%22%3E%0A%20%20%3Cname%3EPage%20Zoom%20Scroll%3C/name%3E%0A%20%20%3Cimage%3E%3C%21%5BCDATA%5Bdata%3Aimage/x-icon%3Bbase64%2CAAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8B////Af///wH///8B////Af///wH///8B////Af///wEAAAApAAAAOQAAAEkNGSyFBDRk/y83Ov8vNzr/////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wEOIT9BBDRk/wU/ev/d4cD/Lzc6/////wH///8B////AWNdUA1jXVBvY11Qu2NdUNNjXVDPY11Qt2NdUGceOVw/AT57/wU/ev8XZKX/n9f0/xNcnP////8B////AWNdUEljXVDne2xZ/6mLbf/Ionv/yqR9/6uPcP9/cFz/WlhS/yc9XP8EMmH/yvP9/xNcnP////8B////AWNdUEtjXVD9wJ98//3fq//++t7////z////8v/+8t///tSh/7mZdv9jXVH/Jz1c/xNcnP8TM145////AWNdUBNjXVDtyKqE//7suf//9sP//u20//3pr//+67L//vG9//7wwf/+4K//sZFx/1tZUf8iO1tB////Af///wFjXVCFkYRr//3erf/83a3//Naf//zWjv/82ZL//NiP//vXov/82Kb//Nim//3Yqf+Ab1v/Y11Qdf///wH///8BZWBS0cKhff/7y5r/+b2J//nBkP/6zJb/+c6R//jMkP/4xZP/+MOR//rEkf/9yJb/xZl3/2NdUMH///8B////AWhiVPnYsIn/+bqI//S2g//xsn7/77OC//C1g//usoD/7rB+//CygP/2vIn/+bmH/96thf9jXVDn////Af///wFjXVD91qqE//i5hf/vrnv/7Kp4/+yqeP/sqnj/7Kp4/+yqeP/sqnj/7rB9//W1gv/apn7/Y11Q6////wH///8BY11Q27yYeP/1tYP/87SB/+6sev/sqnj/7Kp4/+yqeP/sqnj/7at4//Cwff/wr3//vph2/2NdUM3///8B////AWNdUJOOf2j/6ah7//m8iP/2uIT/8rN///Gwff/xsX7/87OA//S2gv/0t4T/4J51/49+Zv9jXVCF////Af///wFjXVAlcGpa+ayEZv/qqnz/+8+e///88f/////////////77//4w5H/3Z90/6J9Yf9xa1v1Y11QGf///wH///8B////AWNdUG9mX1H/rYRm/+esgf/44Mf///37//78+//23MH/2KB4/6d/Yv9nX1L/Y11QW////wH///8B////Af///wH///8BZV9RW2NdUPF+a1j/rINl/8WQbf/Djmv/qYBj/31qV/9jXVDraWJUU////wH///8B////Af///wH///8B////Af///wFjXVAbY11QnWNdUOtjXVD/Y11Q/2NdUOdjXVCXY11QFf///wH///8B////Af///wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//w%3D%3D%5D%5D%3E%3C/image%3E%0A%20%20%3Cmode%3E0%3C/mode%3E%0A%20%20%3Cinitcode%3E%3C%21%5BCDATA%5Bthis.removeEventListener%28%22DOMMouseScroll%22%2C%20this.scroll%2C%20false%29%3B%0A%0Athis.zoomIn%20%3D%20function%28%29%20%7B%0A%20%20try%20%7B%0A%20%20%20%20ZoomManager.prototype.getInstance%28%29.enlarge%28%29%3B%0A%20%20%7D%20catch%28e%29%20%7B%0A%20%20%20%20FullZoom.enlarge%28%29%3B%0A%20%20%7D%0A%7D%0A%0Athis.zoomOut%20%3D%20function%28%29%20%7B%0A%20%20try%20%7B%0A%20%20%20%20ZoomManager.prototype.getInstance%28%29.reduce%28%29%3B%0A%20%20%7D%20catch%28e%29%20%7B%0A%20%20%20%20FullZoom.reduce%28%29%3B%0A%20%20%7D%0A%7D%0A%0Athis.zoomNormal%20%3D%20function%28%29%20%7B%0A%20%20try%20%7B%0A%20%20%20%20ZoomManager.prototype.getInstance%28%29.reset%28%29%3B%0A%20%20%7D%20catch%28e%29%20%7B%0A%20%20%20%20FullZoom.reset%28%29%3B%0A%20%20%7D%0A%7D%0A%0Athis.scroll%20%3D%20function%28aEvent%29%20%7B%0A%20%20if%28aEvent.detail%20%3E%200%29%20%7B%0A%20%20%20%20this.zoomOut%28%29%3B%0A%20%20%7D%20else%20%7B%0A%20%20%20%20this.zoomIn%28%29%3B%0A%20%20%7D%0A%7D%0A%0Athis.onclick%20%3D%20function%28aEvent%29%20%7B%0A%20%20if%20%28aEvent.button%20%3D%3D%201%29%20%7B%0A%20%20%20%20this.zoomNormal%28%29%3B%0A%20%20%7D%0A%7D%0A%0Athis.addEventListener%28%22DOMMouseScroll%22%2C%20this.scroll%2C%20false%29%3B%0A%0A%5D%5D%3E%3C/initcode%3E%0A%20%20%3Ccode%3E%3C%21%5BCDATA%5Bif%20%28ZoomManager.zoom%20%21%3D%201%29%20%7B%0A%20%20this.zoomNormal%28%29%3B%0A%7D%20else%20%7B%0A%20%20custombuttons.uChelpButton%28this%29%3B%0A%7D%0A%5D%5D%3E%3C/code%3E%0A%20%20%3Caccelkey%3E%3C%21%5BCDATA%5B%5D%5D%3E%3C/accelkey%3E%0A%20%20%3Chelp%3E%3C%21%5BCDATA%5B%0ADo%20any%20of%20these%20while%20the%20cursor%20is%20on%20this%20button%0A%0AScroll%20up%3A%20zoom%20in%0AScroll%20down%3A%20zoom%20out%0ALeft/middle+click%3A%20zoom%20normal%0A%0A%5D%5D%3E%3C/help%3E%0A%20%20%3Cattributes/%3E%0A%3C/custombutton%3E" rel="nofollow" title="Install Page Zoom Scroll">
+        <![CDATA[Install this button]]>
+        </html:a>
+      </html:div>
+      <html:a href="https://addons.mozilla.org/addon/custom-buttons/?src=custom-buttons-xml">
+        <![CDATA[What's this?]]>
+      </html:a>
+      <html:div id="credits">
+        <html:a href="http://custombuttons.sourceforge.net/forum/viewtopic.php?t=78#p197">
+          <![CDATA[Custom Buttons XML]]><html:br/><![CDATA[Exporter/Importer]]>
+        </html:a>
+      </html:div>
+    </html:div>
+  </html:body>
+  <date id="date" value="20120329"/>
+  <name>Page Zoom Scroll</name>
+  <image><![CDATA[data:image/x-icon;base64,AAABAAEAEBAAAAAAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8B////Af///wH///8B////Af///wH///8B////Af///wEAAAApAAAAOQAAAEkNGSyFBDRk/y83Ov8vNzr/////Af///wH///8B////Af///wH///8B////Af///wH///8B////Af///wEOIT9BBDRk/wU/ev/d4cD/Lzc6/////wH///8B////AWNdUA1jXVBvY11Qu2NdUNNjXVDPY11Qt2NdUGceOVw/AT57/wU/ev8XZKX/n9f0/xNcnP////8B////AWNdUEljXVDne2xZ/6mLbf/Ionv/yqR9/6uPcP9/cFz/WlhS/yc9XP8EMmH/yvP9/xNcnP////8B////AWNdUEtjXVD9wJ98//3fq//++t7////z////8v/+8t///tSh/7mZdv9jXVH/Jz1c/xNcnP8TM145////AWNdUBNjXVDtyKqE//7suf//9sP//u20//3pr//+67L//vG9//7wwf/+4K//sZFx/1tZUf8iO1tB////Af///wFjXVCFkYRr//3erf/83a3//Naf//zWjv/82ZL//NiP//vXov/82Kb//Nim//3Yqf+Ab1v/Y11Qdf///wH///8BZWBS0cKhff/7y5r/+b2J//nBkP/6zJb/+c6R//jMkP/4xZP/+MOR//rEkf/9yJb/xZl3/2NdUMH///8B////AWhiVPnYsIn/+bqI//S2g//xsn7/77OC//C1g//usoD/7rB+//CygP/2vIn/+bmH/96thf9jXVDn////Af///wFjXVD91qqE//i5hf/vrnv/7Kp4/+yqeP/sqnj/7Kp4/+yqeP/sqnj/7rB9//W1gv/apn7/Y11Q6////wH///8BY11Q27yYeP/1tYP/87SB/+6sev/sqnj/7Kp4/+yqeP/sqnj/7at4//Cwff/wr3//vph2/2NdUM3///8B////AWNdUJOOf2j/6ah7//m8iP/2uIT/8rN///Gwff/xsX7/87OA//S2gv/0t4T/4J51/49+Zv9jXVCF////Af///wFjXVAlcGpa+ayEZv/qqnz/+8+e///88f/////////////77//4w5H/3Z90/6J9Yf9xa1v1Y11QGf///wH///8B////AWNdUG9mX1H/rYRm/+esgf/44Mf///37//78+//23MH/2KB4/6d/Yv9nX1L/Y11QW////wH///8B////Af///wH///8BZV9RW2NdUPF+a1j/rINl/8WQbf/Djmv/qYBj/31qV/9jXVDraWJUU////wH///8B////Af///wH///8B////Af///wFjXVAbY11QnWNdUOtjXVD/Y11Q/2NdUOdjXVCXY11QFf///wH///8B////Af///wH///8BAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//w==]]></image>
+  <mode>0</mode>
+  <initcode><![CDATA[this.removeEventListener("DOMMouseScroll", this.scroll, false);
+
+this.zoomIn = function() {
+  try {
+    ZoomManager.prototype.getInstance().enlarge();
+  } catch(e) {
+    FullZoom.enlarge();
+  }
+}
+
+this.zoomOut = function() {
+  try {
+    ZoomManager.prototype.getInstance().reduce();
+  } catch(e) {
+    FullZoom.reduce();
+  }
+}
+
+this.zoomNormal = function() {
+  try {
+    ZoomManager.prototype.getInstance().reset();
+  } catch(e) {
+    FullZoom.reset();
+  }
+}
+
+this.scroll = function(aEvent) {
+  if(aEvent.detail > 0) {
+    this.zoomOut();
+  } else {
+    this.zoomIn();
+  }
+}
+
+this.onclick = function(aEvent) {
+  if (aEvent.button == 1) {
+    this.zoomNormal();
+  }
+}
+
+this.addEventListener("DOMMouseScroll", this.scroll, false);
+
+]]></initcode>
+  <code><![CDATA[if (ZoomManager.zoom != 1) {
+  this.zoomNormal();
+} else {
+  custombuttons.uChelpButton(this);
+}
+]]></code>
+  <accelkey><![CDATA[]]></accelkey>
+  <help><![CDATA[
+Do any of these while the cursor is on this button
+
+Scroll up: zoom in
+Scroll down: zoom out
+Left/middle+click: zoom normal
+
+]]></help>
+  <attributes/>
+</custombutton>
