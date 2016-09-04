@@ -55,6 +55,14 @@ html
 				.alert.alert-danger
 					p
 						b WARNING!!! Some of these buttons are very old and may not work at all or may even crash your browser. So take the proper precautions.
+				.alert.alert-info
+					p The 
+						b Show Source 
+						| button on each Custom Button will display the buttons code. This will give you the posibility to preview the button code without the need to install the button.
+					p The previewed code will have its syntax highlighted. If you click the 
+						b Show All Sources 
+						| button, the code will not be highlighted (it would require a lot of resources and your browser would probably freeze and/or crash), but it will be highlighted automatically the first time you click inside the code boxes.
+
 				div(align='middle')
 					input(type='button', class='btn btn-primary btn-sm button-name' value='Show All Sources' onclick='self.toggleSp(this);')
 
@@ -70,4 +78,4 @@ html
 
 		script(type='text/javascript', src='lib/js/highlight.pack.js')
 		script(type='text/javascript', src='lib/js/myFunctions.js')
-		script(type='text/javascript', src='lib/js/myFunctionsForOLDCBDatabase.js')
+		//- script(type='text/javascript', src='lib/js/myFunctionsForOLDCBDatabase.js')
