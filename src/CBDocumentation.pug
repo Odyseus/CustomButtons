@@ -5,19 +5,12 @@ html
 		title Custom Buttons Documentation
 		link(rel='shortcut icon', type='image/x-icon', href='lib/img/IndexImages/index.png')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
-		link(type='text/css', rel='alternate stylesheet', href='lib/css/bootstrap-dark.css', title='dark')
-		link(type='text/css', rel='stylesheet', href='lib/css/bootstrap-light.css', title='light')
-		link(type='text/css', rel='stylesheet', href='lib/css/tweaks-common.css')
-		link(type='text/css', rel='alternate stylesheet', href='lib/css/highlight-dark.css', title='dark')
-		link(type='text/css', rel='stylesheet', href='lib/css/highlight-light.css', title='light')
-		link(type='text/css', rel='alternate stylesheet', href='lib/css/tweaks-dark.css', title='dark')
-		link(type='text/css', rel='stylesheet', href='lib/css/tweaks-light.css', title='light')
-		link(type='text/css', rel='alternate stylesheet', href='lib/css/docs-dark.css', title='dark')
-		link(type='text/css', rel='stylesheet', href='lib/css/docs-light.css', title='light')
-		script(type='text/javascript', src='lib/js/themes.js')
+		link(type='text/css', rel='stylesheet', href='lib/css/bootstrap.min.css')
+		link(type='text/css', rel='stylesheet', href='lib/css/highlight.css')
+		link(type='text/css', rel='stylesheet', href='lib/css/tweaks.css')
+		link(type='text/css', rel='stylesheet', href='lib/css/docs.css')
 
 		script(type='text/javascript').
-			setTheme(); // Sets the style sheet theme
 			var metadata = {
 				"pageType": "cb_documentation"
 			};
@@ -57,13 +50,10 @@ html
 						nav#index-sidebar.hidden-print.hidden-xs.hidden-sm
 							div(style='padding-top:1px;padding-bottom:1px;padding-left:20px;')
 								br
-								a.btn.btn-info.btn-xs(style='font-size:12px;font-weight:bold;' data-toggle='tooltip', data-placement='top', data-original-title= 'Download this documentation as an standalone HTML file.',rel='nofollow', title='Download this documentation as standalone HTML file.', href='StandAloneUnofficialDocsLight.html', download)
+								a.btn.btn-info.btn-xs(style='font-size:12px;font-weight:bold;' data-toggle='tooltip', data-placement='top', data-original-title= 'Download this documentation as an standalone HTML file.',rel='nofollow', title='Download this documentation as an standalone HTML file.', href='StandAloneUnofficialDocs.html', download)
 									span.glyphicon.glyphicon-download-alt
-									|  Light
+									|  Download
 								| 
-								a.btn.btn-info.btn-xs(style='font-size:12px;font-weight:bold;' data-toggle='tooltip', data-placement='top', data-original-title= 'Download this documentation as an standalone HTML file.',rel='nofollow', title='Download this documentation as standalone HTML file.', href='StandAloneUnofficialDocsDark.html', download)
-									span.glyphicon.glyphicon-download-alt
-									|  Dark
 								br
 							include ./includes/_doc_index.pug
 
@@ -72,7 +62,7 @@ html
 
 		include ./includes/_linktotop.pug
 
-		script(type='text/javascript', src='lib/js/jquery-2.2.4.min.js')
-		script(type='text/javascript', src='lib/js/bootstrap.min.js')
+		include ./includes/_scriptsatbottom.pug
+
 		script(type='text/javascript', src='lib/js/highlight.pack.js')
 		script(type='text/javascript', src='lib/js/myFunctions.js')

@@ -1,0 +1,257 @@
+﻿/* START Documentation styles */
+
+/* START Docs Sidebar styles */
+.effing_index {
+	text-transform: uppercase;
+	letter-spacing: .5px
+}
+
+#index-sidebar.affix {
+	position: static;
+}
+
+.cb-docs-sidenav {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#index-sidebar .nav>li>a {
+	display: block;
+	padding: 4px 20px;
+	font-size: 13px;
+	font-weight: 600;
+	color: #2c3e50;
+}
+
+#index-sidebar .nav>li>a:hover,
+#index-sidebar .nav>li>a:focus {
+	padding-left: 19px;
+	color: #3498db;
+	text-decoration: none;
+	background-color: transparent;
+	border-left: 1px solid #3498db;
+}
+
+#index-sidebar .nav>.active>a,
+#index-sidebar .nav>.active:hover>a,
+#index-sidebar .nav>.active:focus>a {
+	padding-left: 18px;
+	font-weight: 700;
+	color: #3498db;
+	background-color: transparent;
+	border-left: 2px solid #3498db;
+}
+
+#index-sidebar .nav .nav {
+	display: none;
+	padding-bottom: 10px;
+}
+
+#index-sidebar .nav .nav>li>a {
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 30px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+#index-sidebar .nav .nav .nav>li>a {
+	padding-top: 1px;
+	padding-bottom: 1px;
+	padding-left: 40px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+#index-sidebar .nav .nav>li>a:hover,
+#index-sidebar .nav .nav>li>a:focus {
+	padding-left: 29px;
+}
+
+#index-sidebar .nav .nav .nav>li>a:hover,
+#index-sidebar .nav .nav .nav>li>a:focus {
+	padding-left: 39px;
+}
+
+#index-sidebar .nav .nav>.active>a,
+#index-sidebar .nav .nav>.active:hover>a,
+#index-sidebar .nav .nav>.active:focus>a {
+	padding-left: 28px;
+	font-weight: 600;
+}
+
+#index-sidebar .nav .nav .nav>.active>a,
+#index-sidebar .nav .nav .nav>.active:hover>a,
+#index-sidebar .nav .nav .nav>.active:focus>a {
+	padding-left: 38px;
+	font-weight: 600;
+}
+
+@media (min-width:768px) {
+	#index-sidebar .nav>.active>ul {
+		display: block;
+	}
+
+	#index-sidebar.affix,
+	#index-sidebar.affix-bottom {
+		width: 213px;
+	}
+
+	#index-sidebar.affix {
+		position: fixed;
+		top: 55px;
+	}
+
+	#index-sidebar.affix-bottom {
+		position: absolute;
+	}
+
+	#index-sidebar.affix-bottom .cb-docs-sidenav,
+	#index-sidebar.affix .cb-docs-sidenav {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+}
+
+@media (max-width:768px) {
+	#index-sidebar.affix,
+	#index-sidebar.affix-bottom {
+		width: 188px;
+	}
+
+}
+
+@media (min-width:1200px) {
+	#index-sidebar.affix-bottom,
+	#index-sidebar.affix {
+		width: 263px;
+	}
+
+}
+
+.cb-docs-section {
+	margin-bottom: 60px;
+}
+
+.cb-docs-section:last-child {
+	margin-bottom: 0;
+}
+
+h1[id],
+h2[id],
+h3[id],
+h4[id] {
+	padding-top: 20px;
+	margin-top: 0;
+}
+
+/* END Docs Sidebar styles */
+
+/* START Docs Header styles */
+.cb-docs-header {
+	position: relative;
+	padding: 30px 15px;
+	margin-bottom: 40px;
+	font-size: 16px;
+	border-radius: 0 !important;
+	text-align: center;
+}
+
+.cb-docs-header h1 {
+	margin-top: 0;
+	color: #fff;
+}
+
+.cb-docs-header p {
+	margin-bottom: 0;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+.cb-docs-header .container {
+	position: relative;
+}
+
+@media (min-width:768px) {
+	.cb-docs-header {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		text-align: left;
+	}
+
+	.cb-docs-header h1 {
+		font-size: 60px;
+		line-height: 1
+	}
+
+}
+
+/* END Docs Header styles */
+
+/* START Docs tweaks */
+.tweaked_by_odyseus {
+	-moz-box-shadow: 0 0 2px 2px #D62C1A;
+	-webkit-box-shadow: 0 0 2px 2px #D62C1A;
+	box-shadow: 0 0 2px 2px #D62C1A;
+}
+
+.official_docs {
+	-moz-box-shadow: 0 0 2px 2px #18BC9C;
+	-webkit-box-shadow: 0 0 2px 2px #18BC9C;
+	box-shadow: 0 0 2px 2px #18BC9C;
+}
+
+.from_russian_forum {
+	-moz-box-shadow: 0 0 2px 2px #f39c12;
+	-webkit-box-shadow: 0 0 2px 2px #f39c12;
+	box-shadow: 0 0 2px 2px #f39c12;
+}
+
+/* END Docs tweaks */
+
+/* START For ScrollSpy */
+body {
+	position: relative;
+}
+
+/* END For ScrollSpy */
+
+/* START Jumbotron styles */
+#cb_jumbotron p {
+	font-size: 18px;
+	font-weight: 400;
+}
+
+#cb_jumbotron a {
+	font-weight: 600;
+}
+
+@media screen and (min-width:768px) {
+	#cb_jumbotron {
+		padding-top: 38px;
+		padding-bottom: 38px;
+	}
+
+	.container #cb_jumbotron {
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+
+	#cb_jumbotron h1 {
+		font-size: 50px;
+	}
+
+}
+
+/* END Jumbotron styles */
+
+/* START Some tweaks for HTML inside pre/code blocks */
+pre a.label > span.hljs-comment {
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+	color: #fff !important;
+}
+
+/* END Some tweaks for HTML inside pre/code blocks */
+
+/* END Documentation styles */
