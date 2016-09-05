@@ -13,7 +13,7 @@ $ [sudo] make install
 $ [sudo] npm install pug-cli -g
 ```
 
-- Git (install from repo)
+- Git
 ```bash
 sudo apt-get install git git-doc git-gui
 ```
@@ -33,11 +33,10 @@ sudo apt-get install git git-doc git-gui
 - The *_navbar_for_standalone_doc.pug* file has absolute links.
 - The *_olddatabase.html* file is used instead of a pure PUG file because, due to its large size, the PUG file takes an eternity to build.
 
-
 #### Highlight.js notes
 
 - Download [highlight.js](https://highlightjs.org/download/) with support for these languages only (CSS, HTML, XML, JSON and JavaScript).
-- The xcode.css file is the theme used for syntax highlighting.
+- The xcode.css file is the theme used for syntax highlighting. edit this css file to change the background color of the .hljs class to #f8f8f8.
 
 
 #### Bootstrap notes

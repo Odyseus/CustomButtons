@@ -89,8 +89,8 @@ samp {
 
 /* For Back To Top Button */
 #top-link {
-	min-height: 18px;
-	padding: 6px;
+	/*min-height: 18px;*/
+	padding: 2px 6px 3px 6px ;
 	border-radius: 3px;
 }
 
