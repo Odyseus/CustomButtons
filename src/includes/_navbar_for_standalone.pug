@@ -1,0 +1,70 @@
+include _navbar-data.pug
+
+nav#autohide_navbar.navbar.navbar-default.navbar-fixed-top(role='navigation')
+	.container-fluid
+		.navbar-header
+			button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
+				span.sr-only Toggle navigation
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand(href='index.html' title='Custom Buttons created by Odyseus') Index
+		.container-fluid
+			.navbar-collapse.collapse.navbar-right
+				ul.nav.navbar-nav
+					li.dropdown
+						a.dropdown-toggle(href='#', data-toggle='dropdown') Install
+							b.caret
+						ul.dropdown-menu
+							li
+								a(href= navbarJSONData.installCB.items["1"].href, title= navbarJSONData.installCB.items["1"].title): != navbarJSONData.installCB.items["1"].label
+							li
+								a(href= navbarJSONData.installCB.items["2"].href, title= navbarJSONData.installCB.items["2"].title): != navbarJSONData.installCB.items["2"].label
+					li.dropdown
+						a.dropdown-toggle(href='#', data-toggle='dropdown') Buttons database
+							b.caret
+						ul.dropdown-menu
+							li
+								a(href= navbarJSONData.buttonsDB.items["1"].hrefForStandAlone, title= navbarJSONData.buttonsDB.items["1"].title): != navbarJSONData.buttonsDB.items["1"].label
+							li
+								a(href= navbarJSONData.buttonsDB.items["2"].href, title= navbarJSONData.buttonsDB.items["2"].title): != navbarJSONData.buttonsDB.items["2"].label
+							li
+								a(href= navbarJSONData.buttonsDB.items["3"].href, title= navbarJSONData.buttonsDB.items["3"].title): != navbarJSONData.buttonsDB.items["3"].label
+							li
+								a(href= navbarJSONData.buttonsDB.items["4"].href, title= navbarJSONData.buttonsDB.items["4"].title): != navbarJSONData.buttonsDB.items["4"].label
+							li
+								a(href= navbarJSONData.buttonsDB.items["5"].hrefForStandAlone, title= navbarJSONData.buttonsDB.items["5"].title): != navbarJSONData.buttonsDB.items["5"].label
+					li.dropdown
+						a.dropdown-toggle(href='#', data-toggle='dropdown') Useful addons
+							b.caret
+						ul.dropdown-menu
+							li
+								a(href= navbarJSONData.addons.items["1"].href, title= navbarJSONData.addons.items["1"].title): != navbarJSONData.addons.items["1"].label
+							li
+								a(href= navbarJSONData.addons.items["2"].href, title= navbarJSONData.addons.items["2"].title): != navbarJSONData.addons.items["2"].label
+							li
+								a(href= navbarJSONData.addons.items["3"].href, title= navbarJSONData.addons.items["3"].title): != navbarJSONData.addons.items["3"].label
+							li
+								a(href= navbarJSONData.addons.items["4"].href, title= navbarJSONData.addons.items["4"].title): != navbarJSONData.addons.items["4"].label
+					li.dropdown
+						a.dropdown-toggle(href='#', data-toggle='dropdown') Useful links
+							b.caret
+						ul.dropdown-menu
+							li
+								a(href= navbarJSONData.usefulLinks.items["1"].hrefForStandAlone, title= navbarJSONData.usefulLinks.items["1"].title): != navbarJSONData.usefulLinks.items["1"].label
+							li
+								a(href= navbarJSONData.usefulLinks.items["2"].href, title= navbarJSONData.usefulLinks.items["2"].title): != navbarJSONData.usefulLinks.items["2"].label
+							li
+								a(href= navbarJSONData.usefulLinks.items["3"].href, title= navbarJSONData.usefulLinks.items["3"].title): != navbarJSONData.usefulLinks.items["3"].label
+							li
+								a(href= navbarJSONData.usefulLinks.items["4"].href, title= navbarJSONData.usefulLinks.items["4"].title): != navbarJSONData.usefulLinks.items["4"].label
+							li
+								a(href= navbarJSONData.usefulLinks.items["5"].href, title= navbarJSONData.usefulLinks.items["5"].title): != navbarJSONData.usefulLinks.items["5"].label
+							li
+								a(href= navbarJSONData.usefulLinks.items["6"].href, title= navbarJSONData.usefulLinks.items["6"].title): != navbarJSONData.usefulLinks.items["6"].label
+							li
+								a(href= navbarJSONData.usefulLinks.items["7"].href, title= navbarJSONData.usefulLinks.items["7"].title): != navbarJSONData.usefulLinks.items["7"].label
+							li
+								a(href= navbarJSONData.usefulLinks.items["8"].href, title= navbarJSONData.usefulLinks.items["8"].title): != navbarJSONData.usefulLinks.items["8"].label
+							li
+								a(href= navbarJSONData.usefulLinks.items["9"].href, title= navbarJSONData.usefulLinks.items["9"].title): != navbarJSONData.usefulLinks.items["9"].label

@@ -30,7 +30,7 @@ sudo apt-get install git git-doc git-gui
 #### Include files notes
 
 - The *_navbar.pug* file has relative links.
-- The *_navbar_for_standalone_doc.pug* file has absolute links.
+- The *_navbar_for_standalone.pug* file has absolute links.
 - The *_olddatabase.html* file is used instead of a pure PUG file because, due to its large size, the PUG file takes an eternity to build.
 
 #### Highlight.js notes

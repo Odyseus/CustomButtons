@@ -1,5 +1,85 @@
 noscript
+	style(type='text/css').
+		#autohide_navbar {
+			display: none !important;
+		}
+		#noscript-navbar {
+			display: inline-block !important;
+		}
+		#noscript-navbar > li {
+			float: left !important;
+			margin: 2px !important;
+			padding: 2px !important;
+			top: 0 !important;
+			display: inline-block !important;
+		}
+		#noscript-navbar li > ul {
+			margin: 1px !important;
+			padding: 1px !important;
+		}
+		#noscript-navbar li {
+			list-style: none !important;
+			list-style-type: none !important;
+		}
+
 	.alert.alert-danger
 		p: strong Oh snap! This page needs JavaScript enabled to display correctly.
-		p: strong Main information about the button and the link to install it will work normally.
-		p: strong Code preview, dropdown menus and some buttons on the page will not work until JavaScript is enabled.
+		p: strong Main information about the buttons and the links to install them will work normally.
+		p: strong This page uses JavaScript only to add extra functionality to it. There are no tracking services of any kind and never will be (at least, not from my side).
+		p: strong Dropdown menus, buttons filtering/sorting, etc. will not work until JavaScript is enabled.
+
+	include _navbar-data.pug
+
+	ul(id='noscript-navbar')
+		li
+			| Install
+			ul
+				li
+					a(href= navbarJSONData.installCB.items["1"].href, title= navbarJSONData.installCB.items["1"].title): != navbarJSONData.installCB.items["1"].label
+				li
+					a(href= navbarJSONData.installCB.items["2"].href, title= navbarJSONData.installCB.items["2"].title): != navbarJSONData.installCB.items["2"].label
+		li
+			| Buttons database
+			ul
+				li
+					a(href= navbarJSONData.buttonsDB.items["1"].href, title= navbarJSONData.buttonsDB.items["1"].title): != navbarJSONData.buttonsDB.items["1"].label
+				li
+					a(href= navbarJSONData.buttonsDB.items["2"].href, title= navbarJSONData.buttonsDB.items["2"].title): != navbarJSONData.buttonsDB.items["2"].label
+				li
+					a(href= navbarJSONData.buttonsDB.items["3"].href, title= navbarJSONData.buttonsDB.items["3"].title): != navbarJSONData.buttonsDB.items["3"].label
+				li
+					a(href= navbarJSONData.buttonsDB.items["4"].href, title= navbarJSONData.buttonsDB.items["4"].title): != navbarJSONData.buttonsDB.items["4"].label
+				li
+					a(href= navbarJSONData.buttonsDB.items["5"].href, title= navbarJSONData.buttonsDB.items["5"].title): != navbarJSONData.buttonsDB.items["5"].label
+		li
+			| Useful addons
+			ul
+				li
+					a(href= navbarJSONData.addons.items["1"].href, title= navbarJSONData.addons.items["1"].title): != navbarJSONData.addons.items["1"].label
+				li
+					a(href= navbarJSONData.addons.items["2"].href, title= navbarJSONData.addons.items["2"].title): != navbarJSONData.addons.items["2"].label
+				li
+					a(href= navbarJSONData.addons.items["3"].href, title= navbarJSONData.addons.items["3"].title): != navbarJSONData.addons.items["3"].label
+				li
+					a(href= navbarJSONData.addons.items["4"].href, title= navbarJSONData.addons.items["4"].title): != navbarJSONData.addons.items["4"].label
+		li
+			| Useful links
+			ul
+				li
+					a(href= navbarJSONData.usefulLinks.items["1"].href, title= navbarJSONData.usefulLinks.items["1"].title): != navbarJSONData.usefulLinks.items["1"].label
+				li
+					a(href= navbarJSONData.usefulLinks.items["2"].href, title= navbarJSONData.usefulLinks.items["2"].title): != navbarJSONData.usefulLinks.items["2"].label
+				li
+					a(href= navbarJSONData.usefulLinks.items["3"].href, title= navbarJSONData.usefulLinks.items["3"].title): != navbarJSONData.usefulLinks.items["3"].label
+				li
+					a(href= navbarJSONData.usefulLinks.items["4"].href, title= navbarJSONData.usefulLinks.items["4"].title): != navbarJSONData.usefulLinks.items["4"].label
+				li
+					a(href= navbarJSONData.usefulLinks.items["5"].href, title= navbarJSONData.usefulLinks.items["5"].title): != navbarJSONData.usefulLinks.items["5"].label
+				li
+					a(href= navbarJSONData.usefulLinks.items["6"].href, title= navbarJSONData.usefulLinks.items["6"].title): != navbarJSONData.usefulLinks.items["6"].label
+				li
+					a(href= navbarJSONData.usefulLinks.items["7"].href, title= navbarJSONData.usefulLinks.items["7"].title): != navbarJSONData.usefulLinks.items["7"].label
+				li
+					a(href= navbarJSONData.usefulLinks.items["8"].href, title= navbarJSONData.usefulLinks.items["8"].title): != navbarJSONData.usefulLinks.items["8"].label
+				li
+					a(href= navbarJSONData.usefulLinks.items["9"].href, title= navbarJSONData.usefulLinks.items["9"].title): != navbarJSONData.usefulLinks.items["9"].label

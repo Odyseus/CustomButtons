@@ -34,11 +34,11 @@ html
 					tbody#xml-dir-table-body
 						include index-data.pug
 
-						each btn in JSONData
+						each btn in buttonsJSONData
 							tr
 								td.btn-index-name
 									img.btn-index-image(src='buttons/ButtonsByOdyseus/' + btn["repofolder"] +'/' + btn["repofolder"] + '.png' , alt='?', title='', class= btn["customClass"])
-									a(href='buttons/ButtonsByOdyseus/' + btn["repofolder"] +'/' + btn["repofolder"] + btn["appendix"] + '.xml', data-container='body', data-toggle='popover', data-placement='top', data-original-title= btn["name"], data-trigger="focus", role="button", data-content= btn['title']): = btn["name"]
+									a(href='buttons/ButtonsByOdyseus/' + btn["repofolder"] +'/' + btn["repofolder"] + btn["appendix"] + '.xml', data-container='body', data-toggle='popover', data-placement='top', data-original-title= btn["name"], data-trigger="focus", role="button", data-content= btn['description'], title= btn['description'], class='btn-index-name-link'): = btn["name"]
 								td.btn-index-lastupdate: = btn['updatedate']
 								td.btn-index-homepage
 									a(title='Go to this button homepage for detailed information about its features/usage.', href= btn['homepageURL']): = btn['homepageName']
